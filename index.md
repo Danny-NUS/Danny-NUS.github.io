@@ -4,7 +4,7 @@ layout: homepage
 
 ## About Me
 
-I am a first-year Ph.D. student at School of Computing, National University of Singapore. I’m fortunately advised by Prof. Ye Wang (王晔) in the Sound and Music Computing (SMC) Lab. Prior to that, I received my M.Sc. degree in Computer Science from National University of Singapore in Singapore in 2023, under the supervision of Prof. Ye Wang. In 2022, I received my B.Sc. Degree in Telecommunications Engineering with Management from Beijing University of Posts and Telecommunications in China in 2022.
+I am a first-year Ph.D. student at the School of Computing, National University of Singapore (NUS). I am fortunate to be advised by Prof. Ye Wang (王晔) in the Sound and Music Computing (SMC) Lab. Prior to this, I earned my M.Sc. degree in Computer Science from NUS in 2023, also under the supervision of Prof. Ye Wang. In 2022, I received my B.Sc. degree in Telecommunications Engineering with Management from Beijing University of Posts and Telecommunications in China.
 
 ## Research Interests
 - **Computer Vision:** image recognition, image generation, video captioning
