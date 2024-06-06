@@ -8,8 +8,17 @@
         .scrollable-content {
             height: 200px; /* Adjust the height as needed */
             overflow-y: scroll;
-            border: 1px solid #ccc; /* Optional: Add border for visual clarity */
+            border: 1px solid transparent; /* Make border colorless */
+            background-color: #f0f0f0; /* Light gray background */
             padding: 10px; /* Optional: Add padding for better spacing */
+        }
+        .scrollable-content ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .scrollable-content li {
+            margin-bottom: 10px;
         }
     </style>
 
