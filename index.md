@@ -18,14 +18,12 @@ Music has always been the heartbeat of my life and research. My deep passion for
 - **Machine Learning:** generative modeling, transfer learning
 
 ## News
-<div style="text-align: justify;">
-- **[Apr. 2024]** One journal paper was accepted by IEEE Transactions on Audio, Speech, and Language Processing ([TASLP'2024](https://signalprocessingsociety.org/publications-resources/ieeeacm-transactions-audio-speech-and-language-processing))!
-- **[Jan. 2024]** I commenced my PhD journey at NUS, in the SMC Lab, under the guidance of Prof. Wang Ye. 🥰✨
-- **[Dec. 2023]** I successfully defended my MComp Thesis entitled "Singing Voice Synthesis with Singing Technique Control" and earned my M.Sc. degree in Computer Science from NUS. 🥳
-- **[Jun. 2023]** I interned for 3 months at Tsinghua's THUNLP lab, focusing on multi-modal large language models, particularly in the audio domain. 🎧
-- **[Aug. 2022]** I joined NUS as a student in the Master of Computing program (AI track) and began my research in the Sound and Music Computing Lab. 🇸🇬
-- **[Jun. 2022]** I graduated from BUPT and earned my B.Sc. degree with honors. 🎓
-</div>
+- <div style="text-align: justify;">**[April. 2024]** One journal paper was accepted by IEEE Transactions on Audio, Speech, and Language Processing ([TASLP'2024](https://signalprocessingsociety.org/publications-resources/ieeeacm-transactions-audio-speech-and-language-processing))!</div>
+- <div style="text-align: justify;">**[Jan. 2024]** I commenced my PhD journey at NUS, in the SMC Lab, under the guidance of Prof. Wang Ye. 🥰✨</div>
+- <div style="text-align: justify;">**[Dec. 2023]** I successfully defended my MComp Thesis entitled "Singing Voice Synthesis with Singing Technique Control" and earned my M.Sc. degree in Computer Science from NUS. 🥳</div>
+- <div style="text-align: justify;">**[June. 2023]** I interned for 3 months at Tsinghua's THUNLP lab, focusing on multi-modal large language models, particularly in the audio domain. 🎧</div>
+- <div style="text-align: justify;">**[Aug. 2022]** I joined NUS as a student in the Master of Computing program (AI track) and began my research in the Sound and Music Computing Lab. 🇸🇬</div>
+- <div style="text-align: justify;">**[June. 2022]** I graduated from BUPT and earned my B.Sc. degree with honors. 🎓</div>
 
 {% include_relative _includes/publications.md %}
 
