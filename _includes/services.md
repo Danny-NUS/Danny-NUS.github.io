@@ -8,7 +8,7 @@
             <li><a href="https://www.acmmm2023.org/"><autocolor>ACM International Conference on Multimedia (ACM MM) 2023</autocolor></a></li>
           </ul>
       </li>
-      <li>Performer for NUS Sound and Music Computing Concert [<a href="https://smcnus.comp.nus.edu.sg/seminar_concert_2022">2022</a>][<a href="https://smcnus.comp.nus.edu.sg/concert_2023">2023</a>]</li>
-      <li>Performer for NUS Jazz Band [<a href="https://www.youtube.com/watch?v=XDl74FPBNsg&list=PLIT5TPmY3gWzBzpTeQaR5JCxUuoMyQVCV&pp=iAQB">"On Bali Lane" 2022</a>][<a href="https://www.youtube.com/watch?v=9GCAJQ9B_Cg&list=PLIT5TPmY3gWzgTYVx3xSriWrjkjACylcE&pp=iAQB">"I've Got Rhythm!" 2023</a>]</li>
+      <li>Featured Performer at NUS Sound and Music Computing Concert [<a href="https://smcnus.comp.nus.edu.sg/seminar_concert_2022">2022</a>][<a href="https://smcnus.comp.nus.edu.sg/concert_2023">2023</a>]</li>
+      <li>Featured Performer at NUS Jazz Band [<a href="https://www.youtube.com/watch?v=XDl74FPBNsg&list=PLIT5TPmY3gWzBzpTeQaR5JCxUuoMyQVCV&pp=iAQB">"On Bali Lane" 2022</a>][<a href="https://www.youtube.com/watch?v=9GCAJQ9B_Cg&list=PLIT5TPmY3gWzgTYVx3xSriWrjkjACylcE&pp=iAQB">"I've Got Rhythm!" 2023</a>]</li>
 
 
