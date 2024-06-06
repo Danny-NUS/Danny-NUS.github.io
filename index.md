@@ -18,11 +18,12 @@ Music has always been the heartbeat of my life and research. My deep passion for
 - **Machine Learning:** generative modeling, transfer learning
 
 ## News
-
-- **[Feb. 2020]** Our paper about incremental learning is accepted to CVPR 2020.
-- **[Feb. 2020]** We will host the ACM Multimedia Asia 2020 conference in Singapore!
-- **[Sept. 2019]** Our paper about few-shot learning is accepted to NeurIPS 2019.
-- **[Mar. 2019]** Our paper about few-shot learning is accepted to CVPR 2019.
+- **[April. 2024]** One journal paper got accepted to IEEE Transactions on Audio, Speech and Language Processing (<a href="(https://signalprocessingsociety.org/publications-resources/ieeeacm-transactions-audio-speech-and-language-processing)">TASLP'2024</a>)!
+- **[Jan. 2024]** **I started my PhD journey at NUS**, in the SMC Lab, advised by Prof. Wang Ye. 🥰✨
+- **[Dec. 2023]** I have successfully defended his MComp Thesis entitled "Singing Voice Synthesis with Singing Technique Control" and my M.Sc. degree in Computer Science from NUS. 🥳
+- **[June. 2023]** I interned for 3 months at Tsinghua's THUNLP lab, focusing on multi-modal large language models, particularly in the audio domain 🎧.
+- **[Aug. 2022]** I joined NUS as a student in Master of Computing program (AI track), start my research in Sound and Music Computing Lab. 🇸🇬
+- **[June. 2022]** I was graduated from BUPT and earned my B.Sc. degree with honors. 🎓
 
 {% include_relative _includes/publications.md %}
 
