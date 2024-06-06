@@ -18,7 +18,6 @@ Music has always been the heartbeat of my life and research. My deep passion for
 - **Machine Learning:** generative modeling, transfer learning
 
 ## News
-<p align="justify">
 - **[April. 2024]** One journal paper got accepted to IEEE Transactions on Audio, Speech and Language Processing (<a href="(https://signalprocessingsociety.org/publications-resources/ieeeacm-transactions-audio-speech-and-language-processing)">TASLP'2024</a>)!
 - **[Jan. 2024]** **I started my PhD journey at NUS**, in the SMC Lab, advised by Prof. Wang Ye. 🥰✨
 - **[Dec. 2023]** I have successfully defended his MComp Thesis entitled "Singing Voice Synthesis with Singing Technique Control" and my M.Sc. degree in Computer Science from NUS. 🥳
