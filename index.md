@@ -13,10 +13,9 @@ Moreover, I have a strong musical background in piano 🎹 and singing 🎤. In 
 Music has always been the heartbeat of my life and research. My deep passion for music fuels my creativity and drives me to push the boundaries in the thrilling world of AI 🤖 and music 🎵. Each note and melody inspires me to innovate and excel, blending technology and artistry in harmony. 🚀✨
 </p>
 
-
 ## Research Interests
-- **Sound and Music Computing:** image recognition, image generation, video captioning
-- **Machine Learning:** meta-learning, incremental learning, transfer learning
+- **Sound and Music Computing:** singing and speech synthesis, singing expressive control, voice conversion
+- **Machine Learning:** generative modeling, transfer learning
 
 ## News
 
