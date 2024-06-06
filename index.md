@@ -10,7 +10,7 @@ I am a first-year Ph.D. student at the <a href="https://www.comp.nus.edu.sg/">Sc
 
 <p align="justify">
 Moreover, I have a strong musical background in piano 🎹 and singing 🎤. In 2022, I was thrilled to join the <a href="https://cfa.nus.edu.sg/explore/talent/arts-groups/music/nus-jazz-band/">NUS Jazzband</a> as a vocalist 🎷. You can catch some of our performances on <a href="https://www.youtube.com/@nusjazzband">YouTube</a>. During my undergraduate studies, I had the honor of serving as the conductor of the AiYue Choir 🎼 at BUPT and performing as a bass singer with the <a href="https://www.youtube.com/channel/UCNMAnNY_93rND1mh8qRP7fQ">Beijing Queer Chorus (BQC)</a> 🌈. 
-Music has always been the heartbeat of my life and research. My deep passion for music fuels my creativity and drives me to push the boundaries in the thrilling world of AI 🤖 and music 🎵. Each note and melody inspires me to innovate and excel, blending technology and artistry in harmony. 🚀✨
+Music has always been the heartbeat of my life and research. My deep passion for music fuels my creativity and drives me to push the boundaries in the thrilling world of AI 🤖 and music 🎵. Each note and melody inspires me to innovate and excel, blending technology and artistry in harmony 🚀✨.
 </p>
 
 ## Research Interests
