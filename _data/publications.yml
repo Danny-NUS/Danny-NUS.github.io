@@ -1,13 +1,5 @@
 main:
 
-  - title: SinTechSVS: A Singing Technique Controllable Singing Voice Synthesis System
-    authors: <strong>Junchuan Zhao</strong>, Low Qi Hong Chetwin, Ye Wang* (*Corresponding authors)
-    conference_short: TASLP
-    conference: IEEE/ACM Transactions on Audio, Speech, and Language Processing <strong>(TASLP)</strong>, 2024.
-    pdf: https://ieeexplore-ieee-org.libproxy1.nus.edu.sg/stamp/stamp.jsp?tp=&arnumber=10509739
-    page: https://danny-nus.github.io/SinTechSVS/
-    bibtex: https://scholar.googleusercontent.com/scholar.bib?q=info:IVkbR1ghWkcJ:scholar.google.com/&output=citation&scisdr=ClE0-pEMEJXsksn9fHY:AFWwaeYAAAAAZmH7ZHbXtauA73Df9soiQ89Z-bg&scisig=AFWwaeYAAAAAZmH7ZKNC1b5yaYwsdzWsjgU8ERU&scisf=4&ct=citation&cd=-1&hl=zh-CN
-    image: ./assets/img/overall-1.png
 
   - title: An Improved Time Series Network Model Based on Multitrack Music Generation
     authors: <strong>Junchuan Zhao</strong>
