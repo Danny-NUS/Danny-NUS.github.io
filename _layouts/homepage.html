@@ -87,6 +87,8 @@
         text-align: center;
         display: inline-block;
         padding: 0 20px;
+        height: 50px;
+        line-height: 50px;
       }
       .mo_xx a{
         color: #333;
@@ -105,11 +107,11 @@
     <div class="mo">
         <div class="logo">JINGWEI</div>
         <div class="mo_info">
-            <div class="mo_xx"><a>As Musician</a></div>
-            <div class="mo_xx"><a>Publications</a></div>
-            <div class="mo_xx"><a>News</a></div>
-            <div class="mo_xx"><a>Research Interest</a></div>
-            <div class="mo_xx"><a>About Me</a></div>
+            <div class="mo_xx"><a href="#">As Musician</a></div>
+            <div class="mo_xx"><a href="#publications">Publications</a></div>
+            <div class="mo_xx"><a href="#news">News</a></div>
+            <div class="mo_xx"><a href="#research-interests">Research Interest</a></div>
+            <div class="mo_xx"><a href="#about-me">About Me</a></div>
         </div>
     </div>
 
@@ -117,7 +119,7 @@
 
 
     <div class="wrapper">
-      <header>
+      <header style="position: relative;">
         
         {% if site.avatar %}
         <a class="image avatar"><img src="{{ site.avatar }}" alt="avatar" /></a>
