@@ -92,12 +92,15 @@
     z-index: 99;
   }
   .mo.day.scrolled {
-    background: #fff; /* 滚动后的不透明背景 */
-    border-color: #fff; /* 滚动后的边框颜色（白天） */
+    background: rgba(89, 89, 89, 0.8); /* 滚动后的不透明背景（白天） */
+    border-color: #595959; /* 滚动后的边框颜色（白天） */
+  }
+  .mo.night {
+    background: rgba(89, 89, 89, 0.5); /* 夜晚时的初始透明背景 */
   }
   .mo.night.scrolled {
-    background: #fff; /* 滚动后的不透明背景（夜晚） */
-    border-color: #fff; /* 滚动后的边框颜色（夜晚） */
+    background: #595959; /* 滚动后的不透明背景（夜晚） */
+    border-color: #fff; /* 滋动后的边框颜色（夜晚） */
   }
   .logo {
     width: 180px;
@@ -169,6 +172,7 @@
 </style>
 
 
+
   </head>
   <body>
     <div class="mo">
@@ -186,7 +190,6 @@
       document.addEventListener('DOMContentLoaded', function() {
         const header = document.querySelector('.mo');
         const logo = document.querySelector('.logo');
-        const moXX = document.querySelectorAll('.mo_xx');
     
         // 获取当前时间的小时数
         const now = new Date();
