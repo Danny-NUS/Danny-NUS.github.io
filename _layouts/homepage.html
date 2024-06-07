@@ -190,20 +190,25 @@
       document.addEventListener('DOMContentLoaded', function() {
         const header = document.querySelector('.mo');
         const logo = document.querySelector('.logo');
-    
+        const moXX = document.querySelectorAll('.mo_xx');
+      
         // 获取当前时间的小时数
         const now = new Date();
         const hours = now.getHours();
-    
+      
         // 判断当前时间是白天还是黑夜
         if (hours >= 6 && hours < 18) {
           // 白天
           header.classList.add('day');
+          // 在白天模式下，为 mo_xx 设置颜色为 #2496CB
+          moXX.forEach(item => {
+            item.style.color = '#2496CB';
+          });
         } else {
           // 黑夜
           header.classList.add('night');
         }
-    
+      
         // 滚动事件处理函数
         window.addEventListener('scroll', function() {
           if (window.scrollY > 0) {
@@ -213,7 +218,7 @@
             header.classList.remove('scrolled');
             logo.classList.remove('scrolled');
           }
-    
+      
           // 如果滚动到最顶端，则移除滚动后的样式类
           if (window.scrollY === 0) {
             header.classList.remove('scrolled');
@@ -221,7 +226,8 @@
           }
         });
       });
-    </script>
+      </script>
+
 
 
 
