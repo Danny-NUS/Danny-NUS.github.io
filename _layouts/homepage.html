@@ -23,11 +23,14 @@
         .scrollable-content li {
             margin-bottom: 10px;
         }
-    </style>
-    <style>
-      body {
-        font-size: 20px;
-      }
+
+        .large-favicon {
+          width: 64px;
+          height: 64px;  
+        }
+        body {
+          font-size: 20px;
+        }
     </style>
 
     <meta charset="UTF-8">
@@ -41,8 +44,8 @@
     <link rel="canonical" href="{{ site.canonical }}"/>
     {% endif %}
 
-    <link rel="icon" media="(prefers-color-scheme:dark)" href="{{ site.favicon_dark }}" type="image/png" />
-    <link rel="icon" media="(prefers-color-scheme:light)" href="{{ site.favicon }}" type="image/png" />
+    <link rel="icon" media="(prefers-color-scheme:dark)" href="{{ site.favicon_dark }}" type="image/png" class="large-favicon"/>
+    <link rel="icon" media="(prefers-color-scheme:light)" href="{{ site.favicon }}" type="image/png" class="large-favicon"/>
     <script src="./assets/js/favicon-switcher.js" type="application/javascript"></script>
 
     <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
