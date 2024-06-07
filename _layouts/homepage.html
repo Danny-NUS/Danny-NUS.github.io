@@ -82,75 +82,78 @@
 
 
 @media screen and (min-width: 1199px) {
-
-  .mo{
-    width: 100%;
-    height: 50px;
-    margin: 0 auto;
-    border-bottom: 1px slategray solid;
-    position: fixed;
-    top: 0;
-    background: #fff;
-    z-index: 99;
+    .mo {
+      width: 100%;
+      height: 50px;
+      margin: 0 auto;
+      border-bottom: 1px slategray solid;
+      position: fixed;
+      top: 0;
+      background: rgba(255, 255, 255, 0.5); /* 初始透明背景 */
+      transition: background 0.3s; /* 添加过渡效果 */
+      z-index: 99;
+    }
+    .mo.scrolled {
+      background: #fff; /* 滚动后的不透明背景 */
+    }
+    .logo {
+      width: 180px;
+      float: left;
+      height: 50px;
+      line-height: 50px;
+      text-align: left;
+      font-weight: bold;
+      font-size: 22px;
+      color: #2496CB;
+      font-family: 'Open Sans', serif;
+      margin-left: 20px;
+    }
+    .mo_info {
+      width: calc(100% - 200px);
+      height: 50px;
+      float: right;
+    }
+    .mo_xx {
+      float: right;
+      text-align: center;
+      display: inline-block;
+      padding: 0 20px;
+      height: 50px;
+      line-height: 50px;
+    }
+    .mo_xx a {
+      color: #333;
+      font-size: 16px;
+      font-weight: bold;
+      font-family: 'Open Sans', serif;
+    }
+    .mo_xx a:hover {
+      color: #2496CB;
+    }
+    #about-me, .about {
+      width: 900px;
+      position: absolute;
+      right: 0;
+      font-family: 'Merriweather', serif;
+    }
+    #about-me {
+      top: -610px;
+    }
+    .about {
+      top: -560px;
+    }
+    .wrapper {
+      width: 1200px;
+      font-size: 19px;
+      font-family: 'Merriweather', serif;
+    }
+    .abw {
+      width: 1200px;
+      position: relative;
+      font-family: 'Merriweather', serif;
+    }
   }
-  .logo{
-    width: 180px;
-    float: left;
-    height: 50px;
-    line-height: 50px;
-    text-align: left;
-    font-weight: bold;
-    font-size: 22px;
-    color: #2496CB;
-    font-family: 'Open Sans', serif; /* 修改这里 */
-    margin-left: 20px;
-  }
-  .mo_info{
-    width: calc(100% - 200px);
-    height: 50px;
-    float: right;
-  }
-  .mo_xx{
-    float: right;
-    text-align: center;
-    display: inline-block;
-    padding: 0 20px;
-    height: 50px;
-    line-height: 50px;
-  }
-  .mo_xx a{
-    color: #333;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: 'Open Sans', serif; /* 修改这里 */
-  }
-  .mo_xx a:hover{
-    color: #2496CB;
-  }
-  #about-me,.about{
-    width: 900px;
-    position: absolute;
-    right: 0;
-    font-family: 'Merriweather', serif; /* 修改这里 */
-  }
-  #about-me{
-    top: -610px;
-  }
-  .about{
-    top: -560px;
-  }
-  .wrapper{
-    width: 1200px;
-    font-size: 19px;
-    font-family: 'Merriweather', serif; /* 修改这里 */
-  }
-  .abw{
-    width: 1200px;
-    position: relative;
-    font-family: 'Merriweather', serif; /* 修改这里 */
-  }
-}
-</style>
+  </style>
 
 
   </head>
@@ -165,6 +168,17 @@
             <div class="mo_xx"><a href="#about-me">About Me</a></div>
         </div>
     </div>
+
+    <script>
+      window.addEventListener('scroll', function() {
+        const header = document.querySelector('.mo');
+        if (window.scrollY > 0) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    </script>
 
 
 
