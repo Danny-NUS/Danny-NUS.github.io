@@ -79,88 +79,94 @@
     {% endif %}
 
 <style>
-
-
-
-  @media screen and (min-width: 1199px) {
-    .mo {
-      width: 100%;
-      height: 50px;
-      margin: 0 auto;
-      border-bottom: 1px solid #2496CB; /* 初始边框颜色 */
-      position: fixed;
-      top: 0;
-      background: rgba(255, 255, 255, 0.5); /* 初始透明背景 */
-      transition: background 0.3s, border-color 0.3s; /* 添加过渡效果 */
-      z-index: 99;
-    }
-    .mo.scrolled {
-      background: #fff; /* 滚动后的不透明背景 */
-      border-color: #fff; /* 滚动后的边框颜色 */
-    }
-    .logo {
-      width: 180px;
-      float: left;
-      height: 50px;
-      line-height: 50px;
-      text-align: left;
-      font-weight: bold;
-      font-size: 22px;
-      color: #2496CB;
-      font-family: 'Open Sans', serif;
-      margin-left: 20px;
-      transition: all 0.3s; /* 添加过渡效果 */
-    }
-    .logo.scrolled {
-      font-size: 18px; /* 变小的字体大小 */
-      color: #1a6a8f; /* 变深的颜色 */
-    }
-    .mo_info {
-      width: calc(100% - 200px);
-      height: 50px;
-      float: right;
-    }
-    .mo_xx {
-      float: right;
-      text-align: center;
-      display: inline-block;
-      padding: 0 20px;
-      height: 50px;
-      line-height: 50px;
-    }
-    .mo_xx a {
-      color: #333;
-      font-size: 16px;
-      font-weight: bold;
-      font-family: 'Open Sans', serif;
-    }
-    .mo_xx a:hover {
-      color: #2496CB;
-    }
-    #about-me, .about {
-      width: 900px;
-      position: absolute;
-      right: 0;
-      font-family: 'Merriweather', serif;
-    }
-    #about-me {
-      top: -610px;
-    }
-    .about {
-      top: -560px;
-    }
-    .wrapper {
-      width: 1200px;
-      font-size: 19px;
-      font-family: 'Merriweather', serif;
-    }
-    .abw {
-      width: 1200px;
-      position: relative;
-      font-family: 'Merriweather', serif;
-    }
+@media screen and (min-width: 1199px) {
+  .mo {
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    border-bottom: 1px solid #2496CB; /* 初始边框颜色 */
+    position: fixed;
+    top: 0;
+    background: rgba(255, 255, 255, 0.5); /* 初始透明背景 */
+    transition: background 0.3s, border-color 0.3s; /* 添加过渡效果 */
+    z-index: 99;
   }
-  </style>
+  .mo.day.scrolled {
+    background: #fff; /* 滚动后的不透明背景 */
+    border-color: #fff; /* 滚动后的边框颜色（白天） */
+  }
+  .mo.night.scrolled {
+    background: #fff; /* 滚动后的不透明背景（夜晚） */
+    border-color: #fff; /* 滚动后的边框颜色（夜晚） */
+  }
+  .logo {
+    width: 180px;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 22px;
+    color: #2496CB;
+    font-family: 'Open Sans', serif;
+    margin-left: 20px;
+    transition: all 0.3s; /* 添加过渡效果 */
+  }
+  .logo.scrolled {
+    font-size: 18px; /* 变小的字体大小 */
+    color: #1a6a8f; /* 变深的颜色 */
+  }
+  .mo_info {
+    width: calc(100% - 200px);
+    height: 50px;
+    float: right;
+  }
+  .mo_xx {
+    float: right;
+    text-align: center;
+    display: inline-block;
+    padding: 0 20px;
+    height: 50px;
+    line-height: 50px;
+    color: #fff; /* 初始文字颜色 */
+    transition: color 0.3s; /* 添加过渡效果 */
+  }
+  .mo_xx a {
+    color: inherit; /* 使用父元素的颜色 */
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Open Sans', serif;
+  }
+  .mo_xx a:hover {
+    color: #2496CB;
+  }
+  .mo.night .mo_xx {
+    color: #2496CB; /* 夜晚时的文字颜色 */
+  }
+  #about-me, .about {
+    width: 900px;
+    position: absolute;
+    right: 0;
+    font-family: 'Merriweather', serif;
+  }
+  #about-me {
+    top: -610px;
+  }
+  .about {
+    top: -560px;
+  }
+  .wrapper {
+    width: 1200px;
+    font-size: 19px;
+    font-family: 'Merriweather', serif;
+  }
+  .abw {
+    width: 1200px;
+    position: relative;
+    font-family: 'Merriweather', serif;
+  }
+}
+</style>
 
 
   </head>
@@ -177,16 +183,34 @@
     </div>
 
     <script>
-      window.addEventListener('scroll', function() {
+      document.addEventListener('DOMContentLoaded', function() {
         const header = document.querySelector('.mo');
         const logo = document.querySelector('.logo');
-        if (window.scrollY > 0) {
-          header.classList.add('scrolled');
-          logo.classList.add('scrolled');
+        const moXX = document.querySelectorAll('.mo_xx');
+    
+        // 获取当前时间的小时数
+        const now = new Date();
+        const hours = now.getHours();
+    
+        // 判断当前时间是白天还是黑夜
+        if (hours >= 6 && hours < 18) {
+          // 白天
+          header.classList.add('day');
         } else {
-          header.classList.remove('scrolled');
-          logo.classList.remove('scrolled');
+          // 黑夜
+          header.classList.add('night');
         }
+    
+        // 滚动事件处理函数
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 0) {
+            header.classList.add('scrolled');
+            logo.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+            logo.classList.remove('scrolled');
+          }
+        });
       });
     </script>
 
