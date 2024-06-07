@@ -45,3 +45,5 @@ Music has always been the heartbeat of my life and research. My deep passion for
 {% include_relative _includes/publications.md %}
 
 {% include_relative _includes/services.md %}
+
+{% include_relative _includes/honours.md %}
