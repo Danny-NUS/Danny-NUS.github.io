@@ -81,20 +81,22 @@
 <style>
 
 
-@media screen and (min-width: 1199px) {
+
+  @media screen and (min-width: 1199px) {
     .mo {
       width: 100%;
       height: 50px;
       margin: 0 auto;
-      border-bottom: 1px slategray solid;
+      border-bottom: 1px solid #2496CB; /* 初始边框颜色 */
       position: fixed;
       top: 0;
       background: rgba(255, 255, 255, 0.5); /* 初始透明背景 */
-      transition: background 0.3s; /* 添加过渡效果 */
+      transition: background 0.3s, border-color 0.3s; /* 添加过渡效果 */
       z-index: 99;
     }
     .mo.scrolled {
       background: #fff; /* 滚动后的不透明背景 */
+      border-color: #fff; /* 滚动后的边框颜色 */
     }
     .logo {
       width: 180px;
@@ -107,6 +109,11 @@
       color: #2496CB;
       font-family: 'Open Sans', serif;
       margin-left: 20px;
+      transition: all 0.3s; /* 添加过渡效果 */
+    }
+    .logo.scrolled {
+      font-size: 18px; /* 变小的字体大小 */
+      color: #1a6a8f; /* 变深的颜色 */
     }
     .mo_info {
       width: calc(100% - 200px);
@@ -172,10 +179,13 @@
     <script>
       window.addEventListener('scroll', function() {
         const header = document.querySelector('.mo');
+        const logo = document.querySelector('.logo');
         if (window.scrollY > 0) {
           header.classList.add('scrolled');
+          logo.classList.add('scrolled');
         } else {
           header.classList.remove('scrolled');
+          logo.classList.remove('scrolled');
         }
       });
     </script>
