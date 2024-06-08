@@ -252,6 +252,7 @@
     transform: rotate(45deg) translate(-5px, -5px);
   }
   .mo_info {
+    display: none;
     position: fixed;
     top: 50px;
     left: 0;
@@ -261,11 +262,11 @@
     z-index: 98;
     padding: 20px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.5s ease;
+    transition: all 0.5s ease;
     transform: translateY(-100%);
-    display: block; /* 使其在 DOM 中始终存在 */
   }
   .mo_info.active {
+    display: block;
     transform: translateY(0);
   }
   .mo_xx {
@@ -336,6 +337,12 @@
     hamburger.addEventListener('click', function() {
       hamburger.classList.toggle('active');
       menu.classList.toggle('active');
+  
+      if (menu.classList.contains('active')) {
+        menu.style.transform = 'translateY(0)';
+      } else {
+        menu.style.transform = 'translateY(-100%)';
+      }
     });
   });
 </script>
