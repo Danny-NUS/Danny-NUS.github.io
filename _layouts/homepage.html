@@ -270,7 +270,7 @@
       }
       .mo_info.active {
         display: block;
-        transform: translateY(51px);
+        transform: translateY(0);
       }
       .mo_xx {
         display: block;
@@ -338,6 +338,8 @@
       }
     });
 
+    menu.style.top = '51px';
+
     hamburger.addEventListener('click', function() {
       hamburger.classList.toggle('active');
       if (menu.style.display === "block") {
@@ -348,7 +350,7 @@
       } else {
         menu.style.display = "block";
         setTimeout(() => {
-          menu.style.transform = "translateY(51px)";
+          menu.style.transform = "translateY(0)";
         }, 10); // Short delay for smooth transition
       }
     });
