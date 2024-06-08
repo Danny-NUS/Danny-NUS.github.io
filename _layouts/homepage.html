@@ -87,7 +87,7 @@
     border-bottom: 1px solid #2496CB; /* 初始边框颜色 */
     position: fixed;
     top: 0;
-    background: rgba(255,255,255,0.5); /* 初始透明背景 */
+    background: rgba(255, 255, 255, 0.5); /* 初始透明背景 */
     transition: background 0.5s, border-color 0.5s; /* 添加过渡效果 */
     z-index: 99;
   }
@@ -96,11 +96,11 @@
     border-color: #20212b; /* 滚动后的边框颜色（白天） */
   }
   .mo.night {
-    background: rgba(32,33,43,0.5); /* 夜晚时的初始透明背景 */
+    background: rgba(32, 33, 43, 0.5); /* 夜晚时的初始透明背景 */
   }
   .mo.night.scrolled {
     background: #20212b; /* 滚动后的不透明背景（夜晚） */
-    border-color: #fff; /* 滋动后的边框颜色（夜晚） */
+    border-color: #fff; /* 滚动后的边框颜色（夜晚） */
   }
   .logo {
     width: 180px;
@@ -131,7 +131,7 @@
     padding: 0 20px;
     height: 50px;
     line-height: 50px;
-    color: #20212b; /* 初始文字颜色 */
+    color: #20212b; /* 初始文字颜色（白天） */
   }
   .mo_xx a {
     color: inherit; /* 使用父元素的颜色 */
@@ -170,57 +170,55 @@
   }
 }
 </style>
-
-
-
-  </head>
-  <body>
-    <div class="mo">
-        <div class="logo">JUNCHUAN</div>
-        <div class="mo_info">
-            <div class="mo_xx"><a href="#">As Musician</a></div>
-            <div class="mo_xx"><a href="#publications">Publications</a></div>
-            <div class="mo_xx"><a href="#news">News</a></div>
-            <div class="mo_xx"><a href="#research-interests">Research Interest</a></div>
-            <div class="mo_xx"><a href="#about-me">About Me</a></div>
-        </div>
+</head>
+<body>
+<div class="mo">
+    <div class="logo">JUNCHUAN</div>
+    <div class="mo_info">
+        <div class="mo_xx"><a href="#">As Musician</a></div>
+        <div class="mo_xx"><a href="#publications">Publications</a></div>
+        <div class="mo_xx"><a href="#news">News</a></div>
+        <div class="mo_xx"><a href="#research-interests">Research Interest</a></div>
+        <div class="mo_xx"><a href="#about-me">About Me</a></div>
     </div>
+</div>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const header = document.querySelector('.mo');
-        const logo = document.querySelector('.logo');
-        const moXX = document.querySelectorAll('.mo_xx');
-      
-        // 获取当前时间的小时数
-        const now = new Date();
-        const hours = now.getHours();
-      
-        // 判断当前时间是白天还是黑夜
-        if (hours >= 6 && hours < 18) {
-          // 白天
-          header.classList.add('day');
-          // 在白天模式下，为 mo_xx 设置颜色为 #2496CB
-          moXX.forEach(item => {
-            item.style.color = '#2496CB';
-          });
-        } else {
-          // 黑夜
-          header.classList.add('night');
-        }
-      
-        // 滚动事件处理函数
-        window.addEventListener('scroll', function() {
-          if (window.scrollY > 0) {
-            header.classList.add('scrolled');
-            logo.classList.add('scrolled');
-          } else {
-            header.classList.remove('scrolled');
-            logo.classList.remove('scrolled');
-          }
-        });
-      });
-      </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('.mo');
+    const logo = document.querySelector('.logo');
+  
+    // 获取当前时间的小时数
+    const now = new Date();
+    const hours = now.getHours();
+  
+    // 判断当前时间是白天还是黑夜
+    if (hours >= 6 && hours < 18) {
+      // 白天
+      header.classList.add('day');
+    } else {
+      // 黑夜
+      header.classList.add('night');
+    }
+  
+    // 滚动事件处理函数
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 0) {
+        header.classList.add('scrolled');
+        logo.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+        logo.classList.remove('scrolled');
+      }
+  
+      // 如果滚动到最顶端，则移除滚动后的样式类
+      if (window.scrollY === 0) {
+        header.classList.remove('scrolled');
+        logo.classList.remove('scrolled');
+      }
+    });
+  });
+</script>
 
 
 
