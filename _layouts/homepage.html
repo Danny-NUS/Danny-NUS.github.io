@@ -47,7 +47,7 @@
     }
     
     /* 媒体查询：当屏幕宽度小于1000像素时 */
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1199px) {
         #clustrmaps-container {
             position: fixed;  /* 固定定位 */
             bottom: 0;  /* 底部对齐 */
@@ -253,10 +253,15 @@
   }
   .mo_info {
     display: none;
+    position: fixed;
+    top: 50px;
+    left: 0;
     width: 100%;
-    height: auto;
-    float: none;
+    background: rgba(255, 255, 255, 0.9);
     text-align: center;
+    z-index: 98;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
   .mo_info.active {
     display: block;
@@ -266,12 +271,17 @@
     padding: 10px 0;
     height: auto;
     line-height: normal;
+    color: #20212b;
   }
   .mo_xx a {
     font-size: 18px;
+    transition: color 0.5s;
   }
-  .mo.night .mo_xx {
-    color: #fff;
+  .mo_xx a:hover {
+    color: #2496CB;
+  }
+  .mo.night .mo_xx a {
+    color: #20212b;
   }
 }
 </style>
@@ -330,8 +340,6 @@
     });
   });
 </script>
-</body>
-</html>
 
 
     <div class="wrapper">
