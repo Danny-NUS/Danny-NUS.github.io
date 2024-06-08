@@ -30,6 +30,8 @@ Music has always been the heartbeat of my life and research. My deep passion for
     </ul>
 </div>
 
+<br>
+
 <script>
     var date = new Date();
     var hour = date.getHours();
@@ -48,5 +50,5 @@ Music has always been the heartbeat of my life and research. My deep passion for
 {% include_relative _includes/honours.md %}
 
 <div id="clustrmaps-container">
-        <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=Kc4kbw7G6_tZ2qrx8LQSxscrbJCYiq03i_g-Sflo5sg">    ·          </script>
+        <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=Kc4kbw7G6_tZ2qrx8LQSxscrbJCYiq03i_g-Sflo5sg"></script>
 </div>
