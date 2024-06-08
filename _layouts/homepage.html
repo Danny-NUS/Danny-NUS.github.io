@@ -98,11 +98,11 @@
     {% endif %}
 
 <style>
-  @media screen and (min-width: 1199px) {
+ @media screen and (min-width: 1199px) {
     .mo {
-        width: calc(100% - 20px); /* Adjusted width to leave space on the right */
+        width: 100%; /* Keep full width for complete border */
         height: 50px;
-        margin: 0 auto;
+        margin-right: 20px; /* Add right margin */
         border-bottom: 1px solid #2496CB;
         position: fixed;
         top: 0;
@@ -143,7 +143,7 @@
         align-items: center; /* Center items vertically */
         justify-content: flex-end; /* Align items to the end */
         height: 50px;
-        width: calc(100% - 220px); /* Adjusted width to accommodate the right space */
+        width: calc(100% - 200px); /* Adjusted width to leave space on the right */
     }
     .mo_xx {
         margin-left: 20px; /* Add some space between menu items */
@@ -166,7 +166,7 @@
         color: #fff;
     }
     #about-me, .about {
-        width: 880px; /* Adjusted width to leave space on the right */
+        width: 900px;
         position: absolute;
         right: 20px; /* Add right margin */
         font-family: 'Merriweather', serif;
@@ -178,12 +178,14 @@
         top: -560px;
     }
     .wrapper {
-        width: calc(100% - 20px); /* Adjusted width to leave space on the right */
+        width: 1200px;
+        margin-right: 20px; /* Add right margin */
         font-size: 19px;
         font-family: 'Merriweather', serif;
     }
     .abw {
-        width: calc(100% - 20px); /* Adjusted width to leave space on the right */
+        width: 1200px;
+        margin-right: 20px; /* Add right margin */
         position: relative;
         font-family: 'Merriweather', serif;
     }
