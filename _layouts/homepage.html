@@ -47,7 +47,7 @@
     }
     
     /* 添加媒体查询来适配移动设备 */
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 1000px) {
         #clustrmaps-container {
             position: fixed;  /* 固定在页面底部 */
             bottom: 0;  /* 底部对齐 */
@@ -57,7 +57,8 @@
         }
     
         #clustrmaps-container iframe {
-            transform: none;  /* 取消缩放 */
+            transform: scale(0.15);  /* 取消缩放 */
+            transform-origin: top left;  /* 确保缩放从左上角开始 */
         }
     }
     </style>
