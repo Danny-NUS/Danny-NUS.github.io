@@ -262,7 +262,7 @@
     z-index: 98;
     padding: 20px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s ease; /* 添加过渡效果 */
+    transition: transform 0.5s ease; /* 添加过渡效果 */
     transform: translateY(-100%);
   }
   .mo_info.active {
@@ -337,12 +337,6 @@
     hamburger.addEventListener('click', function() {
       hamburger.classList.toggle('active');
       menu.classList.toggle('active');
-  
-      if (menu.classList.contains('active')) {
-        menu.style.transform = 'translateY(0)';
-      } else {
-        menu.style.transform = 'translateY(-100%)';
-      }
     });
   });
 </script>
