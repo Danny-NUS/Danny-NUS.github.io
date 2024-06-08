@@ -262,22 +262,20 @@
       z-index: 98;
       padding: 20px 0;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      transition: transform 0.5s ease, background 1s ease, opacity 1s ease;
+      transition: max-height 0.5s ease, background 1s ease
+      max-height: 0; /* 初始状态下隐藏菜单 */
+      overflow: hidden; /* 隐藏溢出内容 */
       transform: translateY(-100%);
-      opacity: 0; /* 初始设置透明度为0，让其慢慢显现 */
     }
     .mo_info.scrolled {
       background: rgba(255, 255, 255, 1); /* Fully opaque background when scrolled */
-    }
-    .mo_info.transitioned {
-      transition-delay: 0.1s; /* 延迟过渡效果以确保动画流畅 */
     }
     .mo_info.active {
       display: flex; /* Display as flex container */
       flex-direction: column; /* Arrange items vertically */
       align-items: flex-start; /* Align items to the start */
       transform: translateY(0);
-      opacity: 1; /* 慢慢显现下拉菜单 */
+      max-height: 1000px;
     }
     .mo_xx {
       padding: 10px 20px; /* Add padding */
