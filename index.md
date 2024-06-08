@@ -14,7 +14,7 @@ Music has always been the heartbeat of my life and research. My deep passion for
 </p>
 </div>
 
-
+<br>
 
 ## Research Interests
 - **Sound and Music Computing:** singing and speech synthesis, singing expressive control, voice conversion
@@ -47,6 +47,8 @@ Music has always been the heartbeat of my life and research. My deep passion for
 {% include_relative _includes/publications.md %}
 
 {% include_relative _includes/services.md %}
+
+<br>
 
 {% include_relative _includes/honours.md %}
 
