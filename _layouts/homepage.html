@@ -262,27 +262,27 @@
     z-index: 98;
     padding: 20px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s ease; /* 添加过渡效果 */
-    transform: translateY(-100%); /* 面板上拉时的位置 */
+    transition: all 0.5s ease;
+    transform: translateY(-100%);
   }
   .mo_info.active {
     display: block;
-    transform: translateY(0); /* 初始位置 */
+    transform: translateY(0);
   }
   .mo_xx {
     display: block;
-    padding: 10px 20px; /* 添加左边的空隙 */
+    padding: 10px 20px;
     height: auto;
     line-height: normal;
-    color: #20212b; /* 初始颜色 */
+    color: #20212b;
   }
   .mo_xx a {
     font-size: 18px;
     transition: color 0.5s;
-    color: inherit; /* 继承父元素的文字颜色 */
+    color: inherit;
   }
   .mo_xx a:hover {
-    color: #2496CB; /* 悬停颜色 */
+    color: #2496CB;
   }
   .mo.night .mo_xx a {
     color: #20212b;
@@ -309,7 +309,7 @@
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function() {
     const header = document.querySelector('.mo');
     const logo = document.querySelector('.logo');
     const hamburger = document.querySelector('.hamburger');
