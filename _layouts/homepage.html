@@ -253,6 +253,7 @@
     }
     .mo_info {
       position: fixed; /* 或者 position: absolute; */
+      height: 0;
       top: 51px; /* 或者其他你想要的位置 */
       left: 0;
       width: 100%;
@@ -261,7 +262,6 @@
       z-index: 98;
       padding: 20px 0;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      height: 0;
       max-height: 0; /* 初始状态下隐藏菜单 */
       overflow: hidden; /* 隐藏溢出内容 */
       transition: max-height 0.5s ease, background 1s ease;
