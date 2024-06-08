@@ -100,94 +100,94 @@
 <style>
   @media screen and (min-width: 1199px) {
     .mo {
-      width: 100%;
-      height: 50px;
-      margin: 0 auto;
-      border-bottom: 1px solid #2496CB;
-      position: fixed;
-      top: 0;
-      background: rgba(255, 255, 255, 0.5);
-      transition: background 1s, border-color 1s;
-      z-index: 99;
+        width: calc(100% - 20px); /* Adjusted width to leave space on the right */
+        height: 50px;
+        margin: 0 auto;
+        border-bottom: 1px solid #2496CB;
+        position: fixed;
+        top: 0;
+        background: rgba(255, 255, 255, 0.5);
+        transition: background 1s, border-color 1s;
+        z-index: 99;
     }
     .mo.day.scrolled {
-      background: #fff;
-      border-color: #20212b;
+        background: #fff;
+        border-color: #20212b;
     }
     .mo.night {
-      background: rgba(32, 33, 43, 0.5);
+        background: rgba(32, 33, 43, 0.5);
     }
     .mo.night.scrolled {
-      background: #20212b;
-      border-color: #fff;
+        background: #20212b;
+        border-color: #fff;
     }
     .logo {
-      width: 180px;
-      float: left;
-      height: 50px;
-      line-height: 50px;
-      text-align: left;
-      font-weight: bold;
-      font-size: 22px;
-      color: #2496CB;
-      font-family: 'Open Sans', serif;
-      margin-left: 20px;
-      transition: all 1s;
+        width: 180px;
+        float: left;
+        height: 50px;
+        line-height: 50px;
+        text-align: left;
+        font-weight: bold;
+        font-size: 22px;
+        color: #2496CB;
+        font-family: 'Open Sans', serif;
+        margin-left: 20px;
+        transition: all 1s;
     }
     .logo.scrolled {
-      font-size: 18px;
-      color: #1a6a8f;
+        font-size: 18px;
+        color: #1a6a8f;
     }
     .mo_info {
-      display: flex; /* Flex container */
-      align-items: center; /* Center items vertically */
-      justify-content: flex-end; /* Align items to the end */
-      height: 50px;
-      width: calc(100% - 200px);
+        display: flex; /* Flex container */
+        align-items: center; /* Center items vertically */
+        justify-content: flex-end; /* Align items to the end */
+        height: 50px;
+        width: calc(100% - 220px); /* Adjusted width to accommodate the right space */
     }
     .mo_xx {
-      margin-left: 20px; /* Add some space between menu items */
-      text-align: center;
-      height: 50px;
-      line-height: 50px;
-      color: #20212b;
+        margin-left: 20px; /* Add some space between menu items */
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+        color: #20212b;
     }
     .mo_xx a {
-      color: inherit;
-      font-size: 16px;
-      font-weight: bold;
-      font-family: 'Open Sans', serif;
-      transition: color 0.5s;
+        color: inherit;
+        font-size: 16px;
+        font-weight: bold;
+        font-family: 'Open Sans', serif;
+        transition: color 0.5s;
     }
     .mo_xx a:hover {
-      color: #2496CB;
+        color: #2496CB;
     }
     .mo.night .mo_xx {
-      color: #fff;
+        color: #fff;
     }
     #about-me, .about {
-      width: 900px;
-      position: absolute;
-      right: 0;
-      font-family: 'Merriweather', serif;
+        width: 880px; /* Adjusted width to leave space on the right */
+        position: absolute;
+        right: 20px; /* Add right margin */
+        font-family: 'Merriweather', serif;
     }
     #about-me {
-      top: -610px;
+        top: -610px;
     }
     .about {
-      top: -560px;
+        top: -560px;
     }
     .wrapper {
-      width: 1200px;
-      font-size: 19px;
-      font-family: 'Merriweather', serif;
+        width: calc(100% - 20px); /* Adjusted width to leave space on the right */
+        font-size: 19px;
+        font-family: 'Merriweather', serif;
     }
     .abw {
-      width: 1200px;
-      position: relative;
-      font-family: 'Merriweather', serif;
+        width: calc(100% - 20px); /* Adjusted width to leave space on the right */
+        position: relative;
+        font-family: 'Merriweather', serif;
     }
-  }
+}
 
   @media screen and (max-width: 1198px) {
     .mo {
