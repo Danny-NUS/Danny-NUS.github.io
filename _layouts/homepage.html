@@ -87,12 +87,12 @@
     border-bottom: 1px solid #2496CB; /* 初始边框颜色 */
     position: fixed;
     top: 0;
-    background: rgba(32,33,43,0.5); /* 初始透明背景 */
-    transition: background 0.3s, border-color 0.3s; /* 添加过渡效果 */
+    background: rgba(255,255,255,0.5); /* 初始透明背景 */
+    transition: background 0.5s, border-color 0.5s; /* 添加过渡效果 */
     z-index: 99;
   }
   .mo.day.scrolled {
-    background: rgba(89, 89, 89, 0.8); /* 滚动后的不透明背景（白天） */
+    background: #fff; /* 滚动后的不透明背景（白天） */
     border-color: #20212b; /* 滚动后的边框颜色（白天） */
   }
   .mo.night {
@@ -113,7 +113,7 @@
     color: #2496CB;
     font-family: 'Open Sans', serif;
     margin-left: 20px;
-    transition: all 0.3s; /* 添加过渡效果 */
+    transition: all 0.5s; /* 添加过渡效果 */
   }
   .logo.scrolled {
     font-size: 18px; /* 变小的字体大小 */
@@ -131,17 +131,13 @@
     padding: 0 20px;
     height: 50px;
     line-height: 50px;
-    color: #fff; /* 初始文字颜色 */
-    transition: color 0.3s; /* 添加过渡效果 */
+    color: #20212b; /* 初始文字颜色 */
   }
   .mo_xx a {
     color: inherit; /* 使用父元素的颜色 */
     font-size: 16px;
     font-weight: bold;
     font-family: 'Open Sans', serif;
-  }
-  .mo_xx a:hover {
-    color: #2496CB;
   }
   .mo_xx a:hover {
     color: #2496CB;
