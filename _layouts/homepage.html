@@ -262,7 +262,7 @@
     z-index: 98;
     padding: 20px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s ease;
+    transition: all 0.5s ease; /* 添加过渡效果 */
     transform: translateY(-100%);
   }
   .mo_info.active {
@@ -309,36 +309,42 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const header = document.querySelector('.mo');
-    const logo = document.querySelector('.logo');
-    const hamburger = document.querySelector('.hamburger');
-    const menu = document.querySelector('.mo_info');
-
-    const now = new Date();
-    const hours = now.getHours();
-
-    if (hours >= 6 && hours < 18) {
-      header.classList.add('day');
-    } else {
-      header.classList.add('night');
-    }
-
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 0) {
-        header.classList.add('scrolled');
-        logo.classList.add('scrolled');
+    document.addEventListener('DOMContentLoaded', function() {
+      const header = document.querySelector('.mo');
+      const logo = document.querySelector('.logo');
+      const hamburger = document.querySelector('.hamburger');
+      const menu = document.querySelector('.mo_info');
+    
+      const now = new Date();
+      const hours = now.getHours();
+    
+      if (hours >= 6 && hours < 18) {
+        header.classList.add('day');
       } else {
-        header.classList.remove('scrolled');
-        logo.classList.remove('scrolled');
+        header.classList.add('night');
       }
+    
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 0) {
+          header.classList.add('scrolled');
+          logo.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+          logo.classList.remove('scrolled');
+        }
+      });
+    
+      hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        menu.classList.toggle('active');
+    
+        if (menu.classList.contains('active')) {
+          menu.style.transform = 'translateY(0)';
+        } else {
+          menu.style.transform = 'translateY(-100%)';
+        }
+      });
     });
-
-    hamburger.addEventListener('click', function() {
-      hamburger.classList.toggle('active');
-      menu.classList.toggle('active');
-    });
-  });
 </script>
 
 
