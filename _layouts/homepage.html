@@ -252,8 +252,8 @@
       transform: rotate(45deg) translate(-5px, -5px);
     }
     .mo_info {
-      position: fixed; /* 或者 position: absolute; */
-      top: 51px; /* 或者其他你想要的位置 */
+      position: fixed; /* Or position: absolute; */
+      top: 51px; /* Or another desired position */
       left: 0;
       width: 100%;
       background: rgba(255, 255, 255, 0.9);
@@ -261,15 +261,15 @@
       z-index: 98;
       padding: 20px 0;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      max-height: 0; /* 初始状态下隐藏菜单 */
-      overflow: hidden; /* 隐藏溢出内容 */
+      max-height: 0; /* Hide menu initially */
+      overflow: hidden; /* Hide overflow content */
       transition: max-height 0.5s ease, background 1s ease;
     }
     .mo_info.scrolled {
       background: rgba(255, 255, 255, 1); /* Fully opaque background when scrolled */
     }
-    .mo_info.open-menu{
-      max-height: 400px; /* 展开菜单 */
+    .mo_info.open-menu {
+      max-height: 400px; /* Expand menu */
     }
     .mo_xx {
       padding: 10px 20px; /* Add padding */
@@ -283,8 +283,17 @@
     .mo_xx a:hover {
       color: #2496CB;
     }
+    .mo.night .mo_xx {
+      color: #fff;
+    }
     .mo.night .mo_xx a {
-      color: #20212b;
+      color: #fff;
+    }
+    .mo.night .mo_xx a:hover {
+      color: #2496CB;
+    }
+    .mo.night .mo_info {
+      background: #20212b;
     }
   }
 </style>
