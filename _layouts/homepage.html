@@ -262,9 +262,10 @@
       z-index: 98;
       padding: 20px 0;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      transition: max-height 0.5s ease, background 1s ease, opacity 1s ease;
       transform: translateY(-100%);
-      opacity: 0;
+      max-height: 0; /* 初始状态下隐藏菜单 */
+      overflow: hidden; /* 隐藏溢出内容 */
+      transition: max-height 0.5s ease, background 1s ease;
     }
     .mo_info.transitioned {
       transition-delay: 0.1s; /* 延迟过渡效果以确保动画流畅 */
@@ -277,7 +278,7 @@
       flex-direction: column; /* Arrange items vertically */
       align-items: flex-start; /* Align items to the start */
       transform: translateY(0);
-      opacity: 1;
+      max-height: 1000px; /* 展开菜单 */
     }
     .mo_xx {
       padding: 10px 20px; /* Add padding */
@@ -347,14 +348,6 @@
         hamburger.classList.toggle('active');
         menu.classList.toggle('active'); // Toggle active class on the menu
 
-        // 触发过渡效果
-        if (menu.classList.contains('active')) {
-          setTimeout(function() {
-            menu.classList.add('transitioned');
-          }, 10); // 等待10毫秒后添加transitioned类
-        } else {
-          menu.classList.remove('transitioned');
-        }
       });
     });
   </script>
