@@ -31,6 +31,7 @@ Music has always been the heartbeat of my life and research. My deep passion for
         <li><b>[Jun. 2022]</b> I graduated from BUPT and earned my B.Sc. degree with honors. 🎓</li>
     </ul>
 </div>
+<br>
 
 <script>
     var date = new Date();
