@@ -272,6 +272,9 @@
     .mo_info.scrolled {
       background: rgba(255, 255, 255, 1); /* Fully opaque background when scrolled */
     }
+    .mo_info.open-menu{
+      max-height: 400px; /* 展开菜单 */
+    }
     .mo_info.active {
       display: flex; /* Display as flex container */
       flex-direction: column; /* Arrange items vertically */
@@ -344,7 +347,7 @@
 
       hamburger.addEventListener('click', function() {
         hamburger.classList.toggle('active');
-        menu.classList.toggle('active'); // Toggle active class on the menu
+        menu.classList.toggle('open-menu'); // Toggle active class on the menu
 
       });
     });
