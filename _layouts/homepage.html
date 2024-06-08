@@ -261,15 +261,15 @@
       z-index: 98;
       padding: 20px 0;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      max-height: 0; /* 初始状态下隐藏菜单 */
+      height: 0; /* 初始状态下隐藏菜单 */
       overflow: hidden; /* 隐藏溢出内容 */
-      transition: max-height 0.5s ease, background 1s ease;
+      transition: height 0.5s ease, background 1s ease;
     }
     .mo_info.scrolled {
       background: rgba(255, 255, 255, 1); /* Fully opaque background when scrolled */
     }
     .mo_info.open-menu{
-      max-height: 1000px; /* 展开菜单 */
+      height: 400px; /* 展开菜单 */
     }
     .mo_xx {
       padding: 10px 20px; /* Add padding */
