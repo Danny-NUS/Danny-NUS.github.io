@@ -142,6 +142,11 @@
     width: calc(100% - 200px);
     height: 50px;
     float: right;
+    transition: all 0.5s ease; /* 添加过渡效果 */
+    transform: translateY(-100%); /* 初始隐藏 */
+  }
+  .mo_info.active {
+    transform: translateY(0); /* 显示 */
   }
   .mo_xx {
     float: right;
@@ -262,12 +267,12 @@
     z-index: 98;
     padding: 20px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s ease;
-    transform: translateY(-100%);
+    transition: all 0.5s ease; /* 添加过渡效果 */
+    transform: translateY(-100%); /* 初始隐藏 */
   }
   .mo_info.active {
     display: block;
-    transform: translateY(0);
+    transform: translateY(0); /* 显示 */
   }
   .mo_xx {
     display: block;
@@ -337,12 +342,6 @@
     hamburger.addEventListener('click', function() {
       hamburger.classList.toggle('active');
       menu.classList.toggle('active');
-  
-      if (menu.classList.contains('active')) {
-        menu.style.transform = 'translateY(0)';
-      } else {
-        menu.style.transform = 'translateY(-100%)';
-      }
     });
   });
 </script>
