@@ -97,7 +97,6 @@
     <link rel="stylesheet" href="./assets/css/publications-no-dark-mode.css">
     {% endif %}
 
-<style>
 @media screen and (min-width: 1199px) {
   .mo {
     width: 100%;
@@ -288,9 +287,7 @@
     color: #20212b;
   }
 }
-</style>
 
- 
 </head>
 <body>
 <div class="mo">
@@ -310,7 +307,7 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
     const header = document.querySelector('.mo');
     const logo = document.querySelector('.logo');
     const hamburger = document.querySelector('.hamburger');
@@ -330,11 +327,6 @@
         header.classList.add('scrolled');
         logo.classList.add('scrolled');
       } else {
-        header.classList.remove('scrolled');
-        logo.classList.remove('scrolled');
-      }
-
-      if (window.scrollY === 0) {
         header.classList.remove('scrolled');
         logo.classList.remove('scrolled');
       }
