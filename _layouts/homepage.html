@@ -340,7 +340,15 @@
 
       hamburger.addEventListener('click', function() {
         hamburger.classList.toggle('active');
-        menu.classList.toggle('active');
+        if (menu.style.display === "block") {
+          menu.style.display = "none";
+          menu.style.transform = "translateY(-100%)";
+        } else {
+          menu.style.display = "block";
+          setTimeout(() => {
+            menu.style.transform = "translateY(0)";
+          }, 10); // Short delay for smooth transition
+        }
       });
     });
   </script>
