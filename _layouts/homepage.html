@@ -98,200 +98,200 @@
     {% endif %}
 
 <style>
-    @media screen and (min-width: 1199px) {
-      .mo {
-        width: 100%;
-        height: 50px;
-        margin: 0 auto;
-        border-bottom: 1px solid #2496CB;
-        position: fixed;
-        top: 0;
-        background: rgba(255, 255, 255, 0.5);
-        transition: background 1s, border-color 1s;
-        z-index: 99;
-      }
-      .mo.day.scrolled {
-        background: #fff;
-        border-color: #20212b;
-      }
-      .mo.night {
-        background: rgba(32, 33, 43, 0.5);
-      }
-      .mo.night.scrolled {
-        background: #20212b;
-        border-color: #fff;
-      }
-      .logo {
-        width: 180px;
-        float: left;
-        height: 50px;
-        line-height: 50px;
-        text-align: left;
-        font-weight: bold;
-        font-size: 22px;
-        color: #2496CB;
-        font-family: 'Open Sans', serif;
-        margin-left: 20px;
-        transition: all 1s;
-      }
-      .logo.scrolled {
-        font-size: 18px;
-        color: #1a6a8f;
-      }
-      .mo_info {
-        width: calc(100% - 200px);
-        height: 50px;
-        float: right;
-      }
-      .mo_xx {
-        float: right;
-        text-align: center;
-        display: inline-block;
-        padding: 0 20px;
-        height: 50px;
-        line-height: 50px;
-        color: #20212b;
-      }
-      .mo_xx a {
-        color: inherit;
-        font-size: 16px;
-        font-weight: bold;
-        font-family: 'Open Sans', serif;
-        transition: color 0.5s;
-      }
-      .mo_xx a:hover {
-        color: #2496CB;
-      }
-      .mo.night .mo_xx {
-        color: #fff;
-      }
-      #about-me, .about {
-        width: 900px;
-        position: absolute;
-        right: 0;
-        font-family: 'Merriweather', serif;
-      }
-      #about-me {
-        top: -610px;
-      }
-      .about {
-        top: -560px;
-      }
-      .wrapper {
-        width: 1200px;
-        font-size: 19px;
-        font-family: 'Merriweather', serif;
-      }
-      .abw {
-        width: 1200px;
-        position: relative;
-        font-family: 'Merriweather', serif;
-      }
+  @media screen and (min-width: 1199px) {
+    .mo {
+      width: 100%;
+      height: 50px;
+      margin: 0 auto;
+      border-bottom: 1px solid #2496CB;
+      position: fixed;
+      top: 0;
+      background: rgba(255, 255, 255, 0.5);
+      transition: background 1s, border-color 1s;
+      z-index: 99;
     }
+    .mo.day.scrolled {
+      background: #fff;
+      border-color: #20212b;
+    }
+    .mo.night {
+      background: rgba(32, 33, 43, 0.5);
+    }
+    .mo.night.scrolled {
+      background: #20212b;
+      border-color: #fff;
+    }
+    .logo {
+      width: 180px;
+      float: left;
+      height: 50px;
+      line-height: 50px;
+      text-align: left;
+      font-weight: bold;
+      font-size: 22px;
+      color: #2496CB;
+      font-family: 'Open Sans', serif;
+      margin-left: 20px;
+      transition: all 1s;
+    }
+    .logo.scrolled {
+      font-size: 18px;
+      color: #1a6a8f;
+    }
+    .mo_info {
+      display: flex; /* Flex container */
+      align-items: center; /* Center items vertically */
+      justify-content: flex-end; /* Align items to the end */
+      height: 50px;
+      width: calc(100% - 200px);
+    }
+    .mo_xx {
+      margin-left: 20px; /* Add some space between menu items */
+      text-align: center;
+      height: 50px;
+      line-height: 50px;
+      color: #20212b;
+    }
+    .mo_xx a {
+      color: inherit;
+      font-size: 16px;
+      font-weight: bold;
+      font-family: 'Open Sans', serif;
+      transition: color 0.5s;
+    }
+    .mo_xx a:hover {
+      color: #2496CB;
+    }
+    .mo.night .mo_xx {
+      color: #fff;
+    }
+    #about-me, .about {
+      width: 900px;
+      position: absolute;
+      right: 0;
+      font-family: 'Merriweather', serif;
+    }
+    #about-me {
+      top: -610px;
+    }
+    .about {
+      top: -560px;
+    }
+    .wrapper {
+      width: 1200px;
+      font-size: 19px;
+      font-family: 'Merriweather', serif;
+    }
+    .abw {
+      width: 1200px;
+      position: relative;
+      font-family: 'Merriweather', serif;
+    }
+  }
 
-    @media screen and (max-width: 1198px) {
-      .mo {
-        width: 100%;
-        height: 50px;
-        margin: 0 auto;
-        border-bottom: 1px solid #2496CB;
-        position: fixed;
-        top: 0;
-        background: rgba(255, 255, 255, 0.9);
-        transition: background 1s, border-color 1s;
-        z-index: 99;
-      }
-      .mo.day.scrolled {
-        background: #fff;
-        border-color: #20212b;
-      }
-      .mo.night {
-        background: rgba(32, 33, 43, 0.9);
-      }
-      .mo.night.scrolled {
-        background: #20212b;
-        border-color: #fff;
-      }
-      .logo {
-        width: 140px;
-        float: left;
-        height: 50px;
-        line-height: 50px;
-        text-align: left;
-        font-weight: bold;
-        font-size: 18px;
-        color: #2496CB;
-        font-family: 'Open Sans', serif;
-        margin-left: 10px;
-        transition: all 1s;
-      }
-      .logo.scrolled {
-        font-size: 16px;
-        color: #1a6a8f;
-      }
-      .hamburger {
-        display: block;
-        float: right;
-        padding: 15px;
-        cursor: pointer;
-      }
-      .hamburger div {
-        width: 25px;
-        height: 3px;
-        background-color: #2496CB;
-        margin: 4px 0;
-        transition: all 0.3s;
-      }
-      .hamburger.active div:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 5px);
-      }
-      .hamburger.active div:nth-child(2) {
-        opacity: 0;
-      }
-      .hamburger.active div:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -5px);
-      }
-      .mo_info {
-        display: none;
-        position: fixed;
-        top: 51px;
-        left: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.9);
-        text-align: left;
-        z-index: 98;
-        padding: 20px 0;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        transition: transform 0.5s ease, background 1s ease;
-        transform: translateY(-100%);
-      }
-      .mo_info.scrolled {
-        background: rgba(255, 255, 255, 1); /* Fully opaque background when scrolled */
-      }
-      .mo_info.active {
-        display: block;
-        transform: translateY(0);
-      }
-      .mo_xx {
-        display: block;
-        padding: 10px 20px;
-        height: auto;
-        line-height: normal;
-        color: #20212b;
-      }
-      .mo_xx a {
-        font-size: 18px;
-        transition: color 0.5s;
-        color: inherit;
-      }
-      .mo_xx a:hover {
-        color: #2496CB;
-      }
-      .mo.night .mo_xx a {
-        color: #20212b;
-      }
+  @media screen and (max-width: 1198px) {
+    .mo {
+      width: 100%;
+      height: 50px;
+      margin: 0 auto;
+      border-bottom: 1px solid #2496CB;
+      position: fixed;
+      top: 0;
+      background: rgba(255, 255, 255, 0.9);
+      transition: background 1s, border-color 1s;
+      z-index: 99;
     }
-  </style>
+    .mo.day.scrolled {
+      background: #fff;
+      border-color: #20212b;
+    }
+    .mo.night {
+      background: rgba(32, 33, 43, 0.9);
+    }
+    .mo.night.scrolled {
+      background: #20212b;
+      border-color: #fff;
+    }
+    .logo {
+      width: 140px;
+      float: left;
+      height: 50px;
+      line-height: 50px;
+      text-align: left;
+      font-weight: bold;
+      font-size: 18px;
+      color: #2496CB;
+      font-family: 'Open Sans', serif;
+      margin-left: 10px;
+      transition: all 1s;
+    }
+    .logo.scrolled {
+      font-size: 16px;
+      color: #1a6a8f;
+    }
+    .hamburger {
+      display: block;
+      float: right;
+      padding: 15px;
+      cursor: pointer;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #2496CB;
+      margin: 4px 0;
+      transition: all 0.3s;
+    }
+    .hamburger.active div:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 5px);
+    }
+    .hamburger.active div:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active div:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -5px);
+    }
+    .mo_info {
+      display: none;
+      position: fixed;
+      top: 51px;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      text-align: left;
+      z-index: 98;
+      padding: 20px 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.5s ease, background 1s ease;
+      transform: translateY(-100%);
+    }
+    .mo_info.scrolled {
+      background: rgba(255, 255, 255, 1); /* Fully opaque background when scrolled */
+    }
+    .mo_info.active {
+      display: flex; /* Display as flex container */
+      flex-direction: column; /* Arrange items vertically */
+      align-items: flex-start; /* Align items to the start */
+      transform: translateY(0);
+    }
+    .mo_xx {
+      padding: 10px 20px; /* Add padding */
+      color: #20212b;
+    }
+    .mo_xx a {
+      font-size: 18px;
+      transition: color 0.5s;
+      color: inherit;
+    }
+    .mo_xx a:hover {
+      color: #2496CB;
+    }
+    .mo.night .mo_xx a {
+      color: #20212b;
+    }
+  }
+</style>
+    
 </head>
 <body>
   <div class="mo">
@@ -310,50 +310,40 @@
     </div>
   </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const header = document.querySelector('.mo');
-    const logo = document.querySelector('.logo');
-    const hamburger = document.querySelector('.hamburger');
-    const menu = document.querySelector('.mo_info');
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const header = document.querySelector('.mo');
+      const logo = document.querySelector('.logo');
+      const hamburger = document.querySelector('.hamburger');
+      const menu = document.querySelector('.mo_info');
 
-    const now = new Date();
-    const hours = now.getHours();
+      const now = new Date();
+      const hours = now.getHours();
 
-    if (hours >= 6 && hours < 18) {
-      header.classList.add('day');
-    } else {
-      header.classList.add('night');
-    }
-
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 0) {
-        header.classList.add('scrolled');
-        logo.classList.add('scrolled');
-        menu.classList.add('scrolled');
+      if (hours >= 6 && hours < 18) {
+        header.classList.add('day');
       } else {
-        header.classList.remove('scrolled');
-        logo.classList.remove('scrolled');
-        menu.classList.remove('scrolled');
+        header.classList.add('night');
       }
-    });
 
-    hamburger.addEventListener('click', function() {
-      hamburger.classList.toggle('active');
-      if (menu.style.display === "block") {
-        menu.style.transform = "translateY(-100%)";
-        setTimeout(() => {
-          menu.style.display = "none";
-        }, 500); // Wait for the transition to complete before hiding
-      } else {
-        menu.style.display = "block";
-        setTimeout(() => {
-          menu.style.transform = "translateY(0)";
-        }, 10); // Short delay for smooth transition
-      }
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 0) {
+          header.classList.add('scrolled');
+          logo.classList.add('scrolled');
+          menu.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+          logo.classList.remove('scrolled');
+          menu.classList.remove('scrolled');
+        }
+      });
+
+      hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        menu.classList.toggle('active'); // Toggle active class on the menu
+      });
     });
-  });
-</script>
+  </script>
 
     <div class="wrapper">
       <header style="position: relative;">
