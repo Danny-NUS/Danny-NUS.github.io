@@ -11,10 +11,6 @@
         body {
             font-family: 'Merriweather', serif; /* Apply Merriweather font to entire document */
         }
-        .page-title {
-            font-size: 20px; /* Adjust the font size as needed */
-            font-family: 'Open Sans', sans-serif; /* Apply specific font */
-        }
         .scrollable-content {
             height: 200px; /* Adjust the height as needed */
             overflow-y: scroll;
@@ -365,7 +361,7 @@
         <br>
         {% endif %}
         {% if site.email %}
-        <email>{{ site.email }}</email>
+        <email style="font-size: 16px;">{{ site.email }}</email>
         {% endif %}
 
         <br>
