@@ -310,41 +310,49 @@
     </div>
   </div>
 
- <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const header = document.querySelector('.mo');
-  const logo = document.querySelector('.logo');
-  const hamburger = document.querySelector('.hamburger');
-  const menu = document.querySelector('.mo_info');
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('.mo');
+    const logo = document.querySelector('.logo');
+    const hamburger = document.querySelector('.hamburger');
+    const menu = document.querySelector('.mo_info');
 
-  const now = new Date();
-  const hours = now.getHours();
+    const now = new Date();
+    const hours = now.getHours();
 
-  if (hours >= 6 && hours < 18) {
-    header.classList.add('day');
-  } else {
-    header.classList.add('night');
-  }
-
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 0) {
-      header.classList.add('scrolled');
-      logo.classList.add('scrolled');
-      menu.classList.add('scrolled');
+    if (hours >= 6 && hours < 18) {
+      header.classList.add('day');
     } else {
-      header.classList.remove('scrolled');
-      logo.classList.remove('scrolled');
-      menu.classList.remove('scrolled');
+      header.classList.add('night');
     }
-  });
 
-  // 设置初始状态，将菜单面板移动到离顶端 51px 的位置
-  menu.style.transform = 'translateY(-100%)'; // 先将面板移出可视区域
-  menu.style.display = 'block'; // 显示面板
-  setTimeout(() => {
-    menu.style.transform = 'translateY(0)'; // 将面板移动到离顶端 51px 的位置
-  }, 10); // 短暂延迟以实现平滑过渡
-});
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 0) {
+        header.classList.add('scrolled');
+        logo.classList.add('scrolled');
+        menu.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+        logo.classList.remove('scrolled');
+        menu.classList.remove('scrolled');
+      }
+    });
+
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      if (menu.style.display === "block") {
+        menu.style.transform = "translateY(-100%)";
+        setTimeout(() => {
+          menu.style.display = "none";
+        }, 500); // Wait for the transition to complete before hiding
+      } else {
+        menu.style.display = "block";
+        setTimeout(() => {
+          menu.style.transform = "translateY(0)";
+        }, 10); // Short delay for smooth transition
+      }
+    });
+  });
 </script>
 
     <div class="wrapper">
