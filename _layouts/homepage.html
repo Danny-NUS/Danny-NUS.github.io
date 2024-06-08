@@ -258,7 +258,7 @@
     left: 0;
     width: 100%;
     background: rgba(255, 255, 255, 0.9);
-    text-align: center;
+    text-align: left; /* 修改为左对齐 */
     z-index: 98;
     padding: 20px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -268,23 +268,25 @@
   }
   .mo_xx {
     display: block;
-    padding: 10px 0;
+    padding: 10px 20px; /* 添加左边的空隙 */
     height: auto;
     line-height: normal;
-    color: #20212b;
+    color: #20212b; /* 初始颜色 */
   }
   .mo_xx a {
     font-size: 18px;
     transition: color 0.5s;
+    color: inherit; /* 继承父元素的文字颜色 */
   }
   .mo_xx a:hover {
-    color: #2496CB;
+    color: #2496CB; /* 悬停颜色 */
   }
   .mo.night .mo_xx a {
     color: #20212b;
   }
 }
 </style>
+
  
 </head>
 <body>
