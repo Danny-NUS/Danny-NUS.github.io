@@ -262,8 +262,11 @@
     z-index: 98;
     padding: 20px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.5s ease; /* 添加过渡效果 */
+    transition: transform 0.5s ease, background 1s ease;
     transform: translateY(-100%);
+  }
+  .mo_info.scrolled {
+    background: rgba(255, 255, 255, 1); /* Fully opaque background when scrolled */
   }
   .mo_info.active {
     display: block;
@@ -328,9 +331,11 @@
       if (window.scrollY > 0) {
         header.classList.add('scrolled');
         logo.classList.add('scrolled');
+        menu.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
         logo.classList.remove('scrolled');
+        menu.classList.remove('scrolled');
       }
     });
   
