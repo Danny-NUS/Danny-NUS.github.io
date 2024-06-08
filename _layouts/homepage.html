@@ -261,7 +261,7 @@
       z-index: 98;
       padding: 20px 0;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      max-height: 0px; /* 初始状态下隐藏菜单 */
+      max-height: 0; /* 初始状态下隐藏菜单 */
       overflow: hidden; /* 隐藏溢出内容 */
       transition: max-height 0.5s ease, background 1s ease;
     }
@@ -270,12 +270,6 @@
     }
     .mo_info.open-menu{
       max-height: 1000px; /* 展开菜单 */
-    }
-    .mo_info.active {
-      display: flex; /* Display as flex container */
-      flex-direction: column; /* Arrange items vertically */
-      align-items: flex-start; /* Align items to the start */
-      max-height: 400px; /* 展开菜单 */
     }
     .mo_xx {
       padding: 10px 20px; /* Add padding */
