@@ -11,6 +11,10 @@
         body {
             font-family: 'Merriweather', serif; /* Apply Merriweather font to entire document */
         }
+        .page-title {
+            font-size: 24px; /* Adjust the font size as needed */
+            font-family: 'Open Sans', sans-serif; /* Apply specific font */
+        }
         .scrollable-content {
             height: 200px; /* Adjust the height as needed */
             overflow-y: scroll;
@@ -261,15 +265,15 @@
       z-index: 98;
       padding: 20px 0;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      height: 0; /* 初始状态下隐藏菜单 */
+      max-height: 0; /* 初始状态下隐藏菜单 */
       overflow: hidden; /* 隐藏溢出内容 */
-      transition: height 0.5s ease, background 1s ease;
+      transition: max-height 0.5s ease, background 1s ease;
     }
     .mo_info.scrolled {
       background: rgba(255, 255, 255, 1); /* Fully opaque background when scrolled */
     }
     .mo_info.open-menu{
-      height: 400px; /* 展开菜单 */
+      max-height: 400px; /* 展开菜单 */
     }
     .mo_xx {
       padding: 10px 20px; /* Add padding */
