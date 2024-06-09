@@ -50,6 +50,15 @@
     overflow: hidden;  /* 确保没有溢出 */
     }
     
+    #clustrmaps-container {
+        width: 300px;  /* 设置你想要的宽度 */
+        height: 300px; /* 设置你想要的高度 */
+        position: absolute;  /* 允许绝对定位 */
+        top: 1250px;  /* 调整顶部位置 */
+        left: 900px;  /* 调整左侧位置 */
+        overflow: hidden;  /* 确保没有溢出 */
+    }
+    
     #clustrmaps-container iframe {
         width: 100%;
         height: 100%;
@@ -57,22 +66,10 @@
         transform-origin: top left;  /* 确保缩放从左上角开始 */
     }
     
-    /* 媒体查询：当屏幕宽度小于1000像素时 */
-    @media screen and(max-width: 1199px) {
+    /* 当屏幕宽度小于1198px时隐藏clustrmaps-container */
+    @media screen and (max-width: 1198px) {
         #clustrmaps-container {
-            position: fixed;  /* 固定定位 */
-            bottom: 0;  /* 底部对齐 */
-            left: 50%;  /* 水平居中 */
-            transform: translateX(-50%);  /* 水平居中 */
-            width: 300px;  /* 设置适当的宽度，根据需要调整 */
-            height: 300px;  /* 设置适当的高度，根据需要调整 */
-        }
-    
-        #clustrmaps-container iframe {
-            width: 100%;
-            height: 100%;
-            transform: scale(0.15);  /* 保留缩放比例 */
-            transform-origin: top left;  /* 确保缩放从左上角开始 */
+            display: none;
         }
     }
     </style>
