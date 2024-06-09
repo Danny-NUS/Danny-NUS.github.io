@@ -30,8 +30,6 @@ Music has always been the heartbeat of my life and research. My deep passion for
     </ul>
 </div>
 
-<br>
-
 <script>
     var date = new Date();
     var hour = date.getHours();
