@@ -156,12 +156,12 @@ footer { width: 232px; float: left; position: fixed; bottom: 30px; -webkit-font-
   .image.avatar img { border-radius: 100%; width: 117px; padding: 20px; }
   #head1o2 { visibility: hidden; }
   #head2o2 { visibility: hidden; } }
-@media print, screen and (max-width: 960px) { body { word-wrap: break-word; padding: 15px; }
+@media print, screen and (max-width: 960px) { body { word-wrap: break-word;}
   .pub-row { display: flex; align-items: center; }
   header { padding: 0; }
   pre, code { word-wrap: normal; } }
 @media print, screen and (max-width: 480px) { .pub-row { display: block; align-items: center; }
-  body { padding: 15px; }
+  body {}
   header ul { width: 99%; }
   header li, header ul li + li + li { width: 33%; }
   .image.avatar img { border-radius: 100%; width: 95px; padding: 20px; }
