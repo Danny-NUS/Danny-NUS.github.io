@@ -7,7 +7,7 @@ body { background-color: #fff; padding: 0px; font: 16.0px/1.5 Merriweather, seri
 
 .social-icons a { display: inline-block; height: 2.4rem; width: 2.4rem; background-color: transparent; color: #043361 !important; border-radius: 100%; text-align: center; font-size: 1.15rem; line-height: 2.5rem; margin-right: 1rem; }
 
-@media (prefers-color-scheme: dark) { .social-icons a { color: #3eb7f0 !important; } }
+@media (prefers-color-scheme: dark) { .social-icons a { color: #86A18B !important; } }
 .social-icons a:last-child { margin-right: 0; }
 
 .social-icons a:hover { background-color: white; color: black; transform: scale(1.2); }
@@ -78,8 +78,8 @@ h1 { font-weight: 500; color: #043361; margin: 0 0 20px; }
 
 h2 { color: #043361; font-weight: 500; margin: 2px 0px 15px; font-size: 157%; }
 
-@media (prefers-color-scheme: dark) { h1, h3, h4, h5, h6 { color: #3eb7f0; }
-  h2 { color: #3eb7f0; } }
+@media (prefers-color-scheme: dark) { h1, h3, h4, h5, h6 { color: #86A18B; }
+  h2 { color: #86A18B; } }
 p, ul, ol, table, pre, dl { margin: 0 0 20px; }
 
 h1, h2, h3 { line-height: 1.1; }
@@ -90,7 +90,7 @@ a { color: #39c; text-decoration: none; }
 
 a:hover { color: #069; }
 
-@media (prefers-color-scheme: dark) { a { color: #3eb7f0; } }
+@media (prefers-color-scheme: dark) { a { color: #86A18B; } }
 a small { font-size: 11px; color: #777; margin-top: -0.3em; display: block; }
 
 a:hover small { color: #777; }
@@ -111,8 +111,8 @@ dt { color: #444; font-weight: 500; }
 
 th { color: #444; }
 
-@media (prefers-color-scheme: dark) { th { color: #3eb7f0; }
-  dt { color: #3eb7f0; } }
+@media (prefers-color-scheme: dark) { th { color: #86A18B; }
+  dt { color: #86A18B; } }
 img { max-width: 100%; }
 
 header { width: 232px; float: left; position: fixed; -webkit-font-smoothing: subpixel-antialiased; padding-top: 4.0em; text-align: center; }
