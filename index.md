@@ -30,17 +30,6 @@ Music has always been the heartbeat of my life and research. My deep passion for
     </ul>
 </div>
 
-<script>
-    var date = new Date();
-    var hour = date.getHours();
-
-    // If it's nighttime, switch to dark mode
-    if (hour >= 20 || hour < 7) {
-        document.querySelector('.scrollable-content').classList.remove('day');
-        document.querySelector('.scrollable-content').classList.add('night');
-    }
-</script>
-
 {% include_relative _includes/publications.md %}
 
 {% include_relative _includes/services.md %}
