@@ -129,7 +129,7 @@
       }
 @media screen and (min-width: 1199px) {
     .mo {
-        width: 100%;
+        width: 100%; /* Keep full width for complete border */
         height: 50px;
         margin: 0 auto;
         border-bottom: 1px solid #5C2C18;
@@ -139,16 +139,9 @@
         transition: background 1s, border-color 1s;
         z-index: 99;
     }
-    .mo.day.scrolled {
+    .mo.scrolled {
         background: #fff;
         border-color: #20212b;
-    }
-    .mo.night {
-        background: rgba(32, 33, 43, 0.5);
-    }
-    .mo.night.scrolled {
-        background: #20212b;
-        border-color: #fff;
     }
     .logo {
         width: 180px;
@@ -170,15 +163,15 @@
         color: #5C704E;
     }
     .mo_info {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
+        display: flex; /* Flex container */
+        align-items: center; /* Center items vertically */
+        justify-content: flex-end; /* Align items to the end */
         height: 50px;
-        width: calc(100% - 240px);
-        padding-right: 20px;
+        width: calc(100% - 240px); /* Adjusted width to leave space on the right */
+        padding-right: 20px; /* Add right padding for extra space */
     }
     .mo_xx {
-        margin-left: 20px;
+        margin-left: 20px; /* Add some space between menu items */
         text-align: center;
         height: 50px;
         line-height: 50px;
@@ -194,13 +187,10 @@
     .mo_xx a:hover {
         color: #5C704E !important;
     }
-    .mo.night .mo_xx {
-        color: #fff;
-    }
     #about-me, .about {
         width: 900px;
         position: absolute;
-        right: 0;
+        right: 0; /* No change here, keep at the right edge */
         font-family: 'Playfair Display', serif;
     }
     #about-me {
@@ -214,6 +204,26 @@
         font-size: 21px;
         font-family: 'Playfair Display', serif;
     }
+    .abw {
+        width: 1200px;
+        position: relative;
+        font-family: 'Playfair Display', serif;
+    }
+
+    @media (prefers-color-scheme: dark){
+        .mo {
+            background: rgba(32, 33, 43, 0.5);
+        }
+        .mo.scrolled {
+            background: #20212b;
+            border-color: #fff;
+        }
+        .mo .mo_xx {
+            color: #fff;
+        }
+    }
+  }
+  
     .abw {
         width: 1200px;
         position: relative;
