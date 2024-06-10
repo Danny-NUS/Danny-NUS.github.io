@@ -15,22 +15,11 @@
         a {
             color: #A5795C!important;
             text-decoration: none;
-            position: relative;
+            transition: color 0.3s ease!important;
         }
         
-        a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1; /* 将伪类元素置于链接后面 */
-            transition: transform 0.3s ease;
-        }
-        
-        a:hover::before {
-            transform: scale(1.01);
+        a:hover {
+            color: #936347!important;
         }
         body {
             font-family: 'Playfair Display', serif; /* Apply Merriweather font to entire document */
