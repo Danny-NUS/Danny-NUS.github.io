@@ -37,27 +37,35 @@
             padding: 10px; /* Optional: Add padding for better spacing */
         }
         .scrollable-content {
-           background: rgba(227, 227, 227, 0.3);
-           padding: 30px;
-        }
-        .scrollable-content {
-            padding: 30px;
-            background: rgba(227, 227, 227, 0.3);
-        }
-        .scrollable-content.night{
-            background: rgba(53, 53, 53, 0.3);
-        }
-        .scrollable-content {
+            height: 220px; /* Adjust the height as needed */
+            overflow-y: scroll;
+            border: 1px solid transparent;
+            padding: 10px; /* Optional: Add padding for better spacing */
             text-align: justify;
         }
+        
+        /* Default light mode */
+        .scrollable-content {
+            background-color: rgba(227, 227, 227, 0.3); /* Light gray background */
+        }
+        
+        /* Dark mode */
+        @media (prefers-color-scheme: dark) {
+            .scrollable-content {
+                background-color: rgba(53, 53, 53, 0.3); /* Darker background for dark mode */
+            }
+        }
+        
         .scrollable-content ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
         }
+        
         .scrollable-content li {
             margin-bottom: 10px;
         }
+
         
     #clustrmaps-container {
         width: 300px;  /* 设置你想要的宽度 */
