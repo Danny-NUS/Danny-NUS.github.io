@@ -9,10 +9,13 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        h1, h2, h3, h4, h5, h6 {
-          color:#936347!important;
+        social-icons {
+            color: #936347!important;
         }
-        a {
+        h1, h2, h3, h4, h5, h6 {
+            color: #936347!important;
+        }
+        a{
             color: #A5795C!important;
             text-decoration: none;
             transition: color 0.3s ease!important;
@@ -28,6 +31,20 @@
         @media (prefers-color-scheme: dark) {
             body {
                 background-color: #20212b!important; /* Darker background for dark mode */
+            }
+            social-icons {
+                color: #D5BEA2!important;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                color: #D5BEA2!important;
+            }
+            a{
+                color: #D5BEA2!important;
+                text-decoration: none;
+                transition: color 0.3s ease!important;
+            }
+            a:hover {
+                color: #D5BEA2!important;
             }
         }
         p, ul, ol, table, pre, dl {
@@ -212,7 +229,7 @@
     @media (prefers-color-scheme: dark){
         .mo {
             background: rgba(32, 33, 43, 0.5);
-            border-color: #A5795C;
+            border-color: #D5BEA2;
         }
         .mo.scrolled {
             background: #20212b;
@@ -222,10 +239,10 @@
             color: #fff;
         }
         .logo {
-          color: #fff;
+            color: #fff;
         }
+      }
     }
-  }
   
 .abw{
    padding: 30px;
@@ -328,11 +345,10 @@
     .mo_xx a:hover {
       color: #A5795C !important;
     }
-
     @media (prefers-color-scheme: dark){
         .mo {
             background: rgba(32, 33, 43, 0.9);
-            border-color: #A5795C;
+            border-color: #D5BEA2;
         }
         .mo.scrolled {
             background: #20212b;
@@ -345,7 +361,7 @@
             color: #fff !important;
         }
         .mo .mo_xx a:hover {
-            color: #A5795C !important;
+            color: #D5BEA2 !important;
         }
         .mo .mo_info {
             background: #20212b;
@@ -354,7 +370,7 @@
             color: #fff;
         }
         .hamburger div {
-            background-color: #A5795C;
+            background-color: #D5BEA2;
         }
     }
   }
@@ -373,7 +389,7 @@
       <div class="mo_xx"><a href="#about-me">ABOUT ME</a></div>
       <div class="mo_xx"><a href="#research-interests">RESEARCH INTEREST</a></div>
       <div class="mo_xx"><a href="#news">NEWS</a></div>
-       <div class="mo_xx"><a href="#publications">PUBLICATIONS</a></div>
+      <div class="mo_xx"><a href="#publications">PUBLICATIONS</a></div>
       <div class="mo_xx"><a href="#">AS MUSICIAN</a></div>
     </div>
   </div>
@@ -399,11 +415,9 @@
           menu.classList.remove('scrolled');
         }
       });
-
-      hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
-        menu.classList.toggle('open-menu'); // Toggle active class on the menu
-
+          hamburger.addEventListener('click', function() {
+          hamburger.classList.toggle('active');
+          menu.classList.toggle('open-menu'); // Toggle active class on the menu
       });
     });
   </script>
@@ -481,22 +495,22 @@
         
       </footer>
     </div>
-<script>
-$('a[href*=#],area[href*=#]').click(function() {      //若报错则改为$(document).on('click', 'a[href^="#"]', function () { 
-  if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-       var $target = $(this.hash);
-       $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');//获取到点击对应id的元素
-       if ($target.length) { 
-           var targetOffset = $target.offset().top;
-           $('html,body').animate({   //滑动效果主要用到jq的animate函数
-               scrollTop: targetOffset
-           },500);
-           return false;
-       }
-   }
- });
-
-  </script>
+  
+    <script>
+      $('a[href*=#],area[href*=#]').click(function() {      //若报错则改为$(document).on('click', 'a[href^="#"]', function () { 
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+             var $target = $(this.hash);
+             $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');//获取到点击对应id的元素
+             if ($target.length) { 
+                 var targetOffset = $target.offset().top;
+                 $('html,body').animate({   //滑动效果主要用到jq的animate函数
+                     scrollTop: targetOffset
+                 },500);
+                 return false;
+             }
+         }
+       });
+    </script>
 
 
 
