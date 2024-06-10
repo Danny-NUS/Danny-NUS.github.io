@@ -17,7 +17,6 @@
             text-decoration: none;
             transition: color 0.3s ease!important;
         }
-        
         a:hover {
             color: #936347!important;
         }
@@ -26,13 +25,11 @@
             padding:0px!important;
             background-color: #F0F0EE!important;
         }
-
         @media (prefers-color-scheme: dark) {
             body {
                 background-color: #20212b!important; /* Darker background for dark mode */
             }
         }
-        
         p, ul, ol, table, pre, dl {
             margin: 0;
         }
@@ -52,47 +49,39 @@
             border: 1px solid transparent;
             padding: 10px; /* Optional: Add padding for better spacing */
             text-align: justify;
-        }
-        
+        }        
         /* Default light mode */
         .scrollable-content {
             background-color: rgba(227, 227, 227, 0.3); /* Light gray background */
-        }
-        
+        }  
         /* Dark mode */
         @media (prefers-color-scheme: dark) {
             .scrollable-content {
                 background-color: rgba(53, 53, 53, 0.3); /* Darker background for dark mode */
             }
-        }
-        
+        }        
         .scrollable-content ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
         }
-        
         .scrollable-content li {
             margin-bottom: 10px;
         }
-
-        
-    #clustrmaps-container {
-        width: 300px;  /* 设置你想要的宽度 */
-        height: 300px; /* 设置你想要的高度 */
-        position: absolute;  /* 允许绝对定位 */
-        top: 1370px;  /* 调整顶部位置 */
-        left: 930px;  /* 调整左侧位置 */
-        overflow: hidden;  /* 确保没有溢出 */
-    }
-    
-    #clustrmaps-container iframe {
-        width: 100%;
-        height: 100%;
-        transform: scale(0.15);  /* 根据需要调整缩放比例 */
-        transform-origin: top left;  /* 确保缩放从左上角开始 */
-    }
-    
+        #clustrmaps-container {
+            width: 300px;  /* 设置你想要的宽度 */
+            height: 300px; /* 设置你想要的高度 */
+            position: absolute;  /* 允许绝对定位 */
+            top: 1370px;  /* 调整顶部位置 */
+            left: 930px;  /* 调整左侧位置 */
+            overflow: hidden;  /* 确保没有溢出 */
+        }
+        #clustrmaps-container iframe {
+            width: 100%;
+            height: 100%;
+            transform: scale(0.15);  /* 根据需要调整缩放比例 */
+            transform-origin: top left;  /* 确保缩放从左上角开始 */
+        }
     /* 当屏幕宽度小于1198px时隐藏clustrmaps-container */
     @media screen and (max-width: 1198px) {
         #clustrmaps-container {
