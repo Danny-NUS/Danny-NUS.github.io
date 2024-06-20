@@ -22,7 +22,7 @@ Music has always been the heartbeat of my life and research. My deep passion for
 <div class="scrollable-content">
     <ul>
         <li><b>[Apr. 2024]</b> One journal paper was accepted by IEEE Transactions on Audio, Speech, and Language Processing (<a href="https://signalprocessingsociety.org/publications-resources/ieeeacm-transactions-audio-speech-and-language-processing">TASLP'2024</a>)!</li>
-        <li><b>[Jan. 2024]</b> I commenced my PhD journey at NUS, in the SMC Lab, under the guidance of Prof. Wang Ye. 🥰✨</li>
+        <li><b>[Jan. 2024]</b> I started my PhD journey at NUS, in the SMC Lab, under the guidance of Prof. Wang Ye. 🥰✨</li>
         <li><b>[Dec. 2023]</b> I successfully defended my MComp Thesis entitled "Singing Voice Synthesis with Singing Technique Control" and earned my M.Sc. degree in Computer Science from NUS. 🥳</li>
         <li><b>[Jun. 2023]</b> I interned for 3 months at Tsinghua's THUNLP lab, focusing on multi-modal large language models, particularly in the audio domain. 🎧</li>
         <li><b>[Aug. 2022]</b> I joined NUS as a student in the Master of Computing program (AI track) and began my research in the Sound and Music Computing Lab. 🇸🇬</li>
