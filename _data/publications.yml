@@ -1,4 +1,10 @@
 main:
+  - title: "SPSinger: Multi-Singer Singing Voice Synthesis with Short Reference Prompt"
+    authors: <strong>Junchuan Zhao</strong>, Low Qi Hong Chetwin, Ye Wang* (*Corresponding authors)
+    conference_short: ICASSP
+    conference: 2025 IEEE International Conference on Acoustics, Speech, and Signal Processing.
+    page: https://danny-nus.github.io/SPSinger/
+    image: ./assets/img/overall--spsinger.png
 
   - title: "SinTechSVS: A Singing Technique Controllable Singing Voice Synthesis System"
     authors: <strong>Junchuan Zhao</strong>, Low Qi Hong Chetwin, Ye Wang* (*Corresponding authors)
