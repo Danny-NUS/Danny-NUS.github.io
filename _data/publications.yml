@@ -3,6 +3,7 @@ main:
     authors: <strong>Junchuan Zhao</strong>, Low Qi Hong Chetwin, Ye Wang* (*Corresponding authors)
     conference_short: ICASSP
     conference: 2025 IEEE International Conference on Acoustics, Speech, and Signal Processing.
+    pdf: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10888907
     page: https://danny-nus.github.io/SPSinger/
     image: ./assets/img/SPSinger_overall.png
 
