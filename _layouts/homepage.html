@@ -3,14 +3,38 @@
   <head>
     <title>{{ site.title }} | {{site.affiliation}}</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        body {
+            font-family: 'Merriweather', serif; /* Apply Merriweather font to entire document */
+            padding:0px!important;
+        }
+        p, ul, ol, table, pre, dl {
+           margin: 0;
+        }
+        #honours,#activities--services,#research-interests, #news, #publications, #about-me {
+           padding-top: 50px;
+        }
         .scrollable-content {
-            height: 200px; /* Adjust the height as needed */
+            height: 220px; /* Adjust the height as needed */
             overflow-y: scroll;
             border: 1px solid transparent
-            background-color: rgba(128, 128, 128, 0.7); /* Light gray background */
+            background-color: rgba(128, 128, 128, 0.5); /* Light gray background */
             padding: 10px; /* Optional: Add padding for better spacing */
+        }
+        .scrollable-content {
+           background: rgba(227, 227, 227, 0.3);
+           padding: 30px;
+        }
+        .scrollable-content {
+            padding: 30px;
+            background: rgba(227, 227, 227, 0.3);
+        }
+        .scrollable-content.night{
+            background: rgba(53, 53, 53, 0.3);
         }
         .scrollable-content {
             text-align: justify;
@@ -23,6 +47,29 @@
         .scrollable-content li {
             margin-bottom: 10px;
         }
+      
+    #clustrmaps-container {
+        width: 300px;  /* 设置你想要的宽度 */
+        height: 300px; /* 设置你想要的高度 */
+        position: absolute;  /* 允许绝对定位 */
+        top: 1350px;  /* 调整顶部位置 */
+        left: 930px;  /* 调整左侧位置 */
+        overflow: hidden;  /* 确保没有溢出 */
+    }
+    
+    #clustrmaps-container iframe {
+        width: 100%;
+        height: 100%;
+        transform: scale(0.15);  /* 根据需要调整缩放比例 */
+        transform-origin: top left;  /* 确保缩放从左上角开始 */
+    }
+    
+    /* 当屏幕宽度小于1198px时隐藏clustrmaps-container */
+    @media screen and (max-width: 1198px) {
+        #clustrmaps-container {
+            display: none;
+        }
+    }
     </style>
 
     <meta charset="UTF-8">
@@ -56,16 +103,280 @@
     <link rel="stylesheet" href="./assets/css/publications-no-dark-mode.css">
     {% endif %}
 
-  </head>
-  <body>
+<style>
+ @media screen and (min-width: 1199px) {
+    .mo {
+        width: 100%; /* Keep full width for complete border */
+        height: 50px;
+        margin: 0 auto;
+        border-bottom: 1px solid #2496CB;
+        position: fixed;
+        top: 0;
+        background: rgba(255, 255, 255, 0.5);
+        transition: background 1s, border-color 1s;
+        z-index: 99;
+    }
+    .mo.day.scrolled {
+        background: #fff;
+        border-color: #20212b;
+    }
+    .mo.night {
+        background: rgba(32, 33, 43, 0.5);
+    }
+    .mo.night.scrolled {
+        background: #20212b;
+        border-color: #fff;
+    }
+    .logo {
+        width: 180px;
+        float: left;
+        height: 50px;
+        line-height: 50px;
+        text-align: left;
+        font-weight: bold;
+        font-size: 22px;
+        color: #2496CB;
+        font-family: 'Open Sans', serif;
+        margin-left: 20px;
+        transition: all 1s;
+    }
+    .logo.scrolled {
+        font-size: 18px;
+        color: #1a6a8f;
+    }
+    .mo_info {
+        display: flex; /* Flex container */
+        align-items: center; /* Center items vertically */
+        justify-content: flex-end; /* Align items to the end */
+        height: 50px;
+        width: calc(100% - 240px); /* Adjusted width to leave space on the right */
+        padding-right: 20px; /* Add right padding for extra space */
+    }
+    .mo_xx {
+        margin-left: 20px; /* Add some space between menu items */
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+        color: #20212b;
+    }
+    .mo_xx a {
+        color: inherit;
+        font-size: 14px;
+        font-weight: bold;
+        font-family: 'Open Sans', serif;
+        transition: color 0.5s;
+    }
+    .mo_xx a:hover {
+        color: #2496CB;
+    }
+    .mo.night .mo_xx {
+        color: #fff;
+    }
+    #about-me, .about {
+        width: 900px;
+        position: absolute;
+        right: 0; /* No change here, keep at the right edge */
+        font-family: 'Merriweather', serif;
+    }
+    #about-me {
+        top: -652px;
+    }
+    .about {
+        top: -560px;
+    }
+    .wrapper {
+        width: 1200px;
+        font-size: 19px;
+        font-family: 'Merriweather', serif;
+    }
+    .abw {
+        width: 1200px;
+        position: relative;
+        font-family: 'Merriweather', serif;
+    }
+  }
+  .abw{
+        padding: 30px;
+        box-sizing: border-box
+  }
+  @media screen and (max-width: 1198px) {
+    .mo {
+      width: 100%;
+      height: 50px;
+      margin: 0 auto;
+      border-bottom: 1px solid #2496CB;
+      position: fixed;
+      top: 0;
+      background: rgba(255, 255, 255, 0.9);
+      transition: background 1s, border-color 1s;
+      z-index: 99;
+    }
+    .mo.day.scrolled {
+      background: #fff;
+      border-color: #20212b;
+    }
+    .mo.night {
+      background: rgba(32, 33, 43, 0.9);
+    }
+    .mo.night.scrolled {
+      background: #20212b;
+      border-color: #fff;
+    }
+    .logo {
+      width: 140px;
+      float: left;
+      height: 50px;
+      line-height: 50px;
+      text-align: left;
+      font-weight: bold;
+      font-size: 18px;
+      color: #2496CB;
+      font-family: 'Open Sans', serif;
+      margin-left: 10px;
+      transition: all 1s;
+    }
+    .logo.scrolled {
+      font-size: 16px;
+      color: #1a6a8f;
+    }
+    .hamburger {
+      display: block;
+      float: right;
+      padding: 15px;
+      cursor: pointer;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #2496CB;
+      margin: 4px 0;
+      transition: all 0.3s;
+    }
+    .hamburger.active div:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 5px);
+    }
+    .hamburger.active div:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active div:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -5px);
+    }
+    .mo_info {
+      position: fixed; /* Or position: absolute; */
+      top: 51px; /* Or another desired position */
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      text-align: left;
+      z-index: 98;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      max-height: 0; /* Hide menu initially */
+      overflow: hidden; /* Hide overflow content */
+      transition: max-height 0.5s ease, background 1s ease;
+    }
+    .mo_info.scrolled {
+      background: rgba(255, 255, 255, 1); /* Fully opaque background when scrolled */
+    }
+    .mo_info.open-menu {
+      max-height: 300px; /* Expand menu */
+    }
+    .mo_xx {
+      padding: 5px 20px; /* Add padding */
+      color: #20212b;
+    }
+    .mo_xx:first-child {
+        margin-top: 8px;
+    }
+    .mo_xx:last-child {
+        margin-bottom: 8px;
+    }
+    .mo_xx a {
+      font-size: 14px;
+      transition: color 0.5s;
+      color: inherit;
+      font-weight: bold;
+      font-family: 'Open Sans', serif;
+    }
+    .mo_xx a:hover {
+      color: #2496CB;
+    }
+    .mo.night .mo_xx {
+      color: #fff;
+    }
+    .mo.night .mo_xx a {
+      color: #fff;
+    }
+    .mo.night .mo_xx a:hover {
+      color: #2496CB;
+    }
+    .mo.night .mo_info {
+      background: #20212b;
+    }
+  }
+</style>
+    
+</head>
+<body>
+  <div class="mo">
+    <div class="logo">JUNCHUAN</div>
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="mo_info">
+      <div class="mo_xx"><a href="#about-me">ABOUT ME</a></div>
+      <div class="mo_xx"><a href="#research-interests">RESEARCH INTEREST</a></div>
+      <div class="mo_xx"><a href="#news">NEWS</a></div>
+       <div class="mo_xx"><a href="#publications">PUBLICATIONS</a></div>
+      <div class="mo_xx"><a href="#">AS MUSICIAN</a></div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const header = document.querySelector('.mo');
+      const logo = document.querySelector('.logo');
+      const hamburger = document.querySelector('.hamburger');
+      const menu = document.querySelector('.mo_info');
+
+      const now = new Date();
+      const hours = now.getHours();
+
+      if (hours >= 7 && hours < 19) {
+        header.classList.add('day');
+      } else {
+        header.classList.add('night');
+      }
+
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 0) {
+          header.classList.add('scrolled');
+          logo.classList.add('scrolled');
+          menu.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+          logo.classList.remove('scrolled');
+          menu.classList.remove('scrolled');
+        }
+      });
+
+      hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        menu.classList.toggle('open-menu'); // Toggle active class on the menu
+
+      });
+    });
+  </script>
+
     <div class="wrapper">
-      <header>
+      <header style="position: relative;">
         
         {% if site.avatar %}
-        <a class="image avatar"><img src="{{ site.avatar }}" alt="avatar" /></a>
+        <a class="image avatar"><img src="{{ site.avatar }}" alt="avatar" style="width: 80%;" /></a>
         {% endif %}
 
-        <h1>{{ site.title }}</h1>
+        <h1 style="font-size: 24px;">{{ site.title }}</h1>
 
         {% if site.position %}
         <position style="font-size:1.10rem;">{{ site.position }}</position>
@@ -76,7 +387,7 @@
         <br>
         {% endif %}
         {% if site.email %}
-        <email>{{ site.email }}</email>
+        <email style="font-size: 18px;">{{ site.email }}</email>
         {% endif %}
 
         <br>
@@ -115,7 +426,7 @@
         <br>
 
       </header>
-      <section>
+      <section class="abw">
 
       {{ content }}
 
@@ -130,6 +441,25 @@
         
       </footer>
     </div>
+<script>
+$('a[href*=#],area[href*=#]').click(function() {      //若报错则改为$(document).on('click', 'a[href^="#"]', function () { 
+  if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+       var $target = $(this.hash);
+       $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');//获取到点击对应id的元素
+       if ($target.length) { 
+           var targetOffset = $target.offset().top;
+           $('html,body').animate({   //滑动效果主要用到jq的animate函数
+               scrollTop: targetOffset
+           },500);
+           return false;
+       }
+   }
+ });
+
+  </script>
+
+
+
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
     {% if site.google_analytics %}
     <script>
