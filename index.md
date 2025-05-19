@@ -21,6 +21,7 @@ Music has always been the heartbeat of my life and research. My deep passion for
 ## News
 <div class="scrollable-content">
     <ul>
+        <li><b>[May. 2025]</b> One paper was accepted by 26th edition of the Interspeech Conference (<a href="https://www.interspeech2025.org/">Interspeech 2025</a>)!</li>
         <li><b>[Jan. 2025]</b> I have been selected for the SoC's Teaching Fellowship Scheme (TFS), with 12 CS PhD students chosen this year. </li>
         <li><b>[Dec. 2024]</b> One paper was accepted by IEEE International Conference on Acoustics, Speech, and Signal Processing (<a href="https://2025.ieeeicassp.org/">ICASSP 2025</a>)!</li>
         <li><b>[Apr. 2024]</b> One journal paper was accepted by IEEE Transactions on Audio, Speech, and Language Processing (<a href="https://signalprocessingsociety.org/publications-resources/ieeeacm-transactions-audio-speech-and-language-processing">TASLP 2024</a>)!</li>
