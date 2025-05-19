@@ -2,13 +2,13 @@ main:
   - title: "Prosody-Adaptable Audio Codecs for Zero-Shot Voice Conversion via In-Context Learning"
     authors: <strong>Junchuan Zhao</strong>, Xintong Wang, Ye Wang* (*Corresponding authors)
     conference_short: Interspeech
-    conference: 26th edition of the Interspeech Conference.
+    conference: 26th edition of the Interspeech Conference <strong>(Interspeech)</strong>, 2025.
     image: ./assets/img/SPSinger_overall.png
 
   - title: "SPSinger: Multi-Singer Singing Voice Synthesis with Short Reference Prompt"
     authors: <strong>Junchuan Zhao</strong>, Low Qi Hong Chetwin, Ye Wang* (*Corresponding authors)
     conference_short: ICASSP
-    conference: 2025 IEEE International Conference on Acoustics, Speech, and Signal Processing.
+    conference: IEEE International Conference on Acoustics, Speech, and Signal Processing <strong>(ICASSP)</strong>, 2025.
     pdf: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10888907
     page: https://danny-nus.github.io/SPSinger/
     image: ./assets/img/SPSinger_overall.png
