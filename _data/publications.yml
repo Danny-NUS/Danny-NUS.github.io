@@ -3,6 +3,7 @@ main:
     authors: <strong>Junchuan Zhao</strong>, Xintong Wang, Ye Wang* (*Corresponding authors)
     conference_short: Interspeech
     conference: 26th edition of the Interspeech Conference <strong>(Interspeech)</strong>, 2025.
+    pdf: https://arxiv.org/abs/2505.15402
     image: ./assets/img/PACE.png
 
   - title: "SPSinger: Multi-Singer Singing Voice Synthesis with Short Reference Prompt"
