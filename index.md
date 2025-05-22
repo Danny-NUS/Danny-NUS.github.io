@@ -40,7 +40,7 @@ Music has always been the heartbeat of my life and research. My deep passion for
 {% include_relative _includes/honours.md %}
 
 ## Teaching
-Teaching Assistant, <b>CS4347/CS5647</b>, Sound and Music Computing, Sem1 AY2024/2025.
+- Teaching Assistant, CS4347/CS5647, Sound and Music Computing, Sem1 AY2024/2025.
 
 <div id="clustrmaps-container">
         <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=Kc4kbw7G6_tZ2qrx8LQSxscrbJCYiq03i_g-Sflo5sg"></script>
