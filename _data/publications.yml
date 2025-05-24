@@ -1,13 +1,13 @@
 main:
   - title: "Prosody-Adaptable Audio Codecs for Zero-Shot Voice Conversion via In-Context Learning"
-    authors: <strong>Junchuan Zhao</strong>, Xintong Wang, Ye Wang* (*Corresponding authors)
+    authors: <b>Junchuan Zhao</b>, Xintong Wang, Ye Wang* (*Corresponding authors)
     conference_short: Interspeech
     conference: 26th edition of the Interspeech Conference <strong>(Interspeech)</strong>, 2025.
     pdf: https://arxiv.org/abs/2505.15402
     image: ./assets/img/PACE.png
 
   - title: "SPSinger: Multi-Singer Singing Voice Synthesis with Short Reference Prompt"
-    authors: <strong>Junchuan Zhao</strong>, Low Qi Hong Chetwin, Ye Wang* (*Corresponding authors)
+    authors: <b>Junchuan Zhao</b>, Low Qi Hong Chetwin, Ye Wang* (*Corresponding authors)
     conference_short: ICASSP
     conference: IEEE International Conference on Acoustics, Speech, and Signal Processing <strong>(ICASSP)</strong>, 2025.
     pdf: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10888907
@@ -16,7 +16,7 @@ main:
     image: ./assets/img/SPSinger_overall.png
 
   - title: "SinTechSVS: A Singing Technique Controllable Singing Voice Synthesis System"
-    authors: <strong>Junchuan Zhao</strong>, Low Qi Hong Chetwin, Ye Wang* (*Corresponding authors)
+    authors: <b>Junchuan Zhao</b>, Low Qi Hong Chetwin, Ye Wang* (*Corresponding authors)
     conference_short: TASLP
     conference: IEEE/ACM Transactions on Audio, Speech, and Language Processing <strong>(TASLP)</strong>, 2024.
     pdf: https://ieeexplore-ieee-org.libproxy1.nus.edu.sg/stamp/stamp.jsp?tp=&arnumber=10509739
@@ -25,7 +25,7 @@ main:
     image: ./assets/img/overall--1.png
     
   - title: An Improved Time Series Network Model Based on Multitrack Music Generation
-    authors: <strong>Junchuan Zhao</strong>
+    authors: <b>Junchuan Zhao</b>
     conference_short: WCNA
     conference: International Conference on Wireless Communications, Network and Applications <strong>(WCNA)</strong>, 2022.
     pdf: https://link.springer.com/chapter/10.1007/978-981-19-2456-9_120
