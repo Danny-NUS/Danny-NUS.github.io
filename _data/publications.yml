@@ -27,7 +27,7 @@ main:
   - title: An Improved Time Series Network Model Based on Multitrack Music Generation
     authors: <b>Junchuan Zhao</b>
     conference_short: WCNA
-    conference: International Conference on Wireless Communications, Network and Applications <strong>(WCNA)</strong>, 2022.
+    conference: International Conference on Wireless Communications, Network and Applications <b>(WCNA)</b>, 2022.
     pdf: https://link.springer.com/chapter/10.1007/978-981-19-2456-9_120
     bibtex: https://scholar.googleusercontent.com/scholar.bib?q=info:RvYrgxHdwP8J:scholar.google.com/&output=citation&scisdr=ClE0-pEMEJXsksn6xlg:AFWwaeYAAAAAZmH83livxuqDpc7CbEcHWfzLjwo&scisig=AFWwaeYAAAAAZmH83ta7r-m3DhVFpfo26OvPrk4&scisf=4&ct=citation&cd=-1&hl=zh-CN
     image: ./assets/img/overall-2.png
