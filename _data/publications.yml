@@ -2,14 +2,14 @@ main:
   - title: "Prosody-Adaptable Audio Codecs for Zero-Shot Voice Conversion via In-Context Learning"
     authors: <b>Junchuan Zhao</b>, Xintong Wang, Ye Wang* (*Corresponding authors)
     conference_short: Interspeech
-    conference: 26th edition of the Interspeech Conference <strong>(Interspeech)</strong>, 2025.
+    conference: 26th edition of the Interspeech Conference <b>(Interspeech)</b>, 2025.
     pdf: https://arxiv.org/abs/2505.15402
     image: ./assets/img/PACE.png
 
   - title: "SPSinger: Multi-Singer Singing Voice Synthesis with Short Reference Prompt"
     authors: <b>Junchuan Zhao</b>, Low Qi Hong Chetwin, Ye Wang* (*Corresponding authors)
     conference_short: ICASSP
-    conference: IEEE International Conference on Acoustics, Speech, and Signal Processing <strong>(ICASSP)</strong>, 2025.
+    conference: IEEE International Conference on Acoustics, Speech, and Signal Processing <b>(ICASSP)</b>, 2025.
     pdf: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10888907
     page: https://danny-nus.github.io/SPSinger/
     bibtex: https://scholar.googleusercontent.com/scholar.bib?q=info:tz9NldZwCyIJ:scholar.google.com/&output=citation&scisdr=CgKRonx9EKHPyZStGWA:AAZF9b8AAAAAaC6rAWDQs7zmA2fY6Vty_Sq0Rss&scisig=AAZF9b8AAAAAaC6rAXburco5_WK_FVVwu3Iyu74&scisf=4&ct=citation&cd=-1&hl=zh-CN
@@ -18,7 +18,7 @@ main:
   - title: "SinTechSVS: A Singing Technique Controllable Singing Voice Synthesis System"
     authors: <b>Junchuan Zhao</b>, Low Qi Hong Chetwin, Ye Wang* (*Corresponding authors)
     conference_short: TASLP
-    conference: IEEE/ACM Transactions on Audio, Speech, and Language Processing <strong>(TASLP)</strong>, 2024.
+    conference: IEEE/ACM Transactions on Audio, Speech, and Language Processing <b>(TASLP)</b>, 2024.
     pdf: https://ieeexplore-ieee-org.libproxy1.nus.edu.sg/stamp/stamp.jsp?tp=&arnumber=10509739
     page: https://danny-nus.github.io/SinTechSVS/
     bibtex: https://scholar.googleusercontent.com/scholar.bib?q=info:IVkbR1ghWkcJ:scholar.google.com/&output=citation&scisdr=ClE0-pEMEJXsksn9fHY:AFWwaeYAAAAAZmH7ZHbXtauA73Df9soiQ89Z-bg&scisig=AFWwaeYAAAAAZmH7ZKNC1b5yaYwsdzWsjgU8ERU&scisf=4&ct=citation&cd=-1&hl=zh-CN
