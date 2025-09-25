@@ -3,6 +3,7 @@
 <ul>
       <li>Academic Reviewers
           <ul>
+            <li>IEEE Transactions on Audio, Speech and Language Processing (<a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=10723155">TASLP</a>) 2025</li>
             <li>ACM International Conference on Multimedia (<a href="https://2024.acmmm.org/">ACM MM</a>) 2024</li>
             <li>International Society for Music Information Retrieval Conference (<a href="https://ismir2024.ismir.net/">ISMIR</a>) 2024</li>
             <li>ACM International Conference on Multimedia (<a href="https://www.acmmm2023.org/">ACM MM</a>) 2023</li>
