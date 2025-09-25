@@ -1,13 +1,31 @@
 main:
+  - title: "KSDiff: Keyframe-Augmented Speech-Aware Dual-Path Diffusion for Facial Animation"
+    authors: Tianle Lyu*, <b>Junchuan Zhao</b>*, Ye Wang (* Equal Contribution)
+    conference: Arxiv, 2025.
+    pdf: https://arxiv.org/pdf/2509.20128
+    image: ./assets/img/KSDiff.png
+    
+  - title: "InconVAD: A Two-Stage Dual-Tower Framework for Multimodal Emotion Inconsistency Detection"
+    authors: Zongyi Li, <b>Junchuan Zhao</b>, Francis Bu Sung Lee, Andrew Zi Han Yee
+    conference: Arxiv, 2025.
+    pdf: https://arxiv.org/pdf/2509.20140
+    image: ./assets/img/InconVAD.png
+    
+  - title: "CoMelSinger: Discrete Token-Based Zero-Shot Singing Synthesis With Structured Melody Control and Guidance"
+    authors: <b>Junchuan Zhao</b>, Wei Zeng, Tianle Lyu, Ye Wang
+    conference: Arxiv, 2025.
+    pdf: https://arxiv.org/pdf/2509.19883
+    image: ./assets/img/CoMelSinger.png
+    
   - title: "Prosody-Adaptable Audio Codecs for Zero-Shot Voice Conversion via In-Context Learning"
-    authors: <b>Junchuan Zhao</b>, Xintong Wang, Ye Wang* (*Corresponding authors)
+    authors: <b>Junchuan Zhao*</b>, Xintong Wang*, Ye Wang (* Equal Contribution)
     conference_short: Interspeech
     conference: 26th edition of the Interspeech Conference <b>(Interspeech)</b>, 2025.
-    pdf: https://arxiv.org/abs/2505.15402
+    pdf: https://arxiv.org/pdf/2505.15402
     image: ./assets/img/PACE.png
 
   - title: "SPSinger: Multi-Singer Singing Voice Synthesis with Short Reference Prompt"
-    authors: <b>Junchuan Zhao</b>, Low Qi Hong Chetwin, Ye Wang* (*Corresponding authors)
+    authors: <b>Junchuan Zhao</b>, Low Qi Hong Chetwin, Ye Wang
     conference_short: ICASSP
     conference: IEEE International Conference on Acoustics, Speech, and Signal Processing <b>(ICASSP)</b>, 2025.
     pdf: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10888907
@@ -16,7 +34,7 @@ main:
     image: ./assets/img/SPSinger_overall.png
 
   - title: "SinTechSVS: A Singing Technique Controllable Singing Voice Synthesis System"
-    authors: <b>Junchuan Zhao</b>, Low Qi Hong Chetwin, Ye Wang* (*Corresponding authors)
+    authors: <b>Junchuan Zhao</b>, Low Qi Hong Chetwin, Ye Wang
     conference_short: TASLP
     conference: IEEE/ACM Transactions on Audio, Speech, and Language Processing <b>(TASLP)</b>, 2024.
     pdf: https://ieeexplore-ieee-org.libproxy1.nus.edu.sg/stamp/stamp.jsp?tp=&arnumber=10509739
