@@ -3,7 +3,7 @@ main:
     authors: Tianle Lyu*, <b>Junchuan Zhao</b>*, Ye Wang (* Equal Contribution)
     conference: Arxiv, 2025.
     pdf: https://arxiv.org/pdf/2509.20128
-    image: ./assets/img/KSDiff.png
+    image: ./assets/img/KSDiff.pdf
     
   - title: "InconVAD: A Two-Stage Dual-Tower Framework for Multimodal Emotion Inconsistency Detection"
     authors: Zongyi Li, <b>Junchuan Zhao</b>, Francis Bu Sung Lee, Andrew Zi Han Yee
