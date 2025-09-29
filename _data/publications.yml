@@ -19,12 +19,21 @@ main:
     conference_short: Arxiv
     pdf: https://arxiv.org/pdf/2509.19883
     image: ./assets/img/CoMelSinger.png
+
+  - title: "Disentangling Score Content and Performance Style for Joint Piano Rendering and Transcription"
+    authors: Wei Zeng, <b>Junchuan Zhao</b>, Ye Wang
+    conference: Arxiv, 2025.
+    conference_short: Arxiv
+    pdf: https://arxiv.org/pdf/2509.19883
+    page: https://danny-nus.github.io/SPSinger/
+    image: ./assets/img/CoMelSinger.png
     
   - title: "Prosody-Adaptable Audio Codecs for Zero-Shot Voice Conversion via In-Context Learning"
     authors: <b>Junchuan Zhao*</b>, Xintong Wang*, Ye Wang (* Equal Contribution)
     conference_short: Interspeech
     conference: 26th edition of the Interspeech Conference <b>(Interspeech)</b>, 2025.
     pdf: https://www.isca-archive.org/interspeech_2025/zhao25d_interspeech.pdf
+    bibtex: https://www.isca-archive.org/interspeech_2025/zhao25d_interspeech.html#
     image: ./assets/img/PACE.png
 
   - title: "SPSinger: Multi-Singer Singing Voice Synthesis with Short Reference Prompt"
