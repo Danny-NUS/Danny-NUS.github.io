@@ -24,9 +24,9 @@ main:
     authors: Wei Zeng, <b>Junchuan Zhao</b>, Ye Wang
     conference: Arxiv, 2025.
     conference_short: Arxiv
-    pdf: https://arxiv.org/pdf/2509.19883
-    page: https://danny-nus.github.io/SPSinger/
-    image: ./assets/img/CoMelSinger.png
+    pdf: https://arxiv.org/pdf/2509.23878
+    page: https://jointpianist.github.io/epr-apt/
+    image: ./assets/img/JointPianist.jpg
     
   - title: "Prosody-Adaptable Audio Codecs for Zero-Shot Voice Conversion via In-Context Learning"
     authors: <b>Junchuan Zhao*</b>, Xintong Wang*, Ye Wang (* Equal Contribution)
