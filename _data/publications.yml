@@ -4,6 +4,7 @@ main:
     conference: Arxiv, 2025.
     conference_short: Arxiv
     pdf: https://arxiv.org/pdf/2509.20128
+    page: https://kincin.github.io/KSDiff/
     image: ./assets/img/KSDiff.jpg
     
   - title: "InconVAD: A Two-Stage Dual-Tower Framework for Multimodal Emotion Inconsistency Detection"
