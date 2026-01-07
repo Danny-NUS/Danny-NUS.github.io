@@ -5,7 +5,7 @@ main:
     conference_short: Arxiv
     pdf: https://arxiv.org/pdf/2601.03170
     page: https://yuan-hou.github.io/EmoTTS-DemoPage/
-    image: ./assets/img/KSDiff.jpg
+    image: ./assets/img/TED-TTS.png
   
   - title: "KSDiff: Keyframe-Augmented Speech-Aware Dual-Path Diffusion for Facial Animation"
     authors: Tianle Lyu*, <b>Junchuan Zhao</b>*, Ye Wang (* Equal Contribution)
