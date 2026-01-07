@@ -4,7 +4,7 @@ main:
     conference: Arxiv, 2026.
     conference_short: Arxiv
     pdf: https://arxiv.org/pdf/2601.03170
-    page: https://yuan-hou.github.io/EmoTTS-DemoPage/
+    page: https://yuan-hou.github.io/TED-TTS-DemoPage/
     image: ./assets/img/TED-TTS.png
   
   - title: "KSDiff: Keyframe-Augmented Speech-Aware Dual-Path Diffusion for Facial Animation"
