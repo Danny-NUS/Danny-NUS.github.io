@@ -1,5 +1,13 @@
 main:
   - title: "KSDiff: Keyframe-Augmented Speech-Aware Dual-Path Diffusion for Facial Animation"
+    authors: Qifan Liang, Yuansen Liu, Ruixin Wei, Nan Lu, <b>Junchuan Zhao</b>, Ye Wang
+    conference: Arxiv, 2026.
+    conference_short: Arxiv
+    pdf: https://arxiv.org/pdf/2601.03170
+    page: https://yuan-hou.github.io/EmoTTS-DemoPage/
+    image: ./assets/img/KSDiff.jpg
+  
+  - title: "KSDiff: Keyframe-Augmented Speech-Aware Dual-Path Diffusion for Facial Animation"
     authors: Tianle Lyu*, <b>Junchuan Zhao</b>*, Ye Wang (* Equal Contribution)
     conference: Arxiv, 2025.
     conference_short: Arxiv
