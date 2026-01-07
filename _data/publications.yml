@@ -1,5 +1,5 @@
 main:
-  - title: "KSDiff: Keyframe-Augmented Speech-Aware Dual-Path Diffusion for Facial Animation"
+  - title: "Segment-Aware Conditioning for Training-Free Intra-Utterance Emotion and Duration Control in Text-to-Speech"
     authors: Qifan Liang, Yuansen Liu, Ruixin Wei, Nan Lu, <b>Junchuan Zhao</b>, Ye Wang
     conference: Arxiv, 2026.
     conference_short: Arxiv
