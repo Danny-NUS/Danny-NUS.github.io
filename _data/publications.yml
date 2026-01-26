@@ -32,8 +32,8 @@ main:
 
   - title: "Disentangling Score Content and Performance Style for Joint Piano Rendering and Transcription"
     authors: Wei Zeng, <b>Junchuan Zhao</b>, Ye Wang
-    conference: Arxiv, 2025.
-    conference_short: Arxiv
+    conference: The Fourteenth International Conference on Learning Representations <b>(ICLR)</b>, 2026.
+    conference_short: ICLR
     pdf: https://arxiv.org/pdf/2509.23878
     page: https://jointpianist.github.io/epr-apt/
     image: ./assets/img/JointPianist.jpg
