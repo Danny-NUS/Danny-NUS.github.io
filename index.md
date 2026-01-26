@@ -15,7 +15,7 @@ Music has always been the heartbeat of my life and research. My deep passion for
 </div>
 
 ## Research Interests
-- **Sound and Music Computing:** singing and speech synthesis, singing expressive control, voice conversion
+- **Sound and Music Computing:** singing and speech synthesis, singing expressive control, voice conversion, talking head generation
 - **Machine Learning:** generative modeling, transfer learning
 
 ## News
