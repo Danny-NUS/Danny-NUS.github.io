@@ -42,6 +42,8 @@ Music has always been the heartbeat of my life and research. My deep passion for
 {% include_relative _includes/honours.md %}
 
 ## Teaching
+- Teaching Assistant, CS3244, Machine Learning, Sem2 AY2025/2026.
+- Teaching Assistant, CS4347/CS5647, Sound and Music Computing, Sem1 AY2025/2026.
 - Teaching Assistant, CS4347/CS5647, Sound and Music Computing, Sem1 AY2024/2025.
 
 <div id="clustrmaps-container">
