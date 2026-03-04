@@ -1,5 +1,5 @@
 main:
-  - title: "Segment-Aware Conditioning for Training-Free Intra-Utterance Emotion and Duration Control in Text-to-Speech"
+  - title: "CodecFlow: Efficient Bandwidth Extension via Conditional Flow Matching in Neural Codec Latent Space"
     authors: Bowen Zhang*, <b>Junchuan Zhao</b>*, A S Madhukumar, Ye Wang, Ian McLoughlin (* Equal Contribution)
     conference: Arxiv, 2026.
     conference_short: Arxiv
