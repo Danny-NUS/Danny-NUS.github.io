@@ -1,5 +1,12 @@
 main:
   - title: "Segment-Aware Conditioning for Training-Free Intra-Utterance Emotion and Duration Control in Text-to-Speech"
+    authors: Bowen Zhang*, <b>Junchuan Zhao</b>*, A S Madhukumar, Ye Wang, Ian McLoughlin (* Equal Contribution)
+    conference: Arxiv, 2026.
+    conference_short: Arxiv
+    pdf: http://arxiv.org/abs/2603.02022
+    image: ./assets/img/CodecFlow.png
+    
+  - title: "Segment-Aware Conditioning for Training-Free Intra-Utterance Emotion and Duration Control in Text-to-Speech"
     authors: Qifan Liang, Yuansen Liu, Ruixin Wei, Nan Lu, <b>Junchuan Zhao</b>, Ye Wang
     conference: Arxiv, 2026.
     conference_short: Arxiv
