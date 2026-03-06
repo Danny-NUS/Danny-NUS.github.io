@@ -4,7 +4,7 @@ main:
     conference: Arxiv, 2026.
     conference_short: Arxiv
     pdf: https://arxiv.org/pdf/2603.05373
-    image: ./assets/img/MSpoofTTS.pdf
+    image: ./assets/img/MSpoofTTS.jpg
     
   - title: "CodecFlow: Efficient Bandwidth Extension via Conditional Flow Matching in Neural Codec Latent Space"
     authors: Bowen Zhang*, <b>Junchuan Zhao</b>*, A S Madhukumar, Ye Wang, Ian McLoughlin (* Equal Contribution)
