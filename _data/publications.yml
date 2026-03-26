@@ -11,6 +11,7 @@ main:
     conference: Arxiv, 2026.
     conference_short: Arxiv
     pdf: http://arxiv.org/abs/2603.02022
+    page: https://danny-nus.github.io/CodecFlow/
     image: ./assets/img/CodecFlow.png
     
   - title: "Segment-Aware Conditioning for Training-Free Intra-Utterance Emotion and Duration Control in Text-to-Speech"
@@ -42,6 +43,7 @@ main:
     conference: IEEE Transactions on Audio, Speech, and Language Processing <b>(TASLP)</b>, 2026.
     pdf: https://arxiv.org/pdf/2509.19883
     page: https://danny-nus.github.io/CoMelSinger/
+    bibtex: https://scholar.googleusercontent.com/scholar.bib?q=info:P2e6W4_6QVAJ:scholar.google.com/&output=citation&scisdr=CjwwgzI0ELTR_AB2HtI:ADi0EEUAAAAAacVwBtICBDUqUjjrGFtFYvAsc3o&scisig=ADi0EEUAAAAAacVwBs272JuTipujNmswKsWpZQI&scisf=4&ct=citation&cd=-1&hl=zh-CN
     image: ./assets/img/CoMelSinger.png
 
   - title: "Disentangling Score Content and Performance Style for Joint Piano Rendering and Transcription"
