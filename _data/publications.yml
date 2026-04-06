@@ -16,8 +16,8 @@ main:
     
   - title: "Segment-Aware Conditioning for Training-Free Intra-Utterance Emotion and Duration Control in Text-to-Speech"
     authors: Qifan Liang, Yuansen Liu, Ruixin Wei, Nan Lu, <b>Junchuan Zhao</b>, Ye Wang
-    conference: Arxiv, 2026.
-    conference_short: Arxiv
+    conference: The 64th Annual Meeting of the Association for Computational Linguistics<b>(ACL Main)</b>, 2026.
+    conference_short: ACL
     pdf: https://arxiv.org/pdf/2601.03170
     page: https://yuan-hou.github.io/TED-TTS-DemoPage/
     image: ./assets/img/TED-TTS.png
