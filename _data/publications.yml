@@ -1,4 +1,12 @@
 main:
+  - title: "PersonaGest: Personalized Co-Speech Gesture Generation with Semantic-Guided Hierarchical Motion Representation"
+      authors: <b>Junchuan Zhao</b>*, Qifan Liang*, Ye Wang (* Equal Contribution)
+      conference: Arxiv, 2026.
+      conference_short: Arxiv
+      pdf: https://arxiv.org/pdf/2605.07252v1
+      page: https://danny-nus.github.io/PersonaGest/
+      image: ./assets/img/PersonaGest.jpg
+    
   - title: "Hierarchical Decoding for Discrete Speech Synthesis with Multi-Resolution Spoof Detection"
     authors: <b>Junchuan Zhao</b>*, Minh Duc Vu*, Ye Wang (* Equal Contribution)
     conference: Arxiv, 2026.
