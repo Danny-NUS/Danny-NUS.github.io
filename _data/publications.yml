@@ -1,4 +1,12 @@
-main:
+  main:
+  - title: "PersonaGest: Personalized Co-Speech Gesture Generation with Semantic-Guided Hierarchical Motion Representation"
+    authors: Leduo Chen, <b>Junchuan Zhao†</b>, Shengchen Li
+    conference: Arxiv, 2026.
+    conference_short: Arxiv
+    pdf: https://arxiv.org/pdf/2605.09259
+    page: https://mixturett.github.io/Mixture_TT/
+    image: ./assets/img/MixtureTT.png
+    
   - title: "PersonaGest: Personalized Co-Speech Gesture Generation with Semantic-Guided Hierarchical Motion Representation"
     authors: <b>Junchuan Zhao</b>*, Qifan Liang*, Ye Wang (* Equal Contribution)
     conference: Arxiv, 2026.
@@ -24,7 +32,7 @@ main:
     image: ./assets/img/CodecFlow.png
     
   - title: "Segment-Aware Conditioning for Training-Free Intra-Utterance Emotion and Duration Control in Text-to-Speech"
-    authors: Qifan Liang, Yuansen Liu, Ruixin Wei, Nan Lu, <b>Junchuan Zhao</b>, Ye Wang
+    authors: Qifan Liang, Yuansen Liu, Ruixin Wei, Nan Lu, <b>Junchuan Zhao†</b>, Ye Wang
     conference: The 64th Annual Meeting of the Association for Computational Linguistics <b>(ACL Main)</b>, 2026.
     conference_short: ACL
     pdf: https://arxiv.org/pdf/2601.03170
