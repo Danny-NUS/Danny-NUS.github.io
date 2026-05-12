@@ -595,3 +595,59 @@ footer {
   display:none;
   font-family: monospace;
 }
+
+.pub-category {
+  margin-top: 28px;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e5e5e5;
+  color: #5C2C18;
+  font-size: 115%;
+  font-weight: 600;
+}
+
+.pub-category-list {
+  margin-bottom: 12px;
+}
+
+.compact-pub-row {
+  margin-bottom: 16px;
+  align-items: center;
+}
+
+.pub-img-col {
+  position: relative;
+  padding-right: 12px;
+  padding-left: 10px;
+}
+
+.pub-text-col {
+  position: relative;
+  padding-right: 10px;
+  padding-left: 16px;
+}
+
+.pub-teaser {
+  width: 100%;
+  max-height: 105px;
+  object-fit: contain;
+}
+
+.links a {
+  font-size: 12px;
+}
+
+.publications li {
+  margin-bottom: 4px;
+}
+
+.publications br {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .pub-category {
+    color: #86A18B;
+    border-bottom: 1px solid #444;
+  }
+}

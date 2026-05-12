@@ -1,4 +1,4 @@
-  main:
+main:
   - title: "Remix the Timbre: Diffusion-Based Style Transfer Across Polyphonic Stems"
     authors: Leduo Chen, <b>Junchuan Zhao†</b>, Shengchen Li
     conference: Arxiv, 2026.
@@ -6,7 +6,8 @@
     pdf: https://arxiv.org/pdf/2605.09259
     page: https://mixturett.github.io/Mixture_TT/
     image: ./assets/img/MixtureTT.png
-    
+    category: music_audio
+
   - title: "PersonaGest: Personalized Co-Speech Gesture Generation with Semantic-Guided Hierarchical Motion Representation"
     authors: <b>Junchuan Zhao</b>*, Qifan Liang*, Ye Wang (* Equal Contribution)
     conference: Arxiv, 2026.
@@ -14,7 +15,8 @@
     pdf: https://arxiv.org/pdf/2605.07252v1
     page: https://danny-nus.github.io/PersonaGest/
     image: ./assets/img/PersonaGest.jpg
-      
+    category: human_animation
+
   - title: "Hierarchical Decoding for Discrete Speech Synthesis with Multi-Resolution Spoof Detection"
     authors: <b>Junchuan Zhao</b>*, Minh Duc Vu*, Ye Wang (* Equal Contribution)
     conference: Arxiv, 2026.
@@ -22,7 +24,8 @@
     pdf: https://arxiv.org/pdf/2603.05373
     page: https://danny-nus.github.io/MSpoofTTS.github.io/
     image: ./assets/img/MSpoofTTS.jpg
-    
+    category: speech
+
   - title: "CodecFlow: Efficient Bandwidth Extension via Conditional Flow Matching in Neural Codec Latent Space"
     authors: Bowen Zhang*, <b>Junchuan Zhao</b>*, A S Madhukumar, Ye Wang, Ian McLoughlin (* Equal Contribution)
     conference: Arxiv, 2026.
@@ -30,7 +33,8 @@
     pdf: http://arxiv.org/abs/2603.02022
     page: https://danny-nus.github.io/CodecFlow/
     image: ./assets/img/CodecFlow.png
-    
+    category: speech
+
   - title: "Segment-Aware Conditioning for Training-Free Intra-Utterance Emotion and Duration Control in Text-to-Speech"
     authors: Qifan Liang, Yuansen Liu, Ruixin Wei, Nan Lu, <b>Junchuan Zhao†</b>, Ye Wang
     conference: The 64th Annual Meeting of the Association for Computational Linguistics <b>(ACL Main)</b>, 2026.
@@ -38,7 +42,8 @@
     pdf: https://arxiv.org/pdf/2601.03170
     page: https://yuan-hou.github.io/TED-TTS-DemoPage/
     image: ./assets/img/TED-TTS.png
-  
+    category: speech
+
   - title: "KSDiff: Keyframe-Augmented Speech-Aware Dual-Path Diffusion for Facial Animation"
     authors: Tianle Lyu*, <b>Junchuan Zhao</b>*, Ye Wang (* Equal Contribution)
     conference: IEEE International Conference on Acoustics, Speech, and Signal Processing <b>(ICASSP)</b>, 2026.
@@ -46,14 +51,16 @@
     pdf: https://arxiv.org/pdf/2509.20128
     page: https://kincin.github.io/KSDiff/
     image: ./assets/img/KSDiff.jpg
-    
+    category: human_animation
+
   - title: "InconVAD: A Two-Stage Dual-Tower Framework for Multimodal Emotion Inconsistency Detection"
     authors: Zongyi Li, <b>Junchuan Zhao</b>, Francis Bu Sung Lee, Andrew Zi Han Yee
     conference: IEEE International Conference on Acoustics, Speech, and Signal Processing <b>(ICASSP)</b>, 2026.
     conference_short: ICASSP
     pdf: https://arxiv.org/pdf/2509.20140
     image: ./assets/img/InconVAD.png
-    
+    category: affective
+
   - title: "CoMelSinger: Discrete Token-Based Zero-Shot Singing Synthesis With Structured Melody Control and Guidance"
     authors: <b>Junchuan Zhao</b>, Wei Zeng, Tianle Lyu, Ye Wang
     conference_short: TASLP
@@ -62,6 +69,7 @@
     page: https://danny-nus.github.io/CoMelSinger/
     bibtex: https://scholar.googleusercontent.com/scholar.bib?q=info:P2e6W4_6QVAJ:scholar.google.com/&output=citation&scisdr=CjwwgzI0ELTR_AB2HtI:ADi0EEUAAAAAacVwBtICBDUqUjjrGFtFYvAsc3o&scisig=ADi0EEUAAAAAacVwBs272JuTipujNmswKsWpZQI&scisf=4&ct=citation&cd=-1&hl=zh-CN
     image: ./assets/img/CoMelSinger.png
+    category: speech
 
   - title: "Disentangling Score Content and Performance Style for Joint Piano Rendering and Transcription"
     authors: Wei Zeng, <b>Junchuan Zhao</b>, Ye Wang
@@ -70,7 +78,8 @@
     pdf: https://arxiv.org/pdf/2509.23878
     page: https://jointpianist.github.io/epr-apt/
     image: ./assets/img/JointPianist.jpg
-    
+    category: music_audio
+
   - title: "Prosody-Adaptable Audio Codecs for Zero-Shot Voice Conversion via In-Context Learning"
     authors: <b>Junchuan Zhao*</b>, Xintong Wang*, Ye Wang (* Equal Contribution)
     conference_short: Interspeech
@@ -78,6 +87,7 @@
     pdf: https://www.isca-archive.org/interspeech_2025/zhao25d_interspeech.pdf
     bibtex: https://www.isca-archive.org/interspeech_2025/zhao25d_interspeech.html#
     image: ./assets/img/PACE.png
+    category: speech
 
   - title: "SPSinger: Multi-Singer Singing Voice Synthesis with Short Reference Prompt"
     authors: <b>Junchuan Zhao</b>, Low Qi Hong Chetwin, Ye Wang
@@ -87,6 +97,7 @@
     page: https://danny-nus.github.io/SPSinger/
     bibtex: https://scholar.googleusercontent.com/scholar.bib?q=info:tz9NldZwCyIJ:scholar.google.com/&output=citation&scisdr=CgKRonx9EKHPyZStGWA:AAZF9b8AAAAAaC6rAWDQs7zmA2fY6Vty_Sq0Rss&scisig=AAZF9b8AAAAAaC6rAXburco5_WK_FVVwu3Iyu74&scisf=4&ct=citation&cd=-1&hl=zh-CN
     image: ./assets/img/SPSinger_overall.png
+    category: speech
 
   - title: "SinTechSVS: A Singing Technique Controllable Singing Voice Synthesis System"
     authors: <b>Junchuan Zhao</b>, Low Qi Hong Chetwin, Ye Wang
@@ -95,4 +106,5 @@
     pdf: https://ieeexplore-ieee-org.libproxy1.nus.edu.sg/stamp/stamp.jsp?tp=&arnumber=10509739
     page: https://danny-nus.github.io/SinTechSVS/
     bibtex: https://scholar.googleusercontent.com/scholar.bib?q=info:IVkbR1ghWkcJ:scholar.google.com/&output=citation&scisdr=ClE0-pEMEJXsksn9fHY:AFWwaeYAAAAAZmH7ZHbXtauA73Df9soiQ89Z-bg&scisig=AFWwaeYAAAAAZmH7ZKNC1b5yaYwsdzWsjgU8ERU&scisf=4&ct=citation&cd=-1&hl=zh-CN
-    image: ./assets/img/overall--1.png
+    image: ./assets/img/SinTechSVS.png
+    category: speech
