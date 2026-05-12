@@ -15,9 +15,9 @@ Music has always been the heartbeat of my life and research. My deep passion for
 </div>
 
 ## Research Interests
-- **Speech and Audio Generation:** speech and singing voice synthesis, voice conversion, neural audio codecs.
-- **Audio-Driven Human Generation:** talking head generation, co-speech gesture generation.
-- **Machine Learning**: controllable and structured generative modeling.
+- <b>Speech and Audio Generation</b>: speech and singing voice synthesis, voice conversion, neural audio codecs.
+- <b>Audio-Driven Human Generation</b>: talking head generation, co-speech gesture generation.
+- <b>Machine Learning</b>: controllable and structured generative modeling.
 
 ## News
 <div class="scrollable-content">
