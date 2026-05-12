@@ -21,6 +21,7 @@ Music has always been the heartbeat of my life and research. My deep passion for
 ## News
 <div class="scrollable-content">
     <ul>
+        <li><b>[May. 2026]</b> I'm joining Tencent as a Research Intern in Speech Synthesis in Singapore!</li>
         <li><b>[Apr. 2026]</b> One paper has been accepted by the 64th Annual Meeting of the Association for Computational Linguistics, Main Conference (<a href="https://signalprocessingsociety.org/publications-resources/ieee-transactions-audio-speech-and-language-processing">ACL 2026 - Main</a>)!</li>
         <li><b>[Feb. 2026]</b> One paper has been accepted by IEEE Transactions on Audio, Speech and Language Processing (<a href="https://signalprocessingsociety.org/publications-resources/ieee-transactions-audio-speech-and-language-processing">TASLP 2026</a>)!</li>
         <li><b>[Feb. 2026]</b> One paper has been accepted by International Conference on Learning Representations (<a href="https://iclr.cc/">ICLR 2026</a>)!</li>
