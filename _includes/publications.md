@@ -42,26 +42,27 @@ affective|Affective Speech & Multimodal Learning" | split: "," %}
           {% if link.pdf %}
           <a href="{{ link.pdf }}" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
           {% endif %}
+
           {% if link.code %}
           <a href="{{ link.code }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Code</a>
           {% endif %}
+
           {% if link.page %}
           <a href="{{ link.page }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Project Page</a>
           {% endif %}
+
+          {% if link.bibtex %}
+          <button class="btn btn-sm z-depth-0 bib-btn" type="button" onclick='copyBibtex(`{{ link.bibtex | escape }}`)'>BibTeX</button>
+          {% endif %}
+
           {% if link.notes %}
           <strong><i style="color:#e74d3c">{{ link.notes }}</i></strong>
           {% endif %}
+
           {% if link.others %}
           {{ link.others }}
           {% endif %}
         </div>
-
-        {% if link.bibtex %}
-        <details class="bibtex-box">
-          <summary>BibTeX</summary>
-          <pre>{{ link.bibtex }}</pre>
-        </details>
-        {% endif %}
       </div>
     </div>
     </li>
@@ -74,3 +75,19 @@ affective|Affective Speech & Multimodal Learning" | split: "," %}
 {% endfor %}
 
 </div>
+
+<script>
+function copyBibtex(text) {
+  navigator.clipboard.writeText(text);
+
+  const notice = document.createElement("div");
+  notice.innerText = "BibTeX copied!";
+  notice.className = "copy-notice";
+
+  document.body.appendChild(notice);
+
+  setTimeout(() => {
+    notice.remove();
+  }, 1200);
+}
+</script>
