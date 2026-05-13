@@ -13,81 +13,122 @@ affective|Affective Speech & Multimodal Learning" | split: "," %}
 {% assign cat_key = pair[0] | strip %}
 {% assign cat_name = pair[1] | strip %}
 
-  <div class="pub-category">
-    {{ forloop.index }}. {{ cat_name }}
-  </div>
+<div class="pub-category">
+  {{ forloop.index }}. {{ cat_name }}
+</div>
 
-  <ol class="bibliography pub-category-list">
+<ol class="bibliography pub-category-list">
 
 {% for link in site.data.publications.main %}
 {% if link.category == cat_key %}
 
-    <li>
-    <div class="pub-row compact-pub-row">
-      <div class="col-sm-3 abbr pub-img-col">
-        {% if link.image %}
-        <img src="{{ link.image }}" class="teaser img-fluid z-depth-1 pub-teaser">
-        {% endif %}
-        {% if link.conference_short %}
-        <abbr class="badge">{{ link.conference_short }}</abbr>
-        {% endif %}
-      </div>
+<li>
+<div class="pub-row compact-pub-row">
 
-      <div class="col-sm-9 pub-text-col">
-        <div class="title pub-title"><a href="{{ link.pdf }}">{{ link.title }}</a></div>
-        <div class="author pub-author">{{ link.authors }}</div>
-        <div class="periodical pub-venue"><em>{{ link.conference }}</em></div>
+  <div class="col-sm-3 abbr pub-img-col">
+    {% if link.image %}
+    <img src="{{ link.image }}" class="teaser img-fluid z-depth-1 pub-teaser">
+    {% endif %}
 
-        <div class="links pub-links">
-          {% if link.pdf %}
-          <a href="{{ link.pdf }}" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
-          {% endif %}
+    {% if link.conference_short %}
+    <abbr class="badge">{{ link.conference_short }}</abbr>
+    {% endif %}
 
-          {% if link.code %}
-          <a href="{{ link.code }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Code</a>
-          {% endif %}
+  </div>
 
-          {% if link.page %}
-          <a href="{{ link.page }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Project Page</a>
-          {% endif %}
+  <div class="col-sm-9 pub-text-col">
 
-          {% if link.bibtex %}
-          <button class="btn btn-sm z-depth-0 bib-btn" type="button" onclick='copyBibtex(`{{ link.bibtex | escape }}`)'>BibTeX</button>
-          {% endif %}
-
-          {% if link.notes %}
-          <strong><i style="color:#e74d3c">{{ link.notes }}</i></strong>
-          {% endif %}
-
-          {% if link.others %}
-          {{ link.others }}
-          {% endif %}
-        </div>
-      </div>
+    <div class="title pub-title">
+      <a href="{{ link.pdf }}">{{ link.title }}</a>
     </div>
-    </li>
+
+    <div class="author pub-author">
+      {{ link.authors }}
+    </div>
+
+    <div class="periodical pub-venue">
+      <em>{{ link.conference }}</em>
+    </div>
+
+    <div class="links pub-links">
+
+      {% if link.pdf %}
+      <a href="{{ link.pdf }}"
+         class="btn btn-sm z-depth-0"
+         role="button"
+         target="_blank">
+         PDF
+      </a>
+      {% endif %}
+
+      {% if link.code %}
+      <a href="{{ link.code }}"
+         class="btn btn-sm z-depth-0"
+         role="button"
+         target="_blank">
+         Code
+      </a>
+      {% endif %}
+
+      {% if link.page %}
+      <a href="{{ link.page }}"
+         class="btn btn-sm z-depth-0"
+         role="button"
+         target="_blank">
+         Project Page
+      </a>
+      {% endif %}
+
+      {% if link.bibtex %}
+      <button class="btn btn-sm z-depth-0 bib-btn"
+              type="button"
+              onclick='copyBibtex(this, `{{ link.bibtex | escape }}`)'>
+              BibTeX
+      </button>
+      {% endif %}
+
+      {% if link.notes %}
+      <strong>
+        <i style="color:#e74d3c">{{ link.notes }}</i>
+      </strong>
+      {% endif %}
+
+      {% if link.others %}
+      {{ link.others }}
+      {% endif %}
+
+    </div>
+
+  </div>
+
+</div>
+</li>
 
 {% endif %}
 {% endfor %}
 
-  </ol>
+</ol>
 
 {% endfor %}
 
 </div>
 
 <script>
-function copyBibtex(text) {
-  navigator.clipboard.writeText(text);
+function copyBibtex(btn, text) {
 
-  const notice = document.createElement("div");
-  notice.innerText = "BibTeX copied!";
-  notice.className = "copy-notice";
+  navigator.clipboard.writeText(text).then(function() {
 
-  document.body.appendChild(notice);
+    const oldText = btn.innerText;
 
-  setTimeout(() => {
-    notice.remove();
-  }, 1200);
+    btn.innerText = "Copied!";
+    btn.classList.add("copied");
+
+    setTimeout(function() {
+      btn.innerText = oldText;
+      btn.classList.remove("copied");
+    }, 1200);
+
+  });
+
 }
 </script>
