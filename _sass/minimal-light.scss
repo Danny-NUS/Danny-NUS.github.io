@@ -597,166 +597,18 @@ footer {
 }
 
 .pub-category {
-  margin-top: 24px;
-  margin-bottom: 9px;
-  padding-bottom: 5px;
+  margin-top: 28px;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
   border-bottom: 1px solid #e5e5e5;
   color: #5C2C18;
-  font-size: 108%;
+  font-size: 115%;
   font-weight: 600;
-}
-
-.pub-category-list {
-  margin-bottom: 8px;
-}
-
-.compact-pub-row {
-  margin-bottom: 8px;
-  align-items: center;
-}
-
-.pub-img-col {
-  position: relative;
-  padding-right: 10px;
-  padding-left: 8px;
-}
-
-.pub-text-col {
-  position: relative;
-  padding-right: 8px;
-  padding-left: 14px;
-}
-
-.pub-teaser {
-  width: 100%;
-  max-height: 82px;
-  object-fit: contain;
-}
-
-.pub-title {
-  font-size: 92%;
-  line-height: 1.18;
-  margin-bottom: 1px;
-}
-
-.pub-author {
-  font-size: 82%;
-  line-height: 1.16;
-  margin-bottom: 1px;
-}
-
-.pub-venue {
-  font-size: 82%;
-  line-height: 1.16;
-  margin-bottom: 2px;
-}
-
-.pub-links a {
-  font-size: 11px;
-  padding: 1px 4px;
-}
-
-.publications li {
-  margin-bottom: 2px;
-}
-
-.publications br {
-  display: none;
-}
-
-.pub-category {
-  margin-top: 24px;
-  margin-bottom: 10px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #e5e5e5;
-  color: #5C2C18;
-  font-size: 110%;
-  font-weight: 600;
-}
-
-.pub-category-list {
-  margin-bottom: 10px;
-}
-
-.compact-pub-row {
-  margin-bottom: 10px;
-  align-items: center;
-}
-
-.pub-img-col {
-  position: relative;
-  padding-right: 12px;
-  padding-left: 10px;
-}
-
-.pub-text-col {
-  position: relative;
-  padding-right: 10px;
-  padding-left: 16px;
-}
-
-.pub-teaser {
-  width: 100%;
-  max-height: 88px;
-  object-fit: contain;
-}
-
-.pub-title {
-  line-height: 1.16;
-  margin-bottom: 2px;
-}
-
-.pub-author {
-  line-height: 1.15;
-  margin-bottom: 1px;
-}
-
-.pub-venue {
-  line-height: 1.15;
-  margin-bottom: 2px;
-}
-
-.pub-links a,
-.bib-btn {
-  font-size: 12px;
-}
-
-.publications li {
-  margin-bottom: 2px;
-}
-
-.publications br {
-  display: none;
-}
-
-.bib-btn {
-  background: transparent;
-  cursor: pointer;
-}
-
-.bib-btn.copied {
-  color: #2e7d32;
 }
 
 @media (prefers-color-scheme: dark) {
-
   .pub-category {
     color: #86A18B;
     border-bottom: 1px solid #444;
-  }
-
-  .bib-btn.copied {
-    color: #81c784;
-  }
-}
-
-@media print, screen and (max-width: 480px) {
-
-  .pub-teaser {
-    max-height: 120px;
-  }
-
-  .pub-text-col {
-    padding-left: 8px;
   }
 }
