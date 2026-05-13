@@ -34,11 +34,11 @@ affective|Affective Speech & Multimodal Learning" | split: "," %}
       </div>
 
       <div class="col-sm-9 pub-text-col">
-        <div class="title"><a href="{{ link.pdf }}">{{ link.title }}</a></div>
-        <div class="author">{{ link.authors }}</div>
-        <div class="periodical"><em>{{ link.conference }}</em></div>
+        <div class="title pub-title"><a href="{{ link.pdf }}">{{ link.title }}</a></div>
+        <div class="author pub-author">{{ link.authors }}</div>
+        <div class="periodical pub-venue"><em>{{ link.conference }}</em></div>
 
-        <div class="links">
+        <div class="links pub-links">
           {% if link.pdf %}
           <a href="{{ link.pdf }}" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
           {% endif %}
@@ -48,9 +48,6 @@ affective|Affective Speech & Multimodal Learning" | split: "," %}
           {% if link.page %}
           <a href="{{ link.page }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Project Page</a>
           {% endif %}
-          {% if link.bibtex %}
-          <a href="{{ link.bibtex }}" class="btn btn-sm z-depth-0" role="button" target="_blank">BibTex</a>
-          {% endif %}
           {% if link.notes %}
           <strong><i style="color:#e74d3c">{{ link.notes }}</i></strong>
           {% endif %}
@@ -58,12 +55,18 @@ affective|Affective Speech & Multimodal Learning" | split: "," %}
           {{ link.others }}
           {% endif %}
         </div>
+
+        {% if link.bibtex %}
+        <details class="bibtex-box">
+          <summary>BibTeX</summary>
+          <pre>{{ link.bibtex }}</pre>
+        </details>
+        {% endif %}
       </div>
     </div>
     </li>
 
-    {% endif %}
-
+{% endif %}
 {% endfor %}
 
   </ol>

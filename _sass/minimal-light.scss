@@ -597,57 +597,128 @@ footer {
 }
 
 .pub-category {
-  margin-top: 28px;
-  margin-bottom: 12px;
-  padding-bottom: 6px;
+  margin-top: 24px;
+  margin-bottom: 9px;
+  padding-bottom: 5px;
   border-bottom: 1px solid #e5e5e5;
   color: #5C2C18;
-  font-size: 115%;
+  font-size: 108%;
   font-weight: 600;
 }
 
 .pub-category-list {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .compact-pub-row {
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   align-items: center;
 }
 
 .pub-img-col {
   position: relative;
-  padding-right: 12px;
-  padding-left: 10px;
+  padding-right: 10px;
+  padding-left: 8px;
 }
 
 .pub-text-col {
   position: relative;
-  padding-right: 10px;
-  padding-left: 16px;
+  padding-right: 8px;
+  padding-left: 14px;
 }
 
 .pub-teaser {
   width: 100%;
-  max-height: 105px;
+  max-height: 82px;
   object-fit: contain;
 }
 
-.links a {
-  font-size: 12px;
+.pub-title {
+  font-size: 92%;
+  line-height: 1.18;
+  margin-bottom: 1px;
+}
+
+.pub-author {
+  font-size: 82%;
+  line-height: 1.16;
+  margin-bottom: 1px;
+}
+
+.pub-venue {
+  font-size: 82%;
+  line-height: 1.16;
+  margin-bottom: 2px;
+}
+
+.pub-links a {
+  font-size: 11px;
+  padding: 1px 4px;
 }
 
 .publications li {
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .publications br {
   display: none;
 }
 
+.publications {
+  font-size: 90%;
+}
+
+.bibtex-box {
+  margin-top: 2px;
+  font-size: 11px;
+}
+
+.bibtex-box summary {
+  cursor: pointer;
+  color: #39c;
+  display: inline-block;
+  font-size: 11px;
+}
+
+.bibtex-box summary:hover {
+  color: #069;
+}
+
+.bibtex-box pre {
+  margin-top: 5px;
+  padding: 7px 9px;
+  max-width: 100%;
+  font-size: 10.5px;
+  line-height: 1.22;
+  white-space: pre-wrap;
+  background: #f8f8f8;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+}
+
 @media (prefers-color-scheme: dark) {
   .pub-category {
     color: #86A18B;
     border-bottom: 1px solid #444;
+  }
+
+  .bibtex-box summary {
+    color: #86A18B;
+  }
+
+  .bibtex-box pre {
+    background: #252631;
+    border-color: #444;
+    color: #dadbdf;
+  }
+}
+
+@media print, screen and (max-width: 480px) {
+  .pub-teaser {
+    max-height: 120px;
+  }
+
+  .pub-text-col {
+    padding-left: 8px;
   }
 }

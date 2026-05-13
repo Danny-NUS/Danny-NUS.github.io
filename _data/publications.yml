@@ -50,6 +50,16 @@ main:
     conference_short: ICASSP
     pdf: https://arxiv.org/pdf/2509.20128
     page: https://kincin.github.io/KSDiff/
+    bibtex: |
+      @INPROCEEDINGS{lyr2026ksdiff,
+        author={Lyu, Tianle and Zhao, Junchuan and Wang, Ye},
+        booktitle={ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
+        title={KSDIFF: Keyframe-Augmented Speech-Aware Dual-Path Diffusion for Facial Animation}, 
+        year={2026},
+        pages={13132-13136},
+        keywords={Feeds;Motion pictures;Broadcasting;Filtering;Filters;Videos;High frequency;Graphical user interfaces;Video equipment;Protocols;Talking head synthesis;Diffusion models;Keyframe modeling;Head pose and expression dynamics},
+        doi={10.1109/ICASSP55912.2026.11465063}
+      }
     image: ./assets/img/KSDiff.jpg
     category: human_animation
 
@@ -58,6 +68,16 @@ main:
     conference: IEEE International Conference on Acoustics, Speech, and Signal Processing <b>(ICASSP)</b>, 2026.
     conference_short: ICASSP
     pdf: https://arxiv.org/pdf/2509.20140
+    bibtex: |
+      @INPROCEEDINGS{li2026inconvad,
+        author={Li, Zongyi and Zhao, Junchuan and Lee, Francis Bu Sung and Yee, Andrew Zi Han},
+        booktitle={ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
+        title={InconVAD: A Two-Stage Dual-Tower Framework for Multimodal Emotion Inconsistency Detection}, 
+        year={2026},
+        pages={17962-17966},
+        keywords={Feeds;Antennas;Motion pictures;Broadcasting;Broadcast technology;Protocols;HTTP;Optical projectors;Codecs;LoRa;Multimodal emotion inconsistency detection;Affective computing;Cross-modal representation learning;Multi-modal emotion analysis},
+        doi={10.1109/ICASSP55912.2026.11460821}
+      }
     image: ./assets/img/InconVAD.png
     category: affective
 
@@ -67,16 +87,34 @@ main:
     conference: IEEE Transactions on Audio, Speech, and Language Processing <b>(TASLP)</b>, 2026.
     pdf: https://arxiv.org/pdf/2509.19883
     page: https://danny-nus.github.io/CoMelSinger/
-    bibtex: https://scholar.googleusercontent.com/scholar.bib?q=info:P2e6W4_6QVAJ:scholar.google.com/&output=citation&scisdr=CjwwgzI0ELTR_AB2HtI:ADi0EEUAAAAAacVwBtICBDUqUjjrGFtFYvAsc3o&scisig=ADi0EEUAAAAAacVwBs272JuTipujNmswKsWpZQI&scisf=4&ct=citation&cd=-1&hl=zh-CN
+    bibtex: |
+      @ARTICLE{zhao2026comelsinger,
+        author={Zhao, Junchuan and Zeng, Wei and Lyu, Tianle and Wang, Ye},
+        journal={IEEE Transactions on Audio, Speech and Language Processing}, 
+        title={CoMelSinger: Discrete Token-Based Zero-Shot Singing Synthesis With Structured Melody Control and Guidance}, 
+        year={2026},
+        volume={34},
+        pages={1374-1387},
+        keywords={Acoustics;Timbre;Music;Hidden Markov models;Codecs;Accuracy;Decoding;Periodic structures;Contrastive learning;Adaptation models;Singing voice synthesis;zero-shot singing voice synthesis;voice cloning;neural codecs;deep learning;masked generative models},
+        doi={10.1109/TASLPRO.2026.3664643}
+      }
     image: ./assets/img/CoMelSinger.png
     category: speech
 
-  - title: "Disentangling Score Content and Performance Style for Joint Piano Rendering and Transcription"
+  - title: "Bridging Piano Transcription and Rendering via Disentangled Score Content and Style"
     authors: Wei Zeng, <b>Junchuan Zhao</b>, Ye Wang
     conference: The Fourteenth International Conference on Learning Representations <b>(ICLR)</b>, 2026.
     conference_short: ICLR
-    pdf: https://arxiv.org/pdf/2509.23878
+    pdf: https://openreview.net/pdf?id=173Pq3F31r
     page: https://jointpianist.github.io/epr-apt/
+    bibtex: |
+      @inproceedings{
+        zeng2026bridging,
+        title={Bridging Piano Transcription and Rendering via Disentangled Score Content and Style},
+        author={Wei Zeng and JUNCHUAN ZHAO and Ye Wang},
+        booktitle={The Fourteenth International Conference on Learning Representations},
+        year={2026},
+      }
     image: ./assets/img/JointPianist.jpg
     category: music_audio
 
@@ -85,7 +123,16 @@ main:
     conference_short: Interspeech
     conference: 26th edition of the Interspeech Conference <b>(Interspeech)</b>, 2025.
     pdf: https://www.isca-archive.org/interspeech_2025/zhao25d_interspeech.pdf
-    bibtex: https://www.isca-archive.org/interspeech_2025/zhao25d_interspeech.html#
+    bibtex: |
+      @inproceedings{zhao25d_interspeech,
+        title     = {{Prosody-Adaptable Audio Codecs for Zero-Shot Voice Conversion via In-Context Learning}},
+        author    = {Junchuan Zhao and Xintong Wang and Ye Wang},
+        year      = {2025},
+        booktitle = {{Interspeech 2025}},
+        pages     = {4893--4897},
+        doi       = {10.21437/Interspeech.2025-464},
+        issn      = {2958-1796},
+      }
     image: ./assets/img/PACE.png
     category: speech
 
@@ -95,9 +142,16 @@ main:
     conference: IEEE International Conference on Acoustics, Speech, and Signal Processing <b>(ICASSP)</b>, 2025.
     pdf: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10888907
     page: https://danny-nus.github.io/SPSinger/
-    bibtex: https://scholar.googleusercontent.com/scholar.bib?q=info:tz9NldZwCyIJ:scholar.google.com/&output=citation&scisdr=CgKRonx9EKHPyZStGWA:AAZF9b8AAAAAaC6rAWDQs7zmA2fY6Vty_Sq0Rss&scisig=AAZF9b8AAAAAaC6rAXburco5_WK_FVVwu3Iyu74&scisf=4&ct=citation&cd=-1&hl=zh-CN
-    image: ./assets/img/SPSinger_overall.png
-    category: speech
+    bibtex: |
+      @INPROCEEDINGS{zhao2025spsinger,
+        author={Zhao, Junchuan and Low, Chetwin and Wang, Ye},
+        booktitle={ICASSP 2025 - 2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
+        title={SPSinger: Multi-Singer Singing Voice Synthesis with Short Reference Prompt}, 
+        year={2025},
+        pages={1-5},
+        keywords={Training;Adaptation models;Synthesizers;Training data;Signal processing algorithms;Signal processing;Feature extraction;Transformers;Timbre;Speech processing;Singing voice synthesis;Multi-singer singing voice synthesis;Acoustic models;Diffusion models},
+        doi={10.1109/ICASSP49660.2025.10888907}
+      }
 
   - title: "SinTechSVS: A Singing Technique Controllable Singing Voice Synthesis System"
     authors: <b>Junchuan Zhao</b>, Low Qi Hong Chetwin, Ye Wang
@@ -105,6 +159,16 @@ main:
     conference: IEEE/ACM Transactions on Audio, Speech, and Language Processing <b>(TASLP)</b>, 2024.
     pdf: https://ieeexplore-ieee-org.libproxy1.nus.edu.sg/stamp/stamp.jsp?tp=&arnumber=10509739
     page: https://danny-nus.github.io/SinTechSVS/
-    bibtex: https://scholar.googleusercontent.com/scholar.bib?q=info:IVkbR1ghWkcJ:scholar.google.com/&output=citation&scisdr=ClE0-pEMEJXsksn9fHY:AFWwaeYAAAAAZmH7ZHbXtauA73Df9soiQ89Z-bg&scisig=AFWwaeYAAAAAZmH7ZKNC1b5yaYwsdzWsjgU8ERU&scisf=4&ct=citation&cd=-1&hl=zh-CN
+    bibtex: |
+      @ARTICLE{zhao2024sintechsvs,
+        author={Zhao, Junchuan and Chetwin, Low Qi Hong and Wang, Ye},
+        journal={IEEE/ACM Transactions on Audio, Speech, and Language Processing}, 
+        title={SinTechSVS: A Singing Technique Controllable Singing Voice Synthesis System}, 
+        year={2024},
+        volume={32},
+        pages={2641-2653},
+        keywords={Hidden Markov models;Annotations;Timbre;Task analysis;Deep learning;Synthesizers;Controllability;Singing voice synthesis;singing voice synthesis conditioned on singing techniques;singing technique classification;singing technique recommendation;metric;deep learning},
+        doi={10.1109/TASLP.2024.3394769}
+      }
     image: ./assets/img/SinTechSVS.png
     category: speech
