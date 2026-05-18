@@ -42,6 +42,7 @@ main:
     pdf: https://arxiv.org/pdf/2601.03170
     page: https://simon-leong.github.io/TED-TTS-DemoPage/
     code: https://github.com/Simon-leong/TED-TTS
+    data: https://huggingface.co/datasets/Chanson-0803/MED-TTS
     image: ./assets/img/TED-TTS.png
     category: speech
 
