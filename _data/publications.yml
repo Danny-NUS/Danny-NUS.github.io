@@ -154,7 +154,7 @@ main:
         keywords={Training;Adaptation models;Synthesizers;Training data;Signal processing algorithms;Signal processing;Feature extraction;Transformers;Timbre;Speech processing;Singing voice synthesis;Multi-singer singing voice synthesis;Acoustic models;Diffusion models},
         doi={10.1109/ICASSP49660.2025.10888907}
       }
-    image: ./assets/img/SinTechSVS.png
+    image: ./assets/img/SPSinger_overall.png
     category: speech
 
   - title: "SinTechSVS: A Singing Technique Controllable Singing Voice Synthesis System"
