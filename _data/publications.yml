@@ -19,7 +19,7 @@ main:
 
   - title: "Hierarchical Decoding for Discrete Speech Synthesis with Multi-Resolution Spoof Detection"
     authors: <b>Junchuan Zhao</b>*, Minh Duc Vu*, Ye Wang (* Equal Contribution)
-    conference: Arxiv, 2026.
+    conference: Interspeech, 2026.
     conference_short: Arxiv
     pdf: https://arxiv.org/pdf/2603.05373
     page: https://danny-nus.github.io/MSpoofTTS.github.io/
