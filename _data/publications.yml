@@ -31,7 +31,7 @@
     page: https://danny-nus.github.io/CodecFlow/
     image: ./assets/img/CodecFlow.png
     
-  - title: "Segment-Aware Conditioning for Training-Free Intra-Utterance Emotion and Duration Control in Text-to-Speech"
+  - title: "TED-TTS: Training-Free Intra-Utterance Emotion and Duration Control for Text-to-Speech Synthesis"
     authors: Qifan Liang, Yuansen Liu, Ruixin Wei, Nan Lu, <b>Junchuan Zhao†</b>, Ye Wang
     conference: The 64th Annual Meeting of the Association for Computational Linguistics <b>(ACL Main)</b>, 2026.
     conference_short: ACL
