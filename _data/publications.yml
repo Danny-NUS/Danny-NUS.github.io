@@ -23,6 +23,7 @@ main:
     conference_short: Arxiv
     pdf: https://arxiv.org/pdf/2603.05373
     page: https://danny-nus.github.io/MSpoofTTS.github.io/
+    code: https://github.com/Danny-NUS/MSpoofTTS
     image: ./assets/img/MSpoofTTS.jpg
     category: speech
 
