@@ -1,109 +1,7 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
-    <title>{{ site.title }} | {{site.affiliation}}</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        h1, h2, h3, h4, h5, h6 {
-            color: #936347!important;
-        }
-        a{
-            color: #A5795C!important;
-            text-decoration: none;
-            transition: color 0.3s ease!important;
-        }
-        a:hover {
-            color: #936347!important;
-        }
-        body {
-            font-family: 'optima', serif; /* Apply Merriweather font to entire document */
-            padding:0px!important;
-            background-color: #F0F0EE!important;
-        }
-        .musician-link {
-            color: #8a7ecd!important;
-        }
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #20212b!important; /* Darker background for dark mode */
-            }
-            h1, h2, h3, h4, h5, h6 {
-                color: #D5BEA2!important;
-            }
-            a {
-                color: #D5BEA2!important;
-                text-decoration: none;
-                transition: color 0.3s ease!important;
-            }
-            a:hover {
-                color: #f6b26b!important;
-            }
-        }
-        p, ul, ol, table, pre, dl {
-            margin: 0;
-        }
-        #honours,#activities--services,#research-interests, #news, #publications, #about-me, #teaching {
-            padding-top: 50px;
-        }
-        .scrollable-content {
-            height: 220px; /* Adjust the height as needed */
-            overflow-y: scroll;
-            border: 1px solid transparent
-            background-color: rgba(181, 177, 158, 0.3); /* Light gray background */
-            padding: 10px; /* Optional: Add padding for better spacing */
-        }
-        .scrollable-content {
-            height: 220px; /* Adjust the height as needed */
-            overflow-y: scroll;
-            border: 1px solid transparent;
-            padding: 10px; /* Optional: Add padding for better spacing */
-            text-align: justify;
-        }        
-        /* Default light mode */
-        .scrollable-content {
-            background-color: rgba(227, 227, 227, 0.3); /* Light gray background */
-        }  
-        /* Dark mode */
-        @media (prefers-color-scheme: dark) {
-            .scrollable-content {
-                background-color: rgba(53, 53, 53, 0.3); /* Darker background for dark mode */
-            }
-        }        
-        .scrollable-content ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-        .scrollable-content li {
-            margin-bottom: 10px;
-        }
-        #clustrmaps-container {
-            width: 200px;  /* 设置你想要的宽度 */
-            height: 200px; /* 设置你想要的高度 */
-            position: absolute;  /* 允许绝对定位 */
-            bottom: 145px;  /* 调整顶部位置 */
-            left: 950px;  /* 调整左侧位置 */
-            overflow: hidden;  /* 确保没有溢出 */
-        }
-        #clustrmaps-container iframe {
-            width: 100%;
-            height: 100%;
-            transform: scale(0.15);  /* 根据需要调整缩放比例 */
-            transform-origin: top left;  /* 确保缩放从左上角开始 */
-        }
-    /* 当屏幕宽度小于1198px时隐藏clustrmaps-container */
-    @media screen and (max-width: 1198px) {
-        #clustrmaps-container {
-            display: none;
-        }
-    }
-    </style>
-
+    <title>{{ site.title }} | {{ site.affiliation }}</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -112,416 +10,1037 @@
     <meta name="keywords" content="{{ site.keywords }}">
     {% endif %}
     {% if site.canonical %}
-    <link rel="canonical" href="{{ site.canonical }}"/>
+    <link rel="canonical" href="{{ site.canonical }}">
     {% endif %}
 
-    <link rel="icon" media="(prefers-color-scheme:dark)" href="{{ site.favicon_dark }}" type="image/png"/>
-    <link rel="icon" media="(prefers-color-scheme:light)" href="{{ site.favicon }}" type="image/png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;650;750;850&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+    <link rel="icon" media="(prefers-color-scheme:dark)" href="{{ site.favicon_dark }}" type="image/png">
+    <link rel="icon" media="(prefers-color-scheme:light)" href="{{ site.favicon }}" type="image/png">
     <script src="./assets/js/favicon-switcher.js" type="application/javascript"></script>
 
-    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
-    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin=anonymous>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
 
-    {% if site.font == "Sans Serif" %}
-    <link rel="stylesheet" href="./assets/css/font_sans_serif.css">
-    {% else %}
-    <link rel="stylesheet" href="./assets/css/font.css">
-    {% endif %}
     {% if site.auto_dark_mode %}
-    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/publications.css">
     {% else %}
-    <link rel="stylesheet" href="./assets/css/style-no-dark-mode.css">
     <link rel="stylesheet" href="./assets/css/publications-no-dark-mode.css">
     {% endif %}
 
-<style>
-@font-face {
-          font-family: 'BOSCH';
-          src: url('./assets/files/Bosch.otf') format('opentype'); /* Adjust the URL if the font file is in a different directory */
+    <style>
+      :root {
+        --paper: #f7f3ea;
+        --paper-soft: #fffdf8;
+        --ink: #18211f;
+        --muted: #68716d;
+        --line: #d9d0c3;
+        --teal: #0f6b66;
+        --teal-soft: rgba(15, 107, 102, .1);
+        --amber: #d79024;
+        --coral: #b9553f;
+        --plum: #59476e;
+        --sage: #7c8f69;
+        --shadow: 0 18px 48px rgba(31, 37, 35, .12);
+        color-scheme: light;
       }
-@media screen and (min-width: 1199px) {
-    .mo {
-        width: 100%; /* Keep full width for complete border */
-        height: 50px;
-        margin: 0 auto;
-        border-bottom: 1px solid #936347;
-        position: fixed;
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 17px;
+        line-height: 1.62;
+      }
+
+      a {
+        color: var(--teal);
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: var(--coral);
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      .site-nav {
+        position: sticky;
         top: 0;
-        background: rgba(255, 255, 255, 0.5);
-        transition: background 1s, border-color 1s;
-        z-index: 99;
-    }
-    .mo.scrolled {
-        background: #fff;
-        border-color: #20212b;
-    }
-    .logo {
-        width: 180px;
-        float: left;
-        height: 50px;
-        line-height: 50px;
-        text-align: left;
-        font-weight: bold;
-        font-size: 22px;
-        color: #936347;
-        font-family: 'BOSCH', serif;
-        font-weight: 900;
-        text-shadow: 0 0 5px rgba(127, 127, 127, 0.5); 
-        margin-left: 20px;
-        transition: all 1s;
-    }
-    .logo.scrolled {
-        font-size: 18px;
-        color: #A5795C;
-    }
-    .mo_info {
-        display: flex; /* Flex container */
-        align-items: center; /* Center items vertically */
-        justify-content: flex-end; /* Align items to the end */
-        height: 50px;
-        width: calc(100% - 240px); /* Adjusted width to leave space on the right */
-        padding-right: 20px; /* Add right padding for extra space */
-    }
-    .mo_xx {
-        margin-left: 20px; /* Add some space between menu items */
-        text-align: center;
-        height: 50px;
-        line-height: 50px;
-        color: #20212b;
-    }
-    .mo_xx a {
-        color: inherit !important;
-        font-size: 14px;
-        font-weight: bold;
-        font-family: 'optima', serif;
-        transition: color 0.5s;
-    }
-    .mo_xx a:hover {
-        color: #A5795C !important;
-    }
-    #about-me, .about {
-        width: 900px;
-        position: absolute;
-        right: 0; /* No change here, keep at the right edge */
-        font-family: 'optima', serif;
-    }
-    #about-me {
-        top: -652px;
-    }
-    .about {
-        top: -560px;
-    }
-    .wrapper {
-        width: 1200px;
-        font-size: 21px;
-        font-family: 'optima', serif;
-    }
-    .abw {
-        width: 1200px;
-        position: relative;
-        font-family: 'optima', serif;
-    }
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        min-height: 62px;
+        padding: 12px clamp(18px, 4vw, 58px);
+        border-bottom: 1px solid rgba(24, 33, 31, .12);
+        background: rgba(247, 243, 234, .9);
+        backdrop-filter: blur(16px);
+      }
 
-    @media (prefers-color-scheme: dark){
-        .mo {
-            background: rgba(32, 33, 43, 0.5);
-            border-color: #D5BEA2;
+      .brand {
+        display: grid;
+        gap: 0;
+        color: var(--ink);
+        font-size: 15px;
+        font-weight: 850;
+        letter-spacing: 0;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .brand span:last-child {
+        color: var(--teal);
+      }
+
+      .menu-toggle {
+        display: none;
+        width: 42px;
+        height: 42px;
+        place-items: center;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: transparent;
+        color: var(--ink);
+        cursor: pointer;
+      }
+
+      .menu-toggle span,
+      .menu-toggle span:before,
+      .menu-toggle span:after {
+        display: block;
+        width: 18px;
+        height: 2px;
+        background: currentColor;
+        content: "";
+      }
+
+      .menu-toggle span {
+        position: relative;
+      }
+
+      .menu-toggle span:before {
+        position: absolute;
+        top: -6px;
+      }
+
+      .menu-toggle span:after {
+        position: absolute;
+        top: 6px;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 6px;
+      }
+
+      .nav-links a {
+        padding: 8px 10px;
+        border-radius: 6px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 850;
+        text-transform: uppercase;
+      }
+
+      .nav-links a:hover {
+        background: var(--teal-soft);
+        color: var(--teal);
+      }
+
+      .hero {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1.06fr) minmax(320px, .94fr);
+        gap: clamp(30px, 5vw, 74px);
+        align-items: center;
+        min-height: calc(100vh - 62px);
+        padding: clamp(38px, 6vw, 82px) clamp(18px, 5vw, 72px) clamp(36px, 5vw, 72px);
+      }
+
+      .hero:after {
+        position: absolute;
+        right: clamp(18px, 5vw, 72px);
+        bottom: 0;
+        left: clamp(18px, 5vw, 72px);
+        border-bottom: 1px solid var(--line);
+        content: "";
+      }
+
+      .hero-copy {
+        max-width: 790px;
+      }
+
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 22px;
+        color: var(--teal);
+        font-size: 13px;
+        font-weight: 850;
+        text-transform: uppercase;
+      }
+
+      .eyebrow:before {
+        width: 36px;
+        height: 2px;
+        background: var(--amber);
+        content: "";
+      }
+
+      .hero h1 {
+        max-width: 790px;
+        margin: 0;
+        color: var(--ink);
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(46px, 6.1vw, 88px);
+        font-weight: 800;
+        letter-spacing: 0;
+        line-height: .96;
+      }
+
+      .hero-subtitle {
+        max-width: 660px;
+        margin: 24px 0 0;
+        color: #34403d;
+        font-size: clamp(18px, 2vw, 23px);
+      }
+
+      .hero-actions,
+      .profile-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .hero-actions {
+        margin-top: 32px;
+      }
+
+      .button {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        padding: 10px 16px;
+        border: 1px solid var(--ink);
+        border-radius: 6px;
+        background: var(--ink);
+        color: var(--paper-soft);
+        font-size: 14px;
+        font-weight: 850;
+      }
+
+      .button:hover {
+        color: var(--paper-soft);
+        background: var(--teal);
+        border-color: var(--teal);
+      }
+
+      .button.secondary {
+        background: transparent;
+        color: var(--ink);
+        border-color: var(--line);
+      }
+
+      .button.secondary:hover {
+        background: var(--paper-soft);
+        color: var(--teal);
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1px;
+        max-width: 670px;
+        margin-top: 42px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        overflow: hidden;
+        background: var(--line);
+      }
+
+      .stat {
+        min-height: 92px;
+        padding: 17px;
+        background: rgba(255, 253, 248, .72);
+      }
+
+      .stat b {
+        display: block;
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(28px, 4vw, 42px);
+        line-height: 1;
+      }
+
+      .stat span {
+        display: block;
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 850;
+        text-transform: uppercase;
+      }
+
+      .visual-panel {
+        position: relative;
+        display: grid;
+        grid-template-rows: minmax(320px, 1fr) auto;
+        min-height: 570px;
+        border: 1px solid rgba(24, 33, 31, .18);
+        border-radius: 8px;
+        overflow: hidden;
+        background: #16201e;
+        box-shadow: var(--shadow);
+      }
+
+      #audioField {
+        width: 100%;
+        height: 100%;
+        min-height: 390px;
+        display: block;
+      }
+
+      .portrait-card {
+        position: absolute;
+        right: 22px;
+        top: 22px;
+        width: clamp(94px, 12vw, 132px);
+        aspect-ratio: 1;
+        border: 1px solid rgba(255, 253, 248, .45);
+        border-radius: 50%;
+        overflow: hidden;
+        background: #263431;
+        box-shadow: 0 0 0 10px rgba(255, 253, 248, .08);
+      }
+
+      .portrait-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .signal-label {
+        position: absolute;
+        left: 24px;
+        bottom: 178px;
+        color: rgba(255, 253, 248, .86);
+        font-size: 12px;
+        font-weight: 850;
+        text-transform: uppercase;
+      }
+
+      .research-map {
+        display: grid;
+        gap: 1px;
+        background: rgba(255, 253, 248, .22);
+        border-top: 1px solid rgba(255, 253, 248, .22);
+      }
+
+      .map-row {
+        display: grid;
+        grid-template-columns: 108px 1fr;
+        gap: 16px;
+        padding: 15px 18px;
+        background: rgba(22, 32, 30, .9);
+        color: var(--paper-soft);
+      }
+
+      .map-row span {
+        color: rgba(255, 253, 248, .58);
+        font-size: 12px;
+        font-weight: 850;
+        text-transform: uppercase;
+      }
+
+      .map-row strong {
+        font-size: 15px;
+        line-height: 1.35;
+      }
+
+      .content-wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: clamp(52px, 7vw, 92px) clamp(18px, 5vw, 72px);
+      }
+
+      .content-wrap h2 {
+        margin: 0 0 20px;
+        padding-top: 28px;
+        color: var(--ink);
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(34px, 4vw, 56px);
+        letter-spacing: 0;
+        line-height: 1;
+      }
+
+      .content-wrap h2:first-child {
+        padding-top: 0;
+      }
+
+      .content-wrap h3 {
+        color: var(--ink);
+      }
+
+      .content-wrap p {
+        margin: 0 0 18px;
+      }
+
+      .about {
+        max-width: 980px;
+        color: #33403c;
+        font-size: 18px;
+      }
+
+      .section-kicker {
+        margin: -8px 0 22px;
+        max-width: 780px;
+        color: var(--muted);
+        font-size: 17px;
+      }
+
+      .focus-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin: 0 0 38px;
+      }
+
+      .focus-card {
+        min-height: 180px;
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 253, 248, .74);
+      }
+
+      .focus-card:before {
+        display: block;
+        width: 100%;
+        height: 8px;
+        margin-bottom: 24px;
+        border-radius: 999px;
+        background: var(--teal);
+        content: "";
+      }
+
+      .focus-card:nth-child(2):before {
+        background: var(--coral);
+      }
+
+      .focus-card:nth-child(3):before {
+        background: var(--plum);
+      }
+
+      .focus-card h3 {
+        margin: 0 0 10px;
+        font-size: 20px;
+        line-height: 1.2;
+      }
+
+      .scrollable-content {
+        max-height: 260px;
+        margin-bottom: 44px;
+        padding: 18px 20px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        overflow-y: auto;
+        background: rgba(255, 253, 248, .74);
+      }
+
+      .scrollable-content ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .scrollable-content li {
+        margin: 0;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .scrollable-content li:first-child {
+        padding-top: 0;
+      }
+
+      .scrollable-content li:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+
+      .publications {
+        margin-top: 26px;
+      }
+
+      .publications ol.bibliography {
+        display: grid;
+        gap: 14px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .pub-category {
+        margin: 26px 0 10px;
+        color: var(--coral);
+        font-size: 14px;
+        font-weight: 850;
+        text-transform: uppercase;
+      }
+
+      .publications ol.bibliography li {
+        min-height: 0;
+        margin: 0;
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 253, 248, .74);
+      }
+
+      .pub-row {
+        display: grid;
+        grid-template-columns: minmax(180px, 260px) minmax(0, 1fr);
+        gap: 20px;
+        align-items: start;
+      }
+
+      .publications ol.bibliography li .abbr {
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: 124px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .publications ol.bibliography li .abbr .teaser,
+      .publications ol.bibliography li .teaser {
+        width: 100% !important;
+        height: 132px !important;
+        margin: 0;
+        border-radius: 6px;
+        object-fit: cover;
+        box-shadow: none;
+      }
+
+      .publications ol.bibliography li .abbr abbr {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        background: var(--teal);
+      }
+
+      .publications ol.bibliography li .title {
+        margin-bottom: 6px;
+        font-size: 19px;
+        font-weight: 850;
+        line-height: 1.25;
+      }
+
+      .publications ol.bibliography li .author,
+      .publications ol.bibliography li .periodical {
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .publications ol.bibliography li .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .publications ol.bibliography li .links a.btn {
+        padding: 5px 9px !important;
+        border: 1px solid var(--line) !important;
+        border-radius: 6px;
+        color: var(--teal) !important;
+        font-size: 12px !important;
+        font-weight: 850;
+      }
+
+      .publications ol.bibliography li .links a.btn:hover {
+        border-color: var(--teal) !important;
+        background: var(--teal-soft);
+      }
+
+      .compact-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 12px;
+      }
+
+      .info-card {
+        min-height: 220px;
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 253, 248, .68);
+      }
+
+      .info-card h3 {
+        margin: 0 0 16px;
+        font-size: 20px;
+      }
+
+      .line-list {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .line-list li {
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--line);
+        color: #394541;
+      }
+
+      .line-list li:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+
+      .site-footer {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 26px clamp(18px, 5vw, 72px) 42px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      @media (max-width: 980px) {
+        .hero {
+          grid-template-columns: 1fr;
+          min-height: auto;
         }
-        .mo.scrolled {
-            background: #20212b;
-            border-color: #fff;
+
+        .visual-panel {
+          min-height: 520px;
         }
-        .mo .mo_xx {
-            color: #fff;
-        }
-        .logo {
-            color: #fff;
-        }
-        .logo.scrolled {
-            font-size: 18px;
-            color: #D5BEA2;
-        }
-        .mo_xx a:hover {
-            color: #D5BEA2 !important;
+
+        .focus-grid,
+        .compact-grid {
+          grid-template-columns: 1fr;
         }
       }
-    }
-  
-    .abw{
-       padding: 30px;
-       box-sizing: border-box
-    }
-   
-@media screen and (max-width: 1198px) {
-    .mo {
-      width: 100%;
-      height: 50px;
-      margin: 0 auto;
-      border-bottom: 1px solid #936347;
-      position: fixed;
-      top: 0;
-      background: rgba(255, 255, 255, 0.9);
-      transition: background 1s, border-color 1s;
-      z-index: 99;
-    }
-    .mo.scrolled {
-      background: #fff;
-      border-color: #20212b;
-    }
-    .logo {
-      width: 140px;
-      float: left;
-      height: 50px;
-      line-height: 50px;
-      text-align: left;
-      font-weight: bold;
-      font-size: 18px;
-      color: #936347;
-      font-family: 'BOSCH', serif;
-      font-weight: 900;
-      text-shadow: 0 0 5px rgba(127, 127, 127, 0.5); 
-      margin-left: 10px;
-      transition: all 1s;
-    }
-    .logo.scrolled {
-      font-size: 16px;
-      color: #A5795C;
-    }
-    .hamburger {
-      display: block;
-      float: right;
-      padding: 15px;
-      cursor: pointer;
-    }
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background-color: #936347;
-      margin: 4px 0;
-      transition: all 0.3s;
-    }
-    .hamburger.active div:nth-child(1) {
-      transform: rotate(-45deg) translate(-5px, 5px);
-    }
-    .hamburger.active div:nth-child(2) {
-      opacity: 0;
-    }
-    .hamburger.active div:nth-child(3) {
-      transform: rotate(45deg) translate(-5px, -5px);
-    }
-    .mo_info {
-      position: fixed; /* Or position: absolute; */
-      top: 51px; /* Or another desired position */
-      left: 0;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.9);
-      text-align: left;
-      z-index: 98;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      max-height: 0; /* Hide menu initially */
-      overflow: hidden; /* Hide overflow content */
-      transition: max-height 0.5s ease, background 1s ease;
-    }
-    .mo_info.scrolled {
-      background: rgba(255, 255, 255, 1); /* Fully opaque background when scrolled */
-    }
-    .mo_info.open-menu {
-      max-height: 300px; /* Expand menu */
-    }
-    .mo_xx {
-      padding: 5px 20px; /* Add padding */
-      color: #20212b;
-    }
-    .mo_xx:first-child {
-        margin-top: 8px;
-    }
-    .mo_xx:last-child {
-        margin-bottom: 8px;
-    }
-    .mo_xx a {
-      font-size: 14px;
-      transition: color 0.5s;
-      color: inherit !important;
-      font-weight: bold;
-      font-family: 'optima', serif;
-    }
-    .mo_xx a:hover {
-      color: #A5795C !important;
-    }
-    @media (prefers-color-scheme: dark){
-        .mo {
-            background: rgba(32, 33, 43, 0.9);
-            border-color: #D5BEA2;
+
+      @media (max-width: 760px) {
+        body {
+          font-size: 16px;
         }
-        .mo.scrolled {
-            background: #20212b;
-            border-color: #fff;
+
+        .site-nav {
+          align-items: center;
         }
-        .mo .mo_xx {
-            color: #fff;
+
+        .menu-toggle {
+          display: grid;
         }
-        .mo .mo_xx a {
-            color: #fff !important;
+
+        .nav-links {
+          position: absolute;
+          top: 100%;
+          right: 0;
+          left: 0;
+          display: grid;
+          max-height: 0;
+          overflow: hidden;
+          border-bottom: 1px solid var(--line);
+          background: rgba(247, 243, 234, .98);
+          transition: max-height .25s ease;
         }
-        .mo .mo_xx a:hover {
-            color: #D5BEA2 !important;
+
+        .nav-links.open {
+          max-height: 380px;
         }
-        .mo .mo_info {
-            background: #20212b;
+
+        .nav-links a {
+          padding: 12px 22px;
         }
-        .logo {
-            color: #fff;
+
+        .hero {
+          padding-top: 34px;
         }
-        .logo.scrolled {
-            font-size: 18px;
-            color: #D5BEA2;
+
+        .hero h1 {
+          font-size: clamp(42px, 12vw, 62px);
         }
-        .hamburger div {
-            background-color: #D5BEA2;
+
+        .stats {
+          grid-template-columns: 1fr;
         }
-    }
-  }
-</style>
-    
-</head>
-<body>
-  <div class="mo">
-    <div class="logo">JUNCHUAN</div>
-    <div class="hamburger">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <div class="mo_info">
-      <div class="mo_xx"><a href="#about-me">ABOUT ME</a></div>
-      <div class="mo_xx"><a href="#research-interests">RESEARCH INTEREST</a></div>
-      <div class="mo_xx"><a href="#news">NEWS</a></div>
-      <div class="mo_xx"><a href="#publications">PUBLICATIONS</a></div>
-      <div class="mo_xx"><a href="https://danny-musician.github.io/">AS MUSICIAN</a></div>
-      <div class="mo_xx"><a href="#teaching">TEACHING</a></div>
-    </div>
-  </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const header = document.querySelector('.mo');
-      const logo = document.querySelector('.logo');
-      const hamburger = document.querySelector('.hamburger');
-      const menu = document.querySelector('.mo_info');
-
-      const now = new Date();
-      const hours = now.getHours();
-
-      window.addEventListener('scroll', function() {
-        if (window.scrollY > 0) {
-          header.classList.add('scrolled');
-          logo.classList.add('scrolled');
-          menu.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-          logo.classList.remove('scrolled');
-          menu.classList.remove('scrolled');
+        .visual-panel {
+          min-height: 470px;
         }
-      });
-          hamburger.addEventListener('click', function() {
-          hamburger.classList.toggle('active');
-          menu.classList.toggle('open-menu'); // Toggle active class on the menu
-      });
-    });
-  </script>
 
-  <div class="wrapper">
-      <header style="position: relative;">
-        
-        {% if site.avatar %}
-        <a class="image avatar"><img src="{{ site.avatar }}" alt="avatar" style="width: 80%;" /></a>
-        {% endif %}
+        .signal-label {
+          bottom: 172px;
+        }
 
-        <h1 style="font-size: 26px;">{{ site.title }}</h1>
+        .map-row,
+        .pub-row {
+          grid-template-columns: 1fr;
+        }
 
-        {% if site.position %}
-        <position style="font-size:20px;">{{ site.position }}</position>
-        <br>
-        {% endif %}
-        {% if site.affiliation %}
-        <a href="{{ site.affiliation_link }}" rel="noopener"><autocolor>{{ site.affiliation }}</autocolor></a>
-        <br>
-        {% endif %}
-        {% if site.email %}
-        <email style="font-size: 18px;">{{ site.email }}</email>
-        {% endif %}
+        .content-wrap {
+          padding-top: 54px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="{{ site.title }}">
+        <span>Zhao</span>
+        <span>Junchuan</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+      </button>
+      <div class="nav-links">
+        <a href="#about-me">About</a>
+        <a href="#research-interests">Research</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="https://danny-musician.github.io/">Music</a>
+        <a href="#teaching">Teaching</a>
+      </div>
+    </nav>
 
-        <br>
-        
-        <br>
-        <div class="social-icons">
-        {% if site.google_scholar %}
-        <a style="margin: 0 5px 0 0" href="{{ site.google_scholar }}">
-          <i class="ai ai-google-scholar" style="font-size:1.2rem"></i>
-        </a>  
-        {% endif %}
-
-        {% if site.cv_link %}
-        <a style="margin: 0 5px 0 0" href="{{ site.cv_link }}">
-          <i class="ai ai-cv" style="font-size:1.3rem;"></i>
-        </a>
-        {% endif %}
-
-        {% if site.github_link %}
-        <a style="margin: 0 5px 0 0" href="{{ site.github_link }}">
-          <i class="fab fa-github"></i>
-        </a>
-        {% endif %}
-
-        {% if site.linkedin %}
-        <a style="margin: 0 5px 0 0" href="{{ site.linkedin }}">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        {% endif %}
-
-        {% if site.twitter %}
-        <a style="margin: 0 0 0 0" href="{{ site.twitter }}">
-          <i class="fab fa-twitter"></i>
-        </a>
-        {% endif %}
+    <section id="top" class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">{{ site.position }} / Sound and Music Computing</div>
+        <h1>Building generative audio systems for expressive human creativity.</h1>
+        <p class="hero-subtitle">
+          I work on speech, singing voice, music, and multimodal generation at the intersection of AI research and musical practice.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="#publications">View Publications</a>
+          <a class="button secondary" href="#research-interests">Research Areas</a>
+          <a class="button secondary" href="https://danny-musician.github.io/">As Musician</a>
         </div>
-        <br>
+        <div class="stats" aria-label="Research highlights">
+          <div class="stat"><b>PhD</b><span>NUS SoC</span></div>
+          <div class="stat"><b>SMC</b><span>Sound and Music Computing</span></div>
+          <div class="stat"><b>AI</b><span>Speech, Music, Human Signals</span></div>
+        </div>
+      </div>
 
-      </header>
-      <section class="abw">
+      <aside class="visual-panel" aria-label="Research visual">
+        <canvas id="audioField"></canvas>
+        {% if site.avatar %}
+        <div class="portrait-card">
+          <img src="{{ site.avatar }}" alt="{{ site.title }}">
+        </div>
+        {% endif %}
+        <div class="signal-label">Audio / Music / Human Signals</div>
+        <div class="research-map">
+          <div class="map-row"><span>Thread 01</span><strong>Speech and singing voice synthesis</strong></div>
+          <div class="map-row"><span>Thread 02</span><strong>Neural audio codecs and controllability</strong></div>
+          <div class="map-row"><span>Thread 03</span><strong>Audio-driven human animation</strong></div>
+        </div>
+      </aside>
+    </section>
 
-      {{ content }}
+    <main class="content-wrap">
+      <section id="about-me">
+        <h2>About Me</h2>
+        <div class="about">
+          <p>
+            I am a Ph.D. student at the School of Computing, National University of Singapore, advised by Prof. <a href="https://www.comp.nus.edu.sg/cs/people/wangye/">Ye Wang</a> in the <a href="https://smcnus.comp.nus.edu.sg/">Sound and Music Computing Lab</a>. My research studies generative models for speech, singing voice, music, and human-centered multimodal signals.
+          </p>
+          <p>
+            Before my Ph.D., I received my M.Sc. in Computer Science from NUS, where my thesis focused on singing voice synthesis with technique control. I received my B.Sc. degree from Beijing University of Posts and Telecommunications and Queen Mary University of London, where I worked on symbolic music generation.
+          </p>
+          <p>
+            I also have a long musical background in piano and singing. Music is not a side note to my research; it is one of the main reasons I care about building expressive, controllable, and human-facing audio AI systems.
+          </p>
+        </div>
+      </section>
 
-      <br>
+      <section id="research-interests">
+        <h2>Research Focus</h2>
+        <p class="section-kicker">My work is organized around three connected threads: controllable voice generation, music and audio intelligence, and multimodal human signal generation.</p>
+        <div class="focus-grid">
+          <article class="focus-card">
+            <h3>Speech and Singing Voice Generation</h3>
+            <p>Speech synthesis, singing voice synthesis, voice conversion, technique control, and expressive vocal modeling.</p>
+          </article>
+          <article class="focus-card">
+            <h3>Music and Audio Intelligence</h3>
+            <p>Neural audio codecs, controllable audio generation, symbolic music generation, and creative machine learning systems.</p>
+          </article>
+          <article class="focus-card">
+            <h3>Audio-Driven Human Generation</h3>
+            <p>Talking head generation, co-speech gesture generation, affective speech, and multimodal human-centered AI.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="news">
+        <h2>Recent News</h2>
+        <div class="scrollable-content">
+          <ul>
+            <li><b>[Jun. 2026]</b> One paper has been accepted by Interspeech 2026.</li>
+            <li><b>[May. 2026]</b> I am joining Tencent as a Research Intern in Speech Synthesis in Singapore.</li>
+            <li><b>[Apr. 2026]</b> One paper has been accepted by ACL 2026 Main Conference.</li>
+            <li><b>[Feb. 2026]</b> One paper has been accepted by IEEE/ACM TASLP 2026.</li>
+            <li><b>[Feb. 2026]</b> One paper has been accepted by ICLR 2026.</li>
+            <li><b>[Jan. 2026]</b> Two papers have been accepted by ICASSP 2026.</li>
+            <li><b>[May. 2025]</b> One paper has been accepted by Interspeech 2025.</li>
+            <li><b>[Jan. 2025]</b> I have been selected for the SoC Teaching Fellowship Scheme.</li>
+            <li><b>[Dec. 2024]</b> One paper has been accepted by ICASSP 2025.</li>
+            <li><b>[Apr. 2024]</b> One journal paper has been accepted by IEEE/ACM TASLP 2024.</li>
+            <li><b>[Jan. 2024]</b> I started my Ph.D. journey at NUS in the SMC Lab.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="publications">
+        <h2>Publications</h2>
+        <p class="section-kicker">Selected works are grouped by research thread. Paper metadata is loaded from <code>_data/publications.yml</code>.</p>
+        <div class="publications">
+          <ol class="bibliography">
+            {% assign categories =
+            "speech|Speech & Singing Voice Synthesis,
+            music_audio|Music & Audio Generation,
+            human_animation|Speech-Driven Human Animation,
+            affective|Affective Speech & Multimodal Learning" | split: "," %}
+
+            {% for cat in categories %}
+            {% assign pair = cat | split: "|" %}
+            {% assign cat_key = pair[0] | strip %}
+            {% assign cat_name = pair[1] | strip %}
+
+            <div class="pub-category">{{ forloop.index }}. {{ cat_name }}</div>
+
+            {% for link in site.data.publications.main %}
+            {% if link.category == cat_key %}
+            <li>
+              <div class="pub-row">
+                <div class="abbr">
+                  {% if link.image %}
+                  <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" alt="">
+                  {% endif %}
+                  {% if link.conference_short %}
+                  <abbr class="badge">{{ link.conference_short }}</abbr>
+                  {% endif %}
+                </div>
+
+                <div>
+                  <div class="title"><a href="{{ link.pdf }}">{{ link.title }}</a></div>
+                  <div class="author">{{ link.authors }}</div>
+                  <div class="periodical"><em>{{ link.conference }}</em></div>
+                  <div class="links">
+                    {% if link.pdf %}
+                    <a href="{{ link.pdf }}" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
+                    {% endif %}
+                    {% if link.code %}
+                    <a href="{{ link.code }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Code</a>
+                    {% endif %}
+                    {% if link.page %}
+                    <a href="{{ link.page }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Project Page</a>
+                    {% endif %}
+                    {% if link.bibtex %}
+                    <textarea class="bibtex-content" style="display:none;">{{ link.bibtex }}</textarea>
+                    <a href="#" class="btn btn-sm z-depth-0" role="button" onclick="copyBibtex(this); return false;">BibTeX</a>
+                    {% endif %}
+                    {% if link.notes %}
+                    <strong><i style="color:#e74d3c">{{ link.notes }}</i></strong>
+                    {% endif %}
+                    {% if link.others %}
+                    {{ link.others }}
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </li>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+          </ol>
+        </div>
+      </section>
+
+      <section id="service">
+        <h2>Teaching, Service, and Honours</h2>
+        <div class="compact-grid">
+          <article class="info-card" id="teaching">
+            <h3>Teaching</h3>
+            <ul class="line-list">
+              <li>Teaching Assistant, CS3244 Machine Learning, Sem2 AY2025/2026.</li>
+              <li>Teaching Assistant, CS4347/CS5647 Sound and Music Computing, Sem1 AY2025/2026.</li>
+              <li>Teaching Assistant, CS4347/CS5647 Sound and Music Computing, Sem1 AY2024/2025.</li>
+            </ul>
+          </article>
+          <article class="info-card">
+            <h3>Academic Service</h3>
+            <ul class="line-list">
+              <li>Reviewer for ToMM, TASLP, INTERSPEECH, ICASSP, ISMIR, and ACM MM.</li>
+              <li>Event chair and performer at NUS Sound and Music Computing Concert 2025.</li>
+              <li>Featured performer at NUS Sound and Music Computing Concert and NUS Jazz Band events.</li>
+            </ul>
+          </article>
+          <article class="info-card">
+            <h3>Honours</h3>
+            <ul class="line-list">
+              <li>SoC Teaching Fellowship Scheme, 2025-2026.</li>
+              <li>NUS Research Scholarship, 2023-2027.</li>
+              <li>Outstanding College Student in Beijing, 2022.</li>
+              <li>Queen Mary University of London Undergraduate College Prize, 2022.</li>
+            </ul>
+          </article>
+          <article class="info-card" id="contact">
+            <h3>Contact</h3>
+            <ul class="line-list">
+              {% if site.email %}<li>Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a></li>{% endif %}
+              {% if site.affiliation %}<li>{{ site.affiliation }}</li>{% endif %}
+              <li><a href="https://smcnus.comp.nus.edu.sg/">Sound and Music Computing Lab</a></li>
+              <li><a href="https://danny-musician.github.io/">Music page</a></li>
+            </ul>
+          </article>
+        </div>
+      </section>
 
       {% if site.enable_footnote %}
       <p><small>Powered by Jekyll and <a href="https://github.com/yaoyao-liu/minimal-light" target="_blank" rel="noopener">Minimal Light</a> theme.</small></p>
       {% endif %}
+    </main>
 
-      </section>
-      <footer>
-        
-      </footer>
-    </div>
-  
+    <footer class="site-footer">
+      <div class="profile-links">
+        {% if site.email %}
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        {% endif %}
+        {% if site.google_scholar %}
+        <a href="{{ site.google_scholar }}">Google Scholar</a>
+        {% endif %}
+        {% if site.cv_link %}
+        <a href="{{ site.cv_link }}">CV</a>
+        {% endif %}
+        {% if site.github_link %}
+        <a href="{{ site.github_link }}">GitHub</a>
+        {% endif %}
+        {% if site.linkedin %}
+        <a href="{{ site.linkedin }}">LinkedIn</a>
+        {% endif %}
+        {% if site.twitter %}
+        <a href="{{ site.twitter }}">X</a>
+        {% endif %}
+      </div>
+    </footer>
+
     <script>
-      $('a[href*=#],area[href*=#]').click(function() {      //若报错则改为$(document).on('click', 'a[href^="#"]', function () { 
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-             var $target = $(this.hash);
-             $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');//获取到点击对应id的元素
-             if ($target.length) { 
-                 var targetOffset = $target.offset().top;
-                 $('html,body').animate({   //滑动效果主要用到jq的animate函数
-                     scrollTop: targetOffset
-                 },500);
-                 return false;
-             }
-         }
-       });
+      document.addEventListener("DOMContentLoaded", function() {
+        const toggle = document.querySelector(".menu-toggle");
+        const links = document.querySelector(".nav-links");
+
+        toggle.addEventListener("click", function() {
+          const isOpen = links.classList.toggle("open");
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+
+        links.querySelectorAll("a").forEach(function(link) {
+          link.addEventListener("click", function() {
+            links.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+          });
+        });
+
+        const canvas = document.getElementById("audioField");
+        const ctx = canvas.getContext("2d");
+        let frame = 0;
+
+        function resize() {
+          const rect = canvas.getBoundingClientRect();
+          const ratio = window.devicePixelRatio || 1;
+          canvas.width = Math.max(1, Math.floor(rect.width * ratio));
+          canvas.height = Math.max(1, Math.floor(rect.height * ratio));
+          ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+        }
+
+        function draw() {
+          const w = canvas.clientWidth;
+          const h = canvas.clientHeight;
+          ctx.clearRect(0, 0, w, h);
+          ctx.fillStyle = "#16201e";
+          ctx.fillRect(0, 0, w, h);
+
+          const columns = 54;
+          const rows = 34;
+          const cellW = w / columns;
+          const cellH = h / rows;
+          for (let x = 0; x < columns; x += 1) {
+            for (let y = 0; y < rows; y += 1) {
+              const wave = Math.sin((x * .28) + frame * .02) + Math.cos((y * .44) - frame * .014);
+              const band = Math.exp(-Math.pow((y - rows * .52) / 9, 2));
+              const pulse = Math.max(0, wave * .36 + band);
+              const hue = 28 + pulse * 142;
+              const alpha = .07 + pulse * .38;
+              ctx.fillStyle = `hsla(${hue}, 70%, ${42 + pulse * 24}%, ${alpha})`;
+              ctx.fillRect(x * cellW + 1, y * cellH + 1, Math.max(1, cellW - 2), Math.max(1, cellH - 2));
+            }
+          }
+
+          ctx.lineWidth = 2;
+          ["#f0b64c", "#78a98e", "#e08366", "#8f7aa5", "#e9dfc9"].forEach(function(color, line) {
+            ctx.beginPath();
+            for (let x = 0; x <= w; x += 8) {
+              const t = x / w;
+              const y = h * (.28 + line * .11) + Math.sin(t * Math.PI * 6 + frame * .032 + line) * (18 + line * 4);
+              if (x === 0) ctx.moveTo(x, y);
+              else ctx.lineTo(x, y);
+            }
+            ctx.strokeStyle = color;
+            ctx.globalAlpha = .62;
+            ctx.stroke();
+          });
+          ctx.globalAlpha = 1;
+          frame += 1;
+          requestAnimationFrame(draw);
+        }
+
+        window.addEventListener("resize", resize);
+        resize();
+        draw();
+      });
+
+      function copyBibtex(el) {
+        const bib = el.parentElement.querySelector(".bibtex-content").value;
+        navigator.clipboard.writeText(bib).then(function() {
+          const oldText = el.innerText;
+          el.innerText = "Copied!";
+          setTimeout(function() {
+            el.innerText = oldText;
+          }, 1200);
+        });
+      }
     </script>
-
-
 
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
     {% if site.google_analytics %}

@@ -1,0 +1,2132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Junchuan Zhao, Ph.D. student at National University of Singapore working on speech, singing voice, music AI, and multimodal generation.">
+  <title>Junchuan Zhao | Generative Audio, Music AI, Human Signals</title>
+  <link rel="icon" href="./assets/img/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@500;650;750;850&family=Source+Serif+4:opsz,wght@8..60,450;8..60,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f5eddc;
+      --paper-2: #fffaf0;
+      --paper-3: #f0e4ce;
+      --ink: #191815;
+      --muted: #686155;
+      --line: #d7c5a1;
+      --line-strong: #c8ae7e;
+      --accent: #965041;
+      --accent-2: #b98d43;
+      --accent-3: #386b74;
+      --accent-4: #69734f;
+      --violet: #756073;
+      --accent-soft: rgba(150, 80, 65, .1);
+      --surface: rgba(255, 250, 239, .78);
+      --surface-strong: rgba(255, 252, 244, .97);
+      --surface-wash: rgba(255, 248, 233, .88);
+      --section-tint: rgba(185, 141, 67, .07);
+      --nav-bg: rgba(246, 238, 221, .92);
+      --bg-warm: rgba(205, 161, 87, .12);
+      --bg-cool: rgba(74, 128, 133, .095);
+      --bg-rouge: rgba(166, 82, 70, .045);
+      --bg-sage: rgba(122, 127, 82, .06);
+      --button-start: #d8a17f;
+      --button-mid: #b56a58;
+      --button-end: #9d5d52;
+      --button-hover: #965041;
+      --button-text: #fffdf7;
+      --tag-start: #f7e4cf;
+      --tag-end: #d9efe8;
+      --tag-text: #754c41;
+      --panel-dark: #171c1b;
+      --panel-a: rgba(197, 154, 63, .28);
+      --panel-b: rgba(158, 70, 54, .2);
+      --panel-c: rgba(47, 98, 114, .24);
+      --canvas-start: #0d2629;
+      --canvas-mid: #0f3d3f;
+      --canvas-end: #10233b;
+      --canvas-line-1: #e0c586;
+      --canvas-line-2: #c4933e;
+      --canvas-line-3: #9e4636;
+      --canvas-line-4: #2f6272;
+      --canvas-line-5: #786d48;
+      --panel-grid: rgba(197, 154, 63, .24);
+      --shadow: 0 16px 42px rgba(72, 50, 29, .12);
+      --shadow-soft: 0 10px 30px rgba(72, 50, 29, .065);
+      --radius: 8px;
+      color-scheme: light;
+      font-family: "Source Serif 4", Georgia, serif;
+    }
+
+    body[data-theme="azurite"] {
+      --paper: #f1eee8;
+      --paper-2: #fffefa;
+      --paper-3: #ece7dd;
+      --ink: #151b24;
+      --muted: #606871;
+      --line: #d1cbc1;
+      --line-strong: #bab0a2;
+      --accent: #263e63;
+      --accent-2: #8a6d3b;
+      --accent-3: #5d4e6d;
+      --accent-4: #61705c;
+      --accent-soft: rgba(38, 62, 99, .09);
+      --section-tint: rgba(77, 89, 123, .07);
+      --nav-bg: rgba(244, 241, 234, .92);
+      --bg-warm: rgba(138, 109, 59, .09);
+      --bg-cool: rgba(38, 62, 99, .1);
+      --bg-rouge: rgba(93, 78, 109, .06);
+      --bg-sage: rgba(97, 112, 92, .06);
+      --button-start: #8090ad;
+      --button-mid: #5d7198;
+      --button-end: #536785;
+      --button-hover: #455d85;
+      --button-text: #fffefa;
+      --tag-start: #e8e2d5;
+      --tag-end: #e7e2ef;
+      --tag-text: #33435f;
+      --panel-dark: #151a22;
+      --panel-a: rgba(138, 109, 59, .28);
+      --panel-b: rgba(93, 78, 109, .22);
+      --panel-c: rgba(77, 89, 123, .3);
+      --canvas-start: #131a22;
+      --canvas-mid: #263e63;
+      --canvas-end: #22253a;
+      --canvas-line-1: #d5bd80;
+      --canvas-line-2: #8a6d3b;
+      --canvas-line-3: #263e63;
+      --canvas-line-4: #5d4e6d;
+      --canvas-line-5: #61705c;
+      --shadow: 0 16px 42px rgba(46, 48, 55, .1);
+      --shadow-soft: 0 10px 30px rgba(46, 48, 55, .055);
+    }
+
+    body[data-theme="olive"] {
+      --paper: #f4f0e5;
+      --paper-2: #fffdf7;
+      --paper-3: #e9dfca;
+      --ink: #171c18;
+      --muted: #626b61;
+      --line: #d5cbb8;
+      --line-strong: #c4b38e;
+      --accent: #57633d;
+      --accent-2: #9b7338;
+      --accent-3: #694755;
+      --accent-4: #486f73;
+      --accent-soft: rgba(87, 99, 61, .1);
+      --section-tint: rgba(98, 119, 76, .08);
+      --nav-bg: rgba(247, 243, 234, .92);
+      --bg-warm: rgba(155, 115, 56, .11);
+      --bg-cool: rgba(72, 111, 115, .08);
+      --bg-rouge: rgba(105, 71, 85, .055);
+      --bg-sage: rgba(87, 99, 61, .11);
+      --button-start: #9aa773;
+      --button-mid: #75835a;
+      --button-end: #66744f;
+      --button-hover: #5f6c49;
+      --button-text: #fffdf7;
+      --tag-start: #ece3cd;
+      --tag-end: #dfeae2;
+      --tag-text: #4f5b37;
+      --panel-dark: #171a16;
+      --panel-a: rgba(155, 115, 56, .28);
+      --panel-b: rgba(105, 71, 85, .22);
+      --panel-c: rgba(72, 111, 115, .26);
+      --canvas-start: #151b18;
+      --canvas-mid: #344531;
+      --canvas-end: #243d3f;
+      --canvas-line-1: #d8bd80;
+      --canvas-line-2: #9b7338;
+      --canvas-line-3: #57633d;
+      --canvas-line-4: #486f73;
+      --canvas-line-5: #694755;
+      --shadow: 0 16px 42px rgba(55, 53, 34, .1);
+      --shadow-soft: 0 10px 30px rgba(55, 53, 34, .055);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--paper);
+    }
+
+    body {
+      position: relative;
+      margin: 0;
+      background:
+        radial-gradient(circle at 12% 7%, var(--bg-warm), transparent 34%),
+        radial-gradient(circle at 86% 9%, var(--bg-cool), transparent 38%),
+        radial-gradient(circle at 70% 74%, var(--bg-rouge), transparent 40%),
+        radial-gradient(circle at 22% 88%, var(--bg-sage), transparent 36%),
+        linear-gradient(145deg, var(--paper-2) 0%, var(--paper) 50%, var(--paper-3) 100%);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.58;
+      overflow-x: hidden;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    body:before,
+    body:after {
+      position: absolute;
+      z-index: 0;
+      pointer-events: none;
+      content: "";
+    }
+
+    body:before {
+      top: 58px;
+      right: 0;
+      left: 0;
+      height: min(620px, 64vh);
+      opacity: 1;
+      background-image: url("./assets/img/seigaiha.png");
+      background-repeat: repeat;
+      background-size: 400px 400px;
+      mix-blend-mode: multiply;
+      mask-image:
+        linear-gradient(90deg, rgba(0, 0, 0, .34) 0%, rgba(0, 0, 0, .64) 40%, #000 100%),
+        linear-gradient(180deg, #000 0%, #000 25%, rgba(0, 0, 0, .74) 52%, rgba(0, 0, 0, .32) 78%, rgba(0, 0, 0, .07) 94%, transparent 100%);
+      mask-composite: intersect;
+    }
+
+    body:after {
+      right: 0;
+      bottom: 96px;
+      width: min(460px, 38vw);
+      height: min(600px, 62vh);
+      background:
+        linear-gradient(90deg, var(--paper) 0%, color-mix(in srgb, var(--paper) 78%, transparent) 28%, transparent 66%),
+        linear-gradient(180deg, var(--paper) 0%, transparent 18%, transparent 76%, var(--paper) 100%),
+        url("./assets/img/footer-cloud-art.jpeg") right bottom / min(500px, 42vw) auto no-repeat;
+      opacity: .2;
+      mix-blend-mode: multiply;
+      mask-image: linear-gradient(135deg, transparent 0%, rgba(0, 0, 0, .18) 34%, rgba(0, 0, 0, .72) 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a,
+    button,
+    input {
+      transition:
+        color .18s ease,
+        background-color .18s ease,
+        border-color .18s ease,
+        box-shadow .18s ease,
+        transform .18s ease,
+        opacity .18s ease;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+      outline: 2px solid color-mix(in srgb, var(--accent-3) 62%, white);
+      outline-offset: 3px;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .skip-link {
+      position: fixed;
+      left: 12px;
+      top: 12px;
+      z-index: 100;
+      transform: translateY(-160%);
+      padding: 10px 12px;
+      border-radius: 6px;
+      background: var(--ink);
+      color: var(--paper-2);
+      transition: transform .2s ease;
+    }
+
+    .skip-link:focus { transform: translateY(0); }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      min-height: 58px;
+      padding: 9px clamp(18px, 4vw, 52px);
+      border-bottom: 1px solid color-mix(in srgb, var(--line) 76%, transparent);
+      background: color-mix(in srgb, var(--nav-bg) 94%, transparent);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 1px 0 rgba(255, 255, 255, .58);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 7px;
+      line-height: 1;
+      font-size: 16px;
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      font-weight: 850;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+
+    .brand span:last-child { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 5px;
+    }
+
+    .nav-links a {
+      padding: 8px 11px;
+      border-radius: 6px;
+      color: var(--muted);
+      font-size: 14px;
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      font-weight: 750;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .theme-switcher {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-left: 8px;
+      padding-left: 10px;
+      border-left: 1px solid color-mix(in srgb, var(--line) 72%, transparent);
+    }
+
+    .swatch {
+      position: relative;
+      width: 15px;
+      height: 15px;
+      padding: 0;
+      border: 1px solid color-mix(in srgb, var(--line-strong) 62%, transparent);
+      border-radius: 50%;
+      background: var(--swatch);
+      box-shadow:
+        0 1px 3px rgba(49, 39, 29, .12);
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease, outline-color .18s ease;
+    }
+
+    .swatch.active {
+      outline: 2px solid color-mix(in srgb, var(--accent-2) 54%, white);
+      outline-offset: 2px;
+      box-shadow:
+        0 1px 5px rgba(49, 39, 29, .14);
+    }
+
+    .swatch:hover {
+      transform: translateY(-1px);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .menu-toggle span,
+    .menu-toggle span:before,
+    .menu-toggle span:after {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: currentColor;
+      content: "";
+    }
+
+    .menu-toggle span { position: relative; }
+    .menu-toggle span:before { position: absolute; top: -6px; }
+    .menu-toggle span:after { position: absolute; top: 6px; }
+
+    .hero {
+      position: relative;
+      max-width: 1440px;
+      min-height: min(560px, calc(100vh - 58px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, .98fr) minmax(320px, .66fr);
+      align-items: center;
+      gap: clamp(24px, 3vw, 42px);
+      padding: clamp(26px, 4vw, 52px) clamp(22px, 4vw, 56px) clamp(28px, 4vw, 54px);
+    }
+
+    .hero:after {
+      position: absolute;
+      right: clamp(18px, 5vw, 72px);
+      bottom: 0;
+      left: clamp(18px, 5vw, 72px);
+      border-bottom: 1px solid var(--line);
+      content: "";
+    }
+
+    .hero-copy {
+      width: 100%;
+      max-width: 700px;
+      justify-self: end;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      color: var(--accent);
+      font-size: 13px;
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      font-weight: 850;
+    }
+
+    .eyebrow:before {
+      width: 36px;
+      height: 2px;
+      background: var(--accent-2);
+      content: "";
+    }
+
+    h1, h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 680px;
+      margin: 0;
+      font-size: clamp(64px, 7.2vw, 104px);
+      font-weight: 700;
+      line-height: .88;
+    }
+
+    .hero-subtitle {
+      max-width: 700px;
+      margin: 15px 0 0;
+      color: var(--ink);
+      font-size: clamp(18px, 1.7vw, 22px);
+      font-weight: 600;
+    }
+
+    .hero-statement {
+      max-width: 660px;
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .academic-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 750;
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+    }
+
+    .academic-line span {
+      padding: 5px 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--paper-2) 70%, transparent);
+    }
+
+    .hero-actions,
+    .hero-links,
+    .profile-links,
+    .paper-links,
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-actions { margin-top: 20px; }
+
+    .hero-links {
+      margin-top: 12px;
+      gap: 12px;
+      color: var(--muted);
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .hero-links a,
+    .hero-links button {
+      min-height: 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--accent);
+      cursor: pointer;
+    }
+
+    .hero-links a:hover,
+    .hero-links button:hover {
+      color: var(--accent-3);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .button,
+    .chip,
+    .paper-links a {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 850;
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      cursor: pointer;
+    }
+
+    .button {
+      padding: 10px 16px;
+      border: 1px solid color-mix(in srgb, var(--button-mid) 72%, var(--line));
+      background:
+        linear-gradient(135deg, color-mix(in srgb, white 26%, transparent), transparent 58%),
+        linear-gradient(135deg, var(--button-start), var(--button-mid) 52%, var(--button-end));
+      color: var(--button-text);
+      box-shadow: 0 10px 20px color-mix(in srgb, var(--button-mid) 9%, transparent);
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      background:
+        linear-gradient(135deg, color-mix(in srgb, white 20%, transparent), transparent 58%),
+        linear-gradient(135deg, var(--button-hover), var(--button-mid));
+      border-color: var(--button-hover);
+      box-shadow: 0 13px 24px color-mix(in srgb, var(--button-mid) 12%, transparent);
+    }
+
+    .button.secondary,
+    .chip {
+      border: 1px solid var(--line);
+      background: color-mix(in srgb, var(--paper-2) 38%, transparent);
+      color: var(--ink);
+    }
+
+    .button.secondary:hover,
+    .chip:hover,
+    .chip.active {
+      background: color-mix(in srgb, var(--paper-2) 86%, var(--accent-soft));
+      color: var(--accent);
+      border-color: color-mix(in srgb, var(--accent) 28%, var(--line));
+    }
+
+    .signal-panel {
+      position: relative;
+      width: 100%;
+      max-width: 650px;
+      height: clamp(390px, 31vw, 470px);
+      min-height: 0;
+      align-self: center;
+      justify-self: end;
+      display: grid;
+      grid-template-rows: 1fr;
+      border: 1px solid color-mix(in srgb, var(--panel-dark) 22%, transparent);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 16% 24%, var(--panel-a), transparent 20%),
+        radial-gradient(circle at 70% 32%, var(--panel-b), transparent 28%),
+        radial-gradient(circle at 55% 72%, var(--panel-c), transparent 30%),
+        var(--panel-dark);
+      box-shadow: var(--shadow);
+      transform: translateZ(0);
+    }
+
+    .signal-panel::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 42%;
+      content: "";
+      pointer-events: none;
+      background:
+        linear-gradient(180deg,
+          transparent 0%,
+          color-mix(in srgb, var(--panel-dark) 26%, transparent) 58%,
+          color-mix(in srgb, var(--panel-dark) 54%, rgba(150, 80, 65, .12)) 100%);
+    }
+
+    #audioCanvas {
+      width: 100%;
+      height: 100%;
+      min-height: 292px;
+      display: block;
+    }
+
+    .portrait {
+      position: absolute;
+      right: 22px;
+      top: 22px;
+      width: clamp(96px, 12vw, 138px);
+      aspect-ratio: 1;
+      border: 1px solid rgba(255, 253, 247, .52);
+      border-radius: 50%;
+      overflow: hidden;
+      background: #263431;
+      box-shadow: 0 0 0 10px rgba(255, 253, 247, .08);
+    }
+
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .research-legend {
+      position: absolute;
+      right: 22px;
+      bottom: 20px;
+      left: 22px;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      padding: 15px 14px 2px;
+      isolation: isolate;
+    }
+
+    .research-legend::before {
+      position: absolute;
+      inset: 0 -2px -8px;
+      z-index: -1;
+      content: "";
+      border-top: 1px solid rgba(255, 253, 247, .2);
+      border-radius: 10px;
+      background:
+        linear-gradient(180deg,
+          rgba(255, 253, 247, .16) 0%,
+          rgba(24, 38, 38, .16) 46%,
+          rgba(18, 28, 30, .26) 100%);
+      backdrop-filter: blur(9px) saturate(.9);
+      mask-image:
+        linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%),
+        linear-gradient(180deg, #000 0%, #000 76%, transparent 100%);
+      mask-composite: intersect;
+    }
+
+    .legend-item {
+      display: grid;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .legend-item span {
+      color: color-mix(in srgb, var(--panel-b) 42%, #fff);
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      font-size: 11px;
+      font-weight: 760;
+      line-height: 1;
+    }
+
+    .legend-item strong {
+      color: rgba(255, 253, 247, .84);
+      font-size: clamp(13px, 1.08vw, 15px);
+      font-weight: 720;
+      line-height: 1.25;
+      text-wrap: balance;
+      text-shadow: 0 1px 12px rgba(0, 0, 0, .24);
+    }
+
+    main {
+      display: grid;
+      gap: clamp(34px, 4.8vw, 56px);
+      padding: clamp(34px, 4.4vw, 56px) clamp(18px, 5vw, 72px);
+    }
+
+    section {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      scroll-margin-top: 88px;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+    }
+
+    .section-head {
+      position: relative;
+      display: block;
+      margin-bottom: 20px;
+      padding-bottom: 11px;
+      border-bottom: 1px solid color-mix(in srgb, var(--line) 78%, transparent);
+    }
+
+    .section-head:after {
+      display: none;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(34px, 3.8vw, 52px);
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .section-head p,
+    .lead {
+      max-width: 760px;
+      margin: 9px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(360px, .65fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .about-copy,
+    .identity-card,
+    .focus-card,
+    .news-panel,
+    .paper-card,
+    .info-card {
+      border: 1px solid color-mix(in srgb, var(--line) 88%, transparent);
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle at 0 0, color-mix(in srgb, var(--accent-2) 8%, transparent), transparent 34%),
+        linear-gradient(180deg, var(--surface-strong), var(--surface-wash));
+      box-shadow: var(--shadow-soft);
+      background-clip: padding-box;
+    }
+
+    .about-copy:hover,
+    .identity-card:hover,
+    .news-panel:hover,
+    .info-card:hover {
+      border-color: color-mix(in srgb, var(--line-strong) 76%, transparent);
+    }
+
+    .about-copy {
+      padding: clamp(18px, 2.2vw, 22px);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.62;
+    }
+
+    .about-copy a {
+      color: color-mix(in srgb, var(--accent-3) 76%, var(--accent));
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .about-copy p {
+      margin: 0 0 11px;
+    }
+
+    .about-copy p:last-child { margin-bottom: 0; }
+
+    .music-callout {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-left: 3px solid var(--accent-3);
+      border-radius: 6px;
+      background: color-mix(in srgb, var(--accent-3) 8%, var(--paper-2));
+      color: var(--ink);
+      font-size: 15px;
+    }
+
+    .music-callout a {
+      color: var(--accent-3);
+      font-weight: 850;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .identity-card {
+      display: grid;
+      align-content: start;
+      gap: 10px;
+      min-height: 0;
+      padding: 17px;
+      background: linear-gradient(135deg, var(--surface-strong), var(--section-tint));
+      color: var(--ink);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .identity-card:before {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 16% 10%, color-mix(in srgb, var(--accent-2) 10%, transparent), transparent 34%),
+        radial-gradient(circle at 90% 88%, color-mix(in srgb, var(--accent-3) 8%, transparent), transparent 36%);
+      content: "";
+      pointer-events: none;
+    }
+
+    .identity-card > * { position: relative; }
+
+    .profile-monogram {
+      width: 58px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: var(--paper-2);
+      color: var(--accent);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .identity-lines {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .identity-lines strong {
+      display: block;
+      color: var(--ink);
+      font-size: 12px;
+    }
+
+    .identity-note {
+      margin: 0;
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.38;
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .focus-card {
+      position: relative;
+      min-height: 0;
+      display: grid;
+      align-content: start;
+      gap: 13px;
+      padding: 17px;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .focus-card:after {
+      display: none;
+    }
+
+    .focus-card:hover {
+      transform: translateY(-3px);
+      border-color: color-mix(in srgb, var(--accent-3) 32%, var(--line));
+      box-shadow: var(--shadow);
+    }
+
+    .focus-line {
+      width: 100%;
+      height: 1px;
+      border-radius: 999px;
+      background: var(--line);
+    }
+
+    .focus-card:nth-child(2) .focus-line,
+    .focus-card:nth-child(3) .focus-line { background: var(--line); }
+
+    .focus-card h3,
+    .info-card h3 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .focus-card p,
+    .info-card p {
+      margin: 12px 0 0;
+      color: var(--muted);
+    }
+
+    .news-panel {
+      position: relative;
+      max-height: 310px;
+      padding: 16px 20px;
+      overflow: auto;
+      scrollbar-width: thin;
+      scrollbar-color: color-mix(in srgb, var(--line-strong) 62%, transparent) transparent;
+    }
+
+    .news-list,
+    .line-list {
+      display: grid;
+      gap: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .news-list li,
+    .line-list li {
+      display: grid;
+      gap: 7px;
+      padding: 11px 0;
+      border-bottom: 1px solid color-mix(in srgb, var(--line) 76%, transparent);
+      color: var(--ink);
+    }
+
+    .news-list li {
+      grid-template-columns: 96px minmax(0, 1fr);
+      align-items: baseline;
+    }
+
+    .news-list li:first-child,
+    .line-list li:first-child { padding-top: 0; }
+
+    .news-list li:last-child,
+    .line-list li:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .news-list time {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 850;
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+    }
+
+    .filter-row {
+      margin-bottom: 0;
+    }
+
+    .chip {
+      min-height: 36px;
+      padding: 7px 13px;
+    }
+
+    .paper-tools {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .search-box {
+      width: 100%;
+      min-height: 38px;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: color-mix(in srgb, var(--paper-2) 76%, transparent);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      font-size: 13px;
+      font-weight: 650;
+      outline: none;
+    }
+
+    .search-box:focus {
+      border-color: color-mix(in srgb, var(--accent-3) 42%, var(--line));
+      box-shadow: 0 0 0 3px var(--accent-soft);
+    }
+
+    .paper-list {
+      display: grid;
+      gap: 13px;
+    }
+
+    .paper-card {
+      display: grid;
+      position: relative;
+      grid-template-columns: minmax(210px, 246px) minmax(0, 1fr);
+      gap: 16px;
+      align-items: stretch;
+      height: 212px;
+      padding: 14px;
+      transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease, border-color .2s ease;
+    }
+
+    .paper-card.hidden {
+      display: none;
+    }
+
+    .paper-card:hover {
+      transform: translateY(-2px);
+      border-color: color-mix(in srgb, var(--accent-3) 30%, var(--line));
+      box-shadow: var(--shadow);
+    }
+
+    .paper-art {
+      position: relative;
+      height: 100%;
+      min-height: 0;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid color-mix(in srgb, var(--line) 48%, transparent);
+    }
+
+    .paper-art img {
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      display: block;
+      object-fit: contain;
+      padding: 8px;
+      background: #fff;
+      transition: transform .35s ease, opacity .2s ease;
+    }
+
+    .paper-card > div:last-child {
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .paper-card:hover .paper-art img {
+      transform: scale(1.035);
+    }
+
+    .venue {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      padding: 5px 8px;
+      border-radius: 5px;
+      background:
+        linear-gradient(135deg, color-mix(in srgb, white 36%, transparent), transparent 54%),
+        linear-gradient(135deg, var(--tag-start), var(--tag-end));
+      color: var(--tag-text);
+      border: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+      box-shadow: 0 4px 14px color-mix(in srgb, var(--accent-2) 8%, transparent);
+      font-size: 12px;
+      font-weight: 850;
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+    }
+
+    .paper-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 9px;
+    }
+
+    .pill {
+      padding: 4px 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .paper-card h3 {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.28;
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+
+    .authors,
+    .conference {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.38;
+    }
+
+    .authors {
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+
+    .conference {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .paper-links {
+      margin-top: auto;
+      padding-top: 9px;
+    }
+
+    .paper-links a {
+      min-height: 34px;
+      padding: 5px 10px;
+      border: 1px solid var(--line);
+      color: var(--accent);
+      font-size: 12px;
+      background: color-mix(in srgb, var(--paper-2) 42%, transparent);
+    }
+
+    .paper-links a:hover {
+      transform: translateY(-1px);
+      border-color: color-mix(in srgb, var(--accent-3) 34%, var(--line));
+      background: var(--accent-soft);
+    }
+
+    .compact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr) minmax(0, 1fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .contact-subhead {
+      display: block;
+      margin-bottom: -10px;
+    }
+
+    .contact-subhead h3 {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(30px, 3vw, 42px);
+      line-height: 1;
+    }
+
+    .contact-subhead p {
+      max-width: 520px;
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .record-grid {
+      display: grid;
+      gap: 13px;
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0;
+      align-items: stretch;
+      padding: 8px;
+      background:
+        radial-gradient(circle at 0 0, color-mix(in srgb, var(--accent-2) 7%, transparent), transparent 34%),
+        linear-gradient(180deg, var(--surface-strong), var(--surface-wash));
+    }
+
+    .contact-block {
+      min-height: 104px;
+      padding: 14px 16px;
+      background: color-mix(in srgb, var(--paper-2) 24%, transparent);
+      border-right: 1px solid color-mix(in srgb, var(--line) 72%, transparent);
+    }
+
+    .contact-block:last-child {
+      border-right: 0;
+    }
+
+    .contact-block h3,
+    .contact-block p,
+    .contact-block .profile-links {
+      margin: 0;
+    }
+
+    .contact-block h3 {
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.12;
+    }
+
+    .contact-block p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .record-card {
+      display: grid;
+      grid-template-columns: minmax(140px, 220px) minmax(0, 1fr);
+      gap: 16px;
+      align-items: start;
+      padding: 17px 18px;
+    }
+
+    .record-card h3 {
+      margin: 0;
+      color: var(--accent);
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .info-card {
+      min-height: 0;
+      padding: 17px;
+      position: relative;
+      align-self: stretch;
+      overflow: hidden;
+    }
+
+    .line-list li {
+      color: var(--muted);
+    }
+
+    .record-card .line-list li {
+      color: var(--ink);
+    }
+
+    .site-footer {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 26px clamp(18px, 5vw, 72px) 42px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .profile-links {
+      margin-top: 10px;
+    }
+
+    .profile-links a,
+    .profile-links button {
+      color: var(--accent);
+      font-weight: 750;
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      font-size: 14px;
+    }
+
+    .profile-links a:hover,
+    .profile-links button:hover {
+      color: var(--accent-3);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .copy-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      min-height: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      font-family: inherit;
+      font-size: inherit;
+      cursor: pointer;
+    }
+
+    .copy-link:hover {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .copy-link:before {
+      position: absolute;
+      left: 50%;
+      bottom: calc(100% + 9px);
+      z-index: 10;
+      transform: translateX(-50%) translateY(4px);
+      min-width: max-content;
+      padding: 6px 8px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--ink);
+      color: var(--paper-2);
+      font-size: 12px;
+      font-weight: 750;
+      opacity: 0;
+      pointer-events: none;
+      box-shadow: var(--shadow);
+      transition: opacity .18s ease, transform .18s ease;
+      content: attr(data-tooltip);
+    }
+
+    .copy-link:hover:before,
+    .copy-link:focus-visible:before {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .toast {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 80;
+      transform: translateY(140%);
+      padding: 12px 14px;
+      border-radius: 6px;
+      background: var(--ink);
+      color: var(--paper-2);
+      box-shadow: var(--shadow);
+      transition: transform .25s ease;
+    }
+
+    .toast.show { transform: translateY(0); }
+
+    @media (max-width: 1080px) {
+      .compact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .info-card.tall { grid-row: auto; }
+      .contact-layout { grid-template-columns: 1fr; }
+      .paper-card {
+        grid-template-columns: minmax(190px, 230px) minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .about-grid,
+      .section-head {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        align-items: start;
+      }
+      .hero-copy {
+        max-width: none;
+        justify-self: stretch;
+      }
+      .signal-panel {
+        max-width: none;
+        height: clamp(400px, 56vw, 500px);
+        align-self: stretch;
+        justify-self: stretch;
+      }
+      .paper-tools {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 780px) {
+      body { font-size: 15px; }
+
+      .site-nav {
+        min-height: 56px;
+        padding: 8px 18px;
+      }
+
+      .menu-toggle { display: grid; }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: grid;
+        max-height: 0;
+        overflow: hidden;
+        border-bottom: 1px solid var(--line);
+        background: color-mix(in srgb, var(--paper-2) 96%, transparent);
+        backdrop-filter: blur(16px);
+        transition: max-height .25s ease;
+      }
+
+      .nav-links.open { max-height: 460px; }
+      .nav-links a {
+        padding: 12px 22px;
+        font-size: 15px;
+      }
+
+      .theme-switcher {
+        padding: 12px 22px 16px;
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+
+      .hero {
+        gap: 24px;
+        padding-top: 26px;
+      }
+      h1 { font-size: clamp(46px, 13vw, 68px); }
+      h2 { white-space: normal; }
+      .section-head p,
+      .lead {
+        font-size: 15px;
+      }
+      .hero-subtitle {
+        font-size: clamp(18px, 5vw, 22px);
+      }
+      .academic-line span {
+        padding: 5px 8px;
+      }
+      .focus-grid,
+      .compact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .signal-panel { height: clamp(360px, 88vw, 420px); }
+      .research-legend {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding-top: 11px;
+      }
+      .legend-item {
+        grid-template-columns: 34px 1fr;
+        align-items: baseline;
+      }
+      .legend-item strong { font-size: 13px; }
+      .news-list li {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+      .paper-card {
+        grid-template-columns: 1fr;
+      }
+
+      .paper-card {
+        height: auto;
+        min-height: 0;
+        padding: 13px;
+      }
+
+      .paper-card h3 {
+        -webkit-line-clamp: 3;
+      }
+
+      .authors {
+        -webkit-line-clamp: 3;
+      }
+
+      .conference {
+        white-space: normal;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+
+      .paper-links {
+        margin-top: 10px;
+        min-height: 0;
+      }
+
+      .paper-tools {
+        grid-template-columns: 1fr;
+      }
+
+      .paper-art { height: 160px; }
+      .paper-art img { height: 160px; }
+      .record-card { grid-template-columns: 1fr; }
+      .contact-card {
+        grid-template-columns: 1fr;
+        padding: 6px;
+      }
+
+      .contact-block {
+        border-right: 0;
+        border-bottom: 1px solid color-mix(in srgb, var(--line) 72%, transparent);
+      }
+
+      .contact-block:last-child {
+        border-bottom: 0;
+      }
+
+      .contact-subhead {
+        margin-bottom: -10px;
+      }
+
+      body:after {
+        width: min(330px, 72vw);
+        height: min(460px, 58vh);
+        background:
+          linear-gradient(90deg, var(--paper) 0%, color-mix(in srgb, var(--paper) 82%, transparent) 24%, transparent 62%),
+          linear-gradient(180deg, var(--paper) 0%, transparent 18%, transparent 76%, var(--paper) 100%),
+          url("./assets/img/footer-cloud-art.jpeg") right -36px bottom / min(330px, 72vw) auto no-repeat;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *:before, *:after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <a class="brand" href="#top" aria-label="Junchuan Zhao homepage">
+      <span>JUNCHUAN</span> <span>ZHAO</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#news">News</a>
+      <a href="#publications">Publications</a>
+      <a href="https://danny-musician.github.io/">Music</a>
+      <a href="#contact">Contact</a>
+      <div class="theme-switcher" aria-label="Color theme">
+        <button class="swatch active" type="button" data-theme="dunhuang" aria-label="Dunhuang warm mineral theme" style="--swatch:#965041"></button>
+        <button class="swatch" type="button" data-theme="azurite" aria-label="Dunhuang azurite theme" style="--swatch:#263e63"></button>
+        <button class="swatch" type="button" data-theme="olive" aria-label="Dunhuang olive mineral theme" style="--swatch:#57633d"></button>
+      </div>
+    </div>
+  </nav>
+
+  <header id="top" class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">Ph.D. Student / NUS Sound and Music Computing Lab</div>
+      <h1>Junchuan Zhao</h1>
+      <p class="hero-subtitle">Research on expressive voice, music intelligence, neural audio, and human-centered multimodal generation.</p>
+      <p class="hero-statement">My work studies controllable generation systems that preserve expression, style, and human intent across sound and movement.</p>
+      <div class="academic-line" aria-label="Academic profile">
+        <span>Ph.D. Student</span>
+        <span>NUS School of Computing</span>
+        <span>Sound and Music Computing Lab</span>
+      </div>
+      <div class="hero-actions" aria-label="Hero links">
+        <a class="button" href="#publications">View Publications</a>
+        <a class="button secondary" href="#research">Research Areas</a>
+        <a class="button secondary" href="https://danny-musician.github.io/">As Musician</a>
+      </div>
+      <div class="hero-links" aria-label="Academic quick links">
+        <a href="assets/files/CV-junchuan.pdf">CV</a>
+        <a href="https://github.com/Danny-NUS/">GitHub</a>
+        <a href="mailto:junchuan@comp.nus.edu.sg">Email</a>
+        <a href="https://www.linkedin.com/in/junchuan-zhao-6367951a5/">LinkedIn</a>
+      </div>
+    </div>
+
+    <aside class="signal-panel" aria-label="Animated research signal">
+      <canvas id="audioCanvas"></canvas>
+      <div class="portrait"><img src="./assets/junchuan_2.jpg" alt="Portrait of Junchuan Zhao"></div>
+      <div class="research-legend" aria-label="Research directions">
+        <div class="legend-item"><span>01</span><strong>Expressive voice generation</strong></div>
+        <div class="legend-item"><span>02</span><strong>Music and audio intelligence</strong></div>
+        <div class="legend-item"><span>03</span><strong>Human-centered multimodal generation</strong></div>
+      </div>
+    </aside>
+  </header>
+
+  <main id="main">
+    <section id="about" class="reveal">
+      <div class="section-head">
+        <h2>About</h2>
+        <p>I study generative AI for voice, music, and human motion, with an emphasis on controllable systems that support expressive creation.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>I am a Ph.D. student at the <a href="https://www.comp.nus.edu.sg/">School of Computing</a>, <a href="https://www.nus.edu.sg/">National University of Singapore</a>, advised by Prof. <a href="https://www.comp.nus.edu.sg/cs/people/wangye/">Ye Wang</a> in the <a href="https://smcnus.comp.nus.edu.sg/">Sound and Music Computing Lab</a>.</p>
+          <p>My research covers speech and singing voice synthesis, neural audio codecs, music generation, talking head generation, co-speech gesture generation, and affective multimodal learning.</p>
+          <p>I am especially interested in models and interfaces that make generated media easier to guide, evaluate, and use in creative or communicative settings.</p>
+          <p>Before and alongside my research, I have spent many years studying piano and singing. This musical background shapes the questions I care about: how generated sound can remain controllable, expressive, and useful for real creative workflows.</p>
+          <p class="music-callout">For selected performances and music projects, <a href="https://danny-musician.github.io/">check my music page</a>.</p>
+        </div>
+        <aside class="identity-card" aria-label="Profile summary">
+          <div class="profile-monogram">JZ</div>
+          <p class="identity-note">Ph.D. student at NUS School of Computing, Sound and Music Computing Lab.</p>
+          <ul class="identity-lines">
+            <li><strong>Affiliation</strong> School of Computing, National University of Singapore</li>
+            <li><strong>Advisor</strong> Prof. Ye Wang</li>
+            <li><strong>Research</strong> Speech, singing voice, music AI, neural codecs, multimodal generation</li>
+            <li><strong>Email</strong> junchuan@comp.nus.edu.sg</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="research" class="reveal">
+      <div class="section-head">
+        <h2>Research Focus</h2>
+        <p>Three threads connect most of my work: expressive voice generation, music and audio intelligence, and multimodal human signal modeling.</p>
+      </div>
+      <div class="focus-grid">
+        <article class="focus-card">
+          <div class="focus-line"></div>
+          <div>
+            <h3>Speech and Singing Voice Generation</h3>
+            <p>Speech synthesis, singing voice synthesis, voice conversion, singing technique control, and zero-shot vocal modeling.</p>
+          </div>
+        </article>
+        <article class="focus-card">
+          <div class="focus-line"></div>
+          <div>
+            <h3>Music and Audio Intelligence</h3>
+            <p>Neural audio codecs, controllable audio generation, piano transcription/rendering, music style transfer, and creative ML systems.</p>
+          </div>
+        </article>
+        <article class="focus-card">
+          <div class="focus-line"></div>
+          <div>
+            <h3>Audio-Driven Human Generation</h3>
+            <p>Talking head generation, co-speech gesture generation, multimodal emotion analysis, and human-centered generation.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="news" class="reveal">
+      <div class="section-head">
+        <h2>Recent News</h2>
+        <p>A compact timeline for papers, internships, teaching, and milestones.</p>
+      </div>
+      <div class="news-panel">
+        <ul class="news-list">
+          <li><time>Jun. 2026</time><span>One paper has been accepted by Interspeech 2026.</span></li>
+          <li><time>May. 2026</time><span>I am joining Tencent as a Research Intern in Speech Synthesis in Singapore.</span></li>
+          <li><time>Apr. 2026</time><span>One paper has been accepted by ACL 2026 Main Conference.</span></li>
+          <li><time>Feb. 2026</time><span>One paper has been accepted by IEEE/ACM TASLP 2026.</span></li>
+          <li><time>Feb. 2026</time><span>One paper has been accepted by ICLR 2026.</span></li>
+          <li><time>Jan. 2026</time><span>Two papers have been accepted by ICASSP 2026.</span></li>
+          <li><time>May. 2025</time><span>One paper has been accepted by Interspeech 2025.</span></li>
+          <li><time>Jan. 2025</time><span>I was selected for the SoC Teaching Fellowship Scheme.</span></li>
+          <li><time>Jan. 2024</time><span>I started my Ph.D. journey at NUS in the SMC Lab.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="publications" class="reveal">
+      <div class="section-head">
+        <h2>Publications</h2>
+        <p>Filter papers by research thread. Project thumbnails come from your existing assets folder.</p>
+      </div>
+      <div class="paper-tools">
+        <div class="filter-row" role="group" aria-label="Publication filters">
+          <button class="chip active" type="button" data-filter="all">All</button>
+          <button class="chip" type="button" data-filter="speech">Voice</button>
+          <button class="chip" type="button" data-filter="music">Music & Audio</button>
+          <button class="chip" type="button" data-filter="human">Human Animation</button>
+          <button class="chip" type="button" data-filter="affective">Affective</button>
+        </div>
+        <input class="search-box" id="paperSearch" type="search" placeholder="Search title, venue, author..." aria-label="Search publications">
+      </div>
+      <div class="paper-list" id="paperList"></div>
+    </section>
+
+    <section id="contact" class="reveal">
+      <div class="section-head">
+        <h2>Academic Record</h2>
+        <p>Teaching, academic service, honours, and contact links collected in one place.</p>
+      </div>
+      <div class="contact-layout">
+        <div class="record-grid" aria-label="Academic record">
+          <article class="info-card record-card">
+            <h3>Teaching</h3>
+            <ul class="line-list">
+              <li>Teaching Assistant, CS3244 Machine Learning, Sem2 AY2025/2026.</li>
+              <li>Teaching Assistant, CS4347/CS5647 Sound and Music Computing, Sem1 AY2025/2026.</li>
+              <li>Teaching Assistant, CS4347/CS5647 Sound and Music Computing, Sem1 AY2024/2025.</li>
+            </ul>
+          </article>
+          <article class="info-card record-card">
+            <h3>Service</h3>
+            <ul class="line-list">
+              <li>Reviewer for ToMM, TASLP, INTERSPEECH, ICASSP, ISMIR, and ACM MM.</li>
+              <li>Event chair and performer at NUS Sound and Music Computing Concert 2025.</li>
+              <li>Featured performer at NUS SMC Concert and NUS Jazz Band events.</li>
+            </ul>
+          </article>
+          <article class="info-card record-card">
+            <h3>Honours</h3>
+            <ul class="line-list">
+              <li>SoC Teaching Fellowship Scheme, 2025-2026.</li>
+              <li>NUS Research Scholarship, 2023-2027.</li>
+              <li>Outstanding College Student in Beijing, 2022.</li>
+              <li>Queen Mary University of London Undergraduate College Prize, 2022.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="contact-subhead">
+          <h3>Contact</h3>
+          <p>For research discussions, collaboration, code, CV, and professional profiles.</p>
+        </div>
+        <article class="info-card contact-card">
+          <div class="contact-block">
+            <h3>Email</h3>
+            <p><a href="mailto:junchuan@comp.nus.edu.sg">junchuan@comp.nus.edu.sg</a></p>
+          </div>
+          <div class="contact-block">
+            <h3>Academic</h3>
+            <div class="profile-links">
+              <a href="assets/files/CV-junchuan.pdf">CV</a>
+              <a href="#publications">Publications</a>
+              <a href="https://github.com/Danny-NUS/">GitHub</a>
+            </div>
+          </div>
+          <div class="contact-block">
+            <h3>Profiles</h3>
+            <div class="profile-links">
+              <a href="https://www.linkedin.com/in/junchuan-zhao-6367951a5/">LinkedIn</a>
+              <a href="https://x.com/Junchuan_0803">X</a>
+              <button class="copy-link" type="button" data-copy="zhaojunchuan-000803" data-copy-label="WeChat" data-tooltip="zhaojunchuan-000803">WeChat</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>Junchuan Zhao. Generative audio, music AI, and human-centered multimodal systems.</div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Copied BibTeX</div>
+
+  <script>
+    const publications = [
+      {
+        title: "Remix the Timbre: Diffusion-Based Style Transfer Across Polyphonic Stems",
+        authors: "Leduo Chen, <b>Junchuan Zhao†</b>, Shengchen Li",
+        conference: "Arxiv, 2026.",
+        venue: "Arxiv",
+        year: "2026",
+        category: "music",
+        image: "./assets/img/MixtureTT.png",
+        links: { pdf: "https://arxiv.org/pdf/2605.09259", page: "https://mixturett.github.io/Mixture_TT/" }
+      },
+      {
+        title: "PersonaGest: Personalized Co-Speech Gesture Generation with Semantic-Guided Hierarchical Motion Representation",
+        authors: "<b>Junchuan Zhao</b>*, Qifan Liang*, Ye Wang",
+        conference: "Arxiv, 2026.",
+        venue: "Arxiv",
+        year: "2026",
+        category: "human",
+        image: "./assets/img/PersonaGest.jpg",
+        links: { pdf: "https://arxiv.org/pdf/2605.07252v1", page: "https://danny-nus.github.io/PersonaGest/" }
+      },
+      {
+        title: "MSpoofTTS: Multi-Resolution Spoof-Guided Inference for Discrete Speech Synthesis",
+        authors: "<b>Junchuan Zhao</b>*, Minh Duc Vu*, Ye Wang",
+        conference: "Interspeech, 2026.",
+        venue: "Interspeech",
+        year: "2026",
+        category: "speech",
+        image: "./assets/img/MSpoofTTS.jpg",
+        links: { pdf: "https://arxiv.org/pdf/2603.05373", page: "https://danny-nus.github.io/MSpoofTTS.github.io/", code: "https://github.com/Danny-NUS/MSpoofTTS" }
+      },
+      {
+        title: "CodecFlow: Efficient Bandwidth Extension via Conditional Flow Matching in Neural Codec Latent Space",
+        authors: "Bowen Zhang*, <b>Junchuan Zhao</b>*, A S Madhukumar, Ye Wang, Ian McLoughlin",
+        conference: "Arxiv, 2026.",
+        venue: "Arxiv",
+        year: "2026",
+        category: "speech",
+        image: "./assets/img/CodecFlow.png",
+        links: { pdf: "http://arxiv.org/abs/2603.02022", page: "https://danny-nus.github.io/CodecFlow/" }
+      },
+      {
+        title: "TED-TTS: Training-Free Intra-Utterance Emotion and Duration Control for Text-to-Speech Synthesis",
+        authors: "Qifan Liang, Yuansen Liu, Ruixin Wei, Nan Lu, <b>Junchuan Zhao†</b>, Ye Wang",
+        conference: "ACL Main, 2026.",
+        venue: "ACL",
+        year: "2026",
+        category: "speech",
+        image: "./assets/img/TED-TTS.png",
+        links: { pdf: "https://arxiv.org/pdf/2601.03170", page: "https://simon-leong.github.io/TED-TTS-DemoPage/", code: "https://github.com/Simon-leong/TED-TTS" }
+      },
+      {
+        title: "KSDiff: Keyframe-Augmented Speech-Aware Dual-Path Diffusion for Facial Animation",
+        authors: "Tianle Lyu*, <b>Junchuan Zhao</b>*, Ye Wang",
+        conference: "ICASSP, 2026.",
+        venue: "ICASSP",
+        year: "2026",
+        category: "human",
+        image: "./assets/img/KSDiff.jpg",
+        links: { pdf: "https://arxiv.org/pdf/2509.20128", page: "https://kincin.github.io/KSDiff/" },
+        bibtex: "@INPROCEEDINGS{lyr2026ksdiff,\\n  author={Lyu, Tianle and Zhao, Junchuan and Wang, Ye},\\n  title={KSDIFF: Keyframe-Augmented Speech-Aware Dual-Path Diffusion for Facial Animation},\\n  booktitle={ICASSP},\\n  year={2026}\\n}"
+      },
+      {
+        title: "InconVAD: A Two-Stage Dual-Tower Framework for Multimodal Emotion Inconsistency Detection",
+        authors: "Zongyi Li, <b>Junchuan Zhao</b>, Francis Bu Sung Lee, Andrew Zi Han Yee",
+        conference: "ICASSP, 2026.",
+        venue: "ICASSP",
+        year: "2026",
+        category: "affective",
+        image: "./assets/img/InconVAD.png",
+        links: { pdf: "https://arxiv.org/pdf/2509.20140" }
+      },
+      {
+        title: "CoMelSinger: Discrete Token-Based Zero-Shot Singing Synthesis With Structured Melody Control and Guidance",
+        authors: "<b>Junchuan Zhao</b>, Wei Zeng, Tianle Lyu, Ye Wang",
+        conference: "IEEE/ACM TASLP, 2026.",
+        venue: "TASLP",
+        year: "2026",
+        category: "speech",
+        image: "./assets/img/CoMelSinger.png",
+        links: { pdf: "https://arxiv.org/pdf/2509.19883", page: "https://danny-nus.github.io/CoMelSinger/" }
+      },
+      {
+        title: "Bridging Piano Transcription and Rendering via Disentangled Score Content and Style",
+        authors: "Wei Zeng, <b>Junchuan Zhao</b>, Ye Wang",
+        conference: "ICLR, 2026.",
+        venue: "ICLR",
+        year: "2026",
+        category: "music",
+        image: "./assets/img/JointPianist.jpg",
+        links: { pdf: "https://openreview.net/pdf?id=173Pq3F31r", page: "https://jointpianist.github.io/epr-apt/" }
+      },
+      {
+        title: "Prosody-Adaptable Audio Codecs for Zero-Shot Voice Conversion via In-Context Learning",
+        authors: "<b>Junchuan Zhao*</b>, Xintong Wang*, Ye Wang",
+        conference: "Interspeech, 2025.",
+        venue: "Interspeech",
+        year: "2025",
+        category: "speech",
+        image: "./assets/img/PACE.png",
+        links: { pdf: "https://www.isca-archive.org/interspeech_2025/zhao25d_interspeech.pdf" }
+      },
+      {
+        title: "SPSinger: Multi-Singer Singing Voice Synthesis with Short Reference Prompt",
+        authors: "<b>Junchuan Zhao</b>, Low Qi Hong Chetwin, Ye Wang",
+        conference: "ICASSP, 2025.",
+        venue: "ICASSP",
+        year: "2025",
+        category: "speech",
+        image: "./assets/img/SPSinger_overall.png",
+        links: { pdf: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10888907", page: "https://danny-nus.github.io/SPSinger/" }
+      },
+      {
+        title: "SinTechSVS: A Singing Technique Controllable Singing Voice Synthesis System",
+        authors: "<b>Junchuan Zhao</b>, Low Qi Hong Chetwin, Ye Wang",
+        conference: "IEEE/ACM TASLP, 2024.",
+        venue: "TASLP",
+        year: "2024",
+        category: "speech",
+        image: "./assets/img/SinTechSVS.png",
+        links: { pdf: "https://ieeexplore-ieee-org.libproxy1.nus.edu.sg/stamp/stamp.jsp?tp=&arnumber=10509739", page: "https://danny-nus.github.io/SinTechSVS/" }
+      }
+    ];
+
+    const categoryLabel = {
+      speech: "Voice",
+      music: "Music & Audio",
+      human: "Human Animation",
+      affective: "Affective"
+    };
+
+    const paperList = document.getElementById("paperList");
+    const paperSearch = document.getElementById("paperSearch");
+    const toast = document.getElementById("toast");
+    let activeFilter = "all";
+    let activeQuery = "";
+
+    function renderPublications() {
+      paperList.innerHTML = publications.map((paper) => {
+        const links = Object.entries(paper.links || {}).map(([label, href]) => {
+          const text = label === "page" ? "Project" : label;
+          return `<a href="${href}" target="_blank" rel="noopener">${text}</a>`;
+        }).join("");
+        const bib = paper.bibtex ? `<a href="#" data-bibtex="${encodeURIComponent(paper.bibtex)}">BibTeX</a>` : "";
+        const searchable = `${paper.title} ${paper.authors} ${paper.conference} ${paper.venue} ${categoryLabel[paper.category]}`.toLowerCase();
+        const categoryMatch = activeFilter === "all" || paper.category === activeFilter;
+        const queryMatch = !activeQuery || searchable.includes(activeQuery);
+        const hidden = categoryMatch && queryMatch ? "" : " hidden";
+        return `
+          <article class="paper-card${hidden}" data-category="${paper.category}">
+            <div class="paper-art">
+              <img src="${paper.image}" alt="${paper.title}">
+              <span class="venue">${paper.venue}</span>
+            </div>
+            <div>
+              <div class="paper-meta">
+                <span class="pill">${paper.year}</span>
+                <span class="pill">${categoryLabel[paper.category]}</span>
+              </div>
+              <h3>${paper.title}</h3>
+              <div class="authors">${paper.authors}</div>
+              <div class="conference">${paper.conference}</div>
+              <div class="paper-links">${links}${bib}</div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+      window.setTimeout(() => toast.classList.remove("show"), 1400);
+    }
+
+    async function copyText(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "fixed";
+        textarea.style.left = "-9999px";
+        document.body.appendChild(textarea);
+        textarea.select();
+        const copied = document.execCommand("copy");
+        textarea.remove();
+        return copied;
+      }
+    }
+
+    renderPublications();
+
+    document.querySelectorAll(".chip").forEach((button) => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".chip").forEach((chip) => chip.classList.remove("active"));
+        button.classList.add("active");
+        activeFilter = button.dataset.filter;
+        renderPublications();
+      });
+    });
+
+    paperSearch.addEventListener("input", () => {
+      activeQuery = paperSearch.value.trim().toLowerCase();
+      renderPublications();
+    });
+
+    const themeKey = "homepage-dunhuang-theme-v2";
+    const savedTheme = localStorage.getItem(themeKey) || "dunhuang";
+    document.body.dataset.theme = savedTheme === "dunhuang" ? "" : savedTheme;
+    document.querySelectorAll(".swatch").forEach((button) => {
+      button.classList.toggle("active", button.dataset.theme === savedTheme);
+      button.addEventListener("click", () => {
+        const theme = button.dataset.theme;
+        document.body.dataset.theme = theme === "dunhuang" ? "" : theme;
+        localStorage.setItem(themeKey, theme);
+        document.querySelectorAll(".swatch").forEach((item) => item.classList.toggle("active", item === button));
+      });
+    });
+
+    paperList.addEventListener("click", async (event) => {
+      const target = event.target.closest("[data-bibtex]");
+      if (!target) return;
+      event.preventDefault();
+      const text = decodeURIComponent(target.dataset.bibtex);
+      const copied = await copyText(text);
+      showToast(copied ? "Copied BibTeX" : "Clipboard unavailable");
+    });
+
+    document.querySelectorAll("[data-copy]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const text = button.dataset.copy;
+        const label = button.dataset.copyLabel || "Text";
+        const copied = await copyText(text);
+        showToast(copied ? `${label} copied` : text);
+      });
+    });
+
+    const toggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    toggle.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    const sections = [...document.querySelectorAll("main section")];
+    const navAnchors = [...document.querySelectorAll(".nav-links a[href^='#']")];
+    const activeObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navAnchors.forEach((anchor) => {
+          anchor.classList.toggle("active", anchor.getAttribute("href") === `#${entry.target.id}`);
+        });
+      });
+    }, { rootMargin: "-38% 0px -54% 0px", threshold: 0 });
+    sections.forEach((section) => activeObserver.observe(section));
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("in-view");
+      });
+    }, { threshold: .14 });
+    document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+
+    const canvas = document.getElementById("audioCanvas");
+    const ctx = canvas.getContext("2d");
+    let frame = 0;
+    let pointerX = .62;
+    let pointerY = .38;
+
+    function resizeCanvas() {
+      const rect = canvas.getBoundingClientRect();
+      const ratio = window.devicePixelRatio || 1;
+      canvas.width = Math.max(1, Math.floor(rect.width * ratio));
+      canvas.height = Math.max(1, Math.floor(rect.height * ratio));
+      ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+    }
+
+    canvas.addEventListener("pointermove", (event) => {
+      const rect = canvas.getBoundingClientRect();
+      pointerX = (event.clientX - rect.left) / rect.width;
+      pointerY = (event.clientY - rect.top) / rect.height;
+    });
+
+    function cssVar(name) {
+      return getComputedStyle(document.body).getPropertyValue(name).trim();
+    }
+
+    function hexToRgb(hex) {
+      const clean = hex.replace("#", "").trim();
+      const full = clean.length === 3 ? clean.split("").map((char) => char + char).join("") : clean;
+      const number = parseInt(full, 16);
+      return [(number >> 16) & 255, (number >> 8) & 255, number & 255];
+    }
+
+    function rgbaFromVar(name, alpha) {
+      const [r, g, b] = hexToRgb(cssVar(name));
+      return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+    }
+
+    function drawAudioField() {
+      const w = canvas.clientWidth;
+      const h = canvas.clientHeight;
+      ctx.clearRect(0, 0, w, h);
+      const bg = ctx.createLinearGradient(0, 0, w, h);
+      bg.addColorStop(0, cssVar("--canvas-start"));
+      bg.addColorStop(.48, cssVar("--canvas-mid"));
+      bg.addColorStop(1, cssVar("--canvas-end"));
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, w, h);
+
+      const glowA = ctx.createRadialGradient(pointerX * w, pointerY * h, 12, pointerX * w, pointerY * h, Math.max(w, h) * .72);
+      glowA.addColorStop(0, rgbaFromVar("--accent-2", .34));
+      glowA.addColorStop(.38, rgbaFromVar("--accent-4", .18));
+      glowA.addColorStop(1, rgbaFromVar("--accent-3", 0));
+      ctx.fillStyle = glowA;
+      ctx.fillRect(0, 0, w, h);
+
+      const cols = 64;
+      const rows = 40;
+      const cellW = w / cols;
+      const cellH = h / rows;
+      const focusX = pointerX * cols;
+      const focusY = pointerY * rows;
+      const pigments = [
+        hexToRgb(cssVar("--accent-4")),
+        hexToRgb(cssVar("--accent-2")),
+        hexToRgb(cssVar("--accent-3")),
+        hexToRgb(cssVar("--accent")),
+        hexToRgb(cssVar("--canvas-line-1")),
+        hexToRgb(cssVar("--violet"))
+      ];
+
+      for (let x = 0; x < cols; x += 1) {
+        for (let y = 0; y < rows; y += 1) {
+          const dist = Math.hypot(x - focusX, y - focusY);
+          const wave = Math.sin(x * .24 + frame * .026) + Math.cos(y * .38 - frame * .017);
+          const band = Math.exp(-Math.pow((y - rows * (.48 + Math.sin(frame * .012) * .05)) / 8.5, 2));
+          const pointer = Math.max(0, 1 - dist / 14) * .62;
+          const pulse = Math.max(0, wave * .33 + band + pointer);
+          const color = pigments[(x + y + Math.floor(frame / 34)) % pigments.length];
+          ctx.fillStyle = `rgba(${color[0]}, ${color[1]}, ${color[2]}, ${.045 + pulse * .28})`;
+          ctx.fillRect(x * cellW + 1, y * cellH + 1, Math.max(1, cellW - 2), Math.max(1, cellH - 2));
+        }
+      }
+
+      ctx.lineWidth = 1.8;
+      ["--canvas-line-1", "--canvas-line-2", "--canvas-line-3", "--canvas-line-4", "--canvas-line-5", "--accent-2"].forEach((name, line) => {
+        ctx.beginPath();
+        for (let x = 0; x <= w; x += 7) {
+          const t = x / w;
+          const pull = Math.sin((t - pointerX) * Math.PI) * 12 * (1 - Math.min(1, Math.abs(t - pointerX) * 2));
+          const y = h * (.2 + line * .105) + Math.sin(t * Math.PI * (4.8 + line * .22) + frame * .032 + line) * (16 + line * 3.2) + pull * (line + 1) * .2;
+          if (x === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.strokeStyle = cssVar(name);
+        ctx.globalAlpha = .58;
+        ctx.stroke();
+      });
+
+      for (let i = 0; i < 64; i += 1) {
+        const seed = i * 41.7;
+        const x = (Math.sin(seed + frame * .006) * .5 + .5) * w;
+        const y = (Math.cos(seed * .8 + frame * .009) * .5 + .5) * h;
+        const drift = Math.sin(frame * .018 + i) * 9;
+        const radius = 1.1 + (i % 5) * .36;
+        ctx.beginPath();
+        ctx.fillStyle = i % 3 === 0 ? rgbaFromVar("--accent-2", .5) : i % 3 === 1 ? rgbaFromVar("--accent", .34) : rgbaFromVar("--accent-3", .28);
+        ctx.arc(x + drift, y, radius, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+
+      frame += 1;
+      requestAnimationFrame(drawAudioField);
+    }
+
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+    drawAudioField();
+  </script>
+</body>
+</html>
