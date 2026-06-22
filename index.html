@@ -240,6 +240,7 @@
 
     button {
       font: inherit;
+      cursor: pointer;
     }
 
     .skip-link {
@@ -309,6 +310,10 @@
       color: var(--accent);
     }
 
+    .nav-links a:focus-visible {
+      background: var(--accent-soft);
+    }
+
     .theme-switcher {
       display: flex;
       align-items: center;
@@ -341,6 +346,10 @@
 
     .swatch:hover {
       transform: translateY(-1px);
+    }
+
+    .swatch:focus-visible {
+      outline-offset: 3px;
     }
 
     .menu-toggle {
@@ -548,6 +557,11 @@
       background: color-mix(in srgb, var(--paper-2) 86%, var(--accent-soft));
       color: var(--accent);
       border-color: color-mix(in srgb, var(--accent) 28%, var(--line));
+    }
+
+    .button.secondary:hover,
+    .chip:hover {
+      transform: translateY(-1px);
     }
 
     .signal-panel {
@@ -868,6 +882,14 @@
       box-shadow: var(--shadow);
     }
 
+    .focus-card:focus-within,
+    .paper-card:focus-within,
+    .info-card:focus-within,
+    .contact-card:focus-within {
+      border-color: color-mix(in srgb, var(--accent-3) 34%, var(--line));
+      box-shadow: var(--shadow);
+    }
+
     .focus-line {
       width: 100%;
       height: 1px;
@@ -1002,6 +1024,10 @@
       box-shadow: var(--shadow);
     }
 
+    .paper-card:focus-within {
+      transform: translateY(-2px);
+    }
+
     .paper-art {
       position: relative;
       height: 100%;
@@ -1062,8 +1088,10 @@
       border: 1px solid var(--line);
       border-radius: 999px;
       color: var(--muted);
+      background: color-mix(in srgb, var(--paper-2) 46%, transparent);
       font-size: 12px;
       font-weight: 850;
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
     }
 
     .paper-card h3 {
@@ -1195,6 +1223,7 @@
       color: var(--muted);
       font-size: 14px;
       line-height: 1.4;
+      overflow-wrap: anywhere;
     }
 
     .record-card {
@@ -1250,6 +1279,7 @@
       font-weight: 750;
       font-family: Inter, ui-sans-serif, system-ui, sans-serif;
       font-size: 14px;
+      overflow-wrap: anywhere;
     }
 
     .profile-links a:hover,
@@ -1371,6 +1401,12 @@
     @media (max-width: 780px) {
       body { font-size: 15px; }
 
+      main {
+        gap: 38px;
+        padding-right: 16px;
+        padding-left: 16px;
+      }
+
       .site-nav {
         min-height: 56px;
         padding: 8px 18px;
@@ -1407,6 +1443,8 @@
       .hero {
         gap: 24px;
         padding-top: 26px;
+        padding-right: 16px;
+        padding-left: 16px;
       }
       h1 { font-size: clamp(46px, 13vw, 68px); }
       h2 { white-space: normal; }
@@ -1419,6 +1457,16 @@
       }
       .academic-line span {
         padding: 5px 8px;
+      }
+      .hero-actions .button {
+        flex: 1 1 150px;
+      }
+      .filter-row {
+        gap: 8px;
+      }
+      .chip {
+        flex: 1 1 auto;
+        min-width: max-content;
       }
       .focus-grid,
       .compact-grid {
@@ -1477,6 +1525,9 @@
       .paper-art { height: 160px; }
       .paper-art img { height: 160px; }
       .record-card { grid-template-columns: 1fr; }
+      .record-card h3 {
+        margin-bottom: -4px;
+      }
       .contact-card {
         grid-template-columns: 1fr;
         padding: 6px;
@@ -1563,7 +1614,7 @@
 
     <aside class="signal-panel" aria-label="Animated research signal">
       <canvas id="audioCanvas"></canvas>
-      <div class="portrait"><img src="./assets/junchuan_2.jpg" alt="Portrait of Junchuan Zhao"></div>
+      <div class="portrait"><img src="./assets/junchuan_2.jpg" alt="Portrait of Junchuan Zhao" loading="eager" decoding="async"></div>
       <div class="research-legend" aria-label="Research directions">
         <div class="legend-item"><span>01</span><strong>Expressive voice generation</strong></div>
         <div class="legend-item"><span>02</span><strong>Music and audio intelligence</strong></div>
@@ -1888,7 +1939,7 @@
         return `
           <article class="paper-card${hidden}" data-category="${paper.category}">
             <div class="paper-art">
-              <img src="${paper.image}" alt="${paper.title}">
+              <img src="${paper.image}" alt="${paper.title}" loading="lazy" decoding="async">
               <span class="venue">${paper.venue}</span>
             </div>
             <div>
