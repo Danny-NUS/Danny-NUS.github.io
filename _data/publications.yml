@@ -164,6 +164,7 @@ main:
     conference: IEEE/ACM Transactions on Audio, Speech, and Language Processing <b>(TASLP)</b>, 2024.
     pdf: https://ieeexplore-ieee-org.libproxy1.nus.edu.sg/stamp/stamp.jsp?tp=&arnumber=10509739
     page: https://danny-nus.github.io/SinTechSVS/
+    data: https://huggingface.co/datasets/Chanson-0803/SinTechSVS-singing-technique-annotation
     bibtex: |
       @ARTICLE{zhao2024sintechsvs,
         author={Zhao, Junchuan and Chetwin, Low Qi Hong and Wang, Ye},

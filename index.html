@@ -1837,7 +1837,7 @@
         year: "2026",
         category: "speech",
         image: "./assets/img/TED-TTS.png",
-        links: { pdf: "https://arxiv.org/pdf/2601.03170", page: "https://simon-leong.github.io/TED-TTS-DemoPage/", code: "https://github.com/Simon-leong/TED-TTS" }
+        links: { pdf: "https://arxiv.org/pdf/2601.03170", page: "https://simon-leong.github.io/TED-TTS-DemoPage/", code: "https://github.com/Simon-leong/TED-TTS", data: "https://huggingface.co/datasets/Chanson-0803/MED-TTS" }
       },
       {
         title: "KSDiff: Keyframe-Augmented Speech-Aware Dual-Path Diffusion for Facial Animation",
@@ -1908,7 +1908,7 @@
         year: "2024",
         category: "speech",
         image: "./assets/img/SinTechSVS.png",
-        links: { pdf: "https://ieeexplore-ieee-org.libproxy1.nus.edu.sg/stamp/stamp.jsp?tp=&arnumber=10509739", page: "https://danny-nus.github.io/SinTechSVS/" }
+        links: { pdf: "https://ieeexplore-ieee-org.libproxy1.nus.edu.sg/stamp/stamp.jsp?tp=&arnumber=10509739", page: "https://danny-nus.github.io/SinTechSVS/", data: "https://huggingface.co/datasets/Chanson-0803/SinTechSVS-singing-technique-annotation" }
       }
     ];
 
@@ -1928,7 +1928,7 @@
     function renderPublications() {
       paperList.innerHTML = publications.map((paper) => {
         const links = Object.entries(paper.links || {}).map(([label, href]) => {
-          const text = label === "page" ? "Project" : label;
+          const text = label === "page" ? "Project" : label === "data" ? "Data" : label;
           return `<a href="${href}" target="_blank" rel="noopener">${text}</a>`;
         }).join("");
         const bib = paper.bibtex ? `<a href="#" data-bibtex="${encodeURIComponent(paper.bibtex)}">BibTeX</a>` : "";
