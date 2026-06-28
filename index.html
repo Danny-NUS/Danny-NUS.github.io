@@ -1639,6 +1639,11 @@
           linear-gradient(180deg, var(--paper) 0%, transparent 18%, transparent 76%, var(--paper) 100%),
           url("./assets/img/footer-cloud-art.jpeg") right -36px bottom / min(330px, 72vw) auto no-repeat;
       }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -2182,6 +2187,17 @@
       });
     }, { threshold: .14 });
     document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+
+    function revealHashTarget() {
+      if (!window.location.hash) return;
+      const target = document.querySelector(window.location.hash);
+      if (target && target.classList.contains("reveal")) {
+        target.classList.add("in-view");
+      }
+    }
+
+    revealHashTarget();
+    window.addEventListener("hashchange", revealHashTarget);
 
     const canvas = document.getElementById("audioCanvas");
     const ctx = canvas.getContext("2d");
