@@ -5,7 +5,7 @@ main:
     conference_short: Arxiv
     pdf: https://arxiv.org/pdf/2608.00572
     page: https://danny-nus.github.io/AnyBand-DemoPage/
-    image: ./assets/img/AnyBand.pdf
+    image: ./assets/img/AnyBand.png
     category: speech
     
   - title: "Remix the Timbre: Diffusion-Based Style Transfer Across Polyphonic Stems"
