@@ -1,5 +1,14 @@
 main:
   - title: "Remix the Timbre: Diffusion-Based Style Transfer Across Polyphonic Stems"
+    authors: <b>Junchuan Zhao</b>, Minh Duc Vu, Bowen Zhang, Ye Wang
+    conference: Arxiv, 2026.
+    conference_short: Arxiv
+    pdf: https://arxiv.org/pdf/2608.00572
+    page: https://danny-nus.github.io/AnyBand-DemoPage/
+    image: ./assets/img/AnyBand.pdf
+    category: speech
+    
+  - title: "Remix the Timbre: Diffusion-Based Style Transfer Across Polyphonic Stems"
     authors: Leduo Chen, <b>Junchuan Zhao†</b>, Shengchen Li
     conference: Arxiv, 2026.
     conference_short: Arxiv
