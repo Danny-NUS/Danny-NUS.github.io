@@ -1,5 +1,5 @@
 main:
-  - title: "Remix the Timbre: Diffusion-Based Style Transfer Across Polyphonic Stems"
+  - title: "AnyBand: Unified Multi-Bandwidth Speech Extension via Frequency-Aware In-Context Spectral Infilling"
     authors: <b>Junchuan Zhao</b>, Minh Duc Vu, Bowen Zhang, Ye Wang
     conference: Arxiv, 2026.
     conference_short: Arxiv
