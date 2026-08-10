@@ -2931,6 +2931,765 @@
       }
     }
 
+    /* Xuan paper · ink green · cinnabar */
+    :root {
+      --paper: #f1eee5;
+      --paper-2: #faf8f2;
+      --paper-3: #e7e1d5;
+      --ink: #202823;
+      --muted: #686c66;
+      --line: #d4cec1;
+      --line-strong: #a9a294;
+      --accent: #884a42;
+      --accent-2: #a48c62;
+      --accent-3: #405f5d;
+      --accent-4: #687361;
+      --accent-soft: rgba(136, 74, 66, .075);
+      --surface-strong: rgba(250, 248, 242, .96);
+      --surface-wash: rgba(243, 239, 229, .9);
+      --nav-bg: rgba(244, 241, 233, .9);
+      --panel-dark: #172421;
+      --canvas-start: #17231f;
+      --canvas-mid: #223a35;
+      --canvas-end: #273534;
+      --canvas-line-1: #c0ac7c;
+      --canvas-line-2: #998158;
+      --canvas-line-3: #80514a;
+      --canvas-line-4: #53716f;
+      --canvas-line-5: #69735f;
+      --violet: #71676e;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 9% 5%, rgba(164, 140, 98, .08), transparent 27%),
+        radial-gradient(circle at 91% 11%, rgba(64, 95, 93, .065), transparent 29%),
+        linear-gradient(145deg, var(--paper-2), var(--paper) 51%, var(--paper-3));
+      position: relative;
+    }
+
+    /* Watercolor ink-wash blobs — sparse, soft, organic */
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(60px);
+    }
+
+    body::before {
+      top: -6%;
+      left: -4%;
+      width: 420px;
+      height: 380px;
+      background: radial-gradient(ellipse at 40% 35%, rgba(164, 140, 98, .14) 0%, rgba(164, 140, 98, .06) 45%, transparent 70%);
+      border-radius: 48% 52% 62% 38% / 55% 45% 55% 45%;
+    }
+
+    body::after {
+      bottom: -8%;
+      right: -6%;
+      width: 480px;
+      height: 400px;
+      background: radial-gradient(ellipse at 60% 55%, rgba(64, 95, 93, .11) 0%, rgba(104, 115, 97, .06) 50%, transparent 72%);
+      border-radius: 58% 42% 44% 56% / 42% 58% 42% 58%;
+    }
+
+    /* Hero-area accent blobs */
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -2%;
+      right: -3%;
+      width: 320px;
+      height: 280px;
+      background: radial-gradient(ellipse at 55% 40%, rgba(136, 74, 66, .10) 0%, rgba(136, 74, 66, .04) 48%, transparent 70%);
+      border-radius: 45% 55% 40% 60% / 60% 40% 60% 40%;
+      filter: blur(50px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: 4%;
+      left: -2%;
+      width: 240px;
+      height: 180px;
+      background: radial-gradient(ellipse at 35% 55%, rgba(104, 115, 97, .09) 0%, rgba(164, 140, 98, .05) 50%, transparent 68%);
+      border-radius: 52% 48% 58% 42% / 38% 62% 38% 62%;
+      filter: blur(45px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .paper-card.latest {
+      min-height: 330px;
+      height: auto;
+      grid-template-columns: minmax(300px, .82fr) minmax(0, 1.18fr);
+    }
+
+    .paper-card.latest h3 {
+      max-width: 700px;
+      display: block;
+      overflow: visible;
+      font-size: clamp(20px, 1.85vw, 26px);
+      font-weight: 500;
+      line-height: 1.16;
+      letter-spacing: -.035em;
+      -webkit-line-clamp: unset;
+      -webkit-box-orient: initial;
+      text-wrap: balance;
+    }
+
+    .paper-card.latest .authors {
+      display: block;
+      overflow: visible;
+      -webkit-line-clamp: unset;
+    }
+
+    .paper-card.latest .conference {
+      white-space: normal;
+    }
+
+    .about-copy {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: clamp(24px, 3vw, 42px);
+    }
+
+    .about-copy>p:not(.about-lead):not(.music-callout) {
+      break-inside: avoid;
+    }
+
+    .record-card .line-list {
+      columns: 2;
+      column-gap: 34px;
+    }
+
+    .record-card .line-list li {
+      break-inside: avoid;
+      padding-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .ink-name {
+      --name-x: 0px;
+      --name-y: 0px;
+      position: relative;
+      width: max-content;
+      max-width: 100%;
+      padding: .04em .09em .08em 0;
+      cursor: default;
+      isolation: isolate;
+    }
+
+    .ink-name:before,
+    .ink-name:after {
+      position: absolute;
+      left: 0;
+      z-index: -1;
+      height: 1px;
+      content: "";
+      pointer-events: none;
+      transition: width .6s cubic-bezier(.2, .8, .2, 1), transform .45s ease, opacity .35s ease;
+    }
+
+    .ink-name:before {
+      bottom: .015em;
+      width: 36%;
+      background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent-2) 64%, transparent), transparent);
+      opacity: .72;
+      transform: translateX(calc(var(--name-x) * .18));
+    }
+
+    .ink-name:after {
+      bottom: -.045em;
+      width: 12px;
+      background: var(--accent);
+      opacity: .22;
+      transform: translateX(calc(var(--name-x) * .4));
+    }
+
+    .ink-name span {
+      position: relative;
+      transition: transform .5s cubic-bezier(.2, .8, .2, 1), color .3s ease;
+      transform: translate(calc(var(--name-x) * var(--ink-depth, .2)), calc(var(--name-y) * var(--ink-depth, .2)));
+    }
+
+    .ink-name span:first-child {
+      --ink-depth: .22;
+    }
+
+    .ink-name span:last-child {
+      --ink-depth: -.14;
+    }
+
+    .ink-name span:after {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      color: var(--accent);
+      opacity: 0;
+      content: attr(data-text);
+      transform: translate(0, 0);
+      transition: opacity .3s ease, transform .48s cubic-bezier(.2, .8, .2, 1);
+      pointer-events: none;
+    }
+
+    .ink-name:hover:before,
+    .ink-name.is-active:before {
+      width: 76%;
+    }
+
+    .ink-name:hover span:after,
+    .ink-name.is-active span:after {
+      opacity: .14;
+      transform: translate(calc(var(--name-x) * -.16 + 2px), calc(var(--name-y) * -.16 + 1px));
+    }
+
+    .signal-panel {
+      border-color: rgba(227, 218, 198, .28);
+      background:
+        radial-gradient(circle at 18% 22%, rgba(164, 140, 98, .16), transparent 24%),
+        radial-gradient(circle at 72% 28%, rgba(136, 74, 66, .12), transparent 30%),
+        radial-gradient(circle at 52% 72%, rgba(64, 95, 93, .18), transparent 34%),
+        var(--panel-dark);
+      box-shadow: 0 28px 70px rgba(26, 36, 32, .16);
+    }
+
+    .signal-panel:before {
+      border-color: rgba(240, 232, 211, .16);
+      box-shadow: inset 0 0 0 1px rgba(15, 29, 25, .38);
+    }
+
+    #audioCanvas {
+      opacity: .9;
+      filter: saturate(.8) contrast(.96);
+    }
+
+    .panel-kicker {
+      display: grid;
+      gap: 4px;
+      text-shadow: 0 1px 16px rgba(0, 0, 0, .34);
+    }
+
+    .panel-kicker span {
+      color: rgba(249, 244, 230, .78);
+    }
+
+    .panel-kicker small {
+      color: rgba(192, 172, 124, .66);
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: .16em;
+    }
+
+    .research-focus-panel {
+      border-color: rgba(240, 232, 211, .17);
+      background: rgba(14, 27, 24, .7);
+      backdrop-filter: blur(20px) saturate(.82);
+      box-shadow: 0 20px 56px rgba(3, 12, 10, .24);
+    }
+
+    @media (max-width: 900px) {
+      .record-card .line-list {
+        columns: 1;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .paper-card.latest {
+        grid-template-columns: 1fr;
+        min-height: 0;
+      }
+
+      .paper-card.latest h3 {
+        font-size: 23px;
+      }
+
+      .about-copy {
+        grid-template-columns: 1fr;
+      }
+
+      .ink-name {
+        padding-bottom: .11em;
+      }
+    }
+
+    /* Final density, typography and pigment refinements */
+    :root {
+      --paper: #f3efe5;
+      --paper-2: #fbf8f0;
+      --paper-3: #e4ddd0;
+      --ink: #1b2925;
+      --muted: #626962;
+      --line: #d0c8ba;
+      --line-strong: #a59c8c;
+      --accent: #964a40;
+      --accent-2: #b09664;
+      --accent-3: #315f5a;
+      --accent-4: #65735f;
+      --accent-soft: rgba(150, 74, 64, .085);
+      --panel-dark: #132722;
+      --canvas-start: #13241f;
+      --canvas-mid: #1d3933;
+      --canvas-end: #263b38;
+      --canvas-line-1: #d0ba82;
+      --canvas-line-2: #a78a5c;
+      --canvas-line-3: #98584e;
+      --canvas-line-4: #4e7772;
+      --canvas-line-5: #74806a;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 8% 4%, rgba(176, 150, 100, .11), transparent 28%),
+        radial-gradient(circle at 92% 10%, rgba(49, 95, 90, .09), transparent 31%),
+        radial-gradient(circle at 71% 79%, rgba(150, 74, 64, .035), transparent 36%),
+        linear-gradient(145deg, var(--paper-2), var(--paper) 50%, var(--paper-3));
+    }
+
+    .paper-card.latest {
+      min-height: 276px;
+      height: auto;
+      grid-template-columns: minmax(280px, .76fr) minmax(0, 1.24fr);
+      gap: 20px;
+      padding: 17px;
+    }
+
+    .paper-card.latest h3 {
+      max-width: 720px;
+      font-size: clamp(21px, 2vw, 28px);
+      line-height: 1.15;
+      letter-spacing: -.032em;
+    }
+
+    .paper-card.latest .paper-meta {
+      margin-bottom: 7px;
+    }
+
+    .paper-card.latest .authors,
+    .paper-card.latest .conference {
+      margin-top: 7px;
+    }
+
+    .paper-summary {
+      max-width: 650px;
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .paper-card.latest .paper-links {
+      margin-top: 14px;
+      padding-top: 0;
+    }
+
+    .paper-card.latest>div:last-child {
+      justify-content: center;
+    }
+
+    .about-copy>p:not(.about-lead):not(.music-callout) {
+      text-align: left;
+      text-align-last: auto;
+      hyphens: none;
+      hanging-punctuation: first last;
+    }
+
+    .ink-name {
+      padding-right: .16em;
+    }
+
+    .ink-name span:first-child {
+      color: var(--ink);
+      font-family: "Plus Jakarta Sans", Manrope, sans-serif;
+      font-weight: 500;
+      text-shadow:
+        1px 1px 0 rgba(49, 95, 90, .08),
+        3px 3px 18px rgba(49, 95, 90, .04);
+    }
+
+    .ink-name span:last-child {
+      padding-left: .075em;
+      color: color-mix(in srgb, var(--ink) 78%, var(--accent));
+      font-family: Manrope, "Plus Jakarta Sans", sans-serif;
+      font-weight: 400;
+      letter-spacing: -.072em;
+      text-shadow:
+        1px 1px 0 rgba(150, 74, 64, .11),
+        4px 3px 20px rgba(150, 74, 64, .055);
+    }
+
+    .ink-name span:first-child:after {
+      color: var(--accent-3);
+    }
+
+    .ink-name span:last-child:after {
+      color: var(--accent);
+    }
+
+    .ink-name:hover span:first-child,
+    .ink-name.is-active span:first-child {
+      color: color-mix(in srgb, var(--ink) 92%, var(--accent-3));
+    }
+
+    .ink-name:hover span:last-child,
+    .ink-name.is-active span:last-child {
+      color: color-mix(in srgb, var(--accent) 74%, var(--ink));
+    }
+
+    .ink-name:before {
+      height: 2px;
+      background: linear-gradient(90deg,
+        var(--accent),
+        color-mix(in srgb, var(--accent-2) 75%, transparent) 44%,
+        color-mix(in srgb, var(--accent-3) 48%, transparent) 72%,
+        transparent);
+    }
+
+    .ink-name:after {
+      width: 7px;
+      height: 7px;
+      bottom: -.075em;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 9px 1px 0 -2px color-mix(in srgb, var(--accent-2) 72%, transparent);
+    }
+
+    .signal-panel {
+      background:
+        radial-gradient(circle at 15% 18%, rgba(208, 186, 130, .13), transparent 26%),
+        radial-gradient(circle at 78% 26%, rgba(150, 74, 64, .12), transparent 30%),
+        radial-gradient(circle at 52% 70%, rgba(49, 95, 90, .2), transparent 38%),
+        var(--panel-dark);
+      box-shadow:
+        0 30px 76px rgba(20, 39, 34, .17),
+        0 0 0 1px rgba(208, 186, 130, .08);
+    }
+
+    #audioCanvas {
+      opacity: .96;
+      filter: saturate(.88) contrast(1.02);
+    }
+
+    .research-focus-panel {
+      background:
+        linear-gradient(155deg, rgba(20, 41, 36, .8), rgba(12, 27, 24, .77));
+      border-color: rgba(223, 208, 170, .2);
+      box-shadow:
+        0 22px 64px rgba(3, 13, 11, .28),
+        inset 0 1px 0 rgba(255, 255, 255, .035);
+    }
+
+    @media (max-width: 780px) {
+      .paper-card.latest {
+        grid-template-columns: 1fr;
+        min-height: 0;
+        gap: 14px;
+      }
+
+      .paper-card.latest h3 {
+        font-size: 22px;
+      }
+
+      .ink-name span:last-child {
+        padding-left: .035em;
+      }
+    }
+
+    /* Heian palette: hihada, shion, aonibi, tō-ō and muted gold */
+    :root {
+      --paper: #efede8;
+      --paper-2: #faf8f4;
+      --paper-3: #dedbd4;
+      --ink: #292b2a;
+      --muted: #6d6964;
+      --line: #cfc3b1;
+      --line-strong: #a99a84;
+      --accent: #865f54;
+      --accent-2: #b49a62;
+      --accent-3: #596b69;
+      --accent-4: #706377;
+      --violet: #706377;
+      --accent-soft: rgba(134, 95, 84, .085);
+      --surface: rgba(247, 245, 240, .84);
+      --surface-strong: rgba(251, 249, 245, .97);
+      --surface-wash: rgba(239, 236, 229, .92);
+      --section-tint: rgba(112, 99, 119, .05);
+      --nav-bg: rgba(241, 239, 234, .92);
+      --bg-warm: rgba(180, 154, 98, .11);
+      --bg-cool: rgba(89, 107, 105, .075);
+      --bg-rouge: rgba(134, 95, 84, .055);
+      --bg-sage: rgba(112, 99, 119, .045);
+      --button-start: #96746a;
+      --button-mid: #795950;
+      --button-end: #674c47;
+      --button-hover: #596b69;
+      --button-text: #faf7ef;
+      --tag-start: #eadfc9;
+      --tag-end: #dce2dd;
+      --tag-text: #645348;
+      --panel-dark: #242b2a;
+      --panel-a: rgba(180, 154, 98, .22);
+      --panel-b: rgba(134, 95, 84, .18);
+      --panel-c: rgba(89, 107, 105, .2);
+      --canvas-start: #222a29;
+      --canvas-mid: #313d3b;
+      --canvas-end: #37343b;
+      --canvas-line-1: #c9b176;
+      --canvas-line-2: #a58b58;
+      --canvas-line-3: #91685d;
+      --canvas-line-4: #657b77;
+      --canvas-line-5: #7b6d81;
+      --gold: #b89b5e;
+      --shadow: 0 18px 48px rgba(62, 49, 39, .11);
+      --shadow-soft: 0 10px 32px rgba(62, 49, 39, .06);
+    }
+
+    body[data-theme="azurite"] {
+      --paper: #ece9e3;
+      --paper-2: #f8f6f1;
+      --paper-3: #d9d8d2;
+      --ink: #292d2e;
+      --muted: #666a6b;
+      --line: #c8c3ba;
+      --line-strong: #9e988d;
+      --accent: #765f68;
+      --accent-2: #aa956d;
+      --accent-3: #536b70;
+      --accent-4: #6c6478;
+      --violet: #6c6478;
+      --accent-soft: rgba(118, 95, 104, .08);
+      --nav-bg: rgba(237, 234, 228, .92);
+      --canvas-start: #252b2d;
+      --canvas-mid: #344047;
+      --canvas-end: #3a3742;
+      --gold: #ae9562;
+    }
+
+    body[data-theme="olive"] {
+      --paper: #eeeade;
+      --paper-2: #f8f5eb;
+      --paper-3: #dcd5c5;
+      --ink: #2a2d29;
+      --muted: #686a63;
+      --line: #ccc2af;
+      --line-strong: #a59a83;
+      --accent: #826158;
+      --accent-2: #b09a62;
+      --accent-3: #64736a;
+      --accent-4: #746a68;
+      --violet: #746a68;
+      --accent-soft: rgba(130, 97, 88, .08);
+      --nav-bg: rgba(240, 235, 224, .92);
+      --canvas-start: #252c28;
+      --canvas-mid: #38443c;
+      --canvas-end: #3c3a37;
+      --gold: #b39a61;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 9% 5%, rgba(112, 99, 119, .075), transparent 30%),
+        radial-gradient(circle at 91% 10%, rgba(89, 107, 105, .075), transparent 32%),
+        radial-gradient(circle at 70% 78%, rgba(134, 95, 84, .035), transparent 38%),
+        radial-gradient(circle at 21% 90%, rgba(180, 154, 98, .035), transparent 35%),
+        linear-gradient(145deg, var(--paper-2), var(--paper) 50%, var(--paper-3));
+    }
+
+    .scroll-progress {
+      background: linear-gradient(90deg, var(--accent), var(--gold), var(--accent-3), var(--accent-4));
+      box-shadow: none;
+    }
+
+    .site-nav {
+      border-color: color-mix(in srgb, var(--line-strong) 42%, transparent);
+      background: color-mix(in srgb, var(--nav-bg) 92%, transparent);
+      box-shadow: 0 9px 34px rgba(61, 48, 38, .07);
+    }
+
+    .brand-mark {
+      background: color-mix(in srgb, var(--ink) 88%, var(--accent-3));
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: color-mix(in srgb, var(--accent) 10%, transparent);
+      color: var(--accent);
+    }
+
+    .swatch {
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, .54), 0 2px 7px rgba(56, 43, 34, .12);
+    }
+
+    .button {
+      background: color-mix(in srgb, var(--ink) 91%, var(--accent));
+      border-color: color-mix(in srgb, var(--ink) 85%, var(--accent));
+    }
+
+    .button:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      box-shadow: 0 10px 25px rgba(134, 95, 84, .16);
+    }
+
+    .button.secondary {
+      background: color-mix(in srgb, var(--paper-2) 70%, transparent);
+    }
+
+    .eyebrow,
+    .hero-links a,
+    .about-meta span:first-child,
+    .news-cue span:first-child,
+    .profile-links a,
+    .profile-links button {
+      color: var(--accent);
+    }
+
+    .ink-name span:first-child {
+      color: color-mix(in srgb, var(--ink) 90%, var(--accent-3));
+      text-shadow: 1px 1px 0 rgba(89, 107, 105, .1), 3px 3px 18px rgba(89, 107, 105, .05);
+    }
+
+    .ink-name span:last-child {
+      color: color-mix(in srgb, var(--ink) 72%, var(--accent-4));
+      text-shadow: 1px 1px 0 rgba(112, 99, 119, .12), 4px 3px 20px rgba(112, 99, 119, .06);
+    }
+
+    .ink-name span:first-child:after {
+      color: var(--accent-3);
+    }
+
+    .ink-name span:last-child:after {
+      color: var(--accent-4);
+    }
+
+    .ink-name:before {
+      background: linear-gradient(90deg, var(--accent), var(--gold) 42%, var(--accent-3) 70%, transparent);
+    }
+
+    .signal-panel {
+      background:
+        radial-gradient(circle at 14% 17%, rgba(180, 154, 98, .18), transparent 27%),
+        radial-gradient(circle at 79% 25%, rgba(112, 99, 119, .16), transparent 31%),
+        radial-gradient(circle at 52% 72%, rgba(89, 107, 105, .22), transparent 39%),
+        var(--panel-dark);
+      border-color: rgba(213, 194, 154, .24);
+      box-shadow: 0 30px 78px rgba(43, 46, 42, .18), 0 0 0 1px rgba(184, 155, 94, .09);
+    }
+
+    .signal-panel:before {
+      border-color: rgba(234, 221, 191, .16);
+    }
+
+    .panel-kicker small {
+      color: rgba(201, 177, 118, .72);
+    }
+
+    .research-focus-panel {
+      background: linear-gradient(155deg, rgba(37, 44, 43, .83), rgba(26, 31, 32, .8));
+      border-color: rgba(215, 196, 154, .2);
+    }
+
+    .featured-label strong,
+    .new-badge {
+      background: var(--accent);
+    }
+
+    .panel-focus-list span {
+      color: color-mix(in srgb, var(--gold) 86%, white);
+    }
+
+    .about-grid,
+    .paper-card,
+    .news-frame,
+    .record-grid,
+    .contact-card {
+      border-color: color-mix(in srgb, var(--line-strong) 58%, transparent);
+    }
+
+    .about-grid:before {
+      background: linear-gradient(90deg, var(--accent), var(--gold) 40%, var(--accent-3) 70%, var(--accent-4));
+    }
+
+    .about-copy {
+      background:
+        radial-gradient(circle at 4% 94%, color-mix(in srgb, var(--accent-3) 9%, transparent), transparent 31%),
+        radial-gradient(circle at 91% 8%, color-mix(in srgb, var(--accent-4) 8%, transparent), transparent 28%),
+        linear-gradient(140deg, color-mix(in srgb, var(--paper-2) 97%, var(--accent-2)), var(--surface-wash));
+    }
+
+    .identity-card {
+      background:
+        radial-gradient(circle at 100% 0, color-mix(in srgb, var(--accent-4) 10%, transparent), transparent 36%),
+        linear-gradient(160deg, color-mix(in srgb, var(--paper-2) 74%, var(--accent-soft)), var(--section-tint));
+    }
+
+    .focus-card,
+    .info-card,
+    .paper-card,
+    .news-frame {
+      background:
+        radial-gradient(circle at 100% 0, color-mix(in srgb, var(--accent-4) 6%, transparent), transparent 34%),
+        linear-gradient(180deg, color-mix(in srgb, var(--surface-strong) 97%, var(--accent-2)), var(--surface-wash));
+    }
+
+    .focus-card:nth-child(1) {
+      background:
+        radial-gradient(circle at 100% 0, color-mix(in srgb, var(--accent-3) 10%, transparent), transparent 38%),
+        linear-gradient(155deg, var(--surface-strong), color-mix(in srgb, var(--surface-wash) 94%, var(--accent-3)));
+    }
+
+    .focus-card:nth-child(2) {
+      background:
+        radial-gradient(circle at 100% 0, color-mix(in srgb, var(--accent) 9%, transparent), transparent 38%),
+        linear-gradient(155deg, var(--surface-strong), color-mix(in srgb, var(--surface-wash) 94%, var(--accent)));
+    }
+
+    .focus-card:nth-child(3) {
+      background:
+        radial-gradient(circle at 100% 0, color-mix(in srgb, var(--accent-4) 10%, transparent), transparent 38%),
+        linear-gradient(155deg, var(--surface-strong), color-mix(in srgb, var(--surface-wash) 94%, var(--accent-4)));
+    }
+
+    .section-head h2 {
+      color: color-mix(in srgb, var(--ink) 82%, var(--accent-4));
+    }
+
+    .section-head:after {
+      background: linear-gradient(90deg, var(--accent), var(--gold), var(--accent-3), transparent);
+    }
+
+    .chip.active {
+      background: color-mix(in srgb, var(--accent) 11%, var(--paper-2));
+      border-color: color-mix(in srgb, var(--accent) 32%, var(--line));
+      color: var(--accent);
+    }
+
+    .venue {
+      border-color: color-mix(in srgb, var(--accent-3) 22%, var(--line));
+      background: color-mix(in srgb, var(--paper-2) 88%, var(--accent-3));
+      color: color-mix(in srgb, var(--ink) 72%, var(--accent-3));
+      box-shadow: 0 3px 10px rgba(54, 49, 43, .045);
+    }
+
+    .pill {
+      border-color: color-mix(in srgb, var(--line-strong) 48%, transparent);
+      background: color-mix(in srgb, var(--paper-2) 92%, var(--accent-4));
+      color: var(--muted);
+    }
+
+    .paper-meta .pill:nth-last-child(1) {
+      border-color: color-mix(in srgb, var(--accent-4) 24%, var(--line));
+    }
+
+    .contact-block {
+      background: color-mix(in srgb, var(--paper-2) 42%, transparent);
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
@@ -2964,13 +3723,13 @@
       <a href="#publications">Publications</a>
       <a href="https://danny-musician.github.io/">Music</a>
       <a href="#contact">Contact</a>
-      <div class="theme-switcher" aria-label="Color theme">
-        <button class="swatch active" type="button" data-theme="dunhuang" aria-label="Dunhuang warm mineral theme"
-          style="--swatch:#965041"></button>
-        <button class="swatch" type="button" data-theme="azurite" aria-label="Dunhuang azurite theme"
-          style="--swatch:#263e63"></button>
-        <button class="swatch" type="button" data-theme="olive" aria-label="Dunhuang olive mineral theme"
-          style="--swatch:#57633d"></button>
+      <div class="theme-switcher" aria-label="Heian classical color theme">
+        <button class="swatch active" type="button" data-theme="dunhuang" aria-label="Hihada, wisteria and aonibi Heian theme"
+          style="--swatch:#865f54"></button>
+        <button class="swatch" type="button" data-theme="azurite" aria-label="Moon white, shion and indigo-gray Heian theme"
+          style="--swatch:#6c6478"></button>
+        <button class="swatch" type="button" data-theme="olive" aria-label="Rikyucha, hihada and muted gold Heian theme"
+          style="--swatch:#64736a"></button>
       </div>
     </div>
   </nav>
@@ -2978,7 +3737,7 @@
   <header id="top" class="hero">
     <div class="hero-copy">
       <div class="eyebrow">Generative Audio · Multimodal Intelligence</div>
-      <h1><span>Junchuan</span><span>Zhao</span></h1>
+      <h1 class="ink-name" aria-label="Junchuan Zhao"><span data-text="Junchuan">Junchuan</span><span data-text="Zhao">Zhao</span></h1>
       <p class="hero-subtitle">I build expressive AI systems for <em>voice, music,</em> and human motion.</p>
       <p class="hero-statement">Ph.D. student at the National University of Singapore, exploring controllable generation systems that preserve expression, style, and human intent across sound and movement.</p>
       <div class="availability">Researching at NUS Sound &amp; Music Computing Lab</div>
@@ -2996,7 +3755,7 @@
 
     <aside class="signal-panel" id="signalPanel" aria-label="Interactive research signal and research focus">
       <canvas id="audioCanvas"></canvas>
-      <div class="panel-kicker">Move through the signal</div>
+      <div class="panel-kicker"><span>Move through the signal</span><small>Spectral ink field</small></div>
       <div class="portrait"><img src="assets/junchuan_2.jpg" alt="Portrait of Junchuan Zhao" loading="eager" decoding="async"></div>
       <div class="featured-work research-focus-panel">
         <div class="featured-label"><span>Research Focus</span><strong>01—03</strong></div>
@@ -3216,6 +3975,7 @@
         year: "2026",
         category: "speech",
         image: "assets/img/motivation.png",
+        summary: "A unified frequency-aware framework for speech bandwidth extension across multiple input cutoffs, formulated as in-context spectral infilling.",
         links: { pdf: "https://arxiv.org/pdf/2608.00572", page: "https://danny-nus.github.io/AnyBand-DemoPage/" }
       },
       {
@@ -3264,7 +4024,7 @@
         conference: "ACL Main, 2026.",
         venue: "ACL",
         year: "2026",
-        category: "speech",
+        category: ["speech", "affective"],
         image: "./assets/img/TED-TTS.png",
         links: { pdf: "https://arxiv.org/pdf/2601.03170", page: "https://simon-leong.github.io/TED-TTS-DemoPage/", code: "https://github.com/Simon-leong/TED-TTS", data: "https://huggingface.co/datasets/Chanson-0803/MED-TTS" }
       },
@@ -3292,10 +4052,10 @@
       {
         title: "CoMelSinger: Discrete Token-Based Zero-Shot Singing Synthesis With Structured Melody Control and Guidance",
         authors: "<b>Junchuan Zhao</b>, Wei Zeng, Tianle Lyu, Ye Wang",
-        conference: "IEEE/ACM TASLP, 2026.",
+        conference: "IEEE TASLP, 2026.",
         venue: "TASLP",
         year: "2026",
-        category: "speech",
+        category: ["speech", "music"],
         image: "./assets/img/CoMelSinger.png",
         links: { pdf: "https://arxiv.org/pdf/2509.19883", page: "https://danny-nus.github.io/CoMelSinger/" }
       },
@@ -3357,8 +4117,10 @@
 
     function renderPublications() {
       const visiblePapers = publications.filter((paper) => {
-        const searchable = `${paper.title} ${paper.authors} ${paper.conference} ${paper.venue} ${categoryLabel[paper.category]}`.toLowerCase();
-        const categoryMatch = activeFilter === "all" || paper.category === activeFilter;
+        const categories = Array.isArray(paper.category) ? paper.category : [paper.category];
+        const categoryText = categories.map((category) => categoryLabel[category]).join(" ");
+        const searchable = `${paper.title} ${paper.authors} ${paper.conference} ${paper.venue} ${categoryText}`.toLowerCase();
+        const categoryMatch = activeFilter === "all" || categories.includes(activeFilter);
         const queryMatch = !activeQuery || searchable.includes(activeQuery);
         return categoryMatch && queryMatch;
       });
@@ -3372,13 +4134,15 @@
 
       paperList.innerHTML = visiblePapers.map((paper) => {
         const isLatest = paper === publications[0];
+        const categories = Array.isArray(paper.category) ? paper.category : [paper.category];
+        const categoryPills = categories.map((category) => `<span class="pill">${categoryLabel[category]}</span>`).join("");
         const links = Object.entries(paper.links || {}).map(([label, href]) => {
           const text = label === "pdf" ? "PDF" : label === "code" ? "Code" : label === "page" ? "Project" : label === "data" ? "Data" : label;
           return `<a href="${href}" target="_blank" rel="noopener">${text}</a>`;
         }).join("");
         const bib = paper.bibtex ? `<a href="#" data-bibtex="${encodeURIComponent(paper.bibtex)}">BibTeX</a>` : "";
         return `
-          <article class="paper-card${isLatest ? " latest" : ""}" data-category="${paper.category}">
+          <article class="paper-card${isLatest ? " latest" : ""}" data-category="${categories.join(" ")}">
             <div class="paper-art">
               <img src="${paper.image}" alt="Illustration for ${paper.title}" loading="lazy" decoding="async">
               <span class="venue">${paper.venue}</span>
@@ -3387,11 +4151,12 @@
               <div class="paper-meta">
                 ${isLatest ? '<span class="new-badge">Latest</span>' : ""}
                 <span class="pill">${paper.year}</span>
-                <span class="pill">${categoryLabel[paper.category]}</span>
+                ${categoryPills}
               </div>
               <h3>${paper.title}</h3>
               <div class="authors">${paper.authors}</div>
               <div class="conference">${paper.conference}</div>
+              ${paper.summary ? `<p class="paper-summary">${paper.summary}</p>` : ""}
               <div class="paper-links">${links}${bib}</div>
             </div>
           </article>
@@ -3439,7 +4204,7 @@
       renderPublications();
     });
 
-    const themeKey = "homepage-dunhuang-theme-v2";
+    const themeKey = "homepage-heian-theme-v4";
     const savedTheme = localStorage.getItem(themeKey) || "dunhuang";
     document.body.dataset.theme = savedTheme === "dunhuang" ? "" : savedTheme;
     document.querySelectorAll(".swatch").forEach((button) => {
@@ -3556,13 +4321,30 @@
       cursorGlow.style.top = `${event.clientY}px`;
     }, { passive: true });
 
+    const inkName = document.querySelector(".ink-name");
+    if (inkName) {
+      inkName.addEventListener("pointermove", (event) => {
+        const rect = inkName.getBoundingClientRect();
+        const x = ((event.clientX - rect.left) / rect.width - .5) * 10;
+        const y = ((event.clientY - rect.top) / rect.height - .5) * 7;
+        inkName.style.setProperty("--name-x", `${x}px`);
+        inkName.style.setProperty("--name-y", `${y}px`);
+        inkName.classList.add("is-active");
+      });
+      inkName.addEventListener("pointerleave", () => {
+        inkName.style.setProperty("--name-x", "0px");
+        inkName.style.setProperty("--name-y", "0px");
+        inkName.classList.remove("is-active");
+      });
+    }
+
     const signalPanel = document.getElementById("signalPanel");
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (!reduceMotion) {
       signalPanel.addEventListener("pointermove", (event) => {
         const rect = signalPanel.getBoundingClientRect();
-        const rotateY = ((event.clientX - rect.left) / rect.width - .5) * 4;
-        const rotateX = ((event.clientY - rect.top) / rect.height - .5) * -4;
+        const rotateY = ((event.clientX - rect.left) / rect.width - .5) * 2.4;
+        const rotateX = ((event.clientY - rect.top) / rect.height - .5) * -2.4;
         signalPanel.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
       });
       signalPanel.addEventListener("pointerleave", () => {
@@ -3575,10 +4357,14 @@
     let frame = 0;
     let pointerX = .62;
     let pointerY = .38;
+    let smoothX = pointerX;
+    let smoothY = pointerY;
+    let lastDropFrame = 0;
+    const inkDrops = [];
 
     function resizeCanvas() {
       const rect = canvas.getBoundingClientRect();
-      const ratio = window.devicePixelRatio || 1;
+      const ratio = Math.min(window.devicePixelRatio || 1, 2);
       canvas.width = Math.max(1, Math.floor(rect.width * ratio));
       canvas.height = Math.max(1, Math.floor(rect.height * ratio));
       ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
@@ -3588,6 +4374,16 @@
       const rect = canvas.getBoundingClientRect();
       pointerX = (event.clientX - rect.left) / rect.width;
       pointerY = (event.clientY - rect.top) / rect.height;
+      if (frame - lastDropFrame > 6) {
+        inkDrops.push({ x: pointerX, y: pointerY, life: 1, radius: 4 });
+        if (inkDrops.length > 12) inkDrops.shift();
+        lastDropFrame = frame;
+      }
+    });
+
+    canvas.addEventListener("pointerleave", () => {
+      pointerX = .62;
+      pointerY = .38;
     });
 
     function cssVar(name) {
@@ -3606,80 +4402,215 @@
       return `rgba(${r}, ${g}, ${b}, ${alpha})`;
     }
 
+    function seededValue(seed) {
+      return Math.sin(seed * 91.173) * 43758.5453 % 1;
+    }
+
+    const tornFragments = Array.from({ length: 26 }, (_, index) => {
+      const band = index % 5;
+      const step = Math.floor(index / 5);
+      const width = .065 + Math.abs(seededValue(index + 2)) * .07;
+      const height = .035 + Math.abs(seededValue(index + 8)) * .06;
+      return {
+        band,
+        x: .055 + step * .16 + Math.abs(seededValue(index + 15)) * .035,
+        y: .2 + band * .095 + Math.abs(seededValue(index + 21)) * .018,
+        width,
+        height,
+        rotate: (seededValue(index + 31) - .5) * .2,
+        color: ["--accent-2", "--accent", "--accent-3", "--accent-4", "--violet"][index % 5],
+        alpha: .13 + Math.abs(seededValue(index + 41)) * .14,
+        gold: index % 4 === 0 || index % 9 === 0,
+        depth: .3 + (index % 5) * .12
+      };
+    });
+
+    function drawTornFragments(w, h) {
+      tornFragments.forEach((fragment, index) => {
+        const parallaxX = (smoothX - .5) * 16 * fragment.depth;
+        const parallaxY = (smoothY - .5) * 10 * fragment.depth;
+        const phase = frame * (.007 + fragment.band * .0007) + fragment.band * .9;
+        const waveY = Math.sin(fragment.x * Math.PI * (3.1 + fragment.band * .17) + phase) * (8 + fragment.band * 1.6);
+        const proximity = Math.exp(-Math.pow((fragment.x - smoothX) / .21, 2));
+        const energy = Math.sin(index * .77 + frame * .012) * .5 + .5;
+        const centerX = fragment.x * w + parallaxX;
+        const centerY = fragment.y * h + waveY + parallaxY + (smoothY - .5) * h * .045 * proximity;
+        const width = fragment.width * w * (.88 + energy * .28 + proximity * .16);
+        const height = fragment.height * h * (.82 + energy * .34 + proximity * .2);
+        const corners = [
+          [-.5, -.38], [-.18, -.52], [.22, -.46], [.52, -.28], [.46, .22], [.13, .5], [-.28, .44], [-.5, .13]
+        ];
+
+        ctx.save();
+        ctx.translate(centerX, centerY);
+        ctx.rotate(fragment.rotate + Math.sin(frame * .002 + index) * .01);
+        ctx.beginPath();
+        corners.forEach(([x, y], point) => {
+          const edge = (seededValue(index * 11 + point * 3) - .5) * .09;
+          const px = (x + edge) * width;
+          const py = (y - edge * .7) * height;
+          if (point === 0) ctx.moveTo(px, py);
+          else ctx.lineTo(px, py);
+        });
+        ctx.closePath();
+        ctx.fillStyle = rgbaFromVar(fragment.color, fragment.alpha * (.74 + energy * .3 + proximity * .2));
+        ctx.fill();
+
+        if (fragment.gold) {
+          ctx.strokeStyle = rgbaFromVar("--gold", .55);
+          ctx.lineWidth = .65;
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(-width * .38, height * .28);
+          ctx.quadraticCurveTo(width * .03, height * (.05 + Math.sin(index) * .08), width * .39, -height * .3);
+          ctx.strokeStyle = rgbaFromVar("--gold", .38);
+          ctx.lineWidth = .55;
+          ctx.stroke();
+        }
+        ctx.restore();
+      });
+    }
+
+    function drawInkWave(w, h, index, colorName) {
+      const base = h * (.19 + index * .115);
+      const amplitude = 12 + index * 2.8;
+      const phase = frame * (.008 + index * .0012) + index * 1.34;
+      const pointerPull = (smoothY * h - base) * .075;
+
+      ctx.beginPath();
+      for (let x = -8; x <= w + 8; x += 5) {
+        const t = x / w;
+        const proximity = Math.exp(-Math.pow((t - smoothX) / .2, 2));
+        const y = base
+          + Math.sin(t * Math.PI * (3.1 + index * .18) + phase) * amplitude
+          + Math.sin(t * Math.PI * 8.2 - phase * .62) * 2.6
+          + pointerPull * proximity;
+        if (x < 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.strokeStyle = cssVar(colorName);
+      ctx.lineWidth = index % 2 === 0 ? 1.15 : .72;
+      ctx.globalAlpha = .52 - index * .028;
+      ctx.stroke();
+
+      ctx.lineTo(w + 8, base + 46);
+      ctx.lineTo(-8, base + 46);
+      ctx.closePath();
+      const wash = ctx.createLinearGradient(0, base - amplitude, 0, base + 48);
+      wash.addColorStop(0, rgbaFromVar(colorName, .072));
+      wash.addColorStop(1, rgbaFromVar(colorName, 0));
+      ctx.fillStyle = wash;
+      ctx.fill();
+    }
+
     function drawAudioField() {
       const w = canvas.clientWidth;
       const h = canvas.clientHeight;
+      smoothX += (pointerX - smoothX) * .045;
+      smoothY += (pointerY - smoothY) * .045;
       ctx.clearRect(0, 0, w, h);
+
       const bg = ctx.createLinearGradient(0, 0, w, h);
       bg.addColorStop(0, cssVar("--canvas-start"));
-      bg.addColorStop(.48, cssVar("--canvas-mid"));
+      bg.addColorStop(.5, cssVar("--canvas-mid"));
       bg.addColorStop(1, cssVar("--canvas-end"));
       ctx.fillStyle = bg;
       ctx.fillRect(0, 0, w, h);
 
-      const glowA = ctx.createRadialGradient(pointerX * w, pointerY * h, 12, pointerX * w, pointerY * h, Math.max(w, h) * .72);
-      glowA.addColorStop(0, rgbaFromVar("--accent-2", .34));
-      glowA.addColorStop(.38, rgbaFromVar("--accent-4", .18));
-      glowA.addColorStop(1, rgbaFromVar("--accent-3", 0));
-      ctx.fillStyle = glowA;
+      const wash = ctx.createRadialGradient(smoothX * w, smoothY * h, 4, smoothX * w, smoothY * h, Math.max(w, h) * .62);
+      wash.addColorStop(0, rgbaFromVar("--canvas-line-1", .24));
+      wash.addColorStop(.24, rgbaFromVar("--accent", .14));
+      wash.addColorStop(.58, rgbaFromVar("--accent-3", .1));
+      wash.addColorStop(1, rgbaFromVar("--accent-3", 0));
+      ctx.fillStyle = wash;
       ctx.fillRect(0, 0, w, h);
 
-      const cols = 64;
-      const rows = 40;
-      const cellW = w / cols;
-      const cellH = h / rows;
-      const focusX = pointerX * cols;
-      const focusY = pointerY * rows;
-      const pigments = [
-        hexToRgb(cssVar("--accent-4")),
-        hexToRgb(cssVar("--accent-2")),
-        hexToRgb(cssVar("--accent-3")),
-        hexToRgb(cssVar("--accent")),
-        hexToRgb(cssVar("--canvas-line-1")),
-        hexToRgb(cssVar("--violet"))
-      ];
-
-      for (let x = 0; x < cols; x += 1) {
-        for (let y = 0; y < rows; y += 1) {
-          const dist = Math.hypot(x - focusX, y - focusY);
-          const wave = Math.sin(x * .24 + frame * .026) + Math.cos(y * .38 - frame * .017);
-          const band = Math.exp(-Math.pow((y - rows * (.48 + Math.sin(frame * .012) * .05)) / 8.5, 2));
-          const pointer = Math.max(0, 1 - dist / 14) * .62;
-          const pulse = Math.max(0, wave * .33 + band + pointer);
-          const color = pigments[(x + y + Math.floor(frame / 34)) % pigments.length];
-          ctx.fillStyle = `rgba(${color[0]}, ${color[1]}, ${color[2]}, ${.045 + pulse * .28})`;
-          ctx.fillRect(x * cellW + 1, y * cellH + 1, Math.max(1, cellW - 2), Math.max(1, cellH - 2));
-        }
+      for (let i = 0; i < 12; i += 1) {
+        const seed = i * 19.73;
+        const x = (Math.sin(seed) * .5 + .5) * w;
+        const y = (Math.cos(seed * 1.7) * .5 + .5) * h;
+        const radius = 42 + (i % 4) * 24;
+        const cloud = ctx.createRadialGradient(x, y, 0, x, y, radius);
+        const pigment = i % 3 === 0 ? "--accent-2" : i % 3 === 1 ? "--accent-3" : "--accent";
+        cloud.addColorStop(0, rgbaFromVar(pigment, .1));
+        cloud.addColorStop(1, rgbaFromVar(pigment, 0));
+        ctx.fillStyle = cloud;
+        ctx.fillRect(x - radius, y - radius, radius * 2, radius * 2);
       }
 
-      ctx.lineWidth = 1.8;
-      ["--canvas-line-1", "--canvas-line-2", "--canvas-line-3", "--canvas-line-4", "--canvas-line-5", "--accent-2"].forEach((name, line) => {
+      drawTornFragments(w, h);
+
+      ctx.save();
+      ctx.globalCompositeOperation = "screen";
+      const contourColors = ["--canvas-line-1", "--accent-3", "--accent", "--canvas-line-5"];
+      for (let ring = 0; ring < 7; ring += 1) {
         ctx.beginPath();
-        for (let x = 0; x <= w; x += 7) {
-          const t = x / w;
-          const pull = Math.sin((t - pointerX) * Math.PI) * 12 * (1 - Math.min(1, Math.abs(t - pointerX) * 2));
-          const y = h * (.2 + line * .105) + Math.sin(t * Math.PI * (4.8 + line * .22) + frame * .032 + line) * (16 + line * 3.2) + pull * (line + 1) * .2;
-          if (x === 0) ctx.moveTo(x, y);
+        const centerX = w * (.49 + Math.sin(frame * .003 + ring) * .035);
+        const centerY = h * (.43 + Math.cos(frame * .0025 + ring) * .028);
+        for (let angle = 0; angle <= Math.PI * 2 + .08; angle += .08) {
+          const wobble = Math.sin(angle * 3 + frame * .008 + ring) * (4 + ring * .5)
+            + Math.cos(angle * 5 - frame * .004) * 2;
+          const radiusX = 42 + ring * 24 + wobble;
+          const radiusY = 22 + ring * 15 + wobble * .45;
+          const x = centerX + Math.cos(angle) * radiusX;
+          const y = centerY + Math.sin(angle) * radiusY;
+          if (angle === 0) ctx.moveTo(x, y);
           else ctx.lineTo(x, y);
         }
-        ctx.strokeStyle = cssVar(name);
-        ctx.globalAlpha = .58;
+        ctx.strokeStyle = rgbaFromVar(contourColors[ring % contourColors.length], .055 + ring * .008);
+        ctx.lineWidth = .55;
         ctx.stroke();
+      }
+      ctx.restore();
+
+      const spectralBars = 42;
+      const barWidth = w / spectralBars;
+      for (let i = 0; i < spectralBars; i += 1) {
+        const t = i / spectralBars;
+        const envelope = Math.exp(-Math.pow((t - smoothX) / .24, 2));
+        const energy = .14 + (Math.sin(i * .71 + frame * .012) * .5 + .5) * .28 + envelope * .42;
+        const barHeight = Math.max(3, energy * h * .17);
+        const x = i * barWidth + barWidth * .32;
+        const y = h * .65 - barHeight;
+        const color = i % 5 === 0 ? "--accent" : i % 3 === 0 ? "--accent-2" : "--accent-3";
+        const gradient = ctx.createLinearGradient(0, y, 0, h * .65);
+        gradient.addColorStop(0, rgbaFromVar(color, .2));
+        gradient.addColorStop(1, rgbaFromVar(color, .015));
+        ctx.fillStyle = gradient;
+        ctx.fillRect(x, y, Math.max(.6, barWidth * .16), barHeight);
+      }
+
+      ["--canvas-line-1", "--canvas-line-2", "--canvas-line-3", "--canvas-line-4", "--canvas-line-5", "--accent-2"].forEach((color, index) => {
+        drawInkWave(w, h, index, color);
       });
 
-      for (let i = 0; i < 64; i += 1) {
-        const seed = i * 41.7;
-        const x = (Math.sin(seed + frame * .006) * .5 + .5) * w;
-        const y = (Math.cos(seed * .8 + frame * .009) * .5 + .5) * h;
-        const drift = Math.sin(frame * .018 + i) * 9;
-        const radius = 1.1 + (i % 5) * .36;
+      inkDrops.forEach((drop) => {
+        drop.radius += .42;
+        drop.life *= .982;
         ctx.beginPath();
-        ctx.fillStyle = i % 3 === 0 ? rgbaFromVar("--accent-2", .5) : i % 3 === 1 ? rgbaFromVar("--accent", .34) : rgbaFromVar("--accent-3", .28);
-        ctx.arc(x + drift, y, radius, 0, Math.PI * 2);
+        ctx.arc(drop.x * w, drop.y * h, drop.radius, 0, Math.PI * 2);
+        ctx.strokeStyle = rgbaFromVar("--canvas-line-1", drop.life * .38);
+        ctx.lineWidth = .8;
+        ctx.stroke();
+      });
+      while (inkDrops.length && inkDrops[0].life < .08) inkDrops.shift();
+
+      for (let i = 0; i < 48; i += 1) {
+        const seed = i * 47.13;
+        const x = (Math.sin(seed + frame * .0017) * .5 + .5) * w;
+        const y = (Math.cos(seed * .73 + frame * .0022) * .5 + .5) * h;
+        const proximity = Math.max(0, 1 - Math.hypot(x / w - smoothX, y / h - smoothY) * 3.4);
+        const driftX = (smoothX - .5) * proximity * 18;
+        const driftY = (smoothY - .5) * proximity * 12;
+        ctx.beginPath();
+        ctx.fillStyle = i % 4 === 0
+          ? rgbaFromVar("--canvas-line-1", .24 + proximity * .22)
+          : rgbaFromVar("--accent-3", .12 + proximity * .14);
+        ctx.arc(x + driftX, y + driftY, .55 + (i % 4) * .24, 0, Math.PI * 2);
         ctx.fill();
       }
-      ctx.globalAlpha = 1;
 
+      ctx.globalAlpha = 1;
       frame += 1;
       if (!reduceMotion) requestAnimationFrame(drawAudioField);
     }
