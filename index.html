@@ -2975,24 +2975,28 @@
       position: fixed;
       pointer-events: none;
       z-index: 0;
-      filter: blur(60px);
+      filter: blur(80px);
     }
 
     body::before {
-      top: -6%;
-      left: -4%;
-      width: 420px;
-      height: 380px;
-      background: radial-gradient(ellipse at 40% 35%, rgba(164, 140, 98, .14) 0%, rgba(164, 140, 98, .06) 45%, transparent 70%);
+      top: -10%;
+      left: -8%;
+      width: 520px;
+      height: 460px;
+      background:
+        radial-gradient(ellipse at 45% 38%, rgba(164, 140, 98, .25) 0%, rgba(180, 156, 108, .12) 40%, transparent 68%),
+        radial-gradient(ellipse at 78% 24%, rgba(145, 120, 160, .30) 0%, rgba(160, 138, 175, .14) 50%, transparent 70%);
       border-radius: 48% 52% 62% 38% / 55% 45% 55% 45%;
     }
 
     body::after {
-      bottom: -8%;
-      right: -6%;
-      width: 480px;
-      height: 400px;
-      background: radial-gradient(ellipse at 60% 55%, rgba(64, 95, 93, .11) 0%, rgba(104, 115, 97, .06) 50%, transparent 72%);
+      bottom: -10%;
+      right: -8%;
+      width: 540px;
+      height: 460px;
+      background:
+        radial-gradient(ellipse at 50% 50%, rgba(40, 78, 72, .22) 0%, rgba(64, 95, 93, .10) 45%, transparent 70%),
+        radial-gradient(ellipse at 32% 36%, rgba(72, 155, 170, .16) 0%, rgba(100, 185, 200, .07) 55%, transparent 72%);
       border-radius: 58% 42% 44% 56% / 42% 58% 42% 58%;
     }
 
@@ -3000,13 +3004,13 @@
     .hero::before {
       content: "";
       position: absolute;
-      top: -2%;
-      right: -3%;
-      width: 320px;
-      height: 280px;
-      background: radial-gradient(ellipse at 55% 40%, rgba(136, 74, 66, .10) 0%, rgba(136, 74, 66, .04) 48%, transparent 70%);
+      top: -4%;
+      right: -5%;
+      width: 340px;
+      height: 300px;
+      background: radial-gradient(ellipse at 55% 40%, rgba(180, 110, 80, .22) 0%, rgba(136, 74, 66, .10) 48%, transparent 70%);
       border-radius: 45% 55% 40% 60% / 60% 40% 60% 40%;
-      filter: blur(50px);
+      filter: blur(55px);
       pointer-events: none;
       z-index: 0;
     }
@@ -3014,13 +3018,48 @@
     .hero::after {
       content: "";
       position: absolute;
-      bottom: 4%;
-      left: -2%;
-      width: 240px;
-      height: 180px;
-      background: radial-gradient(ellipse at 35% 55%, rgba(104, 115, 97, .09) 0%, rgba(164, 140, 98, .05) 50%, transparent 68%);
+      bottom: 6%;
+      left: -4%;
+      width: 260px;
+      height: 200px;
+      background: radial-gradient(ellipse at 35% 55%, rgba(90, 110, 80, .20) 0%, rgba(164, 140, 98, .10) 50%, transparent 68%);
       border-radius: 52% 48% 58% 42% / 38% 62% 38% 62%;
-      filter: blur(45px);
+      filter: blur(50px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Mid-page color accent blobs */
+    .about-grid {
+      position: relative;
+    }
+
+    .about-grid::before {
+      content: "";
+      position: absolute;
+      top: 12%;
+      right: -6%;
+      width: 300px;
+      height: 280px;
+      background:
+        radial-gradient(ellipse at 50% 50%, rgba(150, 125, 165, .28) 0%, rgba(130, 110, 145, .14) 55%, transparent 72%);
+      border-radius: 55% 45% 48% 52% / 44% 56% 44% 56%;
+      filter: blur(60px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .about-grid::after {
+      content: "";
+      position: absolute;
+      bottom: 8%;
+      left: -6%;
+      width: 220px;
+      height: 240px;
+      background:
+        radial-gradient(ellipse at 50% 50%, rgba(90, 175, 190, .16) 0%, rgba(72, 150, 165, .07) 55%, transparent 70%);
+      border-radius: 42% 58% 56% 44% / 58% 42% 44% 56%;
+      filter: blur(55px);
       pointer-events: none;
       z-index: 0;
     }
