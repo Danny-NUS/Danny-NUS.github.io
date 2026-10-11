@@ -1,0 +1,212 @@
+/* Interactive hero artwork, with narrow-screen containment for its parent grid. */
+.signal-panel {
+  color-scheme: dark;
+  --signal-light: #e9c88d;
+  scroll-margin-top: 96px;
+  background: #142427;
+  isolation: isolate;
+  border-color: rgba(184, 175, 145, .4);
+  box-shadow: 0 28px 70px rgba(26, 40, 36, .22), 0 2px 5px rgba(23, 34, 31, .15);
+  transition: box-shadow .35s ease;
+}
+
+.signal-panel[data-signal="music"] { --signal-light: #acd9ca; }
+.signal-panel[data-signal="motion"] { --signal-light: #cdbce9; }
+.signal-panel::before {
+  inset: 7px;
+  border: 1px solid rgba(233, 223, 198, .1);
+  border-radius: 25px;
+  box-shadow: none;
+}
+.signal-panel::after {
+  height: 34%;
+  background: linear-gradient(transparent, rgba(8, 18, 21, .38));
+}
+.signal-panel #audioCanvas {
+  position: absolute;
+  inset: 0;
+  opacity: 1;
+  filter: none;
+  cursor: crosshair;
+  touch-action: pan-y;
+  outline-offset: -10px;
+}
+.signal-panel .panel-kicker {
+  top: 29px;
+  left: 28px;
+  gap: 7px;
+  pointer-events: none;
+}
+.signal-panel .panel-kicker span {
+  color: #f0eee4;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .12em;
+}
+.signal-panel .panel-kicker small {
+  color: rgba(218, 229, 222, .54);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: .015em;
+  text-transform: none;
+}
+.signal-panel .portrait {
+  top: 27px;
+  right: 27px;
+  width: clamp(96px, 10vw, 124px);
+  border: 3px solid #243635;
+  box-shadow: 0 0 0 1px rgba(230, 215, 176, .45), 0 0 0 7px rgba(224, 226, 201, .035), 0 15px 30px rgba(0, 0, 0, .24);
+  pointer-events: none;
+}
+.signal-toolbar {
+  position: absolute;
+  z-index: 3;
+  top: 91px;
+  left: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.signal-status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--signal-light);
+  font: 500 9px/1 Manrope, sans-serif;
+  letter-spacing: .13em;
+  transition: color .5s ease;
+}
+.signal-status::before {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 9px currentColor;
+  content: "";
+}
+.signal-pause {
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  padding: 0;
+  border: 1px solid rgba(227, 235, 225, .17);
+  border-radius: 50%;
+  background: rgba(224, 236, 224, .035);
+  color: rgba(237, 241, 228, .7);
+  cursor: pointer;
+  transition: background .2s, border-color .2s;
+}
+.signal-pause:hover { background: rgba(224, 236, 224, .12); border-color: rgba(227, 235, 225, .4); }
+.signal-pause svg { width: 11px; height: 11px; }
+.signal-pause .play-icon, .signal-pause[aria-pressed="true"] .pause-icon { display: none; }
+.signal-pause[aria-pressed="true"] .play-icon { display: block; }
+.signal-panel .research-focus-panel {
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  padding: 17px 20px 14px;
+  gap: 10px;
+  border: 1px solid rgba(202, 220, 206, .16);
+  border-radius: 20px;
+  background: linear-gradient(130deg, rgba(28, 44, 43, .85), rgba(13, 28, 31, .91));
+  backdrop-filter: blur(18px);
+  box-shadow: 0 14px 32px rgba(0, 10, 13, .2), inset 0 1px 0 rgba(248, 245, 213, .035);
+  transform: none;
+}
+.signal-panel .featured-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  color: rgba(228, 236, 226, .65);
+}
+.signal-panel .featured-label strong {
+  padding: 0;
+  background: none;
+  color: rgba(225, 230, 221, .45);
+  font: inherit;
+}
+.signal-panel .panel-focus-list li {
+  display: block;
+  padding: 0;
+  border-bottom-color: rgba(221, 234, 223, .09);
+}
+.signal-mode {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) 24px;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 3px 10px 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.signal-panel .signal-mode span {
+  color: rgba(225, 235, 224, .36);
+  font-size: 9px;
+  font-weight: 500;
+  transition: color .25s;
+}
+.signal-panel .signal-mode strong {
+  color: rgba(231, 237, 230, .76);
+  font-size: clamp(17px, 1.55vw, 22px);
+  font-weight: 500;
+  line-height: 1.15;
+  transition: color .25s, transform .25s;
+}
+.signal-mode svg {
+  width: 19px;
+  height: 19px;
+  color: rgba(232, 239, 226, .25);
+  transition: color .25s, transform .25s;
+}
+.signal-panel .signal-mode[aria-pressed="true"] span,
+.signal-mode[aria-pressed="true"] svg { color: var(--signal-light); }
+.signal-panel .signal-mode[aria-pressed="true"] strong,
+.signal-panel .signal-mode:hover strong { color: #f4f1e5; }
+.signal-mode:hover strong { transform: translateX(3px); }
+.signal-mode:hover svg { transform: translateX(2px); color: var(--signal-light); }
+.signal-panel .featured-cta {
+  margin: 0;
+  color: rgba(227, 235, 225, .6);
+  font: 400 10px/1.4 Manrope, sans-serif;
+  letter-spacing: .025em;
+  text-transform: none;
+}
+.signal-panel :is(button, canvas):focus-visible {
+  outline: 2px solid var(--signal-light);
+  outline-offset: 4px;
+}
+.signal-panel canvas:focus-visible { outline-offset: -10px; }
+.signal-touch-hint { display: none; }
+@media (max-width: 780px) {
+  .signal-panel::before { border-radius: 18px; }
+  .signal-panel .research-focus-panel { left: 18px; right: 18px; bottom: 18px; }
+  .signal-panel .signal-mode strong { font-size: 21px; }
+  .signal-mode { min-height: 44px; }
+  .signal-pause { width: 44px; height: 44px; }
+  .signal-pause svg { width: 13px; height: 13px; }
+  .signal-pointer-hint { display: none; }
+  .signal-touch-hint { display: inline; }
+}
+@media (max-width: 420px) {
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .hero-copy { min-width: 0; }
+  .hero .availability { max-width: 100%; }
+  .hero .availability::before { flex-shrink: 0; }
+  .signal-panel .panel-kicker { top: 25px; left: 22px; max-width: 145px; }
+  .signal-panel .panel-kicker span { font-size: 9px; line-height: 1.6; }
+  .signal-panel .panel-kicker small { font-size: 10px; }
+  .signal-panel .portrait { top: 25px; right: 23px; width: 83px; }
+  .signal-toolbar { top: 102px; left: 22px; }
+  .signal-panel .research-focus-panel { padding: 16px; }
+  .signal-panel .signal-mode strong { font-size: 17px; }
+  .signal-mode { grid-template-columns: 21px minmax(0, 1fr) 19px; gap: 6px; }
+  .signal-panel .featured-cta { font-size: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .signal-panel, .signal-panel * { transition: none !important; }
+}

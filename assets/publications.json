@@ -1,0 +1,214 @@
+[
+  {
+    "id": "edict",
+    "title": "Edit Who Speaks, Control How They Speak: Global Timbre Editing and Local Instruction Control for TTS",
+    "authors": "<b>Junchuan Zhao</b>, Chenglin Xu, Wei Zeng, Haoyang Li, Yiwen Guo, Ye Wang",
+    "conference": "arXiv preprint, 2026.",
+    "venue": "arXiv",
+    "year": "2026",
+    "submitted": "2026-10-08",
+    "category": "speech",
+    "new": true,
+    "summary": "EDICT combines reference-based timbre editing with segment-specific expressive instructions, using an edited acoustic reference and KV-cache reconstruction to maintain voice consistency and acoustic continuity.",
+    "links": {
+      "pdf": "https://arxiv.org/abs/2610.11437",
+      "page": "https://danny-nus.github.io/EDICT-demopage/"
+    },
+    "bibtex": "@misc{zhao2026editwhospeaks,\n  title         = {Edit Who Speaks, Control How They Speak: Global Timbre Editing and Local Instruction Control for {TTS}},\n  author        = {Junchuan Zhao and Chenglin Xu and Wei Zeng and Haoyang Li and Yiwen Guo and Ye Wang},\n  year          = {2026},\n  eprint        = {2610.11437},\n  archivePrefix = {arXiv},\n  primaryClass  = {cs.SD},\n  doi           = {10.48550/arXiv.2610.11437},\n  url           = {https://arxiv.org/abs/2610.11437}\n}"
+  },
+  {
+    "id": "preference-optimization-nv",
+    "title": "Preference Optimization for Non-Verbal Vocalization Synthesis",
+    "authors": "Haoyang Li, Chenglin Xu, <b>Junchuan Zhao</b>, Yuang Cao, Liumeng Xue, Yiwen Guo, Eng Siong Chng",
+    "conference": "arXiv preprint, 2026.",
+    "venue": "arXiv",
+    "year": "2026",
+    "submitted": "2026-08-25",
+    "category": "speech",
+    "new": true,
+    "summary": "A study of preference signals, pair construction, and DPO objectives for non-verbal vocalization synthesis, introducing a non-verbal-aware character error rate to balance vocalization realization and lexical accuracy.",
+    "links": {
+      "pdf": "https://arxiv.org/abs/2608.24163"
+    },
+    "bibtex": "@misc{li2026preferenceoptimization,\n  title         = {Preference Optimization for Non-Verbal Vocalization Synthesis},\n  author        = {Haoyang Li and Chenglin Xu and Junchuan Zhao and Yuang Cao and Liumeng Xue and Yiwen Guo and Eng Siong Chng},\n  year          = {2026},\n  eprint        = {2608.24163},\n  archivePrefix = {arXiv},\n  primaryClass  = {eess.AS},\n  doi           = {10.48550/arXiv.2608.24163},\n  url           = {https://arxiv.org/abs/2608.24163}\n}"
+  },
+  {
+    "title": "AnyBand: Unified Multi-Bandwidth Speech Extension via Frequency-Aware In-Context Spectral Infilling",
+    "authors": "<b>Junchuan Zhao</b>, Minh Duc Vu, Bowen Zhang, Ye Wang",
+    "conference": "arXiv preprint, 2026.",
+    "venue": "arXiv",
+    "year": "2026",
+    "category": "speech",
+    "summary": "A unified frequency-aware framework for speech bandwidth extension across multiple input cutoffs, formulated as in-context spectral infilling.",
+    "links": {
+      "pdf": "https://arxiv.org/pdf/2608.00572",
+      "page": "https://danny-nus.github.io/AnyBand-DemoPage/"
+    },
+    "id": "anyband"
+  },
+  {
+    "title": "Remix the Timbre: Diffusion-Based Style Transfer Across Polyphonic Stems",
+    "authors": "Leduo Chen, <b>Junchuan Zhao†</b>, Shengchen Li",
+    "conference": "arXiv preprint, 2026.",
+    "venue": "arXiv",
+    "year": "2026",
+    "category": "music",
+    "links": {
+      "pdf": "https://arxiv.org/pdf/2605.09259",
+      "page": "https://mixturett.github.io/Mixture_TT/"
+    },
+    "id": "remix-the-timbre"
+  },
+  {
+    "title": "PersonaGest: Personalized Co-Speech Gesture Generation with Semantic-Guided Hierarchical Motion Representation",
+    "authors": "<b>Junchuan Zhao</b>*, Qifan Liang*, Ye Wang",
+    "conference": "arXiv preprint, 2026.",
+    "venue": "arXiv",
+    "year": "2026",
+    "category": "human",
+    "links": {
+      "pdf": "https://arxiv.org/pdf/2605.07252v1",
+      "page": "https://danny-nus.github.io/PersonaGest/"
+    },
+    "id": "personagest"
+  },
+  {
+    "title": "MSpoofTTS: Multi-Resolution Spoof-Guided Inference for Discrete Speech Synthesis",
+    "authors": "<b>Junchuan Zhao</b>*, Minh Duc Vu*, Ye Wang",
+    "conference": "Interspeech, 2026.",
+    "venue": "Interspeech",
+    "year": "2026",
+    "category": "speech",
+    "links": {
+      "pdf": "https://arxiv.org/pdf/2603.05373",
+      "page": "https://danny-nus.github.io/MSpoofTTS.github.io/",
+      "code": "https://github.com/Danny-NUS/MSpoofTTS"
+    },
+    "id": "mspooftts"
+  },
+  {
+    "title": "CodecFlow: Efficient Bandwidth Extension via Conditional Flow Matching in Neural Codec Latent Space",
+    "authors": "Bowen Zhang*, <b>Junchuan Zhao</b>*, A S Madhukumar, Ye Wang, Ian McLoughlin",
+    "conference": "arXiv preprint, 2026.",
+    "venue": "arXiv",
+    "year": "2026",
+    "category": "speech",
+    "links": {
+      "pdf": "https://arxiv.org/abs/2603.02022",
+      "page": "https://danny-nus.github.io/CodecFlow/"
+    },
+    "id": "codecflow"
+  },
+  {
+    "title": "TED-TTS: Training-Free Intra-Utterance Emotion and Duration Control for Text-to-Speech Synthesis",
+    "authors": "Qifan Liang, Yuansen Liu, Ruixin Wei, Nan Lu, <b>Junchuan Zhao†</b>, Ye Wang",
+    "conference": "ACL Main, 2026.",
+    "venue": "ACL",
+    "year": "2026",
+    "category": [
+      "speech",
+      "affective"
+    ],
+    "links": {
+      "pdf": "https://arxiv.org/pdf/2601.03170",
+      "page": "https://simon-leong.github.io/TED-TTS-DemoPage/",
+      "code": "https://github.com/Simon-leong/TED-TTS",
+      "data": "https://huggingface.co/datasets/Chanson-0803/MED-TTS"
+    },
+    "id": "ted-tts"
+  },
+  {
+    "title": "KSDiff: Keyframe-Augmented Speech-Aware Dual-Path Diffusion for Facial Animation",
+    "authors": "Tianle Lyu*, <b>Junchuan Zhao</b>*, Ye Wang",
+    "conference": "ICASSP, 2026.",
+    "venue": "ICASSP",
+    "year": "2026",
+    "category": "human",
+    "links": {
+      "pdf": "https://arxiv.org/pdf/2509.20128",
+      "page": "https://kincin.github.io/KSDiff/"
+    },
+    "bibtex": "@INPROCEEDINGS{lyr2026ksdiff,\n  author={Lyu, Tianle and Zhao, Junchuan and Wang, Ye},\n  title={KSDIFF: Keyframe-Augmented Speech-Aware Dual-Path Diffusion for Facial Animation},\n  booktitle={ICASSP},\n  year={2026}\n}",
+    "id": "ksdiff"
+  },
+  {
+    "title": "InconVAD: A Two-Stage Dual-Tower Framework for Multimodal Emotion Inconsistency Detection",
+    "authors": "Zongyi Li, <b>Junchuan Zhao</b>, Francis Bu Sung Lee, Andrew Zi Han Yee",
+    "conference": "ICASSP, 2026.",
+    "venue": "ICASSP",
+    "year": "2026",
+    "category": "affective",
+    "links": {
+      "pdf": "https://arxiv.org/pdf/2509.20140"
+    },
+    "id": "inconvad"
+  },
+  {
+    "title": "CoMelSinger: Discrete Token-Based Zero-Shot Singing Synthesis With Structured Melody Control and Guidance",
+    "authors": "<b>Junchuan Zhao</b>, Wei Zeng, Tianle Lyu, Ye Wang",
+    "conference": "IEEE TASLP, 2026.",
+    "venue": "TASLP",
+    "year": "2026",
+    "category": [
+      "speech",
+      "music"
+    ],
+    "links": {
+      "pdf": "https://arxiv.org/pdf/2509.19883",
+      "page": "https://danny-nus.github.io/CoMelSinger/"
+    },
+    "id": "comelsinger"
+  },
+  {
+    "title": "Bridging Piano Transcription and Rendering via Disentangled Score Content and Style",
+    "authors": "Wei Zeng, <b>Junchuan Zhao</b>, Ye Wang",
+    "conference": "ICLR, 2026.",
+    "venue": "ICLR",
+    "year": "2026",
+    "category": "music",
+    "links": {
+      "pdf": "https://openreview.net/pdf?id=173Pq3F31r",
+      "page": "https://jointpianist.github.io/epr-apt/"
+    },
+    "id": "jointpianist"
+  },
+  {
+    "title": "Prosody-Adaptable Audio Codecs for Zero-Shot Voice Conversion via In-Context Learning",
+    "authors": "<b>Junchuan Zhao*</b>, Xintong Wang*, Ye Wang",
+    "conference": "Interspeech, 2025.",
+    "venue": "Interspeech",
+    "year": "2025",
+    "category": "speech",
+    "links": {
+      "pdf": "https://www.isca-archive.org/interspeech_2025/zhao25d_interspeech.pdf"
+    },
+    "id": "pace"
+  },
+  {
+    "title": "SPSinger: Multi-Singer Singing Voice Synthesis with Short Reference Prompt",
+    "authors": "<b>Junchuan Zhao</b>, Low Qi Hong Chetwin, Ye Wang",
+    "conference": "ICASSP, 2025.",
+    "venue": "ICASSP",
+    "year": "2025",
+    "category": "speech",
+    "links": {
+      "pdf": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10888907",
+      "page": "https://danny-nus.github.io/SPSinger/"
+    },
+    "id": "spsinger"
+  },
+  {
+    "title": "SinTechSVS: A Singing Technique Controllable Singing Voice Synthesis System",
+    "authors": "<b>Junchuan Zhao</b>, Low Qi Hong Chetwin, Ye Wang",
+    "conference": "IEEE/ACM TASLP, 2024.",
+    "venue": "TASLP",
+    "year": "2024",
+    "category": "speech",
+    "links": {
+      "pdf": "https://ieeexplore.ieee.org/document/10509739",
+      "page": "https://danny-nus.github.io/SinTechSVS/",
+      "data": "https://huggingface.co/datasets/Chanson-0803/SinTechSVS-singing-technique-annotation"
+    },
+    "id": "sintechsvs"
+  }
+]

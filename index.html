@@ -8,7 +8,16 @@
     content="Junchuan Zhao, Ph.D. student at National University of Singapore working on speech, singing voice, music AI, and multimodal generation.">
   <title>Junchuan Zhao — Generative Audio Researcher</title>
   <link rel="canonical" href="https://danny-nus.github.io/">
-  <meta name="theme-color" content="#f3f0e9">
+  <meta name="theme-color" content="#101b1c">
+  <script>
+    // Apply the saved appearance before styles load to avoid a dark flash in day mode.
+    (() => {
+      let mode = "dark";
+      try { mode = localStorage.getItem("homepage-appearance-v1") === "light" ? "light" : "dark"; } catch {}
+      document.documentElement.dataset.mode = mode;
+      if (mode === "light") document.querySelector('meta[name="theme-color"]').content = "#f8f7f4";
+    })();
+  </script>
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://danny-nus.github.io/">
   <meta property="og:title" content="Junchuan Zhao — Generative Audio Researcher">
@@ -3743,18 +3752,18 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="assets/publications.css">
+  <link rel="stylesheet" href="assets/signal.css?v=20261011.2">
+  <link rel="stylesheet" href="assets/theme.css?v=20261011.4">
 </head>
 
 <body>
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
   <a class="skip-link" href="#main">Skip to content</a>
   <nav class="site-nav" aria-label="Primary navigation">
     <a class="brand" href="#top" aria-label="Junchuan Zhao homepage">
       <span class="brand-mark">JZ</span><span>Junchuan Zhao</span>
     </a>
-    <button class="menu-toggle" type="button" aria-label="Toggle navigation"
-      aria-expanded="false"><span></span></button>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#research">Research</a>
@@ -3762,15 +3771,21 @@
       <a href="#publications">Publications</a>
       <a href="https://danny-musician.github.io/">Music</a>
       <a href="#contact">Contact</a>
-      <div class="theme-switcher" aria-label="Heian classical color theme">
-        <button class="swatch active" type="button" data-theme="dunhuang" aria-label="Hihada, wisteria and aonibi Heian theme"
-          style="--swatch:#865f54"></button>
-        <button class="swatch" type="button" data-theme="azurite" aria-label="Moon white, shion and indigo-gray Heian theme"
-          style="--swatch:#6c6478"></button>
-        <button class="swatch" type="button" data-theme="olive" aria-label="Rikyucha, hihada and muted gold Heian theme"
-          style="--swatch:#64736a"></button>
+      <div class="theme-switcher" role="group" aria-label="Color palette">
+        <button class="swatch active" type="button" data-theme="dunhuang" aria-label="Deep teal palette" title="Deep teal" aria-pressed="true"
+          style="--swatch:#a5cfc1"></button>
+        <button class="swatch" type="button" data-theme="azurite" aria-label="Midnight palette" title="Midnight" aria-pressed="false"
+          style="--swatch:#bcb1d5"></button>
+        <button class="swatch" type="button" data-theme="olive" aria-label="Forest palette" title="Forest" aria-pressed="false"
+          style="--swatch:#bac9a4"></button>
       </div>
     </div>
+    <button class="appearance-toggle" type="button" aria-label="Switch to day mode" title="Switch to day mode">
+      <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42m0-14.14-1.42 1.42m-11.3 11.3-1.42 1.42"/></svg>
+      <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg>
+    </button>
+    <button class="menu-toggle" type="button" aria-label="Toggle navigation"
+      aria-expanded="false"><span></span></button>
   </nav>
 
   <header id="top" class="hero">
@@ -3781,8 +3796,8 @@
       <p class="hero-statement">Ph.D. student at the National University of Singapore, exploring controllable generation systems that preserve expression, style, and human intent across sound and movement.</p>
       <div class="availability">Researching at NUS Sound &amp; Music Computing Lab</div>
       <div class="hero-actions" aria-label="Hero links">
-        <a class="button" href="#publications">Explore my work</a>
-        <a class="button secondary" href="assets/files/CV-junchuan.pdf">Download CV</a>
+        <a class="button" href="#publications">Explore my work <span class="button-arrow" aria-hidden="true">↗</span></a>
+        <a class="button secondary" href="assets/files/CV-junchuan.pdf"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v5h14v-5"/></svg> Download CV</a>
       </div>
       <div class="hero-links" aria-label="Academic quick links">
         <a href="https://scholar.google.com/citations?hl=en&amp;user=l0xiNjYAAAAJ">Scholar</a>
@@ -3792,18 +3807,25 @@
       </div>
     </div>
 
-    <aside class="signal-panel" id="signalPanel" aria-label="Interactive research signal and research focus">
-      <canvas id="audioCanvas"></canvas>
-      <div class="panel-kicker"><span>Move through the signal</span><small>Spectral ink field</small></div>
+    <aside class="signal-panel" id="signalPanel" data-signal="voice" aria-label="Interactive research signal and research focus">
+      <canvas id="audioCanvas" role="button" tabindex="0" aria-label="Interactive light ribbons. Click or press Enter to send a ripple."></canvas>
+      <div class="panel-kicker"><span>Move through the signal</span><small>Sound, made visible.</small></div>
+      <div class="signal-toolbar">
+        <span class="signal-status" aria-live="polite">01 / VOICE</span>
+        <button class="signal-pause" type="button" aria-label="Pause signal animation" aria-pressed="false">
+          <svg class="pause-icon" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M3 2h2v8H3zm4 0h2v8H7z"/></svg>
+          <svg class="play-icon" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="m4 2 6 4-6 4z"/></svg>
+        </button>
+      </div>
       <div class="portrait"><img src="assets/junchuan_2.jpg" alt="Portrait of Junchuan Zhao" loading="eager" decoding="async"></div>
       <div class="featured-work research-focus-panel">
         <div class="featured-label"><span>Research Focus</span><strong>01—03</strong></div>
-        <ul class="panel-focus-list">
-          <li><span>01</span><strong>Expressive Voice</strong></li>
-          <li><span>02</span><strong>Music Intelligence</strong></li>
-          <li><span>03</span><strong>Human Motion</strong></li>
+        <ul class="panel-focus-list" aria-label="Signal visualizations">
+          <li><button class="signal-mode" type="button" data-signal="voice" aria-pressed="true"><span>01</span><strong>Expressive Voice</strong><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><path d="M3 12h3l2-6 4 12 4-12 2 6h3"/></svg></button></li>
+          <li><button class="signal-mode" type="button" data-signal="music" aria-pressed="false"><span>02</span><strong>Music Intelligence</strong><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><path d="M4 10v4m4-7v10m4-13v16m4-13v10m4-7v4"/></svg></button></li>
+          <li><button class="signal-mode" type="button" data-signal="motion" aria-pressed="false"><span>03</span><strong>Human Motion</strong><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-35 12 12)"/><circle cx="12" cy="12" r="2"/></svg></button></li>
         </ul>
-        <span class="featured-cta">Sound · Intelligence · Movement</span>
+        <span class="featured-cta"><span class="signal-pointer-hint">Move to shape · Click to ripple · Select a focus</span><span class="signal-touch-hint">Tap to ripple · Select a focus</span></span>
       </div>
     </aside>
   </header>
@@ -3811,6 +3833,7 @@
   <main id="main">
     <section id="about" class="reveal">
       <div class="section-head">
+        <span class="section-index">01 / Profile</span>
         <h2>About</h2>
         <p>I study generative AI for voice, music, and human motion, with an emphasis on controllable systems that
           support expressive creation.</p>
@@ -3849,40 +3872,45 @@
 
     <section id="research" class="reveal">
       <div class="section-head">
+        <span class="section-index">02 / Research directions</span>
         <h2>Research Focus</h2>
         <p>Three threads connect most of my work: expressive voice generation, music and audio intelligence, and
           multimodal human signal modeling.</p>
       </div>
       <div class="focus-grid">
         <article class="focus-card" data-number="01">
-          <div class="focus-line"></div>
+
           <div>
             <h3>Speech and Singing Voice Generation</h3>
             <p>Speech synthesis, singing voice synthesis, voice conversion, singing technique control, and zero-shot
               vocal modeling.</p>
           </div>
+          <a class="focus-link" href="#publications" data-research-filter="speech">Explore voice research<span aria-hidden="true">↗</span></a>
         </article>
         <article class="focus-card" data-number="02">
-          <div class="focus-line"></div>
+
           <div>
             <h3>Music and Audio Intelligence</h3>
             <p>Neural audio codecs, controllable audio generation, piano transcription/rendering, music style transfer,
               and creative ML systems.</p>
           </div>
+          <a class="focus-link" href="#publications" data-research-filter="music">Explore music research<span aria-hidden="true">↗</span></a>
         </article>
         <article class="focus-card" data-number="03">
-          <div class="focus-line"></div>
+
           <div>
             <h3>Audio-Driven Human Generation</h3>
             <p>Talking head generation, co-speech gesture generation, multimodal emotion analysis, and human-centered
               generation.</p>
           </div>
+          <a class="focus-link" href="#publications" data-research-filter="human">Explore human animation<span aria-hidden="true">↗</span></a>
         </article>
       </div>
     </section>
 
     <section id="news" class="reveal">
       <div class="section-head">
+        <span class="section-index">03 / Updates</span>
         <h2>Recent News</h2>
         <p>A compact timeline for papers, internships, teaching, and milestones.</p>
       </div>
@@ -3915,8 +3943,9 @@
 
     <section id="publications" class="reveal">
       <div class="section-head">
-        <h2>Selected Work</h2>
-        <p>Research across expressive voice, music intelligence, neural audio, and human-centered multimodal systems. Filter by field or search the collection.</p>
+        <span class="section-index">04 / Research output</span>
+        <h2>Publications</h2>
+        <p>Research across voice, music, and human-centered multimodal systems. Browse by year, filter by field, or search the collection.</p>
       </div>
       <div class="paper-tools">
         <div class="filter-row" role="group" aria-label="Publication filters">
@@ -3930,11 +3959,277 @@
           aria-label="Search publications">
       </div>
       <div class="publication-status" id="publicationStatus" aria-live="polite"></div>
-      <div class="paper-list" id="paperList"></div>
+      <p class="contribution-note">* Equal contribution &nbsp; · &nbsp; † Corresponding author</p>
+      <div class="publication-list" id="paperList">
+        <!-- PUBLICATIONS:START -->
+<section class="year-group" data-year="2026" aria-label="Publications from 2026">
+  <div class="year-heading">
+    <h3>2026</h3>
+  </div>
+  <div class="year-papers">
+    <article class="publication" id="edict" data-categories="speech" data-search="Edit Who Speaks, Control How They Speak: Global Timbre Editing and Local Instruction Control for TTS Junchuan Zhao, Chenglin Xu, Wei Zeng, Haoyang Li, Yiwen Guo, Ye Wang arXiv preprint, 2026. 2026 speech EDICT combines reference-based timbre editing with segment-specific expressive instructions, using an edited acoustic reference and KV-cache reconstruction to maintain voice consistency and acoustic continuity. edict https://arxiv.org/abs/2610.11437 https://danny-nus.github.io/EDICT-demopage/ voice speech singing">
+      <div class="paper-meta">
+        <small class="paper-venue">arXiv</small>
+        <small class="paper-new">New</small>
+      </div>
+      <h4 class="paper-title"><a href="https://arxiv.org/abs/2610.11437">Edit Who Speaks, Control How They Speak: Global Timbre Editing and Local Instruction Control for TTS</a></h4>
+      <p class="paper-authors"><b>Junchuan Zhao</b>, Chenglin Xu, Wei Zeng, Haoyang Li, Yiwen Guo, Ye Wang</p>
+      <p class="paper-conference">arXiv preprint, 2026.</p>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.11437" data-kind="paper">Paper</a>
+        <a href="https://danny-nus.github.io/EDICT-demopage/" data-kind="demo">Demo</a>
+        <details class="abstract">
+          <summary>Overview</summary>
+          <p class="abstract-text">EDICT combines reference-based timbre editing with segment-specific expressive instructions, using an edited acoustic reference and KV-cache reconstruction to maintain voice consistency and acoustic continuity.</p>
+        </details>
+        <details class="citation">
+          <summary>Cite</summary>
+          <div class="citation-panel">
+            <pre><code>@misc{zhao2026editwhospeaks,
+  title         = {Edit Who Speaks, Control How They Speak: Global Timbre Editing and Local Instruction Control for {TTS}},
+  author        = {Junchuan Zhao and Chenglin Xu and Wei Zeng and Haoyang Li and Yiwen Guo and Ye Wang},
+  year          = {2026},
+  eprint        = {2610.11437},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.SD},
+  doi           = {10.48550/arXiv.2610.11437},
+  url           = {https://arxiv.org/abs/2610.11437}
+}</code></pre>
+            <button class="copy-citation js-control" type="button" hidden aria-label="Copy BibTeX citation for Edit Who Speaks, Control How They Speak: Global Timbre Editing and Local Instruction Control for TTS">Copy BibTeX</button>
+          </div>
+        </details>
+      </div>
+    </article>
+    <article class="publication" id="preference-optimization-nv" data-categories="speech" data-search="Preference Optimization for Non-Verbal Vocalization Synthesis Haoyang Li, Chenglin Xu, Junchuan Zhao, Yuang Cao, Liumeng Xue, Yiwen Guo, Eng Siong Chng arXiv preprint, 2026. 2026 speech A study of preference signals, pair construction, and DPO objectives for non-verbal vocalization synthesis, introducing a non-verbal-aware character error rate to balance vocalization realization and lexical accuracy. preference-optimization-nv https://arxiv.org/abs/2608.24163 voice speech singing">
+      <div class="paper-meta">
+        <small class="paper-venue">arXiv</small>
+        <small class="paper-new">New</small>
+      </div>
+      <h4 class="paper-title"><a href="https://arxiv.org/abs/2608.24163">Preference Optimization for Non-Verbal Vocalization Synthesis</a></h4>
+      <p class="paper-authors">Haoyang Li, Chenglin Xu, <b>Junchuan Zhao</b>, Yuang Cao, Liumeng Xue, Yiwen Guo, Eng Siong Chng</p>
+      <p class="paper-conference">arXiv preprint, 2026.</p>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.24163" data-kind="paper">Paper</a>
+        <details class="abstract">
+          <summary>Overview</summary>
+          <p class="abstract-text">A study of preference signals, pair construction, and DPO objectives for non-verbal vocalization synthesis, introducing a non-verbal-aware character error rate to balance vocalization realization and lexical accuracy.</p>
+        </details>
+        <details class="citation">
+          <summary>Cite</summary>
+          <div class="citation-panel">
+            <pre><code>@misc{li2026preferenceoptimization,
+  title         = {Preference Optimization for Non-Verbal Vocalization Synthesis},
+  author        = {Haoyang Li and Chenglin Xu and Junchuan Zhao and Yuang Cao and Liumeng Xue and Yiwen Guo and Eng Siong Chng},
+  year          = {2026},
+  eprint        = {2608.24163},
+  archivePrefix = {arXiv},
+  primaryClass  = {eess.AS},
+  doi           = {10.48550/arXiv.2608.24163},
+  url           = {https://arxiv.org/abs/2608.24163}
+}</code></pre>
+            <button class="copy-citation js-control" type="button" hidden aria-label="Copy BibTeX citation for Preference Optimization for Non-Verbal Vocalization Synthesis">Copy BibTeX</button>
+          </div>
+        </details>
+      </div>
+    </article>
+    <article class="publication" id="anyband" data-categories="speech" data-search="AnyBand: Unified Multi-Bandwidth Speech Extension via Frequency-Aware In-Context Spectral Infilling Junchuan Zhao, Minh Duc Vu, Bowen Zhang, Ye Wang arXiv preprint, 2026. 2026 speech A unified frequency-aware framework for speech bandwidth extension across multiple input cutoffs, formulated as in-context spectral infilling. anyband https://arxiv.org/pdf/2608.00572 https://danny-nus.github.io/AnyBand-DemoPage/ voice speech singing">
+      <div class="paper-meta">
+        <small class="paper-venue">arXiv</small>
+      </div>
+      <h4 class="paper-title"><a href="https://arxiv.org/pdf/2608.00572">AnyBand: Unified Multi-Bandwidth Speech Extension via Frequency-Aware In-Context Spectral Infilling</a></h4>
+      <p class="paper-authors"><b>Junchuan Zhao</b>, Minh Duc Vu, Bowen Zhang, Ye Wang</p>
+      <p class="paper-conference">arXiv preprint, 2026.</p>
+      <div class="paper-links">
+        <a href="https://arxiv.org/pdf/2608.00572" data-kind="paper">Paper</a>
+        <a href="https://danny-nus.github.io/AnyBand-DemoPage/" data-kind="demo">Demo</a>
+        <details class="abstract">
+          <summary>Overview</summary>
+          <p class="abstract-text">A unified frequency-aware framework for speech bandwidth extension across multiple input cutoffs, formulated as in-context spectral infilling.</p>
+        </details>
+      </div>
+    </article>
+    <article class="publication" id="remix-the-timbre" data-categories="music" data-search="Remix the Timbre: Diffusion-Based Style Transfer Across Polyphonic Stems Leduo Chen, Junchuan Zhao†, Shengchen Li arXiv preprint, 2026. 2026 music  remix-the-timbre https://arxiv.org/pdf/2605.09259 https://mixturett.github.io/Mixture_TT/ music audio">
+      <div class="paper-meta">
+        <small class="paper-venue">arXiv</small>
+      </div>
+      <h4 class="paper-title"><a href="https://arxiv.org/pdf/2605.09259">Remix the Timbre: Diffusion-Based Style Transfer Across Polyphonic Stems</a></h4>
+      <p class="paper-authors">Leduo Chen, <b>Junchuan Zhao†</b>, Shengchen Li</p>
+      <p class="paper-conference">arXiv preprint, 2026.</p>
+      <div class="paper-links">
+        <a href="https://arxiv.org/pdf/2605.09259" data-kind="paper">Paper</a>
+        <a href="https://mixturett.github.io/Mixture_TT/" data-kind="demo">Demo</a>
+      </div>
+    </article>
+    <article class="publication" id="personagest" data-categories="human" data-search="PersonaGest: Personalized Co-Speech Gesture Generation with Semantic-Guided Hierarchical Motion Representation Junchuan Zhao*, Qifan Liang*, Ye Wang arXiv preprint, 2026. 2026 human  personagest https://arxiv.org/pdf/2605.07252v1 https://danny-nus.github.io/PersonaGest/ human motion animation">
+      <div class="paper-meta">
+        <small class="paper-venue">arXiv</small>
+      </div>
+      <h4 class="paper-title"><a href="https://arxiv.org/pdf/2605.07252v1">PersonaGest: Personalized Co-Speech Gesture Generation with Semantic-Guided Hierarchical Motion Representation</a></h4>
+      <p class="paper-authors"><b>Junchuan Zhao</b>*, Qifan Liang*, Ye Wang</p>
+      <p class="paper-conference">arXiv preprint, 2026.</p>
+      <div class="paper-links">
+        <a href="https://arxiv.org/pdf/2605.07252v1" data-kind="paper">Paper</a>
+        <a href="https://danny-nus.github.io/PersonaGest/" data-kind="demo">Demo</a>
+      </div>
+    </article>
+    <article class="publication" id="mspooftts" data-categories="speech" data-search="MSpoofTTS: Multi-Resolution Spoof-Guided Inference for Discrete Speech Synthesis Junchuan Zhao*, Minh Duc Vu*, Ye Wang Interspeech, 2026. 2026 speech  mspooftts https://arxiv.org/pdf/2603.05373 https://danny-nus.github.io/MSpoofTTS.github.io/ https://github.com/Danny-NUS/MSpoofTTS voice speech singing">
+      <div class="paper-meta">
+        <small class="paper-venue">Interspeech</small>
+      </div>
+      <h4 class="paper-title"><a href="https://arxiv.org/pdf/2603.05373">MSpoofTTS: Multi-Resolution Spoof-Guided Inference for Discrete Speech Synthesis</a></h4>
+      <p class="paper-authors"><b>Junchuan Zhao</b>*, Minh Duc Vu*, Ye Wang</p>
+      <p class="paper-conference">Interspeech, 2026.</p>
+      <div class="paper-links">
+        <a href="https://arxiv.org/pdf/2603.05373" data-kind="paper">Paper</a>
+        <a href="https://danny-nus.github.io/MSpoofTTS.github.io/" data-kind="demo">Demo</a>
+        <a href="https://github.com/Danny-NUS/MSpoofTTS" data-kind="code">Code</a>
+      </div>
+    </article>
+    <article class="publication" id="codecflow" data-categories="speech" data-search="CodecFlow: Efficient Bandwidth Extension via Conditional Flow Matching in Neural Codec Latent Space Bowen Zhang*, Junchuan Zhao*, A S Madhukumar, Ye Wang, Ian McLoughlin arXiv preprint, 2026. 2026 speech  codecflow https://arxiv.org/abs/2603.02022 https://danny-nus.github.io/CodecFlow/ voice speech singing">
+      <div class="paper-meta">
+        <small class="paper-venue">arXiv</small>
+      </div>
+      <h4 class="paper-title"><a href="https://arxiv.org/abs/2603.02022">CodecFlow: Efficient Bandwidth Extension via Conditional Flow Matching in Neural Codec Latent Space</a></h4>
+      <p class="paper-authors">Bowen Zhang*, <b>Junchuan Zhao</b>*, A S Madhukumar, Ye Wang, Ian McLoughlin</p>
+      <p class="paper-conference">arXiv preprint, 2026.</p>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.02022" data-kind="paper">Paper</a>
+        <a href="https://danny-nus.github.io/CodecFlow/" data-kind="demo">Demo</a>
+      </div>
+    </article>
+    <article class="publication" id="ted-tts" data-categories="speech affective" data-search="TED-TTS: Training-Free Intra-Utterance Emotion and Duration Control for Text-to-Speech Synthesis Qifan Liang, Yuansen Liu, Ruixin Wei, Nan Lu, Junchuan Zhao†, Ye Wang ACL Main, 2026. 2026 speech affective  ted-tts https://arxiv.org/pdf/2601.03170 https://simon-leong.github.io/TED-TTS-DemoPage/ https://github.com/Simon-leong/TED-TTS https://huggingface.co/datasets/Chanson-0803/MED-TTS voice speech singing affective emotion">
+      <div class="paper-meta">
+        <small class="paper-venue">ACL</small>
+      </div>
+      <h4 class="paper-title"><a href="https://arxiv.org/pdf/2601.03170">TED-TTS: Training-Free Intra-Utterance Emotion and Duration Control for Text-to-Speech Synthesis</a></h4>
+      <p class="paper-authors">Qifan Liang, Yuansen Liu, Ruixin Wei, Nan Lu, <b>Junchuan Zhao†</b>, Ye Wang</p>
+      <p class="paper-conference">ACL Main, 2026.</p>
+      <div class="paper-links">
+        <a href="https://arxiv.org/pdf/2601.03170" data-kind="paper">Paper</a>
+        <a href="https://simon-leong.github.io/TED-TTS-DemoPage/" data-kind="demo">Demo</a>
+        <a href="https://github.com/Simon-leong/TED-TTS" data-kind="code">Code</a>
+        <a href="https://huggingface.co/datasets/Chanson-0803/MED-TTS" data-kind="data">Data</a>
+      </div>
+    </article>
+    <article class="publication" id="ksdiff" data-categories="human" data-search="KSDiff: Keyframe-Augmented Speech-Aware Dual-Path Diffusion for Facial Animation Tianle Lyu*, Junchuan Zhao*, Ye Wang ICASSP, 2026. 2026 human  ksdiff https://arxiv.org/pdf/2509.20128 https://kincin.github.io/KSDiff/ human motion animation">
+      <div class="paper-meta">
+        <small class="paper-venue">ICASSP</small>
+      </div>
+      <h4 class="paper-title"><a href="https://arxiv.org/pdf/2509.20128">KSDiff: Keyframe-Augmented Speech-Aware Dual-Path Diffusion for Facial Animation</a></h4>
+      <p class="paper-authors">Tianle Lyu*, <b>Junchuan Zhao</b>*, Ye Wang</p>
+      <p class="paper-conference">ICASSP, 2026.</p>
+      <div class="paper-links">
+        <a href="https://arxiv.org/pdf/2509.20128" data-kind="paper">Paper</a>
+        <a href="https://kincin.github.io/KSDiff/" data-kind="demo">Demo</a>
+        <details class="citation">
+          <summary>Cite</summary>
+          <div class="citation-panel">
+            <pre><code>@INPROCEEDINGS{lyr2026ksdiff,
+  author={Lyu, Tianle and Zhao, Junchuan and Wang, Ye},
+  title={KSDIFF: Keyframe-Augmented Speech-Aware Dual-Path Diffusion for Facial Animation},
+  booktitle={ICASSP},
+  year={2026}
+}</code></pre>
+            <button class="copy-citation js-control" type="button" hidden aria-label="Copy BibTeX citation for KSDiff: Keyframe-Augmented Speech-Aware Dual-Path Diffusion for Facial Animation">Copy BibTeX</button>
+          </div>
+        </details>
+      </div>
+    </article>
+    <article class="publication" id="inconvad" data-categories="affective" data-search="InconVAD: A Two-Stage Dual-Tower Framework for Multimodal Emotion Inconsistency Detection Zongyi Li, Junchuan Zhao, Francis Bu Sung Lee, Andrew Zi Han Yee ICASSP, 2026. 2026 affective  inconvad https://arxiv.org/pdf/2509.20140 affective emotion">
+      <div class="paper-meta">
+        <small class="paper-venue">ICASSP</small>
+      </div>
+      <h4 class="paper-title"><a href="https://arxiv.org/pdf/2509.20140">InconVAD: A Two-Stage Dual-Tower Framework for Multimodal Emotion Inconsistency Detection</a></h4>
+      <p class="paper-authors">Zongyi Li, <b>Junchuan Zhao</b>, Francis Bu Sung Lee, Andrew Zi Han Yee</p>
+      <p class="paper-conference">ICASSP, 2026.</p>
+      <div class="paper-links">
+        <a href="https://arxiv.org/pdf/2509.20140" data-kind="paper">Paper</a>
+      </div>
+    </article>
+    <article class="publication" id="comelsinger" data-categories="speech music" data-search="CoMelSinger: Discrete Token-Based Zero-Shot Singing Synthesis With Structured Melody Control and Guidance Junchuan Zhao, Wei Zeng, Tianle Lyu, Ye Wang IEEE TASLP, 2026. 2026 speech music  comelsinger https://arxiv.org/pdf/2509.19883 https://danny-nus.github.io/CoMelSinger/ voice speech singing music audio">
+      <div class="paper-meta">
+        <small class="paper-venue">TASLP</small>
+      </div>
+      <h4 class="paper-title"><a href="https://arxiv.org/pdf/2509.19883">CoMelSinger: Discrete Token-Based Zero-Shot Singing Synthesis With Structured Melody Control and Guidance</a></h4>
+      <p class="paper-authors"><b>Junchuan Zhao</b>, Wei Zeng, Tianle Lyu, Ye Wang</p>
+      <p class="paper-conference">IEEE TASLP, 2026.</p>
+      <div class="paper-links">
+        <a href="https://arxiv.org/pdf/2509.19883" data-kind="paper">Paper</a>
+        <a href="https://danny-nus.github.io/CoMelSinger/" data-kind="demo">Demo</a>
+      </div>
+    </article>
+    <article class="publication" id="jointpianist" data-categories="music" data-search="Bridging Piano Transcription and Rendering via Disentangled Score Content and Style Wei Zeng, Junchuan Zhao, Ye Wang ICLR, 2026. 2026 music  jointpianist https://openreview.net/pdf?id=173Pq3F31r https://jointpianist.github.io/epr-apt/ music audio">
+      <div class="paper-meta">
+        <small class="paper-venue">ICLR</small>
+      </div>
+      <h4 class="paper-title"><a href="https://openreview.net/pdf?id=173Pq3F31r">Bridging Piano Transcription and Rendering via Disentangled Score Content and Style</a></h4>
+      <p class="paper-authors">Wei Zeng, <b>Junchuan Zhao</b>, Ye Wang</p>
+      <p class="paper-conference">ICLR, 2026.</p>
+      <div class="paper-links">
+        <a href="https://openreview.net/pdf?id=173Pq3F31r" data-kind="paper">Paper</a>
+        <a href="https://jointpianist.github.io/epr-apt/" data-kind="demo">Demo</a>
+      </div>
+    </article>
+  </div>
+</section>
+<section class="year-group" data-year="2025" aria-label="Publications from 2025">
+  <div class="year-heading">
+    <h3>2025</h3>
+  </div>
+  <div class="year-papers">
+    <article class="publication" id="pace" data-categories="speech" data-search="Prosody-Adaptable Audio Codecs for Zero-Shot Voice Conversion via In-Context Learning Junchuan Zhao*, Xintong Wang*, Ye Wang Interspeech, 2025. 2025 speech  pace https://www.isca-archive.org/interspeech_2025/zhao25d_interspeech.pdf voice speech singing">
+      <div class="paper-meta">
+        <small class="paper-venue">Interspeech</small>
+      </div>
+      <h4 class="paper-title"><a href="https://www.isca-archive.org/interspeech_2025/zhao25d_interspeech.pdf">Prosody-Adaptable Audio Codecs for Zero-Shot Voice Conversion via In-Context Learning</a></h4>
+      <p class="paper-authors"><b>Junchuan Zhao*</b>, Xintong Wang*, Ye Wang</p>
+      <p class="paper-conference">Interspeech, 2025.</p>
+      <div class="paper-links">
+        <a href="https://www.isca-archive.org/interspeech_2025/zhao25d_interspeech.pdf" data-kind="paper">Paper</a>
+      </div>
+    </article>
+    <article class="publication" id="spsinger" data-categories="speech" data-search="SPSinger: Multi-Singer Singing Voice Synthesis with Short Reference Prompt Junchuan Zhao, Low Qi Hong Chetwin, Ye Wang ICASSP, 2025. 2025 speech  spsinger https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=10888907 https://danny-nus.github.io/SPSinger/ voice speech singing">
+      <div class="paper-meta">
+        <small class="paper-venue">ICASSP</small>
+      </div>
+      <h4 class="paper-title"><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=10888907">SPSinger: Multi-Singer Singing Voice Synthesis with Short Reference Prompt</a></h4>
+      <p class="paper-authors"><b>Junchuan Zhao</b>, Low Qi Hong Chetwin, Ye Wang</p>
+      <p class="paper-conference">ICASSP, 2025.</p>
+      <div class="paper-links">
+        <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=10888907" data-kind="paper">Paper</a>
+        <a href="https://danny-nus.github.io/SPSinger/" data-kind="demo">Demo</a>
+      </div>
+    </article>
+  </div>
+</section>
+<section class="year-group" data-year="2024" aria-label="Publications from 2024">
+  <div class="year-heading">
+    <h3>2024</h3>
+  </div>
+  <div class="year-papers">
+    <article class="publication" id="sintechsvs" data-categories="speech" data-search="SinTechSVS: A Singing Technique Controllable Singing Voice Synthesis System Junchuan Zhao, Low Qi Hong Chetwin, Ye Wang IEEE/ACM TASLP, 2024. 2024 speech  sintechsvs https://ieeexplore.ieee.org/document/10509739 https://danny-nus.github.io/SinTechSVS/ https://huggingface.co/datasets/Chanson-0803/SinTechSVS-singing-technique-annotation voice speech singing">
+      <div class="paper-meta">
+        <small class="paper-venue">TASLP</small>
+      </div>
+      <h4 class="paper-title"><a href="https://ieeexplore.ieee.org/document/10509739">SinTechSVS: A Singing Technique Controllable Singing Voice Synthesis System</a></h4>
+      <p class="paper-authors"><b>Junchuan Zhao</b>, Low Qi Hong Chetwin, Ye Wang</p>
+      <p class="paper-conference">IEEE/ACM TASLP, 2024.</p>
+      <div class="paper-links">
+        <a href="https://ieeexplore.ieee.org/document/10509739" data-kind="paper">Paper</a>
+        <a href="https://danny-nus.github.io/SinTechSVS/" data-kind="demo">Demo</a>
+        <a href="https://huggingface.co/datasets/Chanson-0803/SinTechSVS-singing-technique-annotation" data-kind="data">Data</a>
+      </div>
+    </article>
+  </div>
+</section>
+<!-- PUBLICATIONS:END -->
+      </div>
+      <div class="publication-empty" id="publicationEmpty" hidden><p>No publications match this search.</p><button type="button" id="resetPublications">Clear search &amp; filters</button></div>
     </section>
 
     <section id="contact" class="reveal">
       <div class="section-head">
+        <span class="section-index">05 / Experience</span>
         <h2>Academic Record</h2>
         <p>Teaching, academic service, honours, and contact links collected in one place.</p>
       </div>
@@ -4005,140 +4300,7 @@
   <div class="toast" id="toast" role="status" aria-live="polite">Copied BibTeX</div>
 
   <script>
-    const publications = [
-      {
-        title: "AnyBand: Unified Multi-Bandwidth Speech Extension via Frequency-Aware In-Context Spectral Infilling",
-        authors: "<b>Junchuan Zhao</b>, Minh Duc Vu, Bowen Zhang, Ye Wang",
-        conference: "Arxiv, 2026.",
-        venue: "Arxiv",
-        year: "2026",
-        category: "speech",
-        image: "assets/img/motivation.png",
-        summary: "A unified frequency-aware framework for speech bandwidth extension across multiple input cutoffs, formulated as in-context spectral infilling.",
-        links: { pdf: "https://arxiv.org/pdf/2608.00572", page: "https://danny-nus.github.io/AnyBand-DemoPage/" }
-      },
-      {
-        title: "Remix the Timbre: Diffusion-Based Style Transfer Across Polyphonic Stems",
-        authors: "Leduo Chen, <b>Junchuan Zhao†</b>, Shengchen Li",
-        conference: "Arxiv, 2026.",
-        venue: "Arxiv",
-        year: "2026",
-        category: "music",
-        image: "./assets/img/MixtureTT.png",
-        links: { pdf: "https://arxiv.org/pdf/2605.09259", page: "https://mixturett.github.io/Mixture_TT/" }
-      },
-      {
-        title: "PersonaGest: Personalized Co-Speech Gesture Generation with Semantic-Guided Hierarchical Motion Representation",
-        authors: "<b>Junchuan Zhao</b>*, Qifan Liang*, Ye Wang",
-        conference: "Arxiv, 2026.",
-        venue: "Arxiv",
-        year: "2026",
-        category: "human",
-        image: "./assets/img/PersonaGest.jpg",
-        links: { pdf: "https://arxiv.org/pdf/2605.07252v1", page: "https://danny-nus.github.io/PersonaGest/" }
-      },
-      {
-        title: "MSpoofTTS: Multi-Resolution Spoof-Guided Inference for Discrete Speech Synthesis",
-        authors: "<b>Junchuan Zhao</b>*, Minh Duc Vu*, Ye Wang",
-        conference: "Interspeech, 2026.",
-        venue: "Interspeech",
-        year: "2026",
-        category: "speech",
-        image: "./assets/img/MSpoofTTS.jpg",
-        links: { pdf: "https://arxiv.org/pdf/2603.05373", page: "https://danny-nus.github.io/MSpoofTTS.github.io/", code: "https://github.com/Danny-NUS/MSpoofTTS" }
-      },
-      {
-        title: "CodecFlow: Efficient Bandwidth Extension via Conditional Flow Matching in Neural Codec Latent Space",
-        authors: "Bowen Zhang*, <b>Junchuan Zhao</b>*, A S Madhukumar, Ye Wang, Ian McLoughlin",
-        conference: "Arxiv, 2026.",
-        venue: "Arxiv",
-        year: "2026",
-        category: "speech",
-        image: "./assets/img/CodecFlow.png",
-        links: { pdf: "http://arxiv.org/abs/2603.02022", page: "https://danny-nus.github.io/CodecFlow/" }
-      },
-      {
-        title: "TED-TTS: Training-Free Intra-Utterance Emotion and Duration Control for Text-to-Speech Synthesis",
-        authors: "Qifan Liang, Yuansen Liu, Ruixin Wei, Nan Lu, <b>Junchuan Zhao†</b>, Ye Wang",
-        conference: "ACL Main, 2026.",
-        venue: "ACL",
-        year: "2026",
-        category: ["speech", "affective"],
-        image: "./assets/img/TED-TTS.png",
-        links: { pdf: "https://arxiv.org/pdf/2601.03170", page: "https://simon-leong.github.io/TED-TTS-DemoPage/", code: "https://github.com/Simon-leong/TED-TTS", data: "https://huggingface.co/datasets/Chanson-0803/MED-TTS" }
-      },
-      {
-        title: "KSDiff: Keyframe-Augmented Speech-Aware Dual-Path Diffusion for Facial Animation",
-        authors: "Tianle Lyu*, <b>Junchuan Zhao</b>*, Ye Wang",
-        conference: "ICASSP, 2026.",
-        venue: "ICASSP",
-        year: "2026",
-        category: "human",
-        image: "./assets/img/KSDiff.jpg",
-        links: { pdf: "https://arxiv.org/pdf/2509.20128", page: "https://kincin.github.io/KSDiff/" },
-        bibtex: "@INPROCEEDINGS{lyr2026ksdiff,\\n  author={Lyu, Tianle and Zhao, Junchuan and Wang, Ye},\\n  title={KSDIFF: Keyframe-Augmented Speech-Aware Dual-Path Diffusion for Facial Animation},\\n  booktitle={ICASSP},\\n  year={2026}\\n}"
-      },
-      {
-        title: "InconVAD: A Two-Stage Dual-Tower Framework for Multimodal Emotion Inconsistency Detection",
-        authors: "Zongyi Li, <b>Junchuan Zhao</b>, Francis Bu Sung Lee, Andrew Zi Han Yee",
-        conference: "ICASSP, 2026.",
-        venue: "ICASSP",
-        year: "2026",
-        category: "affective",
-        image: "./assets/img/InconVAD.png",
-        links: { pdf: "https://arxiv.org/pdf/2509.20140" }
-      },
-      {
-        title: "CoMelSinger: Discrete Token-Based Zero-Shot Singing Synthesis With Structured Melody Control and Guidance",
-        authors: "<b>Junchuan Zhao</b>, Wei Zeng, Tianle Lyu, Ye Wang",
-        conference: "IEEE TASLP, 2026.",
-        venue: "TASLP",
-        year: "2026",
-        category: ["speech", "music"],
-        image: "./assets/img/CoMelSinger.png",
-        links: { pdf: "https://arxiv.org/pdf/2509.19883", page: "https://danny-nus.github.io/CoMelSinger/" }
-      },
-      {
-        title: "Bridging Piano Transcription and Rendering via Disentangled Score Content and Style",
-        authors: "Wei Zeng, <b>Junchuan Zhao</b>, Ye Wang",
-        conference: "ICLR, 2026.",
-        venue: "ICLR",
-        year: "2026",
-        category: "music",
-        image: "./assets/img/JointPianist.jpg",
-        links: { pdf: "https://openreview.net/pdf?id=173Pq3F31r", page: "https://jointpianist.github.io/epr-apt/" }
-      },
-      {
-        title: "Prosody-Adaptable Audio Codecs for Zero-Shot Voice Conversion via In-Context Learning",
-        authors: "<b>Junchuan Zhao*</b>, Xintong Wang*, Ye Wang",
-        conference: "Interspeech, 2025.",
-        venue: "Interspeech",
-        year: "2025",
-        category: "speech",
-        image: "./assets/img/PACE.png",
-        links: { pdf: "https://www.isca-archive.org/interspeech_2025/zhao25d_interspeech.pdf" }
-      },
-      {
-        title: "SPSinger: Multi-Singer Singing Voice Synthesis with Short Reference Prompt",
-        authors: "<b>Junchuan Zhao</b>, Low Qi Hong Chetwin, Ye Wang",
-        conference: "ICASSP, 2025.",
-        venue: "ICASSP",
-        year: "2025",
-        category: "speech",
-        image: "./assets/img/SPSinger_overall.png",
-        links: { pdf: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10888907", page: "https://danny-nus.github.io/SPSinger/" }
-      },
-      {
-        title: "SinTechSVS: A Singing Technique Controllable Singing Voice Synthesis System",
-        authors: "<b>Junchuan Zhao</b>, Low Qi Hong Chetwin, Ye Wang",
-        conference: "IEEE/ACM TASLP, 2024.",
-        venue: "TASLP",
-        year: "2024",
-        category: "speech",
-        image: "./assets/img/SinTechSVS.png",
-        links: { pdf: "https://ieeexplore-ieee-org.libproxy1.nus.edu.sg/stamp/stamp.jsp?tp=&arnumber=10509739", page: "https://danny-nus.github.io/SinTechSVS/", data: "https://huggingface.co/datasets/Chanson-0803/SinTechSVS-singing-technique-annotation" }
-      }
-    ];
+    const publications = [...document.querySelectorAll(".publication")];
 
     const categoryLabel = {
       speech: "Voice",
@@ -4155,52 +4317,24 @@
     let activeQuery = "";
 
     function renderPublications() {
-      const visiblePapers = publications.filter((paper) => {
-        const categories = Array.isArray(paper.category) ? paper.category : [paper.category];
-        const categoryText = categories.map((category) => categoryLabel[category]).join(" ");
-        const searchable = `${paper.title} ${paper.authors} ${paper.conference} ${paper.venue} ${categoryText}`.toLowerCase();
-        const categoryMatch = activeFilter === "all" || categories.includes(activeFilter);
-        const queryMatch = !activeQuery || searchable.includes(activeQuery);
-        return categoryMatch && queryMatch;
+      const words = activeQuery.split(/\s+/).filter(Boolean);
+      let count = 0;
+      publications.forEach((paper) => {
+        const matches = (activeFilter === "all" || paper.dataset.categories.split(" ").includes(activeFilter))
+          && words.every((word) => paper.dataset.search.toLowerCase().includes(word));
+        paper.hidden = !matches;
+        if (matches) count++;
       });
-
-      publicationStatus.textContent = `Showing ${visiblePapers.length} of ${publications.length} publications`;
-
-      if (!visiblePapers.length) {
-        paperList.innerHTML = `<div class="no-results">No publications match this search. Try another keyword or category.</div>`;
-        return;
-      }
-
-      paperList.innerHTML = visiblePapers.map((paper) => {
-        const isLatest = paper === publications[0];
-        const categories = Array.isArray(paper.category) ? paper.category : [paper.category];
-        const categoryPills = categories.map((category) => `<span class="pill">${categoryLabel[category]}</span>`).join("");
-        const links = Object.entries(paper.links || {}).map(([label, href]) => {
-          const text = label === "pdf" ? "PDF" : label === "code" ? "Code" : label === "page" ? "Project" : label === "data" ? "Data" : label;
-          return `<a href="${href}" target="_blank" rel="noopener">${text}</a>`;
-        }).join("");
-        const bib = paper.bibtex ? `<a href="#" data-bibtex="${encodeURIComponent(paper.bibtex)}">BibTeX</a>` : "";
-        return `
-          <article class="paper-card${isLatest ? " latest" : ""}" data-category="${categories.join(" ")}">
-            <div class="paper-art">
-              <img src="${paper.image}" alt="Illustration for ${paper.title}" loading="lazy" decoding="async">
-              <span class="venue">${paper.venue}</span>
-            </div>
-            <div>
-              <div class="paper-meta">
-                ${isLatest ? '<span class="new-badge">Latest</span>' : ""}
-                <span class="pill">${paper.year}</span>
-                ${categoryPills}
-              </div>
-              <h3>${paper.title}</h3>
-              <div class="authors">${paper.authors}</div>
-              <div class="conference">${paper.conference}</div>
-              ${paper.summary ? `<p class="paper-summary">${paper.summary}</p>` : ""}
-              <div class="paper-links">${links}${bib}</div>
-            </div>
-          </article>
-        `;
-      }).join("");
+      paperList.querySelectorAll(".year-group").forEach((group) => {
+        group.hidden = ![...group.querySelectorAll(".publication")].some((paper) => !paper.hidden);
+      });
+      publicationStatus.textContent = `Showing ${count} of ${publications.length} publications`;
+      document.getElementById("publicationEmpty").hidden = count !== 0;
+      document.querySelectorAll("[data-filter]").forEach((button) => {
+        const selected = button.dataset.filter === activeFilter;
+        button.classList.toggle("active", selected);
+        button.setAttribute("aria-pressed", String(selected));
+      });
     }
 
     function showToast(message) {
@@ -4228,6 +4362,14 @@
     }
 
     renderPublications();
+    document.querySelectorAll(".copy-citation").forEach((button) => { button.hidden = false; });
+    document.getElementById("resetPublications").addEventListener("click", () => {
+      activeFilter = "all";
+      activeQuery = "";
+      paperSearch.value = "";
+      renderPublications();
+      paperSearch.focus();
+    });
 
     document.querySelectorAll(".chip").forEach((button) => {
       button.addEventListener("click", () => {
@@ -4243,24 +4385,54 @@
       renderPublications();
     });
 
-    const themeKey = "homepage-heian-theme-v4";
-    const savedTheme = localStorage.getItem(themeKey) || "dunhuang";
+    document.querySelectorAll("[data-research-filter]").forEach((link) => {
+      link.addEventListener("click", () => {
+        activeQuery = "";
+        paperSearch.value = "";
+        document.querySelector(`.chip[data-filter="${link.dataset.researchFilter}"]`).click();
+      });
+    });
+
+    const themeKey = "homepage-signal-palette-v1";
+    let storedTheme;
+    try { storedTheme = localStorage.getItem(themeKey); } catch {}
+    const savedTheme = ["dunhuang", "azurite", "olive"].includes(storedTheme) ? storedTheme : "dunhuang";
     document.body.dataset.theme = savedTheme === "dunhuang" ? "" : savedTheme;
+    const appearanceToggle = document.querySelector(".appearance-toggle");
+    function updateAppearanceControl() {
+      const isDay = document.documentElement.dataset.mode === "light";
+      const label = isDay ? "Switch to night mode" : "Switch to day mode";
+      appearanceToggle.setAttribute("aria-label", label);
+      appearanceToggle.title = label;
+      document.querySelector('meta[name="theme-color"]').content = getComputedStyle(document.body).getPropertyValue("--paper").trim();
+    }
+    updateAppearanceControl();
+    appearanceToggle.addEventListener("click", () => {
+      const mode = document.documentElement.dataset.mode === "light" ? "dark" : "light";
+      document.documentElement.dataset.mode = mode;
+      try { localStorage.setItem("homepage-appearance-v1", mode); } catch {}
+      updateAppearanceControl();
+    });
     document.querySelectorAll(".swatch").forEach((button) => {
       button.classList.toggle("active", button.dataset.theme === savedTheme);
+      button.setAttribute("aria-pressed", String(button.dataset.theme === savedTheme));
       button.addEventListener("click", () => {
         const theme = button.dataset.theme;
         document.body.dataset.theme = theme === "dunhuang" ? "" : theme;
-        localStorage.setItem(themeKey, theme);
-        document.querySelectorAll(".swatch").forEach((item) => item.classList.toggle("active", item === button));
+        try { localStorage.setItem(themeKey, theme); } catch {}
+        updateAppearanceControl();
+        document.querySelectorAll(".swatch").forEach((item) => {
+          item.classList.toggle("active", item === button);
+          item.setAttribute("aria-pressed", String(item === button));
+        });
       });
     });
 
     paperList.addEventListener("click", async (event) => {
-      const target = event.target.closest("[data-bibtex]");
+      const target = event.target.closest(".copy-citation");
       if (!target) return;
       event.preventDefault();
-      const text = decodeURIComponent(target.dataset.bibtex);
+      const text = target.closest(".citation-panel").querySelector("code").textContent;
       const copied = await copyText(text);
       showToast(copied ? "Copied BibTeX" : "Clipboard unavailable");
     });
@@ -4298,7 +4470,7 @@
       });
     });
 
-    const sections = [...document.querySelectorAll("main section")];
+    const sections = [...document.querySelectorAll("main > section")];
     const navAnchors = [...document.querySelectorAll(".nav-links a[href^='#']")];
     const activeObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -4341,6 +4513,7 @@
       const target = document.querySelector(anchor.getAttribute("href"));
       if (!target) return;
       event.preventDefault();
+      if (target.id === "top") navAnchors.forEach((item) => item.classList.remove("active"));
       target.scrollIntoView({ behavior: "smooth", block: "start" });
       window.history.replaceState(null, "", `${cleanPath}${window.location.search}`);
     });
@@ -4353,12 +4526,6 @@
     }
     window.addEventListener("scroll", updateScrollProgress, { passive: true });
     updateScrollProgress();
-
-    const cursorGlow = document.getElementById("cursorGlow");
-    window.addEventListener("pointermove", (event) => {
-      cursorGlow.style.left = `${event.clientX}px`;
-      cursorGlow.style.top = `${event.clientY}px`;
-    }, { passive: true });
 
     const inkName = document.querySelector(".ink-name");
     if (inkName) {
@@ -4377,290 +4544,8 @@
       });
     }
 
-    const signalPanel = document.getElementById("signalPanel");
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!reduceMotion) {
-      signalPanel.addEventListener("pointermove", (event) => {
-        const rect = signalPanel.getBoundingClientRect();
-        const rotateY = ((event.clientX - rect.left) / rect.width - .5) * 2.4;
-        const rotateX = ((event.clientY - rect.top) / rect.height - .5) * -2.4;
-        signalPanel.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-      });
-      signalPanel.addEventListener("pointerleave", () => {
-        signalPanel.style.transform = "perspective(1000px) rotateX(0) rotateY(0)";
-      });
-    }
-
-    const canvas = document.getElementById("audioCanvas");
-    const ctx = canvas.getContext("2d");
-    let frame = 0;
-    let pointerX = .62;
-    let pointerY = .38;
-    let smoothX = pointerX;
-    let smoothY = pointerY;
-    let lastDropFrame = 0;
-    const inkDrops = [];
-
-    function resizeCanvas() {
-      const rect = canvas.getBoundingClientRect();
-      const ratio = Math.min(window.devicePixelRatio || 1, 2);
-      canvas.width = Math.max(1, Math.floor(rect.width * ratio));
-      canvas.height = Math.max(1, Math.floor(rect.height * ratio));
-      ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
-    }
-
-    canvas.addEventListener("pointermove", (event) => {
-      const rect = canvas.getBoundingClientRect();
-      pointerX = (event.clientX - rect.left) / rect.width;
-      pointerY = (event.clientY - rect.top) / rect.height;
-      if (frame - lastDropFrame > 6) {
-        inkDrops.push({ x: pointerX, y: pointerY, life: 1, radius: 4 });
-        if (inkDrops.length > 12) inkDrops.shift();
-        lastDropFrame = frame;
-      }
-    });
-
-    canvas.addEventListener("pointerleave", () => {
-      pointerX = .62;
-      pointerY = .38;
-    });
-
-    function cssVar(name) {
-      return getComputedStyle(document.body).getPropertyValue(name).trim();
-    }
-
-    function hexToRgb(hex) {
-      const clean = hex.replace("#", "").trim();
-      const full = clean.length === 3 ? clean.split("").map((char) => char + char).join("") : clean;
-      const number = parseInt(full, 16);
-      return [(number >> 16) & 255, (number >> 8) & 255, number & 255];
-    }
-
-    function rgbaFromVar(name, alpha) {
-      const [r, g, b] = hexToRgb(cssVar(name));
-      return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-    }
-
-    function seededValue(seed) {
-      return Math.sin(seed * 91.173) * 43758.5453 % 1;
-    }
-
-    const tornFragments = Array.from({ length: 26 }, (_, index) => {
-      const band = index % 5;
-      const step = Math.floor(index / 5);
-      const width = .065 + Math.abs(seededValue(index + 2)) * .07;
-      const height = .035 + Math.abs(seededValue(index + 8)) * .06;
-      return {
-        band,
-        x: .055 + step * .16 + Math.abs(seededValue(index + 15)) * .035,
-        y: .2 + band * .095 + Math.abs(seededValue(index + 21)) * .018,
-        width,
-        height,
-        rotate: (seededValue(index + 31) - .5) * .2,
-        color: ["--accent-2", "--accent", "--accent-3", "--accent-4", "--violet"][index % 5],
-        alpha: .13 + Math.abs(seededValue(index + 41)) * .14,
-        gold: index % 4 === 0 || index % 9 === 0,
-        depth: .3 + (index % 5) * .12
-      };
-    });
-
-    function drawTornFragments(w, h) {
-      tornFragments.forEach((fragment, index) => {
-        const parallaxX = (smoothX - .5) * 16 * fragment.depth;
-        const parallaxY = (smoothY - .5) * 10 * fragment.depth;
-        const phase = frame * (.007 + fragment.band * .0007) + fragment.band * .9;
-        const waveY = Math.sin(fragment.x * Math.PI * (3.1 + fragment.band * .17) + phase) * (8 + fragment.band * 1.6);
-        const proximity = Math.exp(-Math.pow((fragment.x - smoothX) / .21, 2));
-        const energy = Math.sin(index * .77 + frame * .012) * .5 + .5;
-        const centerX = fragment.x * w + parallaxX;
-        const centerY = fragment.y * h + waveY + parallaxY + (smoothY - .5) * h * .045 * proximity;
-        const width = fragment.width * w * (.88 + energy * .28 + proximity * .16);
-        const height = fragment.height * h * (.82 + energy * .34 + proximity * .2);
-        const corners = [
-          [-.5, -.38], [-.18, -.52], [.22, -.46], [.52, -.28], [.46, .22], [.13, .5], [-.28, .44], [-.5, .13]
-        ];
-
-        ctx.save();
-        ctx.translate(centerX, centerY);
-        ctx.rotate(fragment.rotate + Math.sin(frame * .002 + index) * .01);
-        ctx.beginPath();
-        corners.forEach(([x, y], point) => {
-          const edge = (seededValue(index * 11 + point * 3) - .5) * .09;
-          const px = (x + edge) * width;
-          const py = (y - edge * .7) * height;
-          if (point === 0) ctx.moveTo(px, py);
-          else ctx.lineTo(px, py);
-        });
-        ctx.closePath();
-        ctx.fillStyle = rgbaFromVar(fragment.color, fragment.alpha * (.74 + energy * .3 + proximity * .2));
-        ctx.fill();
-
-        if (fragment.gold) {
-          ctx.strokeStyle = rgbaFromVar("--gold", .55);
-          ctx.lineWidth = .65;
-          ctx.stroke();
-          ctx.beginPath();
-          ctx.moveTo(-width * .38, height * .28);
-          ctx.quadraticCurveTo(width * .03, height * (.05 + Math.sin(index) * .08), width * .39, -height * .3);
-          ctx.strokeStyle = rgbaFromVar("--gold", .38);
-          ctx.lineWidth = .55;
-          ctx.stroke();
-        }
-        ctx.restore();
-      });
-    }
-
-    function drawInkWave(w, h, index, colorName) {
-      const base = h * (.19 + index * .115);
-      const amplitude = 12 + index * 2.8;
-      const phase = frame * (.008 + index * .0012) + index * 1.34;
-      const pointerPull = (smoothY * h - base) * .075;
-
-      ctx.beginPath();
-      for (let x = -8; x <= w + 8; x += 5) {
-        const t = x / w;
-        const proximity = Math.exp(-Math.pow((t - smoothX) / .2, 2));
-        const y = base
-          + Math.sin(t * Math.PI * (3.1 + index * .18) + phase) * amplitude
-          + Math.sin(t * Math.PI * 8.2 - phase * .62) * 2.6
-          + pointerPull * proximity;
-        if (x < 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
-      }
-      ctx.strokeStyle = cssVar(colorName);
-      ctx.lineWidth = index % 2 === 0 ? 1.15 : .72;
-      ctx.globalAlpha = .52 - index * .028;
-      ctx.stroke();
-
-      ctx.lineTo(w + 8, base + 46);
-      ctx.lineTo(-8, base + 46);
-      ctx.closePath();
-      const wash = ctx.createLinearGradient(0, base - amplitude, 0, base + 48);
-      wash.addColorStop(0, rgbaFromVar(colorName, .072));
-      wash.addColorStop(1, rgbaFromVar(colorName, 0));
-      ctx.fillStyle = wash;
-      ctx.fill();
-    }
-
-    function drawAudioField() {
-      const w = canvas.clientWidth;
-      const h = canvas.clientHeight;
-      smoothX += (pointerX - smoothX) * .045;
-      smoothY += (pointerY - smoothY) * .045;
-      ctx.clearRect(0, 0, w, h);
-
-      const bg = ctx.createLinearGradient(0, 0, w, h);
-      bg.addColorStop(0, cssVar("--canvas-start"));
-      bg.addColorStop(.5, cssVar("--canvas-mid"));
-      bg.addColorStop(1, cssVar("--canvas-end"));
-      ctx.fillStyle = bg;
-      ctx.fillRect(0, 0, w, h);
-
-      const wash = ctx.createRadialGradient(smoothX * w, smoothY * h, 4, smoothX * w, smoothY * h, Math.max(w, h) * .62);
-      wash.addColorStop(0, rgbaFromVar("--canvas-line-1", .24));
-      wash.addColorStop(.24, rgbaFromVar("--accent", .14));
-      wash.addColorStop(.58, rgbaFromVar("--accent-3", .1));
-      wash.addColorStop(1, rgbaFromVar("--accent-3", 0));
-      ctx.fillStyle = wash;
-      ctx.fillRect(0, 0, w, h);
-
-      for (let i = 0; i < 12; i += 1) {
-        const seed = i * 19.73;
-        const x = (Math.sin(seed) * .5 + .5) * w;
-        const y = (Math.cos(seed * 1.7) * .5 + .5) * h;
-        const radius = 42 + (i % 4) * 24;
-        const cloud = ctx.createRadialGradient(x, y, 0, x, y, radius);
-        const pigment = i % 3 === 0 ? "--accent-2" : i % 3 === 1 ? "--accent-3" : "--accent";
-        cloud.addColorStop(0, rgbaFromVar(pigment, .1));
-        cloud.addColorStop(1, rgbaFromVar(pigment, 0));
-        ctx.fillStyle = cloud;
-        ctx.fillRect(x - radius, y - radius, radius * 2, radius * 2);
-      }
-
-      drawTornFragments(w, h);
-
-      ctx.save();
-      ctx.globalCompositeOperation = "screen";
-      const contourColors = ["--canvas-line-1", "--accent-3", "--accent", "--canvas-line-5"];
-      for (let ring = 0; ring < 7; ring += 1) {
-        ctx.beginPath();
-        const centerX = w * (.49 + Math.sin(frame * .003 + ring) * .035);
-        const centerY = h * (.43 + Math.cos(frame * .0025 + ring) * .028);
-        for (let angle = 0; angle <= Math.PI * 2 + .08; angle += .08) {
-          const wobble = Math.sin(angle * 3 + frame * .008 + ring) * (4 + ring * .5)
-            + Math.cos(angle * 5 - frame * .004) * 2;
-          const radiusX = 42 + ring * 24 + wobble;
-          const radiusY = 22 + ring * 15 + wobble * .45;
-          const x = centerX + Math.cos(angle) * radiusX;
-          const y = centerY + Math.sin(angle) * radiusY;
-          if (angle === 0) ctx.moveTo(x, y);
-          else ctx.lineTo(x, y);
-        }
-        ctx.strokeStyle = rgbaFromVar(contourColors[ring % contourColors.length], .055 + ring * .008);
-        ctx.lineWidth = .55;
-        ctx.stroke();
-      }
-      ctx.restore();
-
-      const spectralBars = 42;
-      const barWidth = w / spectralBars;
-      for (let i = 0; i < spectralBars; i += 1) {
-        const t = i / spectralBars;
-        const envelope = Math.exp(-Math.pow((t - smoothX) / .24, 2));
-        const energy = .14 + (Math.sin(i * .71 + frame * .012) * .5 + .5) * .28 + envelope * .42;
-        const barHeight = Math.max(3, energy * h * .17);
-        const x = i * barWidth + barWidth * .32;
-        const y = h * .65 - barHeight;
-        const color = i % 5 === 0 ? "--accent" : i % 3 === 0 ? "--accent-2" : "--accent-3";
-        const gradient = ctx.createLinearGradient(0, y, 0, h * .65);
-        gradient.addColorStop(0, rgbaFromVar(color, .2));
-        gradient.addColorStop(1, rgbaFromVar(color, .015));
-        ctx.fillStyle = gradient;
-        ctx.fillRect(x, y, Math.max(.6, barWidth * .16), barHeight);
-      }
-
-      ["--canvas-line-1", "--canvas-line-2", "--canvas-line-3", "--canvas-line-4", "--canvas-line-5", "--accent-2"].forEach((color, index) => {
-        drawInkWave(w, h, index, color);
-      });
-
-      inkDrops.forEach((drop) => {
-        drop.radius += .42;
-        drop.life *= .982;
-        ctx.beginPath();
-        ctx.arc(drop.x * w, drop.y * h, drop.radius, 0, Math.PI * 2);
-        ctx.strokeStyle = rgbaFromVar("--canvas-line-1", drop.life * .38);
-        ctx.lineWidth = .8;
-        ctx.stroke();
-      });
-      while (inkDrops.length && inkDrops[0].life < .08) inkDrops.shift();
-
-      for (let i = 0; i < 48; i += 1) {
-        const seed = i * 47.13;
-        const x = (Math.sin(seed + frame * .0017) * .5 + .5) * w;
-        const y = (Math.cos(seed * .73 + frame * .0022) * .5 + .5) * h;
-        const proximity = Math.max(0, 1 - Math.hypot(x / w - smoothX, y / h - smoothY) * 3.4);
-        const driftX = (smoothX - .5) * proximity * 18;
-        const driftY = (smoothY - .5) * proximity * 12;
-        ctx.beginPath();
-        ctx.fillStyle = i % 4 === 0
-          ? rgbaFromVar("--canvas-line-1", .24 + proximity * .22)
-          : rgbaFromVar("--accent-3", .12 + proximity * .14);
-        ctx.arc(x + driftX, y + driftY, .55 + (i % 4) * .24, 0, Math.PI * 2);
-        ctx.fill();
-      }
-
-      ctx.globalAlpha = 1;
-      frame += 1;
-      if (!reduceMotion) requestAnimationFrame(drawAudioField);
-    }
-
-    window.addEventListener("resize", () => {
-      resizeCanvas();
-      if (reduceMotion) drawAudioField();
-    });
-    resizeCanvas();
-    drawAudioField();
   </script>
+  <script src="assets/signal.js" defer></script>
 </body>
 
 </html>

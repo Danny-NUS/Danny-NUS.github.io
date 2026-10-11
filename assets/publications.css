@@ -1,0 +1,162 @@
+/* Publication structure and resource controls; theme.css supplies the palette. */
+.hero-actions .button {
+  min-height: 44px;
+  padding: 11px 18px;
+  gap: 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .005em;
+  box-shadow: inset 0 1px 0 #ffffff14, 0 4px 12px #302b2610;
+}
+.hero-actions .button:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 #ffffff18, 0 7px 18px #302b261a;
+}
+.hero-actions .button:active { transform: translateY(0); }
+.hero-actions .button.secondary { border-color: var(--line); box-shadow: inset 0 1px 0 #ffffff80; }
+.hero-actions .button-arrow { margin-left: 8px; font-size: 17px; font-weight: 500; line-height: 1; transition: transform .2s ease; }
+.hero-actions .button:hover .button-arrow { transform: translate(2px,-2px); }
+.hero-actions .button svg { flex-shrink: 0; }
+#publications [hidden] { display: none !important; }
+#publications .paper-tools {
+  border: 1px solid color-mix(in srgb,var(--line-strong) 45%,transparent);
+  border-radius: 14px;
+  padding: 9px;
+  gap: 14px;
+  box-shadow: 0 4px 16px #302b2608, inset 0 1px 0 #ffffff80;
+}
+#publications .filter-row { gap: 5px; }
+#publications .chip {
+  min-height: 36px;
+  padding: 7px 13px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 650;
+  color: var(--muted);
+}
+#publications .chip:hover { background: var(--accent-soft); color: var(--accent); transform: none; }
+#publications .chip.active {
+  background: color-mix(in srgb,var(--paper-2) 88%,var(--accent));
+  border-color: color-mix(in srgb,var(--accent) 23%,var(--line));
+  color: var(--accent);
+  box-shadow: 0 2px 5px #302b2608, inset 0 1px 0 #ffffffa0;
+}
+#publications .search-box { min-height: 36px; border-radius: 9px; font-size: 12px; font-weight: 500; }
+#publications .publication-status { margin: 0; font-size: 11px; font-weight: 500; }
+#publications .contribution-note { margin: 6px 0 18px; font-size: 11px; color: var(--muted); }
+#publications .publication-list { display: block; }
+#publications .year-group {
+  display: grid;
+  grid-template-columns: 74px minmax(0,1fr);
+  gap: 24px;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+#publications .year-heading { padding-top: 25px; }
+#publications .year-heading h3 {
+  position: sticky;
+  top: 170px;
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: -.035em;
+  line-height: 1.4;
+}
+#publications .year-papers { min-width: 0; }
+#publications .publication {
+  position: relative;
+  padding: 24px 4px;
+  border-bottom: 1px solid color-mix(in srgb,var(--line) 70%,transparent);
+  scroll-margin-top: 175px;
+}
+#publications .publication:last-child { border: 0; }
+#publications .publication::before { content: ''; position: absolute; top: 29px; bottom: 27px; left: -13px; width: 2px; background: var(--accent); opacity: 0; transition: opacity .2s; }
+#publications .publication:hover::before,#publications .publication:focus-within::before { opacity: .5; }
+#publications .paper-meta { float: right; display: block; margin: 3px 0 5px 14px; }
+#publications .paper-venue { display: none; }
+#publications .paper-new { display: inline-block; padding: 2px 7px; border: 1px solid color-mix(in srgb,var(--accent) 20%,var(--line)); border-radius: 5px; background: var(--accent-soft); color: var(--accent); font-size: 9px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
+#publications .paper-title { margin: 0; font-size: 18px; font-weight: 700; line-height: 1.5; letter-spacing: -.012em; }
+#publications .paper-title a { color: var(--ink); }
+#publications .paper-title a:hover { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+#publications .paper-authors { margin: 7px 0 0; font-size: 13px; line-height: 1.8; color: var(--muted); }
+#publications .paper-authors b { color: var(--ink); font-weight: 750; }
+#publications .paper-conference { margin: 4px 0 0; font-size: 12px; font-style: italic; color: var(--muted); }
+#publications .paper-links { display: flex; align-items: flex-start; flex-wrap: wrap; gap: 7px; margin-top: 12px; padding: 0; }
+#publications .paper-links > a,
+#publications .paper-links summary,
+#publications .copy-citation,
+#publications .publication-empty button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 32px;
+  padding: 5px 11px;
+  border: 1px solid color-mix(in srgb,var(--line-strong) 50%,var(--line));
+  border-radius: 7px;
+  background: color-mix(in srgb,var(--paper-2) 70%,transparent);
+  box-shadow: inset 0 1px 0 #ffffff90, 0 2px 3px #302b2604;
+  color: var(--accent);
+  font-family: Manrope,sans-serif;
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1.4;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .18s,border-color .18s,box-shadow .18s,transform .18s;
+}
+#publications .paper-links > a::after { content: '↗'; font-size: 13px; opacity: .7; font-weight: 500; }
+#publications .paper-links > a[data-kind='demo']::before { content: '▷'; font-size: 13px; line-height: 1; }
+#publications .paper-links > a[data-kind='demo']::after { display: none; }
+#publications .paper-links summary::after { content: '+'; font-size: 14px; font-weight: 400; opacity: .7; }
+#publications .paper-links summary { list-style: none; }
+#publications .paper-links summary::-webkit-details-marker { display: none; }
+#publications .paper-links > a:hover,
+#publications .paper-links summary:hover,
+#publications .copy-citation:hover,
+#publications .publication-empty button:hover { background: var(--accent-soft); border-color: color-mix(in srgb,var(--accent) 50%,var(--line)); box-shadow: inset 0 1px 0 #ffffff80, 0 3px 8px #302b260a; transform: translateY(-1px); }
+#publications .paper-links > a:active,#publications .paper-links summary:active { transform: translateY(0); }
+#publications summary:focus-visible,#publications .copy-citation:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+#publications .paper-links details[open] { width: 100%; order: 2; }
+#publications .paper-links details[open] summary { background: var(--accent-soft); }
+#publications .paper-links details[open] summary::after { content: '−'; }
+#publications .abstract-text { margin: 12px 0 2px; max-width: 820px; font-size: 13px; line-height: 1.85; color: var(--muted); }
+#publications .citation-panel { margin-top: 12px; padding: 17px; border: 1px solid var(--line); border-radius: 9px; background: color-mix(in srgb,var(--paper-2) 65%,transparent); }
+#publications .citation-panel pre { margin: 0 0 12px; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 11px; line-height: 1.8; color: var(--ink); }
+#publications .publication-empty { padding: 40px 20px; text-align: center; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); color: var(--muted); }
+#publications .publication-empty p { margin: 0 0 15px; font-size: 14px; }
+@media (max-width: 780px) {
+  #publications .paper-tools { position: static; border-radius: 12px; }
+  #publications .year-group { grid-template-columns: 52px minmax(0,1fr); gap: 15px; }
+  #publications .year-heading h3 { font-size: 20px; top: 90px; }
+  #publications .paper-title { font-size: 16px; }
+  #publications .paper-authors { font-size: 12px; }
+  #publications .publication { padding-block: 20px; }
+  #publications .chip { font-size: 11px; padding-inline: 10px; }
+}
+@media (max-width: 480px) {
+  #publications .year-group { grid-template-columns: 1fr; gap: 0; }
+  #publications .year-heading { padding-top: 20px; }
+  #publications .year-heading h3 { position: static; }
+  #publications .paper-title { font-size: 15px; }
+  #publications .paper-links { gap: 6px; }
+  #publications .publication::before { left: -8px; }
+  #publications .paper-links > a,#publications .paper-links summary { min-height: 34px; padding-inline: 10px; }
+  #publications .paper-meta { margin-left: 8px; }
+  .hero-actions .button { font-size: 12px; padding-inline: 15px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-actions .button-arrow { transition: none; }
+  .hero-actions .button:hover,.hero-actions .button:hover .button-arrow,#publications .paper-links > a:hover,#publications .paper-links summary:hover { transform: none; }
+}
