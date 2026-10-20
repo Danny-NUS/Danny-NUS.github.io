@@ -76,7 +76,8 @@
       "pdf": "https://arxiv.org/pdf/2608.00572",
       "page": "https://danny-nus.github.io/AnyBand-DemoPage/"
     },
-    "id": "anyband"
+    "id": "anyband",
+    "bibtex": "@misc{zhao2026anyband,\n  title         = {{AnyBand}: Unified Multi-Bandwidth Speech Extension via Frequency-Aware In-Context Spectral Infilling},\n  author        = {Junchuan Zhao and Minh Duc Vu and Bowen Zhang and Ye Wang},\n  year          = {2026},\n  eprint        = {2608.00572},\n  archivePrefix = {arXiv},\n  primaryClass  = {cs.SD},\n  doi           = {10.48550/arXiv.2608.00572},\n  url           = {https://arxiv.org/abs/2608.00572}\n}"
   },
   {
     "id": "joycent",
@@ -105,7 +106,8 @@
       "pdf": "https://arxiv.org/pdf/2605.09259",
       "page": "https://mixturett.github.io/Mixture_TT/"
     },
-    "id": "remix-the-timbre"
+    "id": "remix-the-timbre",
+    "bibtex": "@misc{chen2026remixtimbre,\n  title         = {Remix the Timbre: Diffusion-Based Style Transfer Across Polyphonic Stems},\n  author        = {Leduo Chen and Junchuan Zhao and Shengchen Li},\n  year          = {2026},\n  eprint        = {2605.09259},\n  archivePrefix = {arXiv},\n  primaryClass  = {cs.SD},\n  doi           = {10.48550/arXiv.2605.09259},\n  url           = {https://arxiv.org/abs/2605.09259}\n}"
   },
   {
     "title": "PersonaGest: Personalized Co-Speech Gesture Generation with Semantic-Guided Hierarchical Motion Representation",
@@ -118,7 +120,8 @@
       "pdf": "https://arxiv.org/pdf/2605.07252v1",
       "page": "https://danny-nus.github.io/PersonaGest/"
     },
-    "id": "personagest"
+    "id": "personagest",
+    "bibtex": "@misc{zhao2026personagest,\n  title         = {{PersonaGest}: Personalized Co-Speech Gesture Generation with Semantic-Guided Hierarchical Motion Representation},\n  author        = {Junchuan Zhao and Qifan Liang and Ye Wang},\n  year          = {2026},\n  eprint        = {2605.07252},\n  archivePrefix = {arXiv},\n  primaryClass  = {cs.GR},\n  doi           = {10.48550/arXiv.2605.07252},\n  url           = {https://arxiv.org/abs/2605.07252}\n}"
   },
   {
     "title": "MSpoofTTS: Multi-Resolution Spoof-Guided Inference for Discrete Speech Synthesis",
@@ -132,11 +135,12 @@
       "page": "https://danny-nus.github.io/MSpoofTTS.github.io/",
       "code": "https://github.com/Danny-NUS/MSpoofTTS"
     },
-    "id": "mspooftts"
+    "id": "mspooftts",
+    "bibtex": "@inproceedings{zhao26g_interspeech,\n  title     = {{MSpoofTTS: Multi-Resolution Spoof-Guided Inference for Discrete Speech Synthesis}},\n  author    = {Junchuan Zhao and Minh Duc Vu and Ye Wang},\n  year      = {2026},\n  booktitle = {{Interspeech 2026}},\n  pages     = {7441--7446},\n  doi       = {10.21437/Interspeech.2026-2159},\n  issn      = {2958-1796},\n}"
   },
   {
     "title": "CodecFlow: Efficient Bandwidth Extension via Conditional Flow Matching in Neural Codec Latent Space",
-    "authors": "Bowen Zhang*, <b>Junchuan Zhao</b>*, A S Madhukumar, Ye Wang, Ian McLoughlin",
+    "authors": "Bowen Zhang*, <b>Junchuan Zhao</b>*, Ian McLoughlin, Ye Wang, A S Madhukumar",
     "conference": "arXiv preprint, 2026.",
     "venue": "arXiv",
     "year": "2026",
@@ -145,7 +149,8 @@
       "pdf": "https://arxiv.org/abs/2603.02022",
       "page": "https://danny-nus.github.io/CodecFlow/"
     },
-    "id": "codecflow"
+    "id": "codecflow",
+    "bibtex": "@misc{zhang2026codecflow,\n  title         = {{CodecFlow}: Efficient Bandwidth Extension via Conditional Flow Matching in Neural Codec Latent Space},\n  author        = {Bowen Zhang and Junchuan Zhao and Ian McLoughlin and Ye Wang and A S Madhukumar},\n  year          = {2026},\n  eprint        = {2603.02022},\n  archivePrefix = {arXiv},\n  primaryClass  = {cs.SD},\n  doi           = {10.48550/arXiv.2603.02022},\n  url           = {https://arxiv.org/abs/2603.02022}\n}"
   },
   {
     "title": "TED-TTS: Training-Free Intra-Utterance Emotion and Duration Control for Text-to-Speech Synthesis",
@@ -163,7 +168,8 @@
       "code": "https://github.com/Simon-leong/TED-TTS",
       "data": "https://huggingface.co/datasets/Chanson-0803/MED-TTS"
     },
-    "id": "ted-tts"
+    "id": "ted-tts",
+    "bibtex": "@inproceedings{liang-etal-2026-ted,\n  title         = {{TED}-{TTS}: Training-Free Intra-Utterance Emotion and Duration Control for Text-to-Speech Synthesis},\n  author        = {Liang, Qifan and Liu, Yuansen and Wei, Ruixin and Lu, Nan and Zhao, Junchuan and Wang, Ye},\n  booktitle     = {Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},\n  year          = {2026},\n  address       = {San Diego, California, United States},\n  publisher     = {Association for Computational Linguistics},\n  pages         = {23485--23508},\n  doi           = {10.18653/v1/2026.acl-long.1077},\n  url           = {https://aclanthology.org/2026.acl-long.1077/}\n}"
   },
   {
     "title": "KSDiff: Keyframe-Augmented Speech-Aware Dual-Path Diffusion for Facial Animation",
@@ -176,7 +182,7 @@
       "pdf": "https://arxiv.org/pdf/2509.20128",
       "page": "https://kincin.github.io/KSDiff/"
     },
-    "bibtex": "@INPROCEEDINGS{lyr2026ksdiff,\n  author={Lyu, Tianle and Zhao, Junchuan and Wang, Ye},\n  title={KSDIFF: Keyframe-Augmented Speech-Aware Dual-Path Diffusion for Facial Animation},\n  booktitle={ICASSP},\n  year={2026}\n}",
+    "bibtex": "@inproceedings{lyu2026ksdiff,\n  title         = {{KSDIFF}: Keyframe-Augmented Speech-Aware Dual-Path Diffusion for Facial Animation},\n  author        = {Lyu, Tianle and Zhao, Junchuan and Wang, Ye},\n  booktitle     = {ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},\n  year          = {2026},\n  pages         = {13132--13136},\n  doi           = {10.1109/icassp55912.2026.11465063},\n  url           = {https://doi.org/10.1109/icassp55912.2026.11465063}\n}",
     "id": "ksdiff"
   },
   {
@@ -189,7 +195,8 @@
     "links": {
       "pdf": "https://arxiv.org/pdf/2509.20140"
     },
-    "id": "inconvad"
+    "id": "inconvad",
+    "bibtex": "@inproceedings{li2026inconvad,\n  title         = {{InconVAD}: A Two-Stage Dual-Tower Framework for Multimodal Emotion Inconsistency Detection},\n  author        = {Li, Zongyi and Zhao, Junchuan and Lee, Francis Bu Sung and Yee, Andrew Zi Han},\n  booktitle     = {ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},\n  year          = {2026},\n  pages         = {17962--17966},\n  doi           = {10.1109/icassp55912.2026.11460821},\n  url           = {https://doi.org/10.1109/icassp55912.2026.11460821}\n}"
   },
   {
     "title": "CoMelSinger: Discrete Token-Based Zero-Shot Singing Synthesis With Structured Melody Control and Guidance",
@@ -205,7 +212,8 @@
       "pdf": "https://arxiv.org/pdf/2509.19883",
       "page": "https://danny-nus.github.io/CoMelSinger/"
     },
-    "id": "comelsinger"
+    "id": "comelsinger",
+    "bibtex": "@article{zhao2026comelsinger,\n  title         = {{CoMelSinger}: Discrete Token-Based Zero-Shot Singing Synthesis With Structured Melody Control and Guidance},\n  author        = {Zhao, Junchuan and Zeng, Wei and Lyu, Tianle and Wang, Ye},\n  journal       = {IEEE Transactions on Audio, Speech and Language Processing},\n  year          = {2026},\n  volume        = {34},\n  pages         = {1374--1387},\n  doi           = {10.1109/taslpro.2026.3664643},\n  url           = {https://doi.org/10.1109/taslpro.2026.3664643}\n}"
   },
   {
     "title": "Bridging Piano Transcription and Rendering via Disentangled Score Content and Style",
@@ -218,7 +226,8 @@
       "pdf": "https://openreview.net/pdf?id=173Pq3F31r",
       "page": "https://jointpianist.github.io/epr-apt/"
     },
-    "id": "jointpianist"
+    "id": "jointpianist",
+    "bibtex": "@inproceedings{ICLR2026_97005e2b,\n author = {Zeng, Wei and Zhao, Junchuan and Wang, Ye},\n booktitle = {International Conference on Learning Representations},\n editor = {C. Vondrick and B. Hariharan and C. Raffel and L. Pinto and D. Yang and A. Faust},\n pages = {93485--93512},\n title = {Bridging Piano Transcription and Rendering via Disentangled Score Content and Style},\n url = {https://proceedings.iclr.cc/paper_files/paper/2026/file/97005e2b425c93015a91c312ba5c5298-Paper-Conference.pdf},\n volume = {2026},\n year = {2026}\n}"
   },
   {
     "title": "Prosody-Adaptable Audio Codecs for Zero-Shot Voice Conversion via In-Context Learning",
@@ -230,7 +239,8 @@
     "links": {
       "pdf": "https://www.isca-archive.org/interspeech_2025/zhao25d_interspeech.pdf"
     },
-    "id": "pace"
+    "id": "pace",
+    "bibtex": "@inproceedings{zhao2025pace,\n  title         = {Prosody-Adaptable Audio Codecs for Zero-Shot Voice Conversion via In-Context Learning},\n  author        = {Zhao, Junchuan and Wang, Xintong and Wang, Ye},\n  booktitle     = {Interspeech 2025},\n  year          = {2025},\n  pages         = {4893--4897},\n  doi           = {10.21437/interspeech.2025-464},\n  url           = {https://doi.org/10.21437/interspeech.2025-464}\n}"
   },
   {
     "title": "SPSinger: Multi-Singer Singing Voice Synthesis with Short Reference Prompt",
@@ -243,7 +253,8 @@
       "pdf": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10888907",
       "page": "https://danny-nus.github.io/SPSinger/"
     },
-    "id": "spsinger"
+    "id": "spsinger",
+    "bibtex": "@inproceedings{zhao2025spsinger,\n  title         = {{SPSinger}: Multi-Singer Singing Voice Synthesis with Short Reference Prompt},\n  author        = {Zhao, Junchuan and Low, Chetwin and Wang, Ye},\n  booktitle     = {ICASSP 2025 - 2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},\n  year          = {2025},\n  pages         = {1--5},\n  doi           = {10.1109/icassp49660.2025.10888907},\n  url           = {https://doi.org/10.1109/icassp49660.2025.10888907}\n}"
   },
   {
     "title": "SinTechSVS: A Singing Technique Controllable Singing Voice Synthesis System",
@@ -257,6 +268,7 @@
       "page": "https://danny-nus.github.io/SinTechSVS/",
       "data": "https://huggingface.co/datasets/Chanson-0803/SinTechSVS-singing-technique-annotation"
     },
-    "id": "sintechsvs"
+    "id": "sintechsvs",
+    "bibtex": "@article{zhao2024sintechsvs,\n  title         = {{SinTechSVS}: A Singing Technique Controllable Singing Voice Synthesis System},\n  author        = {Zhao, Junchuan and Chetwin, Low Qi Hong and Wang, Ye},\n  journal       = {IEEE/ACM Transactions on Audio, Speech, and Language Processing},\n  year          = {2024},\n  volume        = {32},\n  pages         = {2641--2653},\n  doi           = {10.1109/taslp.2024.3394769},\n  url           = {https://doi.org/10.1109/taslp.2024.3394769}\n}"
   }
 ]
