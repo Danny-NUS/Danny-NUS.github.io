@@ -1,5 +1,37 @@
 [
   {
+    "id": "expert-supervision-tts",
+    "title": "Does Expert Supervision Improve Text-to-Speech? An Empirical Study of Preference Optimization",
+    "authors": "Minh Duc Vu*, <b>Junchuan Zhao</b>*, Ye Wang",
+    "conference": "arXiv preprint, 2026.",
+    "venue": "arXiv",
+    "year": "2026",
+    "submitted": "2026-10-18",
+    "category": "speech",
+    "new": true,
+    "summary": "An empirical study of expert-guided TTS preference optimization across two student models, real and synthetic speech, and direct and bridge supervision. It shows why demonstration quality and target likelihood alone do not reliably predict improvements in generated speech.",
+    "links": {
+      "pdf": "https://arxiv.org/abs/2610.25292"
+    },
+    "bibtex": "@misc{vu2026expertsupervision,\n  title         = {Does Expert Supervision Improve Text-to-Speech? An Empirical Study of Preference Optimization},\n  author        = {Minh Duc Vu and Junchuan Zhao and Ye Wang},\n  year          = {2026},\n  eprint        = {2610.25292},\n  archivePrefix = {arXiv},\n  primaryClass  = {cs.SD},\n  doi           = {10.48550/arXiv.2610.25292},\n  url           = {https://arxiv.org/abs/2610.25292}\n}"
+  },
+  {
+    "id": "x-mdd",
+    "title": "X-MDD: LLM-Based Mispronunciation Detection and Diagnosis for Unseen Languages with Canonical References",
+    "authors": "Xintong Wang, <b>Junchuan Zhao</b>†, Ye Wang",
+    "conference": "arXiv preprint, 2026.",
+    "venue": "arXiv",
+    "year": "2026",
+    "submitted": "2026-10-16",
+    "category": "speech",
+    "new": true,
+    "summary": "A multilingual pronunciation diagnosis model that combines canonical speech and phone references with in-context examples and GRPO. Trained on Mandarin and English, it evaluates transfer to Arabic without Arabic MDD training.",
+    "links": {
+      "pdf": "https://arxiv.org/abs/2610.23079"
+    },
+    "bibtex": "@misc{wang2026xmdd,\n  title         = {X-MDD: LLM-Based Mispronunciation Detection and Diagnosis for Unseen Languages with Canonical References},\n  author        = {Xintong Wang and Junchuan Zhao and Ye Wang},\n  year          = {2026},\n  eprint        = {2610.23079},\n  archivePrefix = {arXiv},\n  primaryClass  = {cs.SD},\n  doi           = {10.48550/arXiv.2610.23079},\n  url           = {https://arxiv.org/abs/2610.23079}\n}"
+  },
+  {
     "id": "edict",
     "title": "Edit Who Speaks, Control How They Speak: Global Timbre Editing and Local Instruction Control for TTS",
     "authors": "<b>Junchuan Zhao</b>, Chenglin Xu, Wei Zeng, Haoyang Li, Yiwen Guo, Ye Wang",
@@ -45,6 +77,22 @@
       "page": "https://danny-nus.github.io/AnyBand-DemoPage/"
     },
     "id": "anyband"
+  },
+  {
+    "id": "joycent",
+    "title": "Joycent: Multi-Accent TTS via Disentangled Accent Modeling and Layer-Specific Conditioning",
+    "authors": "Xintong Wang, <b>Junchuan Zhao</b>, Ye Wang",
+    "conference": "arXiv preprint, 2026.",
+    "venue": "arXiv",
+    "year": "2026",
+    "submitted": "2026-06-15",
+    "category": "speech",
+    "summary": "A diffusion-based TTS framework for controlling accent while preserving speaker identity. It learns speaker-disentangled accent representations and applies accent and speaker conditioning at different encoder layers, including cross-accent synthesis with separate reference prompts.",
+    "links": {
+      "pdf": "https://arxiv.org/abs/2606.16417",
+      "page": "https://oshindow.github.io/joycent/"
+    },
+    "bibtex": "@misc{wang2026joycent,\n  title         = {Joycent: Multi-Accent TTS via Disentangled Accent Modeling and Layer-Specific Conditioning},\n  author        = {Xintong Wang and Junchuan Zhao and Ye Wang},\n  year          = {2026},\n  eprint        = {2606.16417},\n  archivePrefix = {arXiv},\n  primaryClass  = {cs.SD},\n  doi           = {10.48550/arXiv.2606.16417},\n  url           = {https://arxiv.org/abs/2606.16417}\n}"
   },
   {
     "title": "Remix the Timbre: Diffusion-Based Style Transfer Across Polyphonic Stems",
